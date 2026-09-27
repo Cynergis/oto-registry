@@ -1,0 +1,47 @@
+{
+  "name": "cynergis",
+  "owner": {
+    "name": "cynergis"
+  },
+  "metadata": {
+    "description": "The OTO catalog: ontologies and packs, published by Cynergis."
+  },
+  "plugins": [
+    {
+      "name": "oto",
+      "source": {
+        "source": "github",
+        "repo": "Cynergis/oto"
+      },
+      "description": "The Oto engine: the kg_* query tools as an MCP server, the generic skills, and the session hook. Every pack depends on it."
+    },
+    {
+      "name": "auto-claims",
+      "source": "./packs/auto-claims",
+      "description": "Motor vehicle claims: policy, coverage, claim, incident, handling, money in and out.",
+      "version": "2.0.0",
+      "category": "insurance"
+    },
+    {
+      "name": "organization-process",
+      "source": "./packs/organization-process",
+      "description": "How an organization works: units, roles, processes, policies, systems and measures.",
+      "version": "1.0.0",
+      "category": "organization"
+    },
+    {
+      "name": "professional-services",
+      "source": "./packs/professional-services",
+      "description": "Engagements: scope, deliverables, governance, sessions, decisions and the work that follows.",
+      "version": "1.0.0",
+      "category": "professional-services"
+    },
+    {
+      "name": "software-architecture",
+      "source": "./packs/software-architecture",
+      "description": "Software estate: systems, components, interfaces, data, environments, decisions and risks.",
+      "version": "1.0.0",
+      "category": "software"
+    }
+  ]
+}

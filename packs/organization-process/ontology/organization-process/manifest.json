@@ -1,0 +1,31 @@
+{
+  "name": "organization-process",
+  "release": 1,
+  "domain": "organization",
+  "summary": "How an organization works: units, roles, processes, policies, systems and measures.",
+  "extends": [
+    "oto-core"
+  ],
+  "engine": ">=0.1",
+  "carries": [
+    "vocabulary",
+    "rationale",
+    "sample",
+    "readme"
+  ],
+  "maintainer": "Oto",
+  "changelog": [
+    {
+      "at": "2026-09-19",
+      "note": "Seeded from the engine's shipped ontologies.",
+      "release": 1
+    }
+  ],
+  "registry": "cynergis",
+  "source": "https://github.com/Cynergis/oto-registry",
+  "ref": "packs",
+  "path": "organization-process",
+  "commit": "ece6206",
+  "fetched_at": "2026-09-24T16:22:26+00:00",
+  "_about": "The ontology's identity: its release rises on every published change, `extends` names what it composes on top of, `carries` what the directory holds."
+}

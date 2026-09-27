@@ -1,0 +1,59 @@
+name: oto registry check
+
+# The index must match the directories beside it, every ontology must pass its self-check and
+# every pack its check.
+# Runs on every push to the default branch and every pull request; `oto ontology publish` keeps
+# this true, a hand edit may not. Tag pushes are not checked twice. The engine is private, so the
+# repository needs the secret OTO_ENGINE_TOKEN (a token that can read it); OTO_DENY_TERMS is
+# optional and makes the self-check strict about names.
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Reach the engine repository when it is private
+        run: if [ -n "$OTO_ENGINE_TOKEN" ]; then git config --global url."https://x-access-token:${OTO_ENGINE_TOKEN}@github.com/".insteadOf "https://github.com/"; fi
+        env:
+          OTO_ENGINE_TOKEN: ${{ secrets.OTO_ENGINE_TOKEN }}
+      - name: Install the engine from its repository
+        run: python -m pip install "oto-kg @ git+${ENGINE}"
+        env:
+          ENGINE: ${{ vars.OTO_ENGINE || 'https://github.com/Cynergis/oto' }}
+      - name: Index matches directories
+        run: oto registry check .
+      - name: Every ontology passes its self-check, every pack its check
+        env:
+          OTO_DENY_TERMS: ${{ secrets.OTO_DENY_TERMS }}
+        run: |
+          python - <<'PY'
+          import json, sys
+          from oto.model import ontologies, packs
+          index = json.load(open("registry.json"))
+          bad = 0
+          for entry in index["ontologies"]:
+              if not entry.get("path"):
+                  continue
+              problems = ontologies.self_check(entry["name"], roots=["."])
+              print("%-24s %s" % ("ontology " + entry["name"], "ok" if not problems else "%d problem(s)" % len(problems)))
+              for p in problems:
+                  print("    - " + p)
+              bad += bool(problems)
+          for entry in index.get("packs") or []:
+              if not entry.get("path"):
+                  continue
+              problems = packs.check(entry["path"])
+              print("%-24s %s" % ("pack " + entry["name"], "ok" if not problems else "%d problem(s)" % len(problems)))
+              for p in problems:
+                  print("    - " + p)
+              bad += bool(problems)
+          sys.exit(1 if bad else 0)
+          PY

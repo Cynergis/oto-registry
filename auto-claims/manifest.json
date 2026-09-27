@@ -1,0 +1,30 @@
+{
+  "name": "auto-claims",
+  "release": 2,
+  "domain": "insurance",
+  "summary": "Motor vehicle claims: policy, coverage, claim, incident, handling, money in and out.",
+  "extends": [
+    "oto-core"
+  ],
+  "engine": ">=0.1",
+  "carries": [
+    "vocabulary",
+    "rationale",
+    "sample",
+    "readme"
+  ],
+  "maintainer": "Oto",
+  "changelog": [
+    {
+      "release": 2,
+      "at": "2026-09-26",
+      "note": "performs: a Role carries out a Procedure (inverse performed_by). The relation every procedure document needs and the graph could not hold."
+    },
+    {
+      "at": "2026-09-19",
+      "note": "Seeded from the engine's shipped ontologies.",
+      "release": 1
+    }
+  ],
+  "_about": "The ontology's identity: its release rises on every published change, `extends` names what it composes on top of, `carries` what the directory holds."
+}
