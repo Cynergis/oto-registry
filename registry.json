@@ -1,0 +1,100 @@
+{
+  "name": "cynergis",
+  "summary": "The OTO catalog: ontologies and packs, published by Cynergis.",
+  "ontologies": [
+    {
+      "name": "auto-claims",
+      "release": 2,
+      "summary": "Motor vehicle claims: policy, coverage, claim, incident, handling, money in and out.",
+      "path": "auto-claims",
+      "extends": [
+        "oto-core"
+      ],
+      "domain": "insurance"
+    },
+    {
+      "name": "organization-process",
+      "summary": "How an organization works: units, roles, processes, policies, systems and measures.",
+      "path": "organization-process",
+      "extends": [
+        "oto-core"
+      ],
+      "release": 1,
+      "domain": "organization"
+    },
+    {
+      "name": "oto-core",
+      "summary": "The temporal vocabulary every Oto ontology rests on, and the one class every fact cites: Document.",
+      "path": "oto-core",
+      "extends": [],
+      "release": 2
+    },
+    {
+      "name": "professional-services",
+      "summary": "Engagements: scope, deliverables, governance, sessions, decisions and the work that follows.",
+      "path": "professional-services",
+      "extends": [
+        "oto-core"
+      ],
+      "release": 1,
+      "domain": "professional-services"
+    },
+    {
+      "name": "software-architecture",
+      "summary": "Software estate: systems, components, interfaces, data, environments, decisions and risks.",
+      "path": "software-architecture",
+      "extends": [
+        "oto-core"
+      ],
+      "release": 5,
+      "domain": "software"
+    }
+  ],
+  "engine": "https://github.com/Cynergis/oto",
+  "packs": [
+    {
+      "name": "auto-claims",
+      "release": 2,
+      "summary": "Motor vehicle claims: policy, coverage, claim, incident, handling, money in and out.",
+      "path": "packs/auto-claims",
+      "ontology": {
+        "name": "auto-claims",
+        "release": 2
+      },
+      "domain": "insurance"
+    },
+    {
+      "name": "organization-process",
+      "release": 1,
+      "summary": "How an organization works: units, roles, processes, policies, systems and measures.",
+      "path": "packs/organization-process",
+      "ontology": {
+        "name": "organization-process",
+        "release": 1
+      },
+      "domain": "organization"
+    },
+    {
+      "name": "professional-services",
+      "release": 1,
+      "summary": "Engagements: scope, deliverables, governance, sessions, decisions and the work that follows.",
+      "path": "packs/professional-services",
+      "ontology": {
+        "name": "professional-services",
+        "release": 1
+      },
+      "domain": "professional-services"
+    },
+    {
+      "name": "software-architecture",
+      "release": 1,
+      "summary": "Software estate: systems, components, interfaces, data, environments, decisions and risks.",
+      "path": "packs/software-architecture",
+      "ontology": {
+        "name": "software-architecture",
+        "release": 5
+      },
+      "domain": "software"
+    }
+  ]
+}

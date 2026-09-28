@@ -1,0 +1,26 @@
+{
+  "title": "The OTO catalog",
+  "tagline": "The ontologies and packs an OTO knowledge graph starts from: one per domain, each with its vocabulary, its reasoning and a sample, the packs with their skills and views. Browse, then install in Claude Code.",
+  "logo": "mark.svg",
+  "domain": "catalog.cynergis.org",
+  "colors": {
+    "accent": "#3B3BD6",
+    "accent-soft": "#EEEEFC",
+    "accent-2": "#0B7D90",
+    "accent-2-soft": "#E3F6F9",
+    "accent-3": "#7A5A2E",
+    "accent-3-soft": "#F7F2EA",
+    "paper": "#F7F2EA",
+    "paper-line": "#EADFCD",
+    "paper-ink": "#7A5A2E",
+    "button": "#E8F0FD",
+    "button-ink": "#1F5FB8"
+  },
+  "links": [
+    {
+      "label": "Go to OTO",
+      "url": "https://oto.cynergis.org",
+      "button": true
+    }
+  ]
+}

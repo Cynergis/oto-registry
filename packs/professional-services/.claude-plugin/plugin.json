@@ -1,0 +1,17 @@
+{
+  "name": "professional-services",
+  "displayName": "Engagement Knowledge Base (Oto pack)",
+  "description": "Engagements: scope, deliverables, governance, sessions, decisions and the work that follows.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Cynergis"
+  },
+  "dependencies": [
+    "oto"
+  ],
+  "keywords": [
+    "professional-services",
+    "oto",
+    "knowledge-graph"
+  ]
+}
