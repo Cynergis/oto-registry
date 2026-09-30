@@ -1,0 +1,88 @@
+{
+  "_about": "Property value is [Domain, Range, inverse_or_null, description]. Use A|B for a union; null means any class.",
+  "_summary": "Product experience: the objectives a product pursues, the features it is made of, the journeys its personas take step by step, and the words it uses.",
+  "name": "Product experience",
+  "ontology_version": 1,
+  "strict_domains": false,
+  "classes": {
+    "Objective": "A qualitative goal for a period, owned by a role and made measurable by success criteria. Objectives support higher objectives; that is strategic alignment.",
+    "Feature": "A user-visible capability the product is made of. Features nest through part_of, so an epic and a sub-feature are the same class at different depths.",
+    "UserJourney": "How a persona gets value, end to end: a trigger, ordered steps, an outcome.",
+    "JourneyStep": "One step of a user journey, with its own identity so a design decision, a requirement or a test can point at it.",
+    "Term": "A word with a definition in this product's language, cited and dated, so a changed meaning is superseded rather than argued about."
+  },
+  "properties": {
+    "part_of": [
+      null,
+      null,
+      "contains",
+      "This belongs to that: a feature to its product or parent feature, a step to its journey. Open on both sides, so any ontology that needs containment uses the same relation."
+    ],
+    "realises": [
+      null,
+      "Requirement",
+      "realised_by",
+      "The requirement a feature exists to satisfy. The realising side is open to any class, so an ontology that extends this one adds its own classes without redeclaring the relation."
+    ],
+    "pursues": [
+      "Product",
+      "Objective",
+      "pursued_by",
+      "The objectives a product works towards. Usually derived (the product offers a value proposition that serves the objective); state it directly only when a document says so."
+    ],
+    "supports": [
+      "Objective",
+      "Objective",
+      "supported_by",
+      "A lower objective that contributes to a higher one. This is where strategic alignment is recorded."
+    ],
+    "defines": [
+      "Term",
+      null,
+      "defined_by",
+      "The entity a term is the name for, when there is one. The defined side is open to any class, so an ontology that extends this one adds its own classes without redeclaring the relation."
+    ]
+  },
+  "attributes": {
+    "Objective": {
+      "period": [
+        "string",
+        "The period it is set for, e.g. 2027 H1."
+      ],
+      "state": [
+        "enum:proposed|active|achieved|missed|dropped",
+        "Where the objective is."
+      ]
+    },
+    "UserJourney": {
+      "trigger": [
+        "string",
+        "What starts the journey."
+      ],
+      "outcome": [
+        "string",
+        "What the persona has at the end."
+      ]
+    },
+    "JourneyStep": {
+      "position": [
+        "integer",
+        "Order within the journey, from 1."
+      ],
+      "action": [
+        "string",
+        "What the persona does."
+      ],
+      "outcome": [
+        "string",
+        "What the step leaves the persona with."
+      ]
+    },
+    "Term": {
+      "definition": [
+        "string",
+        "What the word means here."
+      ]
+    }
+  }
+}

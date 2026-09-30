@@ -40,6 +40,16 @@
       "domain": "product"
     },
     {
+      "name": "product-experience",
+      "release": 1,
+      "summary": "Product experience: the objectives a product pursues, the features it is made of, the journeys its personas take step by step, and the words it uses.",
+      "path": "product-experience",
+      "extends": [
+        "product-core"
+      ],
+      "domain": "product"
+    },
+    {
       "name": "product-governance",
       "release": 1,
       "summary": "Product governance: the policies a product must obey and who enforces them, the constraints it is built under, the assumptions it rests on, and the risks to it.",

@@ -1,0 +1,14 @@
+{
+  "entries": [
+    {
+      "term": "glossary",
+      "aka": [
+        "term",
+        "definition"
+      ],
+      "targets": [],
+      "status": "current",
+      "note": "Term nodes with a definition."
+    }
+  ]
+}

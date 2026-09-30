@@ -1,0 +1,161 @@
+{
+  "nodes": [
+    {
+      "id": "feature.example",
+      "type": "Feature",
+      "label": "Feature example",
+      "aliases": [],
+      "summary": "A user-visible capability the product is made of. Features nest through part_of, so an epic and a sub-feature are the same class at different depths.",
+      "attributes": {},
+      "tags": [
+        "feature"
+      ],
+      "as_of": "2026-01-01",
+      "valid_from": "2026-01-01",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "userjourney.example",
+      "type": "UserJourney",
+      "label": "UserJourney example",
+      "aliases": [],
+      "summary": "How a persona gets value, end to end: a trigger, ordered steps, an outcome.",
+      "attributes": {
+        "trigger": "example",
+        "outcome": "example"
+      },
+      "tags": [
+        "userjourney"
+      ],
+      "as_of": "2026-01-01",
+      "valid_from": "2026-01-01",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "journeystep.example",
+      "type": "JourneyStep",
+      "label": "JourneyStep example",
+      "aliases": [],
+      "summary": "One step of a user journey, with its own identity so a design decision, a requirement or a test can point at it.",
+      "attributes": {
+        "position": 1,
+        "action": "example",
+        "outcome": "example"
+      },
+      "tags": [
+        "journeystep"
+      ],
+      "as_of": "2026-01-01",
+      "valid_from": "2026-01-01",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "objective.example",
+      "type": "Objective",
+      "label": "Objective example",
+      "aliases": [],
+      "summary": "A qualitative goal for a period, owned by a role and made measurable by success criteria. Objectives support higher objectives; that is strategic alignment.",
+      "attributes": {
+        "period": "example",
+        "state": "proposed"
+      },
+      "tags": [
+        "objective"
+      ],
+      "as_of": "2026-01-01",
+      "valid_from": "2026-01-01",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "term.example",
+      "type": "Term",
+      "label": "Term example",
+      "aliases": [],
+      "summary": "A word with a definition in this product's language, cited and dated, so a changed meaning is superseded rather than argued about.",
+      "attributes": {
+        "definition": "example"
+      },
+      "tags": [
+        "term"
+      ],
+      "as_of": "2026-01-01",
+      "valid_from": "2026-01-01",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "objective.example-2",
+      "type": "Objective",
+      "label": "Objective example 2",
+      "aliases": [],
+      "summary": "A qualitative goal for a period, owned by a role and made measurable by success criteria. Objectives support higher objectives; that is strategic alignment.",
+      "attributes": {},
+      "tags": [
+        "objective"
+      ],
+      "as_of": "2026-01-01",
+      "valid_from": "2026-01-01",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "successcriterion.example",
+      "rel": "measures",
+      "to": "objective.example"
+    },
+    {
+      "from": "feature.example",
+      "rel": "part_of",
+      "to": "product.example"
+    },
+    {
+      "from": "feature.example",
+      "rel": "realises",
+      "to": "requirement.example"
+    },
+    {
+      "from": "product.example",
+      "rel": "pursues",
+      "to": "objective.example"
+    },
+    {
+      "from": "objective.example",
+      "rel": "supports",
+      "to": "objective.example-2"
+    },
+    {
+      "from": "role.example",
+      "rel": "interested_in",
+      "to": "objective.example"
+    },
+    {
+      "from": "term.example",
+      "rel": "defines",
+      "to": "product.example"
+    }
+  ]
+}

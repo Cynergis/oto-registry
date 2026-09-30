@@ -1,0 +1,29 @@
+{
+  "name": "product-experience",
+  "release": 1,
+  "domain": "product",
+  "summary": "Product experience: the objectives a product pursues, the features it is made of, the journeys its personas take step by step, and the words it uses.",
+  "extends": [
+    "product-core"
+  ],
+  "engine": ">=0.6",
+  "carries": [
+    "vocabulary",
+    "rationale",
+    "rules",
+    "sample",
+    "readme",
+    "lexicon",
+    "interview",
+    "guide",
+    "gold"
+  ],
+  "changelog": [
+    {
+      "release": 1,
+      "at": "2026-09-30",
+      "note": "First release: a focused, composable part of a product vocabulary."
+    }
+  ],
+  "_about": "The ontology's identity: its release rises on every published change, `extends` names what it composes on top of, `carries` what the directory holds."
+}

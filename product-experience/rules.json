@@ -1,0 +1,95 @@
+{
+  "rules": [
+    {
+      "id": "feature-serves-its-requirements-purpose",
+      "kind": "derive",
+      "when": [
+        {
+          "edge": [
+            "f",
+            "realises",
+            "q"
+          ]
+        },
+        {
+          "edge": [
+            "q",
+            "serves",
+            "v"
+          ]
+        }
+      ],
+      "then": {
+        "edge": [
+          "f",
+          "serves",
+          "v"
+        ]
+      },
+      "why": "D2 asks which purpose a feature serves; documents state only which requirement it realises, and the requirement's purpose is one hop away.",
+      "validated_by": ""
+    },
+    {
+      "id": "requirement-in-scope-through-feature",
+      "kind": "derive",
+      "when": [
+        {
+          "edge": [
+            "f",
+            "in_scope_of",
+            "r"
+          ]
+        },
+        {
+          "edge": [
+            "f",
+            "realises",
+            "q"
+          ]
+        }
+      ],
+      "then": {
+        "edge": [
+          "q",
+          "in_scope_of",
+          "r"
+        ]
+      },
+      "why": "B1 asks what is in scope; release plans usually list features, and a requirement realised by a scoped feature is in scope too.",
+      "validated_by": ""
+    },
+    {
+      "id": "product-pursues-objective",
+      "kind": "derive",
+      "when": [
+        {
+          "edge": [
+            "p",
+            "offers",
+            "v"
+          ]
+        },
+        {
+          "edge": [
+            "v",
+            "serves",
+            "o"
+          ]
+        },
+        {
+          "node": "o",
+          "type": "Objective"
+        }
+      ],
+      "then": {
+        "edge": [
+          "p",
+          "pursues",
+          "o"
+        ]
+      },
+      "why": "G2 asks how the product aligns with objectives; documents state which promise serves which objective, and the product-level edge is one hop away.",
+      "validated_by": ""
+    }
+  ]
+}
