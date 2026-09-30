@@ -1,0 +1,6 @@
+{"class": "Product", "pattern": "What problem does {label} solve, and what is its vision?"}
+{"class": "ValueProposition", "pattern": "Which persona is {label} for, and which requirements serve it?"}
+{"class": "Requirement", "pattern": "Which value proposition does {label} serve, which feature realises it, and is it in scope of the next release?"}
+{"class": "Release", "pattern": "What is in scope of {label}, and what is explicitly excluded?"}
+{"class": "Decision", "pattern": "What did {label} settle, who decided it, and which document records it?"}
+{"class": "OpenQuestion", "pattern": "Is {label} still open, and which release does it block?"}

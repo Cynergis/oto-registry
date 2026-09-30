@@ -1,0 +1,161 @@
+{
+  "rules": [
+    {
+      "id": "open-question-blocks-release",
+      "kind": "derive",
+      "when": [
+        {
+          "edge": [
+            "o",
+            "about",
+            "q"
+          ]
+        },
+        {
+          "edge": [
+            "q",
+            "in_scope_of",
+            "r"
+          ]
+        },
+        {
+          "node": "o",
+          "type": "OpenQuestion",
+          "where": {
+            "state": "open"
+          }
+        }
+      ],
+      "then": {
+        "edge": [
+          "o",
+          "blocks",
+          "r"
+        ]
+      },
+      "why": "C2 asks what is still open before a build; an open question about an in-scope requirement blocks that release, and nobody writes that down. Only questions in state open count; a resolved one must not block.",
+      "validated_by": ""
+    },
+    {
+      "id": "requirement-serves-a-purpose",
+      "kind": "policy",
+      "severity": "warn",
+      "when": [
+        {
+          "node": "q",
+          "type": "Requirement"
+        },
+        {
+          "not_edge": [
+            "q",
+            "serves",
+            "*"
+          ]
+        }
+      ],
+      "then": {
+        "flag": "a requirement must trace to the value proposition it serves"
+      },
+      "why": "Failure F3: a requirement with no traceable reason gets built or dropped arbitrarily.",
+      "validated_by": ""
+    },
+    {
+      "id": "value-proposition-has-success-criterion",
+      "kind": "policy",
+      "severity": "warn",
+      "when": [
+        {
+          "node": "v",
+          "type": "ValueProposition"
+        },
+        {
+          "not_edge": [
+            "*",
+            "measures",
+            "v"
+          ]
+        }
+      ],
+      "then": {
+        "flag": "a value proposition must have at least one success criterion that measures it"
+      },
+      "why": "Failure F4: success was never defined, so nobody could say when the product was done.",
+      "validated_by": ""
+    },
+    {
+      "id": "decision-is-documented",
+      "kind": "policy",
+      "severity": "warn",
+      "when": [
+        {
+          "node": "d",
+          "type": "Decision"
+        },
+        {
+          "not_edge": [
+            "d",
+            "documented_in",
+            "*"
+          ]
+        }
+      ],
+      "then": {
+        "flag": "a decision must cite the document that records it"
+      },
+      "why": "C4 and failure F2: a decision nobody can open is a rumour, and the graph would carry it as fact.",
+      "validated_by": ""
+    },
+    {
+      "id": "scope-is-not-contradictory",
+      "kind": "policy",
+      "severity": "blocking",
+      "when": [
+        {
+          "edge": [
+            "q",
+            "in_scope_of",
+            "r"
+          ]
+        },
+        {
+          "edge": [
+            "q",
+            "excluded_from",
+            "r"
+          ]
+        }
+      ],
+      "then": {
+        "flag": "something is both in scope of and excluded from the same release; supersede one of the two"
+      },
+      "why": "Failure F1: a builder agent cannot see the boundary if the graph says both; the older fact must be superseded, not left standing.",
+      "validated_by": ""
+    },
+    {
+      "id": "shipped-release-is-not-blocked",
+      "kind": "policy",
+      "severity": "warn",
+      "when": [
+        {
+          "edge": [
+            "o",
+            "blocks",
+            "r"
+          ]
+        },
+        {
+          "node": "r",
+          "type": "Release",
+          "where": {
+            "state": "shipped"
+          }
+        }
+      ],
+      "then": {
+        "flag": "a release marked shipped still has an open question blocking it"
+      },
+      "why": "C2 and B1 together: a release that shipped with a question still open means either the state or the question is stale, and someone should say which.",
+      "validated_by": ""
+    }
+  ]
+}

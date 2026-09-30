@@ -1,0 +1,151 @@
+{
+  "_about": "Why each class and relation exists, the question it answers, and who confirmed it.",
+  "classes": {
+    "Product": {
+      "alternatives": "A specific software-product class with releases and environments baked in; rejected because the user chose a generic vocabulary reused per project.",
+      "question": "Why does this product exist, and what is it? (A1)",
+      "validated_by": "",
+      "why": "The root the whole vocabulary hangs off. Generic on purpose: one vocabulary every project starts from, a product being whatever the project sets out to build."
+    },
+    "Role": {
+      "alternatives": "Role plus Person: rejected, no question needs a named individual's decisions traced. Stakeholder as one class: rejected, two people would populate it differently.",
+      "question": "Who owns it and who decides? (A4)",
+      "validated_by": "",
+      "why": "Ownership questions are answered better by a role than a person, because roles are stable while people move; the holder is an attribute with history by supersession."
+    },
+    "Persona": {
+      "alternatives": "Separate AntiPersona class: rejected, nothing points at it so it stays thin. Audience as a text attribute of Product: rejected, D1 and D2 lose their anchor.",
+      "question": "Who is it for, and who is it not for? (A2)",
+      "validated_by": "",
+      "why": "Journeys, requirements and value propositions need something to point at, and the excluded audience must be a dated first-class fact, not a footnote."
+    },
+    "ValueProposition": {
+      "alternatives": "Separate Problem class: rejected, no question traverses from problem to several propositions. Attributes on Product: rejected, nothing could trace to a purpose.",
+      "question": "Why does it exist, and what is the value proposition in one sentence? Which requirement serves which purpose? (A1, A3, D2)",
+      "validated_by": "",
+      "why": "It is the traceability anchor: requirements, journeys and criteria trace to it, so an orphan requirement (failure F3) becomes a rule violation instead of folklore."
+    },
+    "SuccessCriterion": {
+      "alternatives": "List attribute on ValueProposition: rejected, no history, no owner, which is exactly F4. Measurement class for observed readings: deferred until a question asks for readings.",
+      "question": "How do we know the product succeeded? (B2, failure F4)",
+      "validated_by": "",
+      "why": "A target that changes needs history and an owner, and a product with none must be flaggable; an attribute list gives neither."
+    },
+    "Requirement": {
+      "alternatives": "Folding requirements into Feature: rejected, a need and the capability that satisfies it have different owners and dates.",
+      "question": "What must the product do? What is in scope for the next release? (B3, B1)",
+      "validated_by": "",
+      "why": "The unit a builder agent works from and a release scopes; it carries priority and kind, traces to a value proposition, and is what decisions are about."
+    },
+    "Scenario": {
+      "alternatives": "UseCase class: rejected for now, a use case is a functional Requirement with its flow. Workflow class: rejected, a workflow is a UserJourney whose persona is a role.",
+      "question": "What exactly must this do in this situation, and how do we test it? (G5; Gate 3 review)",
+      "validated_by": "",
+      "why": "A scenario is the concrete path tests and acceptance run on, with its own preconditions and expected result; it must be pointable from a test and a requirement."
+    },
+    "Release": {
+      "alternatives": "Requirement.scope attribute: rejected, nothing to be in scope of, B1 and C3 unanswerable. A Scope node per release: rejected, the edges already carry it.",
+      "question": "What is in and out of scope for the next release, and what was the scope as of a past date? (B1, C3)",
+      "validated_by": "",
+      "why": "Scope has to be scope OF something dated; edges to a release carry validFrom and validTo, so the boundary at any past date is readable."
+    },
+    "Decision": {
+      "alternatives": "Decision as a status on the thing decided: rejected, no reason and no history.",
+      "question": "What did we decide about X, when, and why? (C1, failure F1)",
+      "validated_by": "",
+      "why": "A decision has a date, a reason, evidence and a role that made it; a status field has none of those, and an agent needs to see a settled decision before reopening it."
+    },
+    "OpenQuestion": {
+      "alternatives": "Decisions with state = open: rejected, populated differently. Hotspot class: deferred until the method runs gates on contested areas.",
+      "question": "What is still open or unresolved? (C2)",
+      "validated_by": "",
+      "why": "An open question is raised before any reason or evidence exists and is later resolved by a decision; keeping it separate lets an agent list what is open before building."
+    }
+  },
+  "properties": {
+    "owned_by": {
+      "alternatives": "A closed list of classes per side: rejected, two ontologies extending the same base could not both add to it.",
+      "question": "Who is accountable for this?",
+      "why": "Ownership is asked of products, requirements, releases and whatever an extension adds; one relation to a role answers it everywhere. One relation with an open side rather than a closed list of classes, so independent ontologies that extend this one compose without redeclaring it; the engine refuses two siblings widening the same relation.",
+      "validated_by": ""
+    },
+    "decided_by": {
+      "alternatives": "",
+      "question": "Whose call was it?",
+      "why": "A decision without the deciding role cannot be revisited with the right person.",
+      "validated_by": ""
+    },
+    "offers": {
+      "alternatives": "",
+      "question": "Which promises does the product make?",
+      "why": "The product-level entry to the traceability spine; a product usually makes more than one promise.",
+      "validated_by": ""
+    },
+    "intended_for": {
+      "alternatives": "A closed list of classes per side: rejected, two ontologies extending the same base could not both add to it.",
+      "question": "Who is this for, and who is it not for?",
+      "why": "The audience is a fact about a promise, a journey or a report, and the excluded audience must be statable the same way. One relation with an open side rather than a closed list of classes, so independent ontologies that extend this one compose without redeclaring it; the engine refuses two siblings widening the same relation.",
+      "validated_by": ""
+    },
+    "serves": {
+      "alternatives": "A closed list of classes per side: rejected, two ontologies extending the same base could not both add to it.",
+      "question": "Which requirement or journey serves which purpose? (D2)",
+      "validated_by": "",
+      "why": "This is the edge the orphan-requirement policy runs on; without it F3 cannot be detected. One relation with an open side rather than a closed list of classes, so independent ontologies that extend this one compose without redeclaring it; the engine refuses two siblings widening the same relation."
+    },
+    "measures": {
+      "alternatives": "A closed list of classes per side: rejected, two ontologies extending the same base could not both add to it.",
+      "question": "How do we know it succeeded?",
+      "why": "Ties a metric and a target to what it judges, so a promise with no criterion can be flagged. One relation with an open side rather than a closed list of classes, so independent ontologies that extend this one compose without redeclaring it; the engine refuses two siblings widening the same relation.",
+      "validated_by": ""
+    },
+    "in_scope_of": {
+      "alternatives": "A closed list of classes per side: rejected, two ontologies extending the same base could not both add to it.",
+      "question": "What is in scope for the next release? (B1)",
+      "validated_by": "",
+      "why": "Kept separate from excluded_from so absence of an edge means unknown, not out of scope. One relation with an open side rather than a closed list of classes, so independent ontologies that extend this one compose without redeclaring it; the engine refuses two siblings widening the same relation."
+    },
+    "excluded_from": {
+      "alternatives": "A closed list of classes per side: rejected, two ontologies extending the same base could not both add to it.",
+      "question": "What is explicitly out of scope? (B1, failure F1)",
+      "validated_by": "",
+      "why": "An explicit exclusion is a fact a builder must see; silence would be read as permission. One relation with an open side rather than a closed list of classes, so independent ontologies that extend this one compose without redeclaring it; the engine refuses two siblings widening the same relation."
+    },
+    "about": {
+      "alternatives": "A closed list of classes per side: rejected, two ontologies extending the same base could not both add to it.",
+      "question": "What did we decide about X? (C1)",
+      "validated_by": "",
+      "why": "One wide relation rather than one per subject class, so a decision about anything is found the same way. One relation with an open side rather than a closed list of classes, so independent ontologies that extend this one compose without redeclaring it; the engine refuses two siblings widening the same relation."
+    },
+    "resolves": {
+      "alternatives": "",
+      "question": "Which open question did this decision close?",
+      "why": "Closing a question by a dated decision keeps the question and its answer connected.",
+      "validated_by": ""
+    },
+    "blocks": {
+      "alternatives": "A closed list of classes per side: rejected, two ontologies extending the same base could not both add to it.",
+      "question": "What is still open, and does it stop the release? (C2)",
+      "validated_by": "",
+      "why": "Turns an open question into a release-level fact a gate can check; risks reach a release through threatens, so they were removed from this relation in the duplicate audit. One relation with an open side rather than a closed list of classes, so independent ontologies that extend this one compose without redeclaring it; the engine refuses two siblings widening the same relation."
+    },
+    "documented_in": {
+      "alternatives": "A closed list of classes per side: rejected, two ontologies extending the same base could not both add to it.",
+      "question": "Which document says so? (C4)",
+      "validated_by": "",
+      "why": "Every class except Document is in the domain, because every fact must be citable. One relation with an open side rather than a closed list of classes, so independent ontologies that extend this one compose without redeclaring it; the engine refuses two siblings widening the same relation."
+    },
+    "interested_in": {
+      "alternatives": "A closed list of classes per side: rejected, two ontologies extending the same base could not both add to it.",
+      "question": "Who must be consulted or informed, and about what? (G3)",
+      "validated_by": "",
+      "why": "Lets a stakeholder role say what it cares about without a separate Stakeholder class, which decision 1 rejected. One relation with an open side rather than a closed list of classes, so independent ontologies that extend this one compose without redeclaring it; the engine refuses two siblings widening the same relation."
+    },
+    "exercises": {
+      "alternatives": "A closed list of classes per side: rejected, two ontologies extending the same base could not both add to it.",
+      "question": "How do we test this requirement? (G5)",
+      "validated_by": "",
+      "why": "The edge a test-coverage question runs on: a must requirement with no scenario exercising it is untestable. One relation with an open side rather than a closed list of classes, so independent ontologies that extend this one compose without redeclaring it; the engine refuses two siblings widening the same relation."
+    }
+  }
+}

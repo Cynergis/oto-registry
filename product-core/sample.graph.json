@@ -1,0 +1,305 @@
+{
+  "nodes": [
+    {
+      "id": "product.example",
+      "type": "Product",
+      "label": "Product example",
+      "aliases": [],
+      "summary": "The thing a project sets out to build, software or not. The root every other class hangs off.",
+      "attributes": {
+        "stage": "idea",
+        "problem": "example",
+        "background": "example",
+        "vision": "example",
+        "domain": "example",
+        "value_stream": "example"
+      },
+      "tags": [
+        "product"
+      ],
+      "as_of": "2026-01-01",
+      "valid_from": "2026-01-01",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "role.example",
+      "type": "Role",
+      "label": "Role example",
+      "aliases": [],
+      "summary": "A function accountable for something: Product Owner, Sponsor, Lead Designer. Attach ownership and decisions to a role, never to a named person; the current holder is an attribute.",
+      "attributes": {
+        "holder": "example",
+        "mandate": "example",
+        "kind": "owner"
+      },
+      "tags": [
+        "role"
+      ],
+      "as_of": "2026-01-01",
+      "valid_from": "2026-01-01",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "persona.example",
+      "type": "Persona",
+      "label": "Persona example",
+      "aliases": [],
+      "summary": "A kind of user the product is for, or explicitly not for. Journeys, requirements and value propositions point at a persona.",
+      "attributes": {
+        "relationship": "target",
+        "need": "example"
+      },
+      "tags": [
+        "persona"
+      ],
+      "as_of": "2026-01-01",
+      "valid_from": "2026-01-01",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "valueproposition.example",
+      "type": "ValueProposition",
+      "label": "ValueProposition example",
+      "aliases": [],
+      "summary": "One promise the product makes to a persona, and the problem it solves. The anchor every requirement, journey and success criterion traces to.",
+      "attributes": {
+        "promise": "example",
+        "differentiator": "example"
+      },
+      "tags": [
+        "valueproposition"
+      ],
+      "as_of": "2026-01-01",
+      "valid_from": "2026-01-01",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "successcriterion.example",
+      "type": "SuccessCriterion",
+      "label": "SuccessCriterion example",
+      "aliases": [],
+      "summary": "A measurable statement of what success looks like: a metric, a target, a date, an owner role.",
+      "attributes": {
+        "metric": "example",
+        "target": "example",
+        "due_on": "2026-01-01"
+      },
+      "tags": [
+        "successcriterion"
+      ],
+      "as_of": "2026-01-01",
+      "valid_from": "2026-01-01",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "requirement.example",
+      "type": "Requirement",
+      "label": "Requirement example",
+      "aliases": [],
+      "summary": "A stated need the product must satisfy, functional or otherwise. The unit a builder works from and a release scopes.",
+      "attributes": {
+        "kind": "functional",
+        "priority": "must"
+      },
+      "tags": [
+        "requirement"
+      ],
+      "as_of": "2026-01-01",
+      "valid_from": "2026-01-01",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "release.example",
+      "type": "Release",
+      "label": "Release example",
+      "aliases": [],
+      "summary": "A dated boundary of scope: what ships together. Requirements and features are in scope of, or excluded from, a release.",
+      "attributes": {
+        "target_date": "2026-01-01",
+        "state": "planned",
+        "horizon": "mvp"
+      },
+      "tags": [
+        "release"
+      ],
+      "as_of": "2026-01-01",
+      "valid_from": "2026-01-01",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "decision.example",
+      "type": "Decision",
+      "label": "Decision example",
+      "aliases": [],
+      "summary": "A dated choice with its reason and evidence, made by a role. Settles what it is about, so nobody reopens it by accident.",
+      "attributes": {
+        "rationale": "example",
+        "decided_on": "2026-01-01"
+      },
+      "tags": [
+        "decision"
+      ],
+      "as_of": "2026-01-01",
+      "valid_from": "2026-01-01",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "openquestion.example",
+      "type": "OpenQuestion",
+      "label": "OpenQuestion example",
+      "aliases": [],
+      "summary": "Something unresolved that a decision must settle. Raised, then resolved by a decision, or dropped.",
+      "attributes": {
+        "raised_on": "2026-01-01",
+        "state": "open"
+      },
+      "tags": [
+        "openquestion"
+      ],
+      "as_of": "2026-01-01",
+      "valid_from": "2026-01-01",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "document.example",
+      "type": "Document",
+      "label": "Document example",
+      "aliases": [],
+      "summary": "A source document in the corpus: a brief, a PRD, a UX spec, an architecture note, a transcript. Every fact cites one; a newer document supersedes an older one.",
+      "attributes": {
+        "kind": "brief"
+      },
+      "tags": [
+        "document"
+      ],
+      "as_of": "2026-01-01",
+      "valid_from": "2026-01-01",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "scenario.example",
+      "type": "Scenario",
+      "label": "Scenario example",
+      "aliases": [],
+      "summary": "One concrete path through a requirement or a journey step: given, when, then. What a test verifies and what acceptance is judged on.",
+      "attributes": {
+        "given": "example",
+        "when": "example",
+        "then": "example",
+        "kind": "happy-path"
+      },
+      "tags": [
+        "scenario"
+      ],
+      "as_of": "2026-01-01",
+      "valid_from": "2026-01-01",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "product.example",
+      "rel": "owned_by",
+      "to": "role.example"
+    },
+    {
+      "from": "decision.example",
+      "rel": "decided_by",
+      "to": "role.example"
+    },
+    {
+      "from": "product.example",
+      "rel": "offers",
+      "to": "valueproposition.example"
+    },
+    {
+      "from": "valueproposition.example",
+      "rel": "intended_for",
+      "to": "persona.example"
+    },
+    {
+      "from": "requirement.example",
+      "rel": "serves",
+      "to": "valueproposition.example"
+    },
+    {
+      "from": "requirement.example",
+      "rel": "in_scope_of",
+      "to": "release.example"
+    },
+    {
+      "from": "requirement.example",
+      "rel": "excluded_from",
+      "to": "release.example"
+    },
+    {
+      "from": "decision.example",
+      "rel": "about",
+      "to": "product.example"
+    },
+    {
+      "from": "decision.example",
+      "rel": "resolves",
+      "to": "openquestion.example"
+    },
+    {
+      "from": "openquestion.example",
+      "rel": "blocks",
+      "to": "release.example"
+    },
+    {
+      "from": "product.example",
+      "rel": "documented_in",
+      "to": "document.example"
+    },
+    {
+      "from": "scenario.example",
+      "rel": "exercises",
+      "to": "requirement.example"
+    }
+  ]
+}

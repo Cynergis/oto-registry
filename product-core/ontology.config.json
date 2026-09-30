@@ -1,0 +1,253 @@
+{
+  "_about": "Property value is [Domain, Range, inverse_or_null, description]. Use A|B for a union; null means any class.",
+  "_summary": "Product core: what is being built, who answers for it, who it is for, what it promises, what it must do, how that is accepted, what ships when, what was decided and what is still open.",
+  "name": "Product core",
+  "ontology_version": 1,
+  "strict_domains": false,
+  "classes": {
+    "Product": "The thing a project sets out to build, software or not. The root every other class hangs off.",
+    "Role": "A function accountable for something: Product Owner, Sponsor, Lead Designer. Attach ownership and decisions to a role, never to a named person; the current holder is an attribute.",
+    "Persona": "A kind of user the product is for, or explicitly not for. Journeys, requirements and value propositions point at a persona.",
+    "ValueProposition": "One promise the product makes to a persona, and the problem it solves. The anchor every requirement, journey and success criterion traces to.",
+    "SuccessCriterion": "A measurable statement of what success looks like: a metric, a target, a date, an owner role.",
+    "Requirement": "A stated need the product must satisfy, functional or otherwise. The unit a builder works from and a release scopes.",
+    "Scenario": "One concrete path through a requirement or a journey step: given, when, then. What a test verifies and what acceptance is judged on.",
+    "Release": "A dated boundary of scope: what ships together. Requirements and features are in scope of, or excluded from, a release.",
+    "Decision": "A dated choice with its reason and evidence, made by a role. Settles what it is about, so nobody reopens it by accident.",
+    "OpenQuestion": "Something unresolved that a decision must settle. Raised, then resolved by a decision, or dropped."
+  },
+  "properties": {
+    "owned_by": [
+      null,
+      "Role",
+      "owns",
+      "The role accountable for this. Ownership sits on a role, not a person, so it survives people moving. The owned side is open to any class, so an ontology that extends this one adds its own classes without redeclaring the relation."
+    ],
+    "decided_by": [
+      "Decision",
+      "Role",
+      "decides",
+      "The role whose call it was."
+    ],
+    "offers": [
+      "Product",
+      "ValueProposition",
+      "offered_by",
+      "The promise a product makes. A product usually offers more than one."
+    ],
+    "intended_for": [
+      null,
+      "Persona",
+      "wanted_by",
+      "The persona this exists for: a value proposition first, and whatever an extension adds (a journey, a report). Point at an excluded persona to say who it is deliberately not for. The intended side is open to any class, so an ontology that extends this one adds its own classes without redeclaring the relation."
+    ],
+    "serves": [
+      null,
+      null,
+      "served_by",
+      "The purpose this exists for: a requirement serves a value proposition, and, where an extension adds them, a promise serves an objective. The traceability spine an agent walks from a requirement up to the strategy. Open on both sides, so no extension redeclares it and ontologies compose in any order."
+    ],
+    "measures": [
+      "SuccessCriterion",
+      null,
+      "measured_by",
+      "What a criterion tells you succeeded. The measured side is open to any class, so an ontology that extends this one adds its own classes without redeclaring the relation."
+    ],
+    "in_scope_of": [
+      null,
+      "Release",
+      "includes",
+      "Ships in this release. Dated, so scope as of a past date is readable. The scoped side is open to any class, so an ontology that extends this one adds its own classes without redeclaring the relation."
+    ],
+    "excluded_from": [
+      null,
+      "Release",
+      "excludes",
+      "Explicitly not in this release. Recorded, not silently absent, so a builder sees the boundary. The excluded side is open to any class, so an ontology that extends this one adds its own classes without redeclaring the relation."
+    ],
+    "about": [
+      "Decision|OpenQuestion",
+      null,
+      "subject_of",
+      "What a decision settles, or what an open question concerns. The subject side is open to any class, so an ontology that extends this one adds its own classes without redeclaring the relation."
+    ],
+    "resolves": [
+      "Decision",
+      "OpenQuestion",
+      "resolved_by",
+      "The open question this decision closes."
+    ],
+    "blocks": [
+      "OpenQuestion",
+      "Release",
+      "blocked_by",
+      "An unresolved question a release should not ship with."
+    ],
+    "documented_in": [
+      null,
+      "Document",
+      "documents",
+      "The artifact that formally specifies this: a brief, a PRD, a UX spec. Distinct from source_doc, which is provenance: the document that introduced the fact into the graph, possibly a transcript. The documented side is open to any class, so an ontology that extends this one adds its own classes without redeclaring the relation."
+    ],
+    "interested_in": [
+      "Role",
+      null,
+      "concerns",
+      "What a stakeholder role must be consulted or informed about. The subject side is open to any class, so an ontology that extends this one adds its own classes without redeclaring the relation."
+    ],
+    "exercises": [
+      "Scenario",
+      null,
+      "exercised_by",
+      "The requirement a scenario is a concrete path through, or whatever an extension adds (a journey step). The exercised side is open to any class, so an ontology that extends this one adds its own classes without redeclaring the relation."
+    ]
+  },
+  "attributes": {
+    "Product": {
+      "stage": [
+        "enum:idea|discovery|specified|building|live|retired",
+        "Where the product is in its life."
+      ],
+      "problem": [
+        "string",
+        "The problem statement: what is wrong today, for whom."
+      ],
+      "background": [
+        "string",
+        "Context a newcomer needs before the rest makes sense."
+      ],
+      "vision": [
+        "string",
+        "Where this product is going, in one or two sentences."
+      ],
+      "domain": [
+        "string",
+        "The business domain the product sits in."
+      ],
+      "value_stream": [
+        "string",
+        "The value stream it serves."
+      ]
+    },
+    "Role": {
+      "holder": [
+        "string",
+        "Who currently holds the role. Changes by supersession."
+      ],
+      "mandate": [
+        "string",
+        "What the role may decide."
+      ],
+      "kind": [
+        "enum:owner|decider|stakeholder|contributor",
+        "What sort of role: accountable, deciding, interested, or doing."
+      ]
+    },
+    "Persona": {
+      "relationship": [
+        "enum:target|excluded",
+        "Whether the product is for this persona, or explicitly not."
+      ],
+      "need": [
+        "string",
+        "What this persona is trying to get done."
+      ]
+    },
+    "ValueProposition": {
+      "promise": [
+        "string",
+        "The value, in one sentence."
+      ],
+      "differentiator": [
+        "string",
+        "Why this rather than what the persona does today."
+      ]
+    },
+    "SuccessCriterion": {
+      "metric": [
+        "string",
+        "What is measured."
+      ],
+      "target": [
+        "string",
+        "The value that means success."
+      ],
+      "due_on": [
+        "date",
+        "When the target should be met."
+      ]
+    },
+    "Requirement": {
+      "kind": [
+        "enum:functional|non-functional",
+        "Behaviour, or a quality the behaviour must have."
+      ],
+      "priority": [
+        "enum:must|should|could|wont",
+        "MoSCoW priority."
+      ]
+    },
+    "Scenario": {
+      "given": [
+        "string",
+        "The preconditions."
+      ],
+      "when": [
+        "string",
+        "The action."
+      ],
+      "then": [
+        "string",
+        "The expected result."
+      ],
+      "kind": [
+        "enum:happy-path|edge-case|failure",
+        "What sort of path."
+      ]
+    },
+    "Release": {
+      "target_date": [
+        "date",
+        "When it is meant to ship."
+      ],
+      "state": [
+        "enum:planned|in-progress|shipped|cancelled",
+        "Where the release is."
+      ],
+      "horizon": [
+        "enum:mvp|growth|later",
+        "Which scope horizon this release belongs to."
+      ]
+    },
+    "Decision": {
+      "rationale": [
+        "string",
+        "Why this and not the alternatives."
+      ],
+      "decided_on": [
+        "date",
+        "When it was decided."
+      ]
+    },
+    "OpenQuestion": {
+      "raised_on": [
+        "date",
+        "When it was raised."
+      ],
+      "state": [
+        "enum:open|resolved|dropped",
+        "Whether it still needs an answer."
+      ]
+    },
+    "Document": {
+      "kind": [
+        "string",
+        "What sort of artifact: brief, prd, ux-spec, architecture, transcript, decision-log or other. Free text, not a closed list, so an ontology that adds kinds of document composes without retyping this attribute."
+      ],
+      "date": [
+        "date",
+        "The date the document carries."
+      ]
+    }
+  }
+}

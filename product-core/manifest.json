@@ -1,0 +1,29 @@
+{
+  "name": "product-core",
+  "release": 1,
+  "domain": "product",
+  "summary": "Product core: what is being built, who answers for it, who it is for, what it promises, what it must do, how that is accepted, what ships when, what was decided and what is still open.",
+  "extends": [
+    "oto-core"
+  ],
+  "engine": ">=0.6",
+  "carries": [
+    "vocabulary",
+    "rationale",
+    "rules",
+    "sample",
+    "readme",
+    "lexicon",
+    "interview",
+    "guide",
+    "gold"
+  ],
+  "changelog": [
+    {
+      "release": 1,
+      "at": "2026-09-30",
+      "note": "First release: a focused, composable part of a product vocabulary."
+    }
+  ],
+  "_about": "The ontology's identity: its release rises on every published change, `extends` names what it composes on top of, `carries` what the directory holds."
+}
