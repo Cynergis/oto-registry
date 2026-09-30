@@ -1,0 +1,2 @@
+{"class": "Risk", "pattern": "What does {label} threaten, and what mitigates it?"}
+{"class": "Policy", "pattern": "What does {label} apply to, and who enforces it?"}

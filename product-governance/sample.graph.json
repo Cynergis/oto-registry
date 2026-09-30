@@ -1,0 +1,120 @@
+{
+  "nodes": [
+    {
+      "id": "constraint.example",
+      "type": "Constraint",
+      "label": "Constraint example",
+      "aliases": [],
+      "summary": "A limit the product is built under: budget, platform, regulation, timeline. Imposed from outside, not chosen.",
+      "attributes": {
+        "kind": "budget",
+        "imposed_by": "example"
+      },
+      "tags": [
+        "constraint"
+      ],
+      "as_of": "2026-01-01",
+      "valid_from": "2026-01-01",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "assumption.example",
+      "type": "Assumption",
+      "label": "Assumption example",
+      "aliases": [],
+      "summary": "Something believed but not yet verified, on which a decision or requirement rests. Validated or invalidated over time.",
+      "attributes": {
+        "state": "unverified",
+        "checked_on": "2026-01-01"
+      },
+      "tags": [
+        "assumption"
+      ],
+      "as_of": "2026-01-01",
+      "valid_from": "2026-01-01",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "risk.example",
+      "type": "Risk",
+      "label": "Risk example",
+      "aliases": [],
+      "summary": "A known way this can go wrong, including an external dependency whose failure would hurt. Mitigated, accepted or realised over time.",
+      "attributes": {
+        "kind": "dependency",
+        "state": "open"
+      },
+      "tags": [
+        "risk"
+      ],
+      "as_of": "2026-01-01",
+      "valid_from": "2026-01-01",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "policy.example",
+      "type": "Policy",
+      "label": "Policy example",
+      "aliases": [],
+      "summary": "A rule the product must obey that comes from outside it: business, compliance, data, security. Has an authority and a role that enforces it; distinct from a constraint, which limits resources.",
+      "attributes": {
+        "kind": "business",
+        "authority": "example"
+      },
+      "tags": [
+        "policy"
+      ],
+      "as_of": "2026-01-01",
+      "valid_from": "2026-01-01",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "constraint.example",
+      "rel": "constrains",
+      "to": "product.example"
+    },
+    {
+      "from": "decision.example",
+      "rel": "relies_on",
+      "to": "assumption.example"
+    },
+    {
+      "from": "risk.example",
+      "rel": "threatens",
+      "to": "product.example"
+    },
+    {
+      "from": "risk.example",
+      "rel": "mitigated_by",
+      "to": "decision.example"
+    },
+    {
+      "from": "policy.example",
+      "rel": "enforced_by",
+      "to": "role.example"
+    },
+    {
+      "from": "policy.example",
+      "rel": "applies_to",
+      "to": "product.example"
+    }
+  ]
+}

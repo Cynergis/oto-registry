@@ -40,6 +40,16 @@
       "domain": "product"
     },
     {
+      "name": "product-governance",
+      "release": 1,
+      "summary": "Product governance: the policies a product must obey and who enforces them, the constraints it is built under, the assumptions it rests on, and the risks to it.",
+      "path": "product-governance",
+      "extends": [
+        "product-core"
+      ],
+      "domain": "product"
+    },
+    {
       "name": "professional-services",
       "summary": "Engagements: scope, deliverables, governance, sessions, decisions and the work that follows.",
       "path": "professional-services",

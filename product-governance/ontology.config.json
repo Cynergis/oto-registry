@@ -1,0 +1,93 @@
+{
+  "_about": "Property value is [Domain, Range, inverse_or_null, description]. Use A|B for a union; null means any class.",
+  "_summary": "Product governance: the policies a product must obey and who enforces them, the constraints it is built under, the assumptions it rests on, and the risks to it.",
+  "name": "Product governance",
+  "ontology_version": 1,
+  "strict_domains": false,
+  "classes": {
+    "Policy": "A rule the product must obey that comes from outside it: business, compliance, data, security. Has an authority and a role that enforces it; distinct from a constraint, which limits resources.",
+    "Constraint": "A limit the product is built under: budget, platform, regulation, timeline. Imposed from outside, not chosen.",
+    "Assumption": "Something believed but not yet verified, on which a decision or requirement rests. Validated or invalidated over time.",
+    "Risk": "A known way this can go wrong, including an external dependency whose failure would hurt. Mitigated, accepted or realised over time."
+  },
+  "properties": {
+    "constrains": [
+      "Constraint",
+      null,
+      "constrained_by",
+      "What a constraint limits. The constrained side is open to any class, so an ontology that extends this one adds its own classes without redeclaring the relation."
+    ],
+    "relies_on": [
+      null,
+      "Assumption",
+      "underpins",
+      "An assumption this rests on. If the assumption is invalidated, this must be revisited. The relying side is open to any class, so an ontology that extends this one adds its own classes without redeclaring the relation."
+    ],
+    "threatens": [
+      "Risk",
+      null,
+      "at_risk_from",
+      "What a risk applies to. The threatened side is open to any class, so an ontology that extends this one adds its own classes without redeclaring the relation."
+    ],
+    "mitigated_by": [
+      "Risk",
+      null,
+      "mitigates",
+      "What reduces a risk. The mitigating side is open to any class, so an ontology that extends this one adds its own classes without redeclaring the relation."
+    ],
+    "applies_to": [
+      "Policy",
+      null,
+      "governed_by",
+      "What a policy prescribes behaviour for. The governance edge: from here, enforced_by says who enforces it. The governed side is open to any class, so an ontology that extends this one adds its own classes without redeclaring the relation."
+    ],
+    "enforced_by": [
+      "Policy",
+      "Role",
+      "enforces",
+      "The governance role that enforces a policy."
+    ]
+  },
+  "attributes": {
+    "Policy": {
+      "kind": [
+        "enum:business|compliance|data|security|other",
+        "The sort of rule."
+      ],
+      "authority": [
+        "string",
+        "Who or what the rule comes from: a regulation, a standard, a company policy."
+      ]
+    },
+    "Constraint": {
+      "kind": [
+        "enum:budget|platform|timeline|technical|other",
+        "The sort of limit. A regulatory rule is a Policy, not a constraint."
+      ],
+      "imposed_by": [
+        "string",
+        "Who or what imposes it."
+      ]
+    },
+    "Assumption": {
+      "state": [
+        "enum:unverified|validated|invalidated",
+        "Whether anyone has checked it."
+      ],
+      "checked_on": [
+        "date",
+        "When it was last checked."
+      ]
+    },
+    "Risk": {
+      "kind": [
+        "enum:dependency|technical|market|delivery|compliance|other",
+        "The sort of risk; dependency is an external thing the product needs."
+      ],
+      "state": [
+        "enum:open|mitigated|accepted|realised",
+        "Where the risk is."
+      ]
+    }
+  }
+}

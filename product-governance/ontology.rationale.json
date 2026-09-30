@@ -1,0 +1,67 @@
+{
+  "_about": "Why each class and relation exists, the question it answers, and who confirmed it.",
+  "classes": {
+    "Policy": {
+      "alternatives": "Policy as a Constraint kind: rejected, authority and scope differ. GovernanceBody class: deferred to the workflow vocabulary.",
+      "question": "Which rules must the product obey, who enforces them, and what is affected? (G6; Gate 3 review)",
+      "validated_by": "",
+      "why": "A policy prescribes behaviour and has an authority and an enforcing role, which a budget or timeline constraint does not; two people would populate a shared class differently."
+    },
+    "Constraint": {
+      "alternatives": "One Concern class with a kind attribute: rejected, constraints, assumptions and risks have different lifecycles and owners.",
+      "question": "What constraints is it built under? (B4)",
+      "validated_by": "",
+      "why": "A constraint is imposed from outside and limits requirements and releases; it has a source and a lifecycle distinct from an assumption or a risk."
+    },
+    "Assumption": {
+      "alternatives": "Merged into Constraint or Risk: rejected, an assumption is a belief to check, not a limit or a threat.",
+      "question": "What assumptions is it built under, and which could invalidate the plan? (B4)",
+      "validated_by": "",
+      "why": "An assumption is validated or invalidated over time and decisions rest on it, so its state change must propagate; that needs a node with history."
+    },
+    "Risk": {
+      "alternatives": "A fourth Dependency class: rejected, no question yet traverses to external systems or partners. Add it when one does.",
+      "question": "What are the risks and external dependencies? (E1)",
+      "validated_by": "",
+      "why": "A risk threatens something, is mitigated by something, and can block a release; an external dependency is modelled as a risk kind because what matters is what happens if it fails."
+    }
+  },
+  "properties": {
+    "constrains": {
+      "alternatives": "A closed list of classes per side: rejected, two ontologies extending the same base could not both add to it.",
+      "question": "What does this limit apply to?",
+      "why": "A limit is only actionable when it names what it limits. One relation with an open side rather than a closed list of classes, so independent ontologies that extend this one compose without redeclaring it; the engine refuses two siblings widening the same relation.",
+      "validated_by": ""
+    },
+    "relies_on": {
+      "alternatives": "A closed list of classes per side: rejected, two ontologies extending the same base could not both add to it.",
+      "question": "What are we taking for granted here?",
+      "why": "When an assumption is invalidated, everything resting on it must be found. One relation with an open side rather than a closed list of classes, so independent ontologies that extend this one compose without redeclaring it; the engine refuses two siblings widening the same relation.",
+      "validated_by": ""
+    },
+    "threatens": {
+      "alternatives": "A closed list of classes per side: rejected, two ontologies extending the same base could not both add to it.",
+      "question": "What is at risk?",
+      "why": "A risk register that does not name its subjects cannot be acted on. One relation with an open side rather than a closed list of classes, so independent ontologies that extend this one compose without redeclaring it; the engine refuses two siblings widening the same relation.",
+      "validated_by": ""
+    },
+    "mitigated_by": {
+      "alternatives": "A closed list of classes per side: rejected, two ontologies extending the same base could not both add to it.",
+      "question": "What reduces this risk?",
+      "why": "Shows which decision or requirement exists because of a risk, and which risks have no answer. One relation with an open side rather than a closed list of classes, so independent ontologies that extend this one compose without redeclaring it; the engine refuses two siblings widening the same relation.",
+      "validated_by": ""
+    },
+    "applies_to": {
+      "alternatives": "One constrains relation for both: rejected in the duplicate audit. A closed list of classes per side: rejected, two ontologies extending the same base could not both add to it.",
+      "question": "Which rules must the product obey, and what is affected? (G6)",
+      "validated_by": "",
+      "why": "Split from constrains so an agent never confuses a resource limit with a prescribed behaviour that has an authority. One relation with an open side rather than a closed list of classes, so independent ontologies that extend this one compose without redeclaring it; the engine refuses two siblings widening the same relation."
+    },
+    "enforced_by": {
+      "alternatives": "",
+      "question": "Who enforces this rule?",
+      "why": "A policy with no enforcer is a wish; the enforcing role is who to ask.",
+      "validated_by": ""
+    }
+  }
+}

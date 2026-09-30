@@ -1,0 +1,28 @@
+{
+  "name": "product-governance",
+  "release": 1,
+  "domain": "product",
+  "summary": "Product governance: the policies a product must obey and who enforces them, the constraints it is built under, the assumptions it rests on, and the risks to it.",
+  "extends": [
+    "product-core"
+  ],
+  "engine": ">=0.6",
+  "carries": [
+    "vocabulary",
+    "rationale",
+    "sample",
+    "readme",
+    "lexicon",
+    "interview",
+    "guide",
+    "gold"
+  ],
+  "changelog": [
+    {
+      "release": 1,
+      "at": "2026-09-30",
+      "note": "First release: a focused, composable part of a product vocabulary."
+    }
+  ],
+  "_about": "The ontology's identity: its release rises on every published change, `extends` names what it composes on top of, `carries` what the directory holds."
+}
