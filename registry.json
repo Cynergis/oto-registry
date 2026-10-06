@@ -31,7 +31,7 @@
     },
     {
       "name": "professional-services",
-      "release": 3,
+      "release": 4,
       "summary": "Engagements: scope, deliverables, governance, sessions, decisions and the work that follows.",
       "path": "professional-services",
       "extends": [
