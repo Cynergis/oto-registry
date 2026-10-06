@@ -1,6 +1,6 @@
 {
   "name": "oto-core",
-  "release": 3,
+  "release": 4,
   "summary": "The temporal vocabulary every OTO ontology rests on, and the one class every fact cites: Document.",
   "namespace": "https://cynergis.ai/ont/oto-core#",
   "engine": ">=0.1",
@@ -8,11 +8,17 @@
     "vocabulary",
     "rationale",
     "rules",
+    "questions",
     "sample",
     "readme"
   ],
   "maintainer": "OTO",
   "changelog": [
+    {
+      "release": 4,
+      "at": "2026-10-06",
+      "note": "Ships its competency questions (questions.json)."
+    },
     {
       "release": 3,
       "at": "2026-10-06",
