@@ -40,7 +40,7 @@
       "name": "software-architecture",
       "source": "./packs/software-architecture",
       "description": "Software estate: systems, components, interfaces, data, environments, decisions and risks.",
-      "version": "3.0.0",
+      "version": "4.0.0",
       "category": "software"
     }
   ]

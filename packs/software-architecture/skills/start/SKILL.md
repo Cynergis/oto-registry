@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: Software estate: systems, components, interfaces, data, environments, decisions and risks. The pack 'software-architecture' (release 3) embeds the ontology 'software-architecture' (release 7), which declares Asset, System, Component, Interface, DataStore, Environment, Team, Capability and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: Software estate: systems, components, interfaces, data, environments, decisions and risks. The pack 'software-architecture' (release 4) embeds the ontology 'software-architecture' (release 8), which declares Asset, System, Component, Interface, DataStore, Environment, Team, Capability and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Architecture Knowledge Base
