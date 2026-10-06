@@ -14,7 +14,7 @@
     },
     {
       "name": "organization-process",
-      "release": 3,
+      "release": 4,
       "summary": "How an organization works: units, roles, processes, policies, systems and measures.",
       "path": "organization-process",
       "extends": [

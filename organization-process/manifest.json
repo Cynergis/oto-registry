@@ -1,6 +1,6 @@
 {
   "name": "organization-process",
-  "release": 3,
+  "release": 4,
   "domain": "organization",
   "summary": "How an organization works: units, roles, processes, policies, systems and measures.",
   "extends": [
@@ -17,6 +17,11 @@
   ],
   "maintainer": "OTO",
   "changelog": [
+    {
+      "release": 4,
+      "at": "2026-10-06",
+      "note": "Declares its shapes (min, max, required, requires), written as SHACL in the export."
+    },
     {
       "release": 3,
       "at": "2026-10-06",
