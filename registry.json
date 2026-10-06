@@ -14,12 +14,12 @@
     },
     {
       "name": "organization-process",
+      "release": 2,
       "summary": "How an organization works: units, roles, processes, policies, systems and measures.",
       "path": "organization-process",
       "extends": [
         "oto-core"
       ],
-      "release": 1,
       "domain": "organization"
     },
     {

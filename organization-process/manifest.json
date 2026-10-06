@@ -1,11 +1,12 @@
 {
   "name": "organization-process",
-  "release": 1,
+  "release": 2,
   "domain": "organization",
   "summary": "How an organization works: units, roles, processes, policies, systems and measures.",
   "extends": [
     "oto-core"
   ],
+  "namespace": "https://cynergis.ai/ont/organization-process#",
   "engine": ">=0.1",
   "carries": [
     "vocabulary",
@@ -13,8 +14,13 @@
     "sample",
     "readme"
   ],
-  "maintainer": "Oto",
+  "maintainer": "OTO",
   "changelog": [
+    {
+      "release": 2,
+      "at": "2026-10-06",
+      "note": "Rewritten for the semantic layer: every declaration an object, a namespace, labels where the name reads badly, the recorded reasoning in the Turtle."
+    },
     {
       "at": "2026-09-19",
       "note": "Seeded from the engine's shipped ontologies.",
