@@ -65,12 +65,12 @@
     },
     {
       "name": "organization-process",
-      "release": 3,
+      "release": 4,
       "summary": "How an organization works: units, roles, processes, policies, systems and measures.",
       "path": "packs/organization-process",
       "ontology": {
         "name": "organization-process",
-        "release": 3
+        "release": 4
       },
       "domain": "organization"
     },

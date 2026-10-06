@@ -26,7 +26,7 @@
       "name": "organization-process",
       "source": "./packs/organization-process",
       "description": "How an organization works: units, roles, processes, policies, systems and measures.",
-      "version": "3.0.0",
+      "version": "4.0.0",
       "category": "organization"
     },
     {
