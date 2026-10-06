@@ -1,6 +1,6 @@
 {
   "name": "software-architecture",
-  "release": 7,
+  "release": 8,
   "domain": "software",
   "summary": "Software estate: systems, components, interfaces, data, environments, decisions and risks.",
   "extends": [
@@ -20,6 +20,11 @@
   ],
   "maintainer": "OTO",
   "changelog": [
+    {
+      "release": 8,
+      "at": "2026-10-06",
+      "note": "Declares its shapes (min, max, required, requires), written as SHACL in the export."
+    },
     {
       "release": 7,
       "at": "2026-10-06",

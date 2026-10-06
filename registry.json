@@ -41,7 +41,7 @@
     },
     {
       "name": "software-architecture",
-      "release": 7,
+      "release": 8,
       "summary": "Software estate: systems, components, interfaces, data, environments, decisions and risks.",
       "path": "software-architecture",
       "extends": [
