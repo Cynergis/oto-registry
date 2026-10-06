@@ -31,12 +31,12 @@
     },
     {
       "name": "professional-services",
+      "release": 2,
       "summary": "Engagements: scope, deliverables, governance, sessions, decisions and the work that follows.",
       "path": "professional-services",
       "extends": [
         "oto-core"
       ],
-      "release": 1,
       "domain": "professional-services"
     },
     {
