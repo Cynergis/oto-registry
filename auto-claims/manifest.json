@@ -1,11 +1,12 @@
 {
   "name": "auto-claims",
-  "release": 2,
+  "release": 3,
   "domain": "insurance",
   "summary": "Motor vehicle claims: policy, coverage, claim, incident, handling, money in and out.",
   "extends": [
     "oto-core"
   ],
+  "namespace": "https://cynergis.ai/ont/auto-claims#",
   "engine": ">=0.1",
   "carries": [
     "vocabulary",
@@ -13,8 +14,13 @@
     "sample",
     "readme"
   ],
-  "maintainer": "Oto",
+  "maintainer": "OTO",
   "changelog": [
+    {
+      "release": 3,
+      "at": "2026-10-06",
+      "note": "Rewritten for the semantic layer: every declaration an object, a namespace, labels where the name reads badly, the recorded reasoning in the Turtle."
+    },
     {
       "release": 2,
       "at": "2026-09-26",

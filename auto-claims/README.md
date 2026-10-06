@@ -35,7 +35,7 @@ A claim file is full of personal data: names, addresses, medical detail, payment
 - Are you ingesting real claim files, or policy wordings, procedures, bulletins and guidelines?
 - If real files, what is the lawful basis, and who may query the result?
 
-Oto has a pre-ingest privacy gate that blocks credentials, social insurance numbers and payment cards,
+OTO has a pre-ingest privacy gate that blocks credentials, social insurance numbers and payment cards,
 and warns on email, phone, vehicle identification numbers and postal codes. **It is a safety net, not
 a review.** It cannot recognize a name, an address or a medical detail written as prose.
 
