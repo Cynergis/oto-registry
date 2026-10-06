@@ -54,12 +54,12 @@
   "packs": [
     {
       "name": "auto-claims",
-      "release": 4,
+      "release": 5,
       "summary": "Motor vehicle claims: policy, coverage, claim, incident, handling, money in and out.",
       "path": "packs/auto-claims",
       "ontology": {
         "name": "auto-claims",
-        "release": 4
+        "release": 5
       },
       "domain": "insurance"
     },

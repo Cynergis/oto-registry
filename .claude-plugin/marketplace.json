@@ -19,7 +19,7 @@
       "name": "auto-claims",
       "source": "./packs/auto-claims",
       "description": "Motor vehicle claims: policy, coverage, claim, incident, handling, money in and out.",
-      "version": "4.0.0",
+      "version": "5.0.0",
       "category": "insurance"
     },
     {

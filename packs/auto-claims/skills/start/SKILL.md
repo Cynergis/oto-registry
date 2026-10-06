@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: Motor vehicle claims: policy, coverage, claim, incident, handling, money in and out. The pack 'auto-claims' (release 4) embeds the ontology 'auto-claims' (release 4), which declares Policy, Coverage, Endorsement, Claim, Incident, Vehicle, Party, Role and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: Motor vehicle claims: policy, coverage, claim, incident, handling, money in and out. The pack 'auto-claims' (release 5) embeds the ontology 'auto-claims' (release 5), which declares Policy, Coverage, Endorsement, Claim, Incident, Vehicle, Party, Role and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Auto Claims Knowledge Base

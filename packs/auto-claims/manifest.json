@@ -1,11 +1,11 @@
 {
   "name": "auto-claims",
-  "release": 4,
+  "release": 5,
   "domain": "insurance",
   "summary": "Motor vehicle claims: policy, coverage, claim, incident, handling, money in and out.",
   "ontology": {
     "name": "auto-claims",
-    "release": 4,
+    "release": 5,
     "registry": null,
     "source": "built-in",
     "ref": null,
@@ -16,6 +16,11 @@
   "engine": ">=0.6",
   "maintainer": "Cynergis",
   "changelog": [
+    {
+      "release": 5,
+      "at": "2026-10-06",
+      "note": "Embeds the ontology at the release that declares its shapes."
+    },
     {
       "release": 4,
       "at": "2026-10-06",
