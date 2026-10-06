@@ -24,10 +24,10 @@
     },
     {
       "name": "oto-core",
-      "summary": "The temporal vocabulary every Oto ontology rests on, and the one class every fact cites: Document.",
+      "release": 3,
+      "summary": "The temporal vocabulary every OTO ontology rests on, and the one class every fact cites: Document.",
       "path": "oto-core",
-      "extends": [],
-      "release": 2
+      "extends": []
     },
     {
       "name": "professional-services",

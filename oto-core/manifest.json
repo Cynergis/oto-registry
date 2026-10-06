@@ -1,6 +1,8 @@
 {
   "name": "oto-core",
-  "summary": "The temporal vocabulary every Oto ontology rests on, and the one class every fact cites: Document.",
+  "release": 3,
+  "summary": "The temporal vocabulary every OTO ontology rests on, and the one class every fact cites: Document.",
+  "namespace": "https://cynergis.ai/ont/oto-core#",
   "engine": ">=0.1",
   "carries": [
     "vocabulary",
@@ -9,8 +11,13 @@
     "sample",
     "readme"
   ],
-  "maintainer": "Oto",
+  "maintainer": "OTO",
   "changelog": [
+    {
+      "release": 3,
+      "at": "2026-10-06",
+      "note": "Rewritten for the semantic layer: every declaration an object, a namespace, labels where the name reads badly, the recorded reasoning in the Turtle."
+    },
     {
       "at": "2026-09-23",
       "note": "Action, acts_on and executed_by join the core; the status intended for a fact asserted as a plan; the policy rule intended-fact-overdue.",
@@ -22,6 +29,5 @@
       "release": 1
     }
   ],
-  "_about": "The ontology's identity: its release rises on every published change, `extends` names what it composes on top of, `carries` what the directory holds.",
-  "release": 2
+  "_about": "The ontology's identity: its release rises on every published change, `extends` names what it composes on top of, `carries` what the directory holds."
 }
