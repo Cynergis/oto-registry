@@ -1,11 +1,12 @@
 {
   "name": "software-architecture",
-  "release": 5,
+  "release": 6,
   "domain": "software",
   "summary": "Software estate: systems, components, interfaces, data, environments, decisions and risks.",
   "extends": [
     "oto-core"
   ],
+  "namespace": "https://cynergis.ai/ont/software-architecture#",
   "engine": ">=0.1",
   "carries": [
     "vocabulary",
@@ -16,8 +17,13 @@
     "guide",
     "actions"
   ],
-  "maintainer": "Oto",
+  "maintainer": "OTO",
   "changelog": [
+    {
+      "release": 6,
+      "at": "2026-10-06",
+      "note": "Rewritten for the semantic layer: every declaration an object, a namespace, labels where the name reads badly, the recorded reasoning in the Turtle."
+    },
     {
       "at": "2026-09-23",
       "note": "Repository and implemented_by, attributes for repositories and interfaces, a sample repository, and three actions: a daily repository check and a create-repository action bound to the GitHub MCP server, and a weekly read of what an interface answers.",
