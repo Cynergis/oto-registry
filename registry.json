@@ -76,12 +76,12 @@
     },
     {
       "name": "professional-services",
-      "release": 2,
+      "release": 3,
       "summary": "Engagements: scope, deliverables, governance, sessions, decisions and the work that follows.",
       "path": "packs/professional-services",
       "ontology": {
         "name": "professional-services",
-        "release": 2
+        "release": 3
       },
       "domain": "professional-services"
     },

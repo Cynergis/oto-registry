@@ -33,7 +33,7 @@
       "name": "professional-services",
       "source": "./packs/professional-services",
       "description": "Engagements: scope, deliverables, governance, sessions, decisions and the work that follows.",
-      "version": "2.0.0",
+      "version": "3.0.0",
       "category": "professional-services"
     },
     {
