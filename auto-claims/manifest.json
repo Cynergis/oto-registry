@@ -1,6 +1,6 @@
 {
   "name": "auto-claims",
-  "release": 3,
+  "release": 4,
   "domain": "insurance",
   "summary": "Motor vehicle claims: policy, coverage, claim, incident, handling, money in and out.",
   "extends": [
@@ -11,11 +11,17 @@
   "carries": [
     "vocabulary",
     "rationale",
+    "questions",
     "sample",
     "readme"
   ],
   "maintainer": "OTO",
   "changelog": [
+    {
+      "release": 4,
+      "at": "2026-10-06",
+      "note": "Ships its competency questions (questions.json)."
+    },
     {
       "release": 3,
       "at": "2026-10-06",

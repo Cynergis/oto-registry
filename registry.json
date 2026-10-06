@@ -4,7 +4,7 @@
   "ontologies": [
     {
       "name": "auto-claims",
-      "release": 3,
+      "release": 4,
       "summary": "Motor vehicle claims: policy, coverage, claim, incident, handling, money in and out.",
       "path": "auto-claims",
       "extends": [
