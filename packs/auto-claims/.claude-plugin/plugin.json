@@ -1,8 +1,8 @@
 {
   "name": "auto-claims",
-  "displayName": "Auto Claims Knowledge Base (Oto pack)",
+  "displayName": "Auto Claims Knowledge Base (OTO pack)",
   "description": "Motor vehicle claims: policy, coverage, claim, incident, handling, money in and out.",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "author": {
     "name": "Cynergis"
   },
