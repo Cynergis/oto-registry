@@ -1,11 +1,13 @@
 {
+  "_about": "The ontology's identity: its release rises on every published change, `extends` names what it composes on top of, `carries` what the directory holds.",
   "name": "software-architecture",
-  "release": 5,
+  "release": 6,
   "domain": "software",
   "summary": "Software estate: systems, components, interfaces, data, environments, decisions and risks.",
   "extends": [
     "oto-core"
   ],
+  "namespace": "https://cynergis.ai/ont/software-architecture#",
   "engine": ">=0.1",
   "carries": [
     "vocabulary",
@@ -16,39 +18,37 @@
     "guide",
     "actions"
   ],
-  "maintainer": "Oto",
+  "maintainer": "OTO",
   "changelog": [
     {
+      "release": 6,
+      "at": "2026-10-05",
+      "note": "Declares its namespace: its terms keep one IRI in the RDF export of every project that uses it. Asset, the kind every system, component, interface and data store is, so one question or rule covers them all."
+    },
+    {
+      "release": 5,
       "at": "2026-09-23",
-      "note": "Repository and implemented_by, attributes for repositories and interfaces, a sample repository, and three actions: a daily repository check and a create-repository action bound to the GitHub MCP server, and a weekly read of what an interface answers.",
-      "release": 5
+      "note": "Repository and implemented_by, attributes for repositories and interfaces, a sample repository, and three actions: a daily repository check and a create-repository action bound to the GitHub MCP server, and a weekly read of what an interface answers."
     },
     {
+      "release": 4,
       "at": "2026-09-21",
-      "note": "Carries a guide: what an architecture graph is for and how to read it, installed as GUIDE.md and quoted by the concierge skill.",
-      "release": 4
+      "note": "Carries a guide: what an architecture graph is for and how to read it, installed as GUIDE.md and quoted by the concierge skill."
     },
     {
+      "release": 3,
       "at": "2026-09-21",
-      "note": "The architecture app is withdrawn; a generic view for every ontology will follow.",
-      "release": 3
+      "note": "The architecture app is withdrawn; a generic view for every ontology will follow."
     },
     {
+      "release": 2,
       "at": "2026-09-19",
-      "note": "Ships the architecture app: the architecture document read from the graph (views/architecture).",
-      "release": 2
+      "note": "Ships the architecture app: the architecture document read from the graph (views/architecture)."
     },
     {
+      "release": 1,
       "at": "2026-09-19",
-      "note": "Seeded from the engine's shipped ontologies.",
-      "release": 1
+      "note": "Manifest added; the temporal vocabulary is now inherited from oto-core."
     }
-  ],
-  "registry": "cynergis",
-  "source": "https://github.com/Cynergis/oto-registry",
-  "ref": "packs",
-  "path": "software-architecture",
-  "commit": "7d526d1",
-  "fetched_at": "2026-09-24T16:22:35+00:00",
-  "_about": "The ontology's identity: its release rises on every published change, `extends` names what it composes on top of, `carries` what the directory holds."
+  ]
 }

@@ -87,12 +87,12 @@
     },
     {
       "name": "software-architecture",
-      "release": 1,
+      "release": 2,
       "summary": "Software estate: systems, components, interfaces, data, environments, decisions and risks.",
       "path": "packs/software-architecture",
       "ontology": {
         "name": "software-architecture",
-        "release": 5
+        "release": 6
       },
       "domain": "software"
     }

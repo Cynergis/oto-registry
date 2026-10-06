@@ -54,7 +54,10 @@
         "url": "$response.html_url",
         "default_branch": "$response.default_branch"
       }
-    }
+    },
+    "require": [
+      "$response.html_url"
+    ]
   },
   "schedule": "daily"
 }

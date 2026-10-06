@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an Oto knowledge project in this domain: Software estate: systems, components, interfaces, data, environments, decisions and risks. The pack 'software-architecture' (release 1) embeds the ontology 'software-architecture' (release 5), which declares System, Component, Interface, DataStore, Environment, Team, Capability, Requirement and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: Software estate: systems, components, interfaces, data, environments, decisions and risks. The pack 'software-architecture' (release 2) embeds the ontology 'software-architecture' (release 6), which declares Asset, System, Component, Interface, DataStore, Environment, Team, Capability and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Architecture Knowledge Base
@@ -29,6 +29,7 @@ This skill comes with the `software-architecture` pack. The ontology is inside t
 
 ## What the ontology declares
 
+- **Asset**: Anything the estate runs or stores and a team can be accountable for: a system, a component, an interface, a data store. A question about assets covers all four.
 - **System**: A named application or platform that a team owns and a user or another system consumes.
 - **Component**: A part of a system deployed or released as a unit: a service, a job, a library, a front end.
 - **Interface**: A contract others depend on: an API, an event topic, a file feed, a database view.
@@ -45,7 +46,7 @@ This skill comes with the `software-architecture` pack. The ontology is inside t
 
 ## The actions it ships
 
-Oto lists them; the caller invokes (the act skill):
+OTO lists them; the caller invokes (the act skill):
 
 - `action.check-repository` on Repository: Reads the repository's metadata from GitHub and records that it exists, its URL and its default branch. Realises an intended repository; re-attests a current one.
 - `action.create-repository` on Repository: Creates the repository an intended Repository fact describes, under its owner, and records the result. Changes the world: a person confirms it by name.
@@ -85,7 +86,7 @@ rule; `oto rules explain <rule>` says why the rule exists and what it derived.
 
 ## What can be done
 
-The ontology ships three actions, listed by `oto actions list` and never invoked by Oto: a daily
+The ontology ships three actions, listed by `oto actions list` and never invoked by OTO: a daily
 check that a repository exists (read-only; it realises an intended `Repository` and re-attests a
 current one), the creation of a repository an intended fact describes (it changes the world, so a
 person confirms it by name), and a weekly read of what an `Interface` answers at its URL. Record a
