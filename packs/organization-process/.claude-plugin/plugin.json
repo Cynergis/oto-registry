@@ -1,8 +1,8 @@
 {
   "name": "organization-process",
-  "displayName": "Operations Knowledge Base (Oto pack)",
+  "displayName": "Operations Knowledge Base (OTO pack)",
   "description": "How an organization works: units, roles, processes, policies, systems and measures.",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "author": {
     "name": "Cynergis"
   },
