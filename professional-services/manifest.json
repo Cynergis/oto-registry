@@ -1,6 +1,6 @@
 {
   "name": "professional-services",
-  "release": 2,
+  "release": 3,
   "domain": "professional-services",
   "summary": "Engagements: scope, deliverables, governance, sessions, decisions and the work that follows.",
   "extends": [
@@ -11,11 +11,17 @@
   "carries": [
     "vocabulary",
     "rationale",
+    "questions",
     "sample",
     "readme"
   ],
   "maintainer": "OTO",
   "changelog": [
+    {
+      "release": 3,
+      "at": "2026-10-06",
+      "note": "Ships its competency questions (questions.json)."
+    },
     {
       "release": 2,
       "at": "2026-10-06",
