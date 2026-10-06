@@ -1,6 +1,6 @@
 {
   "name": "auto-claims",
-  "release": 4,
+  "release": 5,
   "domain": "insurance",
   "summary": "Motor vehicle claims: policy, coverage, claim, incident, handling, money in and out.",
   "extends": [
@@ -17,6 +17,11 @@
   ],
   "maintainer": "OTO",
   "changelog": [
+    {
+      "release": 5,
+      "at": "2026-10-06",
+      "note": "Declares its shapes (min, max, required, requires), written as SHACL in the export."
+    },
     {
       "release": 4,
       "at": "2026-10-06",
