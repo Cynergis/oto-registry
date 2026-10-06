@@ -1,4 +1,4 @@
-# Oto core
+# OTO core
 
 The base every shipped ontology extends, and the one to extend when no domain ontology fits. It
 declares two things and nothing else:

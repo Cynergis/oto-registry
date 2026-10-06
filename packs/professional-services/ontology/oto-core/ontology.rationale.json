@@ -9,7 +9,7 @@
     },
     "Action": {
       "question": "What can be done about this, and how?",
-      "why": "The binding between an entity, the tool that acts on it, its inputs, its credentials by name and its preconditions is otherwise tribal knowledge in an agent's prompt; as a fact it is versioned, reviewed and shared. Oto never invokes it.",
+      "why": "The binding between an entity, the tool that acts on it, its inputs, its credentials by name and its preconditions is otherwise tribal knowledge in an agent's prompt; as a fact it is versioned, reviewed and shared. OTO never invokes it.",
       "alternatives": "A list of scripts beside the project. It cannot say what each acts on, when it is ready, or what its run proved.",
       "validated_by": ""
     }

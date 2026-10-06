@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an Oto knowledge project in this domain: Engagements: scope, deliverables, governance, sessions, decisions and the work that follows. The pack 'professional-services' (release 1) embeds the ontology 'professional-services' (release 1), which declares Engagement, Organization, Person, Role, Workstream, Deliverable, GovernanceForum, Session and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: Engagements: scope, deliverables, governance, sessions, decisions and the work that follows. The pack 'professional-services' (release 2) embeds the ontology 'professional-services' (release 2), which declares Engagement, Organization, Person, Role, Workstream, Deliverable, GovernanceForum, Session and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Engagement Knowledge Base
