@@ -1,11 +1,11 @@
 {
   "name": "organization-process",
-  "release": 2,
+  "release": 3,
   "domain": "organization",
   "summary": "How an organization works: units, roles, processes, policies, systems and measures.",
   "ontology": {
     "name": "organization-process",
-    "release": 2,
+    "release": 3,
     "registry": null,
     "source": "built-in",
     "ref": null,
@@ -16,6 +16,11 @@
   "engine": ">=0.6",
   "maintainer": "Cynergis",
   "changelog": [
+    {
+      "release": 3,
+      "at": "2026-10-06",
+      "note": "Embeds the ontology at the release that ships its competency questions."
+    },
     {
       "release": 2,
       "at": "2026-10-06",

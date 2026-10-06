@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: How an organization works: units, roles, processes, policies, systems and measures. The pack 'organization-process' (release 2) embeds the ontology 'organization-process' (release 2), which declares Unit, Role, Process, Step, Policy, System, Measure, Decision and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: How an organization works: units, roles, processes, policies, systems and measures. The pack 'organization-process' (release 3) embeds the ontology 'organization-process' (release 3), which declares Unit, Role, Process, Step, Policy, System, Measure, Decision and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Operations Knowledge Base
