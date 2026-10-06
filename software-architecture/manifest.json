@@ -1,6 +1,6 @@
 {
   "name": "software-architecture",
-  "release": 6,
+  "release": 7,
   "domain": "software",
   "summary": "Software estate: systems, components, interfaces, data, environments, decisions and risks.",
   "extends": [
@@ -12,6 +12,7 @@
     "vocabulary",
     "rationale",
     "rules",
+    "questions",
     "sample",
     "readme",
     "guide",
@@ -19,6 +20,11 @@
   ],
   "maintainer": "OTO",
   "changelog": [
+    {
+      "release": 7,
+      "at": "2026-10-06",
+      "note": "Ships its competency questions (questions.json)."
+    },
     {
       "release": 6,
       "at": "2026-10-06",
