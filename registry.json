@@ -143,6 +143,13 @@
   ],
   "plugins": [
     {
+      "name": "pdf-to-template",
+      "repo": "Cynergis/pdf-to-template-plugin",
+      "version": "0.2.0",
+      "description": "Turn a sample PDF into a data-driven HTML/CSS + Jinja2 template that renders new data to PDF; define a report with the analyst on the report-ontology MCP server.",
+      "category": "reporting"
+    },
+    {
       "name": "prd-architecture-studio",
       "repo": "Cynergis/prd-architecture-studio",
       "version": "2.0.0",

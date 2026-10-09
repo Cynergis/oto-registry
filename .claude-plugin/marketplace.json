@@ -16,6 +16,16 @@
       "description": "The OTO engine: the kg_* query tools as an MCP server, the generic skills, and the session hook. Every pack depends on it."
     },
     {
+      "name": "pdf-to-template",
+      "source": {
+        "source": "github",
+        "repo": "Cynergis/pdf-to-template-plugin"
+      },
+      "description": "Turn a sample PDF into a data-driven HTML/CSS + Jinja2 template that renders new data to PDF; define a report with the analyst on the report-ontology MCP server.",
+      "version": "0.2.0",
+      "category": "reporting"
+    },
+    {
       "name": "prd-architecture-studio",
       "source": {
         "source": "github",
