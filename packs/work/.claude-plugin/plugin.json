@@ -1,0 +1,17 @@
+{
+  "name": "work",
+  "displayName": "Work (OTO pack)",
+  "description": "What is planned, by whom, blocked by what: work items and milestones over the product's requirements, features and components; what slips when a component is late, what is overdue, what waits on a decision.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Cynergis"
+  },
+  "dependencies": [
+    "oto"
+  ],
+  "keywords": [
+    "product",
+    "oto",
+    "knowledge-graph"
+  ]
+}

@@ -62,6 +62,13 @@
       "description": "Software estate: systems, components, interfaces, data, environments, decisions and risks.",
       "version": "4.0.0",
       "category": "software"
+    },
+    {
+      "name": "work",
+      "source": "./packs/work",
+      "description": "What is planned, by whom, blocked by what: work items and milestones over the product's requirements, features and components; what slips when a component is late, what is overdue, what waits on a decision.",
+      "version": "1.0.0",
+      "category": "product"
     }
   ]
 }
