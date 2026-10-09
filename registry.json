@@ -140,5 +140,14 @@
       },
       "domain": "product"
     }
+  ],
+  "plugins": [
+    {
+      "name": "prd-architecture-studio",
+      "repo": "Cynergis/prd-architecture-studio",
+      "version": "2.0.0",
+      "description": "Atlas, the Lead Product Engineer, and the studio's skills: capture a product's specification and design against OTO packs through the curate gates, build with the brief in hand, publish. Depends on oto.",
+      "category": "product"
+    }
   ]
 }

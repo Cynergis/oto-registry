@@ -16,6 +16,16 @@
       "description": "The OTO engine: the kg_* query tools as an MCP server, the generic skills, and the session hook. Every pack depends on it."
     },
     {
+      "name": "prd-architecture-studio",
+      "source": {
+        "source": "github",
+        "repo": "Cynergis/prd-architecture-studio"
+      },
+      "description": "Atlas, the Lead Product Engineer, and the studio's skills: capture a product's specification and design against OTO packs through the curate gates, build with the brief in hand, publish. Depends on oto.",
+      "version": "2.0.0",
+      "category": "product"
+    },
+    {
       "name": "auto-claims",
       "source": "./packs/auto-claims",
       "description": "Motor vehicle claims: policy, coverage, claim, incident, handling, money in and out.",
