@@ -23,6 +23,13 @@
       "category": "insurance"
     },
     {
+      "name": "flow",
+      "source": "./packs/flow",
+      "description": "Executable process graphs: steps with typed executors (script, OCR, Claude, human, terminal), gated by checks against metrics and parameters, connected by guarded transitions with effects, exchanging artifacts with fields; invariants and the tests derived from them. The briefs an agent reads before implementing or testing a step, building the engine, or changing a parameter or an artifact.",
+      "version": "1.0.0",
+      "category": "software"
+    },
+    {
       "name": "organization-process",
       "source": "./packs/organization-process",
       "description": "How an organization works: units, roles, processes, policies, systems and measures.",
