@@ -16,11 +16,38 @@
       "description": "The OTO engine: the kg_* query tools as an MCP server, the generic skills, and the session hook. Every pack depends on it."
     },
     {
+      "name": "pdf-to-template",
+      "source": {
+        "source": "github",
+        "repo": "Cynergis/pdf-to-template-plugin"
+      },
+      "description": "Turn a sample PDF into a data-driven HTML/CSS + Jinja2 template that renders new data to PDF; define a report with the analyst on the report-ontology MCP server.",
+      "version": "0.2.0",
+      "category": "reporting"
+    },
+    {
+      "name": "prd-architecture-studio",
+      "source": {
+        "source": "github",
+        "repo": "Cynergis/prd-architecture-studio"
+      },
+      "description": "Atlas, the Lead Product Engineer, and the studio's skills: capture a product's specification and design against OTO packs through the curate gates, build with the brief in hand, publish. Depends on oto.",
+      "version": "2.0.0",
+      "category": "product"
+    },
+    {
       "name": "auto-claims",
       "source": "./packs/auto-claims",
       "description": "Motor vehicle claims: policy, coverage, claim, incident, handling, money in and out.",
       "version": "5.0.0",
       "category": "insurance"
+    },
+    {
+      "name": "flow",
+      "source": "./packs/flow",
+      "description": "Executable process graphs: steps with typed executors (script, OCR, Claude, human, terminal), gated by checks against metrics and parameters, connected by guarded transitions with effects, exchanging artifacts with fields; invariants and the tests derived from them. The briefs an agent reads before implementing or testing a step, building the engine, or changing a parameter or an artifact.",
+      "version": "1.0.0",
+      "category": "software"
     },
     {
       "name": "organization-process",
@@ -30,6 +57,13 @@
       "category": "organization"
     },
     {
+      "name": "product-report",
+      "source": "./packs/product-report",
+      "description": "A report product's specification: which report types it must produce, where their data must come from, what layout and fidelity, which channels, which rules and sign-offs, what a run must guarantee, what must stay answerable afterwards, what identifies a document, who owns what, and when a report type is ready.",
+      "version": "1.0.0",
+      "category": "reporting"
+    },
+    {
       "name": "professional-services",
       "source": "./packs/professional-services",
       "description": "Engagements: scope, deliverables, governance, sessions, decisions and the work that follows.",
@@ -37,11 +71,24 @@
       "category": "professional-services"
     },
     {
+      "name": "report",
+      "source": "./packs/report",
+      "description": "A report type: its meaning per locale, its sections and fields, the rules that apply, the column that supplies each value, the runs and approvals that produced its template, its operating contract, its lifecycle and the accepted history of its definition.",
+      "version": "1.0.0"
+    },
+    {
       "name": "software-architecture",
       "source": "./packs/software-architecture",
       "description": "Software estate: systems, components, interfaces, data, environments, decisions and risks.",
       "version": "4.0.0",
       "category": "software"
+    },
+    {
+      "name": "work",
+      "source": "./packs/work",
+      "description": "What is planned, by whom, blocked by what: work items and milestones over the product's requirements, features and components; what slips when a component is late, what is overdue, what waits on a decision.",
+      "version": "1.0.0",
+      "category": "product"
     }
   ]
 }

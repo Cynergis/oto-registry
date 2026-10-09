@@ -64,6 +64,17 @@
       "domain": "insurance"
     },
     {
+      "name": "flow",
+      "release": 1,
+      "summary": "Executable process graphs: steps with typed executors (script, OCR, Claude, human, terminal), gated by checks against metrics and parameters, connected by guarded transitions with effects, exchanging artifacts with fields; invariants and the tests derived from them. The briefs an agent reads before implementing or testing a step, building the engine, or changing a parameter or an artifact.",
+      "path": "packs/flow",
+      "ontology": {
+        "name": "flow",
+        "release": 1
+      },
+      "domain": "software"
+    },
+    {
       "name": "organization-process",
       "release": 4,
       "summary": "How an organization works: units, roles, processes, policies, systems and measures.",
@@ -73,6 +84,18 @@
         "release": 4
       },
       "domain": "organization"
+    },
+    {
+      "name": "product-report",
+      "release": 1,
+      "summary": "A report product's specification: which report types it must produce, where their data must come from, what layout and fidelity, which channels, which rules and sign-offs, what a run must guarantee, what must stay answerable afterwards, what identifies a document, who owns what, and when a report type is ready.",
+      "path": "packs/product-report",
+      "ontology": {
+        "name": "product-report",
+        "release": 3
+      },
+      "domain": "reporting",
+      "product_type": "report"
     },
     {
       "name": "professional-services",
@@ -86,6 +109,16 @@
       "domain": "professional-services"
     },
     {
+      "name": "report",
+      "release": 1,
+      "summary": "A report type: its meaning per locale, its sections and fields, the rules that apply, the column that supplies each value, the runs and approvals that produced its template, its operating contract, its lifecycle and the accepted history of its definition.",
+      "path": "packs/report",
+      "ontology": {
+        "name": "report",
+        "release": 5
+      }
+    },
+    {
       "name": "software-architecture",
       "release": 4,
       "summary": "Software estate: systems, components, interfaces, data, environments, decisions and risks.",
@@ -95,6 +128,33 @@
         "release": 8
       },
       "domain": "software"
+    },
+    {
+      "name": "work",
+      "release": 1,
+      "summary": "What is planned, by whom, blocked by what: work items and milestones over the product's requirements, features and components; what slips when a component is late, what is overdue, what waits on a decision.",
+      "path": "packs/work",
+      "ontology": {
+        "name": "work",
+        "release": 1
+      },
+      "domain": "product"
+    }
+  ],
+  "plugins": [
+    {
+      "name": "pdf-to-template",
+      "repo": "Cynergis/pdf-to-template-plugin",
+      "version": "0.2.0",
+      "description": "Turn a sample PDF into a data-driven HTML/CSS + Jinja2 template that renders new data to PDF; define a report with the analyst on the report-ontology MCP server.",
+      "category": "reporting"
+    },
+    {
+      "name": "prd-architecture-studio",
+      "repo": "Cynergis/prd-architecture-studio",
+      "version": "2.0.0",
+      "description": "Atlas, the Lead Product Engineer, and the studio's skills: capture a product's specification and design against OTO packs through the curate gates, build with the brief in hand, publish. Depends on oto.",
+      "category": "product"
     }
   ]
 }
