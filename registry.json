@@ -86,6 +86,16 @@
       "domain": "professional-services"
     },
     {
+      "name": "report",
+      "release": 1,
+      "summary": "A report type: its meaning per locale, its sections and fields, the rules that apply, the column that supplies each value, the runs and approvals that produced its template, its operating contract, its lifecycle and the accepted history of its definition.",
+      "path": "packs/report",
+      "ontology": {
+        "name": "report",
+        "release": 5
+      }
+    },
+    {
       "name": "software-architecture",
       "release": 4,
       "summary": "Software estate: systems, components, interfaces, data, environments, decisions and risks.",
