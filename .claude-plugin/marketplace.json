@@ -26,16 +26,6 @@
       "category": "reporting"
     },
     {
-      "name": "prd-architecture-studio",
-      "source": {
-        "source": "github",
-        "repo": "Cynergis/prd-architecture-studio"
-      },
-      "description": "Atlas, the Lead Product Engineer, and the studio's skills: capture a product's specification and design against OTO packs through the curate gates, build with the brief in hand, publish. Depends on oto.",
-      "version": "2.0.0",
-      "category": "product"
-    },
-    {
       "name": "auto-claims",
       "source": "./packs/auto-claims",
       "description": "Motor vehicle claims: policy, coverage, claim, incident, handling, money in and out.",
@@ -62,6 +52,13 @@
       "description": "How an organization works: units, roles, processes, policies, systems and measures.",
       "version": "4.0.0",
       "category": "organization"
+    },
+    {
+      "name": "prd-architecture-studio",
+      "source": "./packs/prd-architecture-studio",
+      "description": "Atlas, the Lead Product Engineer, and the studio's skills: a product's specification and design captured against OTO packs through the curate gates, the build with the brief in hand, and the navigable PRD and architecture site.",
+      "version": "3.0.0",
+      "category": "product"
     },
     {
       "name": "product-report",

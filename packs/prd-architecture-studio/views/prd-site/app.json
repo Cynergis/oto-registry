@@ -1,0 +1,40 @@
+{
+  "name": "prd-site",
+  "summary": "The PRD and the Architecture document of a product, read from its knowledge base: what the graph says, dated, never a file someone edited.",
+  "entry": "index.html",
+  "engine": ">=0.9",
+  "data": [
+    {
+      "file": "data.js",
+      "format": "js-globals",
+      "globals": {
+        "__PRD__": {
+          "$include": "projections/prd.json"
+        },
+        "__ARCH__": {
+          "$include": "projections/arch.json"
+        }
+      }
+    }
+  ],
+  "requires": {
+    "classes": [
+      "Product",
+      "Requirement",
+      "Persona",
+      "ValueProposition",
+      "Decision",
+      "Role",
+      "Policy",
+      "Risk",
+      "Term"
+    ],
+    "relations": [
+      "serves",
+      "satisfies",
+      "about",
+      "owned_by",
+      "applies_to"
+    ]
+  }
+}

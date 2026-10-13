@@ -1,0 +1,342 @@
+{
+ "context": {
+  "summary": {
+   "$first": {
+    "$nodes": "Product",
+    "$field": "$attr.vision"
+   }
+  },
+  "drivers": {
+   "$nodes": "Requirement",
+   "$where": {
+    "attr.priority": "must"
+   },
+   "$sort": "label",
+   "$field": "$label"
+  },
+  "constraints": {
+   "$nodes": "Constraint",
+   "$sort": "label",
+   "$field": "$label"
+  },
+  "assumptions": {
+   "$nodes": "Assumption",
+   "$sort": "label",
+   "$field": "$label"
+  },
+  "diagram": ""
+ },
+ "decisions": {
+  "$nodes": "Decision",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "cat": "",
+   "title": "$label",
+   "status": {
+    "$const": "Accepted"
+   },
+   "rationale": "$attr.rationale",
+   "alternatives": "",
+   "consequences": "$summary",
+   "affects": {
+    "$out": "about",
+    "$select": "$id"
+   }
+  }
+ },
+ "stack": {
+  "$const": []
+ },
+ "subdomainMaps": {
+  "$const": []
+ },
+ "domains": {
+  "$optional": {
+   "$nodes": "Subdomain",
+   "$sort": "label",
+   "$map": {
+    "id": "$id",
+    "name": "$label",
+    "color": {
+     "$const": "#4f6d8f"
+    },
+    "summary": "$summary",
+    "aggregate": {
+     "name": {
+      "$first": {
+       "$out": "realised_in",
+       "$select": {
+        "$first": {
+         "$in": "part_of",
+         "$where": {
+          "type": "Aggregate"
+         },
+         "$select": "$label"
+        }
+       }
+      }
+     },
+     "store": "",
+     "description": "",
+     "tables": {
+      "$const": []
+     }
+    },
+    "maps": {
+     "$const": []
+    },
+    "components": {
+     "$out": "realised_in",
+     "$select": {
+      "id": "$id",
+      "name": "$label",
+      "overview": "$summary",
+      "mapsTo": {
+       "$in": "part_of",
+       "$where": {
+        "type": "UseCase"
+       },
+       "$select": {
+        "$first": {
+         "$out": "satisfies",
+         "$select": "$id"
+        }
+       }
+      },
+      "trigger": {
+       "$in": "part_of",
+       "$where": {
+        "type": "Command"
+       },
+       "$select": {
+        "type": {
+         "$const": "Command"
+        },
+        "name": "$label",
+        "desc": "$summary",
+        "schema": "$attr.payload"
+       }
+      },
+      "businessRules": {
+       "$in": "part_of",
+       "$where": {
+        "type": "BusinessRule"
+       },
+       "$select": {
+        "rule": "$label",
+        "ref": "$attr.kind"
+       }
+      },
+      "command": {
+       "$in": "part_of",
+       "$where": {
+        "type": "Command"
+       },
+       "$select": {
+        "command": "$label",
+        "ref": ""
+       }
+      },
+      "readModel": {
+       "$in": "part_of",
+       "$where": {
+        "type": "ReadModel"
+       },
+       "$select": {
+        "type": {
+         "$const": "Database"
+        },
+        "table": "$label",
+        "desc": "$summary"
+       }
+      },
+      "writeModel": {
+       "$in": "part_of",
+       "$where": {
+        "type": "DomainEvent"
+       },
+       "$select": {
+        "type": {
+         "$const": "Subdomain"
+        },
+        "table": "$label",
+        "desc": "$summary"
+       }
+      },
+      "resource": {
+       "$out": "deployed_as",
+       "$select": "$id"
+      },
+      "dependency": {
+       "$const": []
+      },
+      "hotspot": {
+       "$in": "about",
+       "$where": {
+        "type": "OpenQuestion"
+       },
+       "$select": {
+        "level": {
+         "$const": "Question"
+        },
+        "text": "$label"
+       }
+      },
+      "code": {
+       "path": "$attr.deployment_unit",
+       "repo": "",
+       "pipeline": "",
+       "tests": "",
+       "coverage": "",
+       "app": "",
+       "dashboard": "",
+       "runbook": "",
+       "owners": {
+        "$first": {
+         "$out": "owned_by",
+         "$select": "$label"
+        }
+       },
+       "logs": {
+        "$const": []
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "apis": {
+  "$nodes": "Interface",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "method": "",
+   "path": "$attr.url",
+   "purpose": "$summary",
+   "errors": "",
+   "realizes": {
+    "$out": "satisfies",
+    "$select": "$id"
+   }
+  }
+ },
+ "integrations": {
+  "$optional": {
+   "$nodes": "ExternalSystem",
+   "$sort": "label",
+   "$map": {
+    "id": "$id",
+    "system": "$label",
+    "direction": {
+     "$const": "bidirectional"
+    },
+    "protocol": "",
+    "data": {
+     "$out": "sends",
+     "$select": "$label"
+    },
+    "auth": "",
+    "dependsOn": "",
+    "notes": "$summary"
+   }
+  }
+ },
+ "security": {
+  "$nodes": "Policy",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "control": "$label",
+   "approach": "$summary",
+   "addresses": {
+    "$out": "applies_to",
+    "$select": "$id"
+   }
+  },
+  "$where": {
+   "attr.kind": {
+    "$in": [
+     "security",
+     "compliance"
+    ]
+   }
+  }
+ },
+ "infra": {
+  "cloud": "",
+  "platform": "",
+  "summary": {
+   "$first": {
+    "$nodes": "System",
+    "$field": "$summary"
+   }
+  },
+  "adrs": {
+   "$const": []
+  },
+  "meets": {
+   "$const": []
+  },
+  "environments": {
+   "$nodes": "Environment",
+   "$sort": "label",
+   "$map": {
+    "id": "$id",
+    "name": "$label",
+    "cluster": "",
+    "region": "",
+    "accountUrl": "",
+    "iacUrl": "",
+    "services": {
+     "$in": "runs_in",
+     "$select": {
+      "name": "$label",
+      "url": ""
+     }
+    },
+    "dashboards": {
+     "$const": []
+    },
+    "notes": "$summary"
+   }
+  }
+ },
+ "design": {
+  "links": {
+   "$const": []
+  }
+ },
+ "structure": {
+  "tree": "",
+  "mapping": {
+   "$nodes": "Component",
+   "$sort": "label",
+   "$map": {
+    "area": "$label",
+    "path": {
+     "$first": {
+      "$out": "implemented_by",
+      "$select": "$attr.url"
+     }
+    }
+   }
+  },
+  "patterns": {
+   "$const": []
+  }
+ },
+ "kb": {
+  "intro": "",
+  "guidance": {
+   "$const": []
+  },
+  "criteria": {
+   "$const": []
+  },
+  "patterns": {
+   "$const": []
+  }
+ }
+}

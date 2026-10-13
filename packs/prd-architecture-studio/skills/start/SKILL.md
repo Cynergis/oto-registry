@@ -1,0 +1,112 @@
+---
+name: start
+description: >-
+  Start or extend an OTO knowledge project in this domain: Atlas, the Lead Product Engineer, and the studio's skills: a product's specification and design captured against OTO packs through the curate gates, the build with the brief in hand, and the navigable PRD and architecture site. The pack 'prd-architecture-studio' (release 3) embeds the ontology 'software-architecture' (release 10), which declares Asset, System, Component, Interface, DataStore, Environment, Runbook, Repository. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+---
+
+# PRD & Architecture Studio
+
+Atlas, the Lead Product Engineer, and the studio's skills: a product's specification and design captured against OTO packs through the curate gates, the build with the brief in hand, and the navigable PRD and architecture site.
+
+This skill comes with the `prd-architecture-studio` pack. The ontology is inside the pack, so nothing is fetched.
+
+1. **Start a project from this pack.**
+
+   ```bash
+   oto init --name "<project name>" --pack "${CLAUDE_PLUGIN_ROOT}" --project <root>
+   ```
+
+   `${CLAUDE_PLUGIN_ROOT}` is this pack's directory; Claude Code fills it in. Outside Claude Code,
+   with the pack on the machine (`oto pack add prd-architecture-studio` from the cynergis registry), `oto init --pack prd-architecture-studio` does the same.
+   The project records the ontology's origin, so `oto status` says when a newer release exists and
+   `oto ontology diff` shows what changed. Add `--ontology <name>,...` to merge other ontologies
+   with the pack's (a product type, the flow).
+
+2. **Go on with this pack's skills**, written for this domain:
+
+   - **prd-architecture-studio:architecture-build**: Design the solution as a knowledge base.
+   - **prd-architecture-studio:atlas**: Atlas, the Lead Product Engineer.
+   - **prd-architecture-studio:elicit**: The studio's elicitation.
+   - **prd-architecture-studio:feature-flow**: Governed, gated process for adding or changing a product feature, read from the knowledge base.
+   - **prd-architecture-studio:prd-build**: Build a product's specification (the PRD) as a knowledge base.
+   - **prd-architecture-studio:prd-site**: Serve or publish the navigable PRD + Architecture site as a view of the knowledge base.
+
+3. **For anything else, the engine's skills**: capture-form to answer the vocabulary's
+   questions in an interview, ontology-interview to fit the vocabulary to the documents at hand,
+   build-knowledge-base for a folder of documents, query-knowledge for questions. The engine
+   plugin `oto` comes with this pack: the `kg_*` tools and the generic skills are available once
+   it is installed.
+
+## What the ontology declares
+
+- **Asset**: Anything the estate runs or stores and a team can be accountable for: a system, a component, an interface, a data store. A question about assets covers all four.
+- **System**: A named application or platform that a team owns and a user or another system consumes.
+- **Component**: A part of a system deployed or released as a unit: a service, a job, a library, a front end.
+- **Interface**: A contract others depend on: an API, an event topic, a file feed, a database view.
+- **DataStore**: A place data lives: a database, a bucket, a queue, a cache, a warehouse table.
+- **Environment**: A place components run: production, staging, a region, a tenant.
+- **Runbook**: The documented way to operate or recover something.
+- **Repository**: Where a component's code lives: a source repository, recorded before it exists (intended) and observed once it does.
+
+## The actions it ships
+
+OTO lists them; the caller invokes (the act skill):
+
+- `action.check-repository` on Repository: Reads the repository's metadata from GitHub and records that it exists, its URL and its default branch. Realises an intended repository; re-attests a current one.
+- `action.create-repository` on Repository: Creates the repository an intended Repository fact describes, under its owner, and records the result. Changes the world: a person confirms it by name.
+- `action.probe-interface` on Interface: Calls an interface's base URL with a GET and keeps the response as a source document, so what the interface actually answers can be read and curated.
+
+## The views it ships
+
+- `prd-site`: `oto serve --http <port> --view prd-site`, or `oto build --target site --view prd-site`
+
+## The guide
+
+# Reading a software-architecture graph
+
+## What this graph is for
+
+It answers the questions people ask about a software estate under pressure, from documents that
+were written to describe it at rest: what breaks if this changes, who owns it, why it is the way
+it is, what is fragile, and what the business loses when a part fails. Every answer cites the
+document that states it and the date it was true.
+
+## The questions it answers well
+
+- **Change impact.** "What depends on the payments interface?" follows `consumes` and `exposes`,
+  and the rule `consumer-depends-on-provider` derives the dependency between components so it can
+  be asked directly: `oto query neighbors "<component>" depends_on`.
+- **Ownership.** "Who do I call about the ledger?" follows `owned_by` to a `Team`. If the answer
+  is a person, the graph is recording the wrong thing.
+- **Reasons.** "Why one ledger?" follows `about` from the product's `Decision` and quotes its rationale.
+  A decision without a recorded document is flagged by `decision-is-documented`.
+- **Fragility.** "What threatens production?" follows `threatens` and `mitigated_by` from `Risk`.
+  The rule `risk-reaches-system` lifts a risk to a component up to its system.
+- **Business exposure.** "What can customers not do if payments is down?" follows `enables` to
+  `Capability`, the one class written in the business's words.
+
+## Where to start reading
+
+Open the explorer (`oto serve --http 8765`) and read the `System` column first: each system is a
+unit of ownership. Then one system's components and the interfaces between them. Read
+`Decision` entries last: they explain what the rest shows. A dashed edge was derived by a
+rule; `oto rules explain <rule>` says why the rule exists and what it derived.
+
+## What can be done
+
+The ontology ships three actions, listed by `oto actions list` and never invoked by OTO: a daily
+check that a repository exists (read-only; it realises an intended `Repository` and re-attests a
+current one), the creation of a repository an intended fact describes (it changes the world, so a
+person confirms it by name), and a weekly read of what an `Interface` answers at its URL. Record a
+run with `oto actions record`, and the response enters the graph through the gates with the run as
+its evidence. The act skill is the protocol.
+
+## Common mistakes
+
+- Recording a person as an owner. Use the team; people move.
+- Recording every server. This is not a configuration database; add `Environment` only where a
+  question needs it, and point at the catalog that holds the rest.
+- Two components writing one store without a decision that says so. `writes_to` is separate from
+  `reads_from` so this can be asked: `oto query neighbors "<store>" writes_to`.
+- Leaving `validated_by` empty on a rule for months. A rule nobody confirmed derives facts nobody
+  asked for.

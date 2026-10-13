@@ -49,6 +49,17 @@
       "domain": "organization"
     },
     {
+      "name": "prd-architecture-studio",
+      "release": 3,
+      "summary": "Atlas, the Lead Product Engineer, and the studio's skills: a product's specification and design captured against OTO packs through the curate gates, the build with the brief in hand, and the navigable PRD and architecture site.",
+      "path": "packs/prd-architecture-studio",
+      "ontology": {
+        "name": "software-architecture",
+        "release": 10
+      },
+      "domain": "product"
+    },
+    {
       "name": "product-report",
       "release": 2,
       "summary": "A report product's specification: which report types it must produce, where their data must come from, what layout and fidelity, which channels, which rules and sign-offs, what a run must guarantee, what must stay answerable afterwards, what identifies a document, who owns what, and when a report type is ready.",
@@ -100,13 +111,6 @@
       "version": "0.4.0",
       "description": "Turn a sample PDF into a data-driven HTML/CSS + Jinja2 template that renders new data to PDF; the report's definition is read from an OTO project (the report pack). Depends on oto.",
       "category": "reporting"
-    },
-    {
-      "name": "prd-architecture-studio",
-      "repo": "Cynergis/prd-architecture-studio",
-      "version": "2.0.0",
-      "description": "Atlas, the Lead Product Engineer, and the studio's skills: capture a product's specification and design against OTO packs through the curate gates, build with the brief in hand, publish. Depends on oto.",
-      "category": "product"
     }
   ]
 }
