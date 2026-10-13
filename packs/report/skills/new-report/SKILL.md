@@ -20,16 +20,11 @@ it.
 
 ## The ontology decides what to ask
 
-Do not work from a remembered checklist. The project's `capture.json` (`oto ontology capture
---project <root>`) is the form: **sections** are the report ontology's questions grouped by who
-asks them (the analyst, the data team, operations, compliance, the engineer), each naming the item
-types it needs; **types** are the classes with their fields (typed, enums as choices, `required`)
-and links (with their targets and cardinality), every one carrying its term. Read it before the
-first question; regenerate it when the vocabulary changes. What a question asks for and who can
-answer it are in `capture.json`, not in this file.
-
-When you do not understand an item, `kg_define <term>` (or `oto query define <term>`) gives its
-definition; ask the analyst in their words, not the ontology's.
+Run the interview with OTO's **capture-form** skill: it reads the project's `capture.json`, asks
+the report ontology's questions group by group, and sends every confirmed group through the curate
+gates. What a question asks for and who can answer it are in `capture.json`, not in this file. This
+skill adds what a report needs on top: the catalogue checked first, the sample PDF, what you draft
+yourself, the column mapping and the report's status.
 
 ## Before the first question
 
@@ -47,8 +42,7 @@ definition; ask the analyst in their words, not the ontology's.
 
 ## The interview
 
-Ask in small groups, a few related items at a time, in the order `capture.json` lists the sections;
-offer a similar report's value as the default ("the balanced fund profile runs on the third
+Offer a similar report's value as the default ("the balanced fund profile runs on the third
 business day; the same here?"). The report ontology asks, in this order:
 
 1. **What the report is** (the analyst, Q1, Q17): title, kind, purpose, audience, owner, locales,
@@ -62,9 +56,6 @@ business day; the same here?"). The report ontology asks, in this order:
    observability policy (delivery deadline, tolerated failure rate, who is alerted, the run log).
 5. **Rules, verification and approval** (compliance, Q18, Q19): the rules on fields, which are
    regulatory; the verification thresholds and the approval policy.
-
-If the analyst does not know an answer, do not guess and do not block the session: leave the item
-out and go on; the gate carries it as an open question, with who can answer it if they told you.
 
 ## What you draft yourself
 
@@ -91,32 +82,23 @@ names. Set `verified` only for what they confirm; leave `unmapped` what nobody c
 the analyst that a structured field (a list, a series) reads JSON text from its column, an array of
 rows in the field's row shape, and show the expected JSON for one such field.
 
-## The loop: every confirmed group goes through the gates
+## Every confirmed group goes through the gates
 
-Write the confirmed items as a capture file against `capture.json` — `{"doc": "<report id>-interview",
-"as_of": "<today>", "scope": "<report id>", "items": [{"type": "Field", "id": "mer", "label": "MER", "fields":
-{...}, "links": {"inReport": ["RT"], "sourcedFrom": ["COL-MER"]}, "where": "p.1", "quote": "..."}]}` — then:
+capture-form contributes each confirmed group. For a report, its capture file has `doc`
+`<report id>-interview`, `as_of` today and `scope` the report id, and is written to
+`captures/<report id>-<group>.json`; a field item looks like `{"type": "Field", "id": "mer",
+"label": "MER", "fields": {...}, "links": {"inReport": ["RT"], "sourcedFrom": ["COL-MER"]},
+"where": "p.1", "quote": "..."}`.
 
-```bash
-oto curate propose --project <root> --from captures/<report id>-<group>.json   # refused if not a capture against the form
-oto curate add --project <root> --from proposals/<doc>.json --dry-run
-oto curate add --project <root> --from proposals/<doc>.json
-oto curate check --project <root>
-```
+What the report ontology's check tends to say:
 
-Read the check in the engine's words:
+- **blocking**: a mapping that claims a column the table does not hold, a column outside the
+  report's table, a report type past inception with no section.
+- **gap**: `question Q4 unanswered: … 12 fields have no column`, a field with no French meaning,
+  a report that names no owner.
 
-- **blocking** — a shape or a policy of the report ontology: a mapping that claims a column the
-  table does not hold, a column outside the report's table, a changed fact with no supersession,
-  a report type past inception with no section. Fix the capture and re-propose; never force.
-- **gap** — a question the graph cannot answer yet (`question Q4 unanswered: … 12 fields have no
-  column`), a field with no French meaning, a report that names no owner. Tell the analyst; it
-  does not block.
-
-`oto curate apply --by "<the analyst>" --note "<what the group made answerable>"` closes the
-candidate; `oto build` makes it queryable. Then `oto query questions` (or `kg_questions`) says
-which of the report's questions the graph now answers and which are open: report it as "the
-catalogue answers N of M about this report; open: …".
+Apply after each group, `--by` the analyst, and report the gate as "the catalogue answers N of M
+about this report; open: …".
 
 ## The report's status
 
