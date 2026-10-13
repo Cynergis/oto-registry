@@ -6,7 +6,7 @@
   "packs": [
     {
       "name": "auto-claims",
-      "release": 5,
+      "release": 6,
       "summary": "Motor vehicle claims: policy, coverage, claim, incident, handling, money in and out.",
       "path": "packs/auto-claims",
       "ontology": {

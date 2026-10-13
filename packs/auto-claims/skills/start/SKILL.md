@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: Motor vehicle claims: policy, coverage, claim, incident, handling, money in and out. The pack 'auto-claims' (release 5) embeds the ontology 'auto-claims' (release 5), which declares Policy, Coverage, Endorsement, Claim, Incident, Vehicle, Party, Role and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: Motor vehicle claims: policy, coverage, claim, incident, handling, money in and out. The pack 'auto-claims' (release 6) embeds the ontology 'auto-claims' (release 5), which declares Policy, Coverage, Endorsement, Claim, Incident, Vehicle, Party, Role and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Auto Claims Knowledge Base
@@ -19,7 +19,8 @@ This skill comes with the `auto-claims` pack. The ontology is inside the pack, s
    `${CLAUDE_PLUGIN_ROOT}` is this pack's directory; Claude Code fills it in. Outside Claude Code,
    with the pack on the machine (`oto pack add auto-claims` from the cynergis registry), `oto init --pack auto-claims` does the same.
    The project records the ontology's origin, so `oto status` says when a newer release exists and
-   `oto ontology diff` shows what changed.
+   `oto ontology diff` shows what changed. Add `--ontology <name>,...` to merge other ontologies
+   with the pack's (a product type, the flow).
 
 2. **Run the ontology-interview skill** to fit the vocabulary to the documents at hand.
 
