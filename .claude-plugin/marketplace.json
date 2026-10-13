@@ -47,6 +47,13 @@
       "category": "software"
     },
     {
+      "name": "medallion",
+      "source": "./packs/medallion",
+      "description": "Design a medallion data pipeline for a part of a product, source systems to bronze, silver and gold, checkpoint by checkpoint (D1-D9), and the batch flow that runs it, checked by the medallion rules at every capture.",
+      "version": "1.0.0",
+      "category": "data"
+    },
+    {
       "name": "organization-process",
       "source": "./packs/organization-process",
       "description": "How an organization works: units, roles, processes, policies, systems and measures.",
