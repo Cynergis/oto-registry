@@ -128,6 +128,12 @@
   ],
   "plugins": [
     {
+      "name": "oto",
+      "repo": "Cynergis/oto",
+      "ref": "v0.11.12",
+      "version": "0.11.12"
+    },
+    {
       "name": "pdf-to-template",
       "repo": "Cynergis/pdf-to-template-plugin",
       "version": "0.4.0",
