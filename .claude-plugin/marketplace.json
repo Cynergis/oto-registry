@@ -67,7 +67,7 @@
       "name": "prd-architecture-studio",
       "source": "./packs/prd-architecture-studio",
       "description": "Atlas, the Lead Product Engineer, and the studio's skills: a product's specification and design captured against OTO packs through the curate gates, the build with the brief in hand, and the navigable PRD and architecture site.",
-      "version": "3.0.0",
+      "version": "4.0.0",
       "category": "product"
     },
     {
