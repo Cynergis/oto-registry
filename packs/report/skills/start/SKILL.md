@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: A report type: its meaning per locale, its sections and fields, the rules that apply, the column that supplies each value, the runs and approvals that produced its template, its operating contract, its lifecycle and the accepted history of its definition. The pack 'report' (release 1) embeds the ontology 'report' (release 5), which declares ReportType, StatusChange, Parameter, UniverseQuery, Section, Field, FieldMeaning, Rule and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: A report type: its meaning per locale, its sections and fields, the rules that apply, the column that supplies each value, the runs and approvals that produced its template, its operating contract, its lifecycle and the accepted history of its definition. The pack 'report' (release 2) embeds the ontology 'report' (release 5), which declares ReportType, StatusChange, Parameter, UniverseQuery, Section, Field, FieldMeaning, Rule and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Report domain
@@ -19,13 +19,19 @@ This skill comes with the `report` pack. The ontology is inside the pack, so not
    `${CLAUDE_PLUGIN_ROOT}` is this pack's directory; Claude Code fills it in. Outside Claude Code,
    with the pack on the machine (`oto pack add report` from the cynergis registry), `oto init --pack report` does the same.
    The project records the ontology's origin, so `oto status` says when a newer release exists and
-   `oto ontology diff` shows what changed.
+   `oto ontology diff` shows what changed. Add `--ontology <name>,...` to merge other ontologies
+   with the pack's (a product type, the flow).
 
-2. **Run the ontology-interview skill** to fit the vocabulary to the documents at hand.
+2. **Go on with this pack's skills**, written for this domain:
 
-3. **Hand over** to the build-knowledge-base skill for the documents, and to the query-knowledge
-   skill for questions. The engine plugin `oto` comes with this pack: the `kg_*` tools and the
-   generic skills are available once it is installed.
+   - **report:ask-reports**: Answer questions about the report catalogue from the report knowledge base.
+   - **report:new-report**: Define a new report type with a report analyst, in the report knowledge base.
+
+3. **For anything else, the engine's skills**: capture-form to answer the vocabulary's
+   questions in an interview, ontology-interview to fit the vocabulary to the documents at hand,
+   build-knowledge-base for a folder of documents, query-knowledge for questions. The engine
+   plugin `oto` comes with this pack: the `kg_*` tools and the generic skills are available once
+   it is installed.
 
 ## What the ontology declares
 

@@ -55,9 +55,8 @@ READY: the brief's facts are the specification you implement, and nothing else i
 - FL7, FL9, FL18 (optional): the invariants it enforces, who consumes what it writes, its phase.
 
 **BLOCKED**: stop. Report the blocking questions and gaps verbatim ("FL3: JSON output has no
-field specification"), and have the person capture the missing fact (the studio's **capture**
-skill, or a capture file through `oto curate propose/add/check/apply`); then re-ask. Never guess
-the fact, never implement around it.
+field specification"), and have the person capture the missing fact (OTO's **capture-form**
+skill); then re-ask. Never guess the fact, never implement around it.
 
 ## 4. Write the script, run the tests
 

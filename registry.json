@@ -1,60 +1,12 @@
 {
   "name": "cynergis",
   "summary": "The OTO catalog: ontologies and packs, published by Cynergis.",
-  "ontologies": [
-    {
-      "name": "auto-claims",
-      "release": 5,
-      "summary": "Motor vehicle claims: policy, coverage, claim, incident, handling, money in and out.",
-      "path": "auto-claims",
-      "extends": [
-        "oto-core"
-      ],
-      "domain": "insurance"
-    },
-    {
-      "name": "organization-process",
-      "release": 4,
-      "summary": "How an organization works: units, roles, processes, policies, systems and measures.",
-      "path": "organization-process",
-      "extends": [
-        "oto-core"
-      ],
-      "domain": "organization"
-    },
-    {
-      "name": "oto-core",
-      "release": 4,
-      "summary": "The temporal vocabulary every OTO ontology rests on, and the one class every fact cites: Document.",
-      "path": "oto-core",
-      "extends": []
-    },
-    {
-      "name": "professional-services",
-      "release": 4,
-      "summary": "Engagements: scope, deliverables, governance, sessions, decisions and the work that follows.",
-      "path": "professional-services",
-      "extends": [
-        "oto-core"
-      ],
-      "domain": "professional-services"
-    },
-    {
-      "name": "software-architecture",
-      "release": 8,
-      "summary": "Software estate: systems, components, interfaces, data, environments, decisions and risks.",
-      "path": "software-architecture",
-      "extends": [
-        "oto-core"
-      ],
-      "domain": "software"
-    }
-  ],
+  "ontologies": [],
   "engine": "https://github.com/Cynergis/oto",
   "packs": [
     {
       "name": "auto-claims",
-      "release": 5,
+      "release": 6,
       "summary": "Motor vehicle claims: policy, coverage, claim, incident, handling, money in and out.",
       "path": "packs/auto-claims",
       "ontology": {
@@ -64,19 +16,41 @@
       "domain": "insurance"
     },
     {
-      "name": "flow",
+      "name": "ddd",
       "release": 1,
-      "summary": "Executable process graphs: steps with typed executors (script, OCR, Claude, human, terminal), gated by checks against metrics and parameters, connected by guarded transitions with effects, exchanging artifacts with fields; invariants and the tests derived from them. The briefs an agent reads before implementing or testing a step, building the engine, or changing a parameter or an artifact.",
-      "path": "packs/flow",
+      "summary": "Domain-driven design for the parts of a product that follow it: subdomains, bounded contexts and their map, event storming (events, commands, reactions, read models, external systems) and the tactical model (aggregates, entities, value objects, business rules, domain services), traced to the requirements and components of the architecture.",
+      "path": "packs/ddd",
       "ontology": {
-        "name": "flow",
+        "name": "ddd",
         "release": 1
       },
       "domain": "software"
     },
     {
+      "name": "flow",
+      "release": 2,
+      "summary": "Executable process graphs: steps with typed executors (script, OCR, Claude, human, terminal), gated by checks against metrics and parameters, connected by guarded transitions with effects, exchanging artifacts with fields; invariants and the tests derived from them. The briefs an agent reads before implementing or testing a step, building the engine, or changing a parameter or an artifact.",
+      "path": "packs/flow",
+      "ontology": {
+        "name": "flow",
+        "release": 2
+      },
+      "domain": "software"
+    },
+    {
+      "name": "medallion",
+      "release": 1,
+      "summary": "Design a medallion data pipeline for a part of a product, source systems to bronze, silver and gold, checkpoint by checkpoint (D1-D9), and the batch flow that runs it, checked by the medallion rules at every capture.",
+      "path": "packs/medallion",
+      "ontology": {
+        "name": "medallion",
+        "release": 2
+      },
+      "domain": "data"
+    },
+    {
       "name": "organization-process",
-      "release": 4,
+      "release": 5,
       "summary": "How an organization works: units, roles, processes, policies, systems and measures.",
       "path": "packs/organization-process",
       "ontology": {
@@ -86,8 +60,19 @@
       "domain": "organization"
     },
     {
+      "name": "prd-architecture-studio",
+      "release": 3,
+      "summary": "Atlas, the Lead Product Engineer, and the studio's skills: a product's specification and design captured against OTO packs through the curate gates, the build with the brief in hand, and the navigable PRD and architecture site.",
+      "path": "packs/prd-architecture-studio",
+      "ontology": {
+        "name": "software-architecture",
+        "release": 10
+      },
+      "domain": "product"
+    },
+    {
       "name": "product-report",
-      "release": 1,
+      "release": 2,
       "summary": "A report product's specification: which report types it must produce, where their data must come from, what layout and fidelity, which channels, which rules and sign-offs, what a run must guarantee, what must stay answerable afterwards, what identifies a document, who owns what, and when a report type is ready.",
       "path": "packs/product-report",
       "ontology": {
@@ -99,7 +84,7 @@
     },
     {
       "name": "professional-services",
-      "release": 4,
+      "release": 5,
       "summary": "Engagements: scope, deliverables, governance, sessions, decisions and the work that follows.",
       "path": "packs/professional-services",
       "ontology": {
@@ -110,7 +95,7 @@
     },
     {
       "name": "report",
-      "release": 1,
+      "release": 2,
       "summary": "A report type: its meaning per locale, its sections and fields, the rules that apply, the column that supplies each value, the runs and approvals that produced its template, its operating contract, its lifecycle and the accepted history of its definition.",
       "path": "packs/report",
       "ontology": {
@@ -119,19 +104,19 @@
       }
     },
     {
-      "name": "software-architecture",
-      "release": 4,
-      "summary": "Software estate: systems, components, interfaces, data, environments, decisions and risks.",
-      "path": "packs/software-architecture",
+      "name": "report-medallion",
+      "release": 1,
+      "summary": "The bridge between a report and the medallion pipeline that feeds it: a report's table is the gold dataset it reads, a column the field behind it, a report check backed by the pipeline rule it relies on.",
+      "path": "packs/report-medallion",
       "ontology": {
-        "name": "software-architecture",
-        "release": 8
+        "name": "report-medallion",
+        "release": 1
       },
-      "domain": "software"
+      "domain": "reporting"
     },
     {
       "name": "work",
-      "release": 1,
+      "release": 2,
       "summary": "What is planned, by whom, blocked by what: work items and milestones over the product's requirements, features and components; what slips when a component is late, what is overdue, what waits on a decision.",
       "path": "packs/work",
       "ontology": {
@@ -145,16 +130,9 @@
     {
       "name": "pdf-to-template",
       "repo": "Cynergis/pdf-to-template-plugin",
-      "version": "0.2.0",
-      "description": "Turn a sample PDF into a data-driven HTML/CSS + Jinja2 template that renders new data to PDF; define a report with the analyst on the report-ontology MCP server.",
+      "version": "0.4.0",
+      "description": "Turn a sample PDF into a data-driven HTML/CSS + Jinja2 template that renders new data to PDF; the report's definition is read from an OTO project (the report pack). Depends on oto.",
       "category": "reporting"
-    },
-    {
-      "name": "prd-architecture-studio",
-      "repo": "Cynergis/prd-architecture-studio",
-      "version": "2.0.0",
-      "description": "Atlas, the Lead Product Engineer, and the studio's skills: capture a product's specification and design against OTO packs through the curate gates, build with the brief in hand, publish. Depends on oto.",
-      "category": "product"
     }
   ]
 }

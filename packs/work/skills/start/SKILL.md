@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: What is planned, by whom, blocked by what: work items and milestones over the product's requirements, features and components; what slips when a component is late, what is overdue, what waits on a decision. The pack 'work' (release 1) embeds the ontology 'work' (release 1), which declares WorkItem, Milestone. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: What is planned, by whom, blocked by what: work items and milestones over the product's requirements, features and components; what slips when a component is late, what is overdue, what waits on a decision. The pack 'work' (release 2) embeds the ontology 'work' (release 1), which declares WorkItem, Milestone. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Work
@@ -19,7 +19,8 @@ This skill comes with the `work` pack. The ontology is inside the pack, so nothi
    `${CLAUDE_PLUGIN_ROOT}` is this pack's directory; Claude Code fills it in. Outside Claude Code,
    with the pack on the machine (`oto pack add work` from the cynergis registry), `oto init --pack work` does the same.
    The project records the ontology's origin, so `oto status` says when a newer release exists and
-   `oto ontology diff` shows what changed.
+   `oto ontology diff` shows what changed. Add `--ontology <name>,...` to merge other ontologies
+   with the pack's (a product type, the flow).
 
 2. **Run the ontology-interview skill** to fit the vocabulary to the documents at hand.
 

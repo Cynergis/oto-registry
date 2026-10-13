@@ -43,5 +43,9 @@
       "note": "Ported from report-ontology 2.1.0 (ontology/report.ttl, questions/report_cq.yaml, ontology/report-shapes.ttl, the fund-profile-balanced fixture as the sample)."
     }
   ],
+  "source": "https://github.com/Cynergis/report-ontology",
+  "path": "oto/report",
+  "commit": "7ec9a4e",
+  "fetched_at": "2026-10-13T15:45:59+00:00",
   "_about": "The ontology's identity: its release rises on every published change, `extends` names what it composes on top of, `carries` what the directory holds."
 }

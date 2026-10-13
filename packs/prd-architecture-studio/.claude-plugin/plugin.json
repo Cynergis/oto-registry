@@ -1,0 +1,17 @@
+{
+  "name": "prd-architecture-studio",
+  "displayName": "PRD & Architecture Studio (OTO pack)",
+  "description": "Atlas, the Lead Product Engineer, and the studio's skills: a product's specification and design captured against OTO packs through the curate gates, the build with the brief in hand, and the navigable PRD and architecture site.",
+  "version": "3.0.0",
+  "author": {
+    "name": "Cynergis"
+  },
+  "dependencies": [
+    "oto"
+  ],
+  "keywords": [
+    "product",
+    "oto",
+    "knowledge-graph"
+  ]
+}

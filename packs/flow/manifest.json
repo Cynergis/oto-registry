@@ -1,21 +1,26 @@
 {
   "name": "flow",
-  "release": 1,
+  "release": 2,
   "domain": "software",
   "summary": "Executable process graphs: steps with typed executors (script, OCR, Claude, human, terminal), gated by checks against metrics and parameters, connected by guarded transitions with effects, exchanging artifacts with fields; invariants and the tests derived from them. The briefs an agent reads before implementing or testing a step, building the engine, or changing a parameter or an artifact.",
   "ontology": {
     "name": "flow",
-    "release": 1,
+    "release": 2,
     "registry": null,
-    "source": "/Users/chihebdkhil/Downloads/report-ontology",
+    "source": "https://github.com/Cynergis/report-ontology",
     "ref": null,
     "path": "oto/flow",
-    "commit": "cf62a5d",
-    "embedded_at": "2026-10-07"
+    "commit": "7ec9a4e",
+    "embedded_at": "2026-10-13"
   },
-  "engine": ">=0.11",
+  "engine": ">=0.11.2",
   "maintainer": "Cynergis",
   "changelog": [
+    {
+      "release": 2,
+      "at": "2026-10-13",
+      "note": "flow release 2 (waitsFor, parallel groups, step and flow kinds, trigger and resumption; measures is measuresMetric), from Cynergis/report-ontology; implement-step reports a blocked step through OTO's capture-form; start hands over to the pack's own skills."
+    },
     {
       "release": 1,
       "at": "2026-10-09",

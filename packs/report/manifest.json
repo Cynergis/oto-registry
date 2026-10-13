@@ -1,20 +1,25 @@
 {
   "name": "report",
-  "release": 1,
+  "release": 2,
   "summary": "A report type: its meaning per locale, its sections and fields, the rules that apply, the column that supplies each value, the runs and approvals that produced its template, its operating contract, its lifecycle and the accepted history of its definition.",
   "ontology": {
     "name": "report",
     "release": 5,
     "registry": null,
-    "source": "user",
+    "source": "https://github.com/Cynergis/report-ontology",
     "ref": null,
-    "path": null,
-    "commit": null,
-    "embedded_at": "2026-10-07"
+    "path": "oto/report",
+    "commit": "7ec9a4e",
+    "embedded_at": "2026-10-13"
   },
-  "engine": ">=0.11",
+  "engine": ">=0.11.2",
   "maintainer": "Cynergis",
   "changelog": [
+    {
+      "release": 2,
+      "at": "2026-10-13",
+      "note": "report release 5 (data lineage and quality: Transformation, QualityCheck, Finding, Q23-Q26), from Cynergis/report-ontology; new-report runs OTO's capture-form for the interview and the gates; start hands over to the pack's own skills."
+    },
     {
       "release": 1,
       "at": "2026-10-09",
