@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: Engagements: scope, deliverables, governance, sessions, decisions and the work that follows. The pack 'professional-services' (release 4) embeds the ontology 'professional-services' (release 4), which declares Engagement, Organization, Person, Role, Workstream, Deliverable, GovernanceForum, Session and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: Engagements: scope, deliverables, governance, sessions, decisions and the work that follows. The pack 'professional-services' (release 5) embeds the ontology 'professional-services' (release 4), which declares Engagement, Organization, Person, Role, Workstream, Deliverable, GovernanceForum, Session and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Engagement Knowledge Base
@@ -19,7 +19,8 @@ This skill comes with the `professional-services` pack. The ontology is inside t
    `${CLAUDE_PLUGIN_ROOT}` is this pack's directory; Claude Code fills it in. Outside Claude Code,
    with the pack on the machine (`oto pack add professional-services` from the cynergis registry), `oto init --pack professional-services` does the same.
    The project records the ontology's origin, so `oto status` says when a newer release exists and
-   `oto ontology diff` shows what changed.
+   `oto ontology diff` shows what changed. Add `--ontology <name>,...` to merge other ontologies
+   with the pack's (a product type, the flow).
 
 2. **Run the ontology-interview skill** to fit the vocabulary to the documents at hand.
 

@@ -1,6 +1,6 @@
 {
   "name": "professional-services",
-  "release": 4,
+  "release": 5,
   "domain": "professional-services",
   "summary": "Engagements: scope, deliverables, governance, sessions, decisions and the work that follows.",
   "ontology": {
@@ -11,11 +11,16 @@
     "ref": null,
     "path": null,
     "commit": null,
-    "embedded_at": "2026-10-06"
+    "embedded_at": "2026-10-13"
   },
   "engine": ">=0.6",
   "maintainer": "Cynergis",
   "changelog": [
+    {
+      "release": 5,
+      "at": "2026-10-13",
+      "note": "Refreshed on engine 0.11.10: today's oto-core and bases."
+    },
     {
       "release": 4,
       "at": "2026-10-06",
