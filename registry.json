@@ -16,6 +16,17 @@
       "domain": "insurance"
     },
     {
+      "name": "ddd",
+      "release": 1,
+      "summary": "Domain-driven design for the parts of a product that follow it: subdomains, bounded contexts and their map, event storming (events, commands, reactions, read models, external systems) and the tactical model (aggregates, entities, value objects, business rules, domain services), traced to the requirements and components of the architecture.",
+      "path": "packs/ddd",
+      "ontology": {
+        "name": "ddd",
+        "release": 1
+      },
+      "domain": "software"
+    },
+    {
       "name": "flow",
       "release": 2,
       "summary": "Executable process graphs: steps with typed executors (script, OCR, Claude, human, terminal), gated by checks against metrics and parameters, connected by guarded transitions with effects, exchanging artifacts with fields; invariants and the tests derived from them. The briefs an agent reads before implementing or testing a step, building the engine, or changing a parameter or an artifact.",
