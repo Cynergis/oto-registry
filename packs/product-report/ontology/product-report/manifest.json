@@ -35,5 +35,10 @@
       "at": "2026-10-06",
       "note": "First release: the ten Gate 1 questions of a report product owner, confirmed by Chiheb Dkhil on 2026-10-06; obligations typed by what they govern, linked to the report domain; thin by decision."
     }
-  ]
+  ],
+  "source": "https://github.com/Cynergis/report-ontology",
+  "path": "oto/product-report",
+  "commit": "00fcac1",
+  "fetched_at": "2026-10-13T17:38:10+00:00",
+  "_about": "The ontology's identity: its release rises on every published change, `extends` names what it composes on top of, `carries` what the directory holds."
 }
