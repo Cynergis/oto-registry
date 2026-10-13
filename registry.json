@@ -72,7 +72,7 @@
     },
     {
       "name": "work",
-      "release": 1,
+      "release": 2,
       "summary": "What is planned, by whom, blocked by what: work items and milestones over the product's requirements, features and components; what slips when a component is late, what is overdue, what waits on a decision.",
       "path": "packs/work",
       "ontology": {
