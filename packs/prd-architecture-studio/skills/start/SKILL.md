@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: Atlas, the Lead Product Engineer, and the studio's skills: a product's specification and design captured against OTO packs through the curate gates, the build with the brief in hand, and the navigable PRD and architecture site. The pack 'prd-architecture-studio' (release 3) embeds the ontology 'software-architecture' (release 10), which declares Asset, System, Component, Interface, DataStore, Environment, Runbook, Repository. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: Atlas, the Lead Product Engineer, and the studio's skills: a product's specification and design captured against OTO packs through the curate gates, the build with the brief in hand, and the navigable PRD and architecture site. The pack 'prd-architecture-studio' (release 4) embeds the ontology 'software-architecture' (release 10), which declares Asset, System, Component, Interface, DataStore, Environment, Runbook, Repository. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # PRD & Architecture Studio

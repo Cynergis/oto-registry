@@ -1,7 +1,7 @@
 {
   "name": "prd-architecture-studio",
   "title": "PRD & Architecture Studio",
-  "release": 3,
+  "release": 4,
   "domain": "product",
   "summary": "Atlas, the Lead Product Engineer, and the studio's skills: a product's specification and design captured against OTO packs through the curate gates, the build with the brief in hand, and the navigable PRD and architecture site.",
   "ontology": {
@@ -14,9 +14,14 @@
     "commit": null,
     "embedded_at": "2026-10-13"
   },
-  "engine": ">=0.11.8",
+  "engine": ">=0.11.12",
   "maintainer": "Cynergis",
   "changelog": [
+    {
+      "release": 4,
+      "at": "2026-10-13",
+      "note": "Atlas installs the packs first; oto init then declares the plugins the project uses in .claude/settings.json and records the tools in oto.lock.json; pdf-to-template is added with oto lock --use. Needs OTO 0.11.12."
+    },
     {
       "release": 3,
       "at": "2026-10-13",
