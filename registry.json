@@ -104,6 +104,17 @@
       }
     },
     {
+      "name": "report-medallion",
+      "release": 1,
+      "summary": "The bridge between a report and the medallion pipeline that feeds it: a report's table is the gold dataset it reads, a column the field behind it, a report check backed by the pipeline rule it relies on.",
+      "path": "packs/report-medallion",
+      "ontology": {
+        "name": "report-medallion",
+        "release": 1
+      },
+      "domain": "reporting"
+    },
+    {
       "name": "work",
       "release": 2,
       "summary": "What is planned, by whom, blocked by what: work items and milestones over the product's requirements, features and components; what slips when a component is late, what is overdue, what waits on a decision.",
