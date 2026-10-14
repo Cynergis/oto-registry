@@ -21,6 +21,14 @@ never in a document you wrote or remember. What the graph does not say is a find
 requirement governs the credit report"), not a gap to fill by guessing. If the specification or the
 design is not captured yet, capture it first (**prd-build**, **architecture-build**), then return.
 
+## Talking with the person
+
+- **Plain, natural language, in the person's words.** Never say question numbers, ids, class or
+  field names, file names or commands, and never paste what a command printed.
+- **Technical details only when the person asks for them.** Never offer them, not even as a choice.
+- **The same clear shape every time:** say what we are about to do, ask a few questions at a time,
+  read back what you understood in plain sentences, confirm, then say what is next.
+
 ## Phase 1 — Idea validation (product coherence)
 
 Restate the feature in one sentence, then ask the graph:

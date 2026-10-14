@@ -1,6 +1,6 @@
 {
   "name": "work",
-  "release": 4,
+  "release": 5,
   "domain": "product",
   "summary": "What is planned, by whom, blocked by what: work items and milestones over the product's requirements, features and components; what slips when a component is late, what is overdue, what waits on a decision.",
   "ontology": {
@@ -16,6 +16,11 @@
   "engine": ">=0.11.17",
   "maintainer": "Cynergis",
   "changelog": [
+    {
+      "release": 5,
+      "at": "2026-10-14",
+      "note": "Every conversation in plain language: no codes, ids or engine output, technical details only when asked (engine 0.11.22)."
+    },
     {
       "release": 4,
       "at": "2026-10-14",
