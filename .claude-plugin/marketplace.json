@@ -71,6 +71,13 @@
       "category": "organization"
     },
     {
+      "name": "platform",
+      "source": "./packs/platform",
+      "description": "The platform binding of a product's architecture: where each part runs (platforms, accounts, environments with their region, console, logs and provisioning), what it runs on and is built with (managed services, technologies at their versions), its secrets by where they are kept, the pipelines that deploy it, and who decides each choice: a named person, or the builder within limits. Briefs stop an implementing agent that lacks any of it.",
+      "version": "1.0.0",
+      "category": "software"
+    },
+    {
       "name": "product",
       "source": "./packs/product",
       "description": "A product's specification and its playbook: Atlas, who carries a product from an idea to a published knowledge base, the PRD captured section by section through the curate gates, and the PRD and architecture site read from the graph.",
