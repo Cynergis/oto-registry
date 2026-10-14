@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: A report product's specification: which report types it must produce, where their data must come from, what layout and fidelity, which channels, which rules and sign-offs, what a run must guarantee, what must stay answerable afterwards, what identifies a document, who owns what, and when a report type is ready. The pack 'product-report' (release 3) embeds the ontology 'product-report' (release 3), which declares . Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: A report product's specification: which report types it must produce, where their data must come from, what layout and fidelity, which channels, which rules and sign-offs, what a run must guarantee, what must stay answerable afterwards, what identifies a document, who owns what, and when a report type is ready. The pack 'product-report' (release 4) embeds the ontology 'product-report' (release 3), which declares . Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Report product
@@ -38,3 +38,7 @@ This skill comes with the `product-report` pack. The ontology is inside the pack
 
 ## What the ontology declares
 
+
+## The views it ships
+
+- `report-product`: `oto serve --http <port> --view report-product`, or `oto build --target site --view report-product`
