@@ -44,14 +44,19 @@
     },
     {
       "name": "medallion",
-      "release": 2,
+      "release": 3,
       "summary": "Design a medallion data pipeline for a part of a product, source systems to bronze, silver and gold, checkpoint by checkpoint (D1-D9), and the batch flow that runs it, checked by the medallion rules at every capture.",
       "path": "packs/medallion",
       "ontology": {
         "name": "medallion",
         "release": 2
       },
-      "domain": "data"
+      "domain": "data",
+      "pattern": {
+        "of": "software-architecture",
+        "for": "a part of a product that is a medallion data pipeline: its sources, its bronze, silver and gold layers, its rules and the batch flow that runs them",
+        "skill": "design-pipeline"
+      }
     },
     {
       "name": "organization-process",
