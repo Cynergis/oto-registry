@@ -1,0 +1,426 @@
+{
+ "product": {
+  "$first": {
+   "$nodes": "Product",
+   "$map": {
+    "id": "$id",
+    "name": "$label",
+    "summary": "$summary",
+    "problem": "$attr.problem",
+    "background": "$attr.background",
+    "vision": "$attr.vision",
+    "stage": "$attr.stage",
+    "owners": {
+     "$out": "owned_by",
+     "$select": {
+      "id": "$id",
+      "name": "$label"
+     }
+    }
+   }
+  }
+ },
+ "values": {
+  "$nodes": "ValueProposition",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "promise": "$attr.promise",
+   "differentiator": "$attr.differentiator",
+   "for": {
+    "$out": "intended_for",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "serves": {
+    "$out": "serves",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "objectives": {
+  "$nodes": "Objective",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "period": "$attr.period",
+   "state": "$attr.state",
+   "measured_by": {
+    "$in": "measures",
+    "$select": {
+     "id": "$id",
+     "name": "$label",
+     "metric": "$attr.metric",
+     "target": "$attr.target",
+     "due": "$attr.due_on"
+    }
+   }
+  }
+ },
+ "criteria": {
+  "$nodes": "SuccessCriterion",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "metric": "$attr.metric",
+   "target": "$attr.target",
+   "due": "$attr.due_on",
+   "measures": {
+    "$out": "measures",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "personas": {
+  "$nodes": "Persona",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "need": "$attr.need",
+   "relationship": "$attr.relationship"
+  }
+ },
+ "roles": {
+  "$nodes": "Role",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "holder": "$attr.holder",
+   "mandate": "$attr.mandate",
+   "kind": "$attr.kind"
+  }
+ },
+ "requirements": {
+  "$nodes": "Requirement",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "kind": "$attr.kind",
+   "priority": "$attr.priority",
+   "owners": {
+    "$out": "owned_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "serves": {
+    "$out": "serves",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "met_by": {
+    "$optional": {
+     "$in": "satisfies",
+     "$select": {
+      "id": "$id",
+      "name": "$label"
+     }
+    }
+   },
+   "realised_by": {
+    "$in": "realises",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "proved_by": {
+    "$in": "exercises",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "releases": {
+    "$out": "in_scope_of",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "excluded_from": {
+    "$out": "excluded_from",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "journeys": {
+  "$nodes": "UserJourney",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "trigger": "$attr.trigger",
+   "outcome": "$attr.outcome",
+   "for": {
+    "$out": "intended_for",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "steps": {
+    "$in": "part_of",
+    "$where": {
+     "type": "JourneyStep"
+    },
+    "$sort": "attr.position",
+    "$select": {
+     "id": "$id",
+     "name": "$label",
+     "action": "$attr.action",
+     "outcome": "$attr.outcome"
+    }
+   }
+  }
+ },
+ "features": {
+  "$nodes": "Feature",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "realises": {
+    "$out": "realises",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "releases": {
+    "$out": "in_scope_of",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "releases": {
+  "$nodes": "Release",
+  "$sort": "attr.target_date",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "date": "$attr.target_date",
+   "state": "$attr.state",
+   "horizon": "$attr.horizon",
+   "scope": {
+    "$in": "in_scope_of",
+    "$select": {
+     "id": "$id",
+     "name": "$label",
+     "type": "$type"
+    }
+   },
+   "blocked_by": {
+    "$in": "blocks",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "policies": {
+  "$nodes": "Policy",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "kind": "$attr.kind",
+   "authority": "$attr.authority",
+   "enforced_by": {
+    "$out": "enforced_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "applies_to": {
+    "$out": "applies_to",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "constraints": {
+  "$nodes": "Constraint",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "kind": "$attr.kind",
+   "imposed_by": "$attr.imposed_by",
+   "constrains": {
+    "$out": "constrains",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "assumptions": {
+  "$nodes": "Assumption",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "state": "$attr.state",
+   "checked": "$attr.checked_on"
+  }
+ },
+ "risks": {
+  "$nodes": "Risk",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "kind": "$attr.kind",
+   "state": "$attr.state",
+   "threatens": {
+    "$out": "threatens",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "mitigated_by": {
+    "$out": "mitigated_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "owners": {
+    "$out": "owned_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "decisions": {
+  "$nodes": "Decision",
+  "$sort": "-attr.decided_on",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "rationale": "$attr.rationale",
+   "date": "$attr.decided_on",
+   "by": {
+    "$out": "decided_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "about": {
+    "$out": "about",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "resolves": {
+    "$out": "resolves",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "questions": {
+  "$nodes": "OpenQuestion",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "state": "$attr.state",
+   "raised": "$attr.raised_on",
+   "about": {
+    "$out": "about",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "blocks": {
+    "$out": "blocks",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "scenarios": {
+  "$nodes": "Scenario",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "given": "$attr.given",
+   "when": "$attr.when",
+   "then": "$attr.then",
+   "kind": "$attr.kind",
+   "exercises": {
+    "$out": "exercises",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "terms": {
+  "$nodes": "Term",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "definition": "$attr.definition",
+   "summary": "$summary"
+  }
+ }
+}
