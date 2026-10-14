@@ -1,6 +1,6 @@
 {
   "name": "software-architecture",
-  "release": 6,
+  "release": 7,
   "domain": "software",
   "summary": "A product's architecture, pattern-neutral: its context and drivers, decisions with their alternatives, systems, components, interfaces, data stores and environments, each traced to the requirement it satisfies; each part handed to the design-pattern pack it follows, found among the project's packs.",
   "ontology": {
@@ -16,6 +16,11 @@
   "engine": ">=0.11.17",
   "maintainer": "Cynergis",
   "changelog": [
+    {
+      "release": 7,
+      "at": "2026-10-14",
+      "note": "architecture-build hands over to the binding after the parts and their patterns: where it runs."
+    },
     {
       "release": 6,
       "at": "2026-10-14",

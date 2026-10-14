@@ -115,7 +115,7 @@
       "name": "software-architecture",
       "source": "./packs/software-architecture",
       "description": "A product's architecture, pattern-neutral: its context and drivers, decisions with their alternatives, systems, components, interfaces, data stores and environments, each traced to the requirement it satisfies; each part handed to the design-pattern pack it follows, found among the project's packs.",
-      "version": "6.0.0",
+      "version": "7.0.0",
       "category": "software"
     },
     {

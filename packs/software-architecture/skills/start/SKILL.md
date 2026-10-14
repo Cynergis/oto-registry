@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: A product's architecture, pattern-neutral: its context and drivers, decisions with their alternatives, systems, components, interfaces, data stores and environments, each traced to the requirement it satisfies; each part handed to the design-pattern pack it follows, found among the project's packs. The pack 'software-architecture' (release 6) embeds the ontology 'software-architecture' (release 10), which declares Asset, System, Component, Interface, DataStore, Environment, Runbook, Repository. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: A product's architecture, pattern-neutral: its context and drivers, decisions with their alternatives, systems, components, interfaces, data stores and environments, each traced to the requirement it satisfies; each part handed to the design-pattern pack it follows, found among the project's packs. The pack 'software-architecture' (release 7) embeds the ontology 'software-architecture' (release 10), which declares Asset, System, Component, Interface, DataStore, Environment, Runbook, Repository. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Software architecture

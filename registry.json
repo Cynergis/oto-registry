@@ -162,7 +162,7 @@
     },
     {
       "name": "software-architecture",
-      "release": 6,
+      "release": 7,
       "summary": "A product's architecture, pattern-neutral: its context and drivers, decisions with their alternatives, systems, components, interfaces, data stores and environments, each traced to the requirement it satisfies; each part handed to the design-pattern pack it follows, found among the project's packs.",
       "path": "packs/software-architecture",
       "ontology": {
