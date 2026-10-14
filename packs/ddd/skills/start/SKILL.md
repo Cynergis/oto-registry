@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: Domain-driven design for the parts of a product that follow it: subdomains, bounded contexts and their map, event storming (events, commands, reactions, read models, external systems) and the tactical model (aggregates, entities, value objects, business rules, domain services), traced to the requirements and components of the architecture. The pack 'ddd' (release 1) embeds the ontology 'ddd' (release 1), which declares UseCase, Subdomain, BoundedContext, ContextRelationship, DomainEvent, Command, Reaction, ReadModel and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: Domain-driven design for the parts of a product that follow it: subdomains, bounded contexts and their map, event storming (events, commands, reactions, read models, external systems) and the tactical model (aggregates, entities, value objects, business rules, domain services), traced to the requirements and components of the architecture. The pack 'ddd' (release 2) embeds the ontology 'ddd' (release 1), which declares UseCase, Subdomain, BoundedContext, ContextRelationship, DomainEvent, Command, Reaction, ReadModel and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Domain-driven design
@@ -9,6 +9,9 @@ description: >-
 Domain-driven design for the parts of a product that follow it: subdomains, bounded contexts and their map, event storming (events, commands, reactions, read models, external systems) and the tactical model (aggregates, entities, value objects, business rules, domain services), traced to the requirements and components of the architecture.
 
 This skill comes with the `ddd` pack. The ontology is inside the pack, so nothing is fetched.
+
+**A design pattern of `software-architecture`**: for a part of a product designed with domain-driven design: its subdomains, bounded contexts, events and aggregates. In a project that composes `software-architecture`, such a part is modelled
+with this pack's **model-domain** skill (`/ddd:model-domain`); `oto status` lists the project's patterns.
 
 1. **Start a project from this pack.**
 
