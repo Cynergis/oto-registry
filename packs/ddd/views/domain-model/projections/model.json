@@ -1,0 +1,538 @@
+{
+ "subdomains": {
+  "$nodes": "Subdomain",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "kind": "$attr.kind",
+   "contexts": {
+    "$out": "realised_in",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "serves": {
+    "$out": "serves",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "contexts": {
+  "$nodes": "BoundedContext",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "style": "$attr.architecture_style",
+   "stack": "$attr.stack",
+   "readiness": "$attr.readiness",
+   "owners": {
+    "$out": "owned_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "carried_by": {
+    "$out": "deployed_as",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "subdomain": {
+    "$in": "realised_in",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "listens": {
+    "$out": "listens_to",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "use_cases": {
+    "$in": "part_of",
+    "$where": {
+     "type": "UseCase"
+    },
+    "$sort": "label",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "commands": {
+    "$in": "part_of",
+    "$where": {
+     "type": "Command"
+    },
+    "$sort": "label",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "events": {
+    "$in": "part_of",
+    "$where": {
+     "type": "DomainEvent"
+    },
+    "$sort": "label",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "aggregates": {
+    "$in": "part_of",
+    "$where": {
+     "type": "Aggregate"
+    },
+    "$sort": "label",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "read_models": {
+    "$in": "part_of",
+    "$where": {
+     "type": "ReadModel"
+    },
+    "$sort": "label",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "rules": {
+    "$in": "part_of",
+    "$where": {
+     "type": "BusinessRule"
+    },
+    "$sort": "label",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "services": {
+    "$in": "part_of",
+    "$where": {
+     "type": "DomainService"
+    },
+    "$sort": "label",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "integrations": {
+    "$in": "integrated_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "relationships": {
+  "$nodes": "ContextRelationship",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "pattern": "$attr.pattern",
+   "mechanism": "$attr.mechanism",
+   "between": {
+    "$out": "between",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "upstream": {
+    "$out": "upstream",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "use_cases": {
+  "$nodes": "UseCase",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "readiness": "$attr.readiness",
+   "by": {
+    "$out": "performed_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "context": {
+    "$out": "part_of",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "issues": {
+    "$out": "issues",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "meets": {
+    "$out": "satisfies",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "checked_by": {
+    "$in": "exercises",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "rules": {
+    "$out": "constrained_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "commands": {
+  "$nodes": "Command",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "trigger": "$attr.trigger_kind",
+   "schedule": "$attr.schedule",
+   "readiness": "$attr.readiness",
+   "triggered_by": {
+    "$out": "triggered_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "handled_by": {
+    "$out": "handled_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "raises": {
+    "$out": "raises",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "issued_by": {
+    "$in": "issues",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "informed_by": {
+    "$in": "informs",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "rules": {
+    "$out": "constrained_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "events": {
+  "$nodes": "DomainEvent",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "raised_by": {
+    "$in": "raises",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "emitted_by": {
+    "$out": "emitted_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "followed_by": {
+    "$out": "precedes",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "reactions": {
+    "$in": "reacts_to",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "listened_by": {
+    "$in": "listens_to",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "reactions": {
+  "$nodes": "Reaction",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "condition": "$attr.condition",
+   "to": {
+    "$out": "reacts_to",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "issues": {
+    "$out": "issues",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "read_models": {
+  "$nodes": "ReadModel",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "fields": "$attr.fields",
+   "from": {
+    "$out": "projected_from",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "consulted_by": {
+    "$out": "consulted_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "informs": {
+    "$out": "informs",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "aggregates": {
+  "$nodes": "Aggregate",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "readiness": "$attr.readiness",
+   "root": {
+    "$out": "root",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "made_of": {
+    "$out": "composed_of",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "refers_to": {
+    "$out": "references",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "rules": {
+    "$out": "constrained_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "handles": {
+    "$in": "handled_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "emits": {
+    "$in": "emitted_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "entities": {
+  "$nodes": [
+   "Entity",
+   "ValueObject"
+  ],
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "type": "$type",
+   "fields": "$attr.fields",
+   "made_of": {
+    "$out": "composed_of",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "root_of": {
+    "$in": "root",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "rules": {
+  "$nodes": "BusinessRule",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "kind": "$attr.kind",
+   "expression": "$attr.expression",
+   "applies_to": {
+    "$in": "constrained_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "policies": {
+    "$in": "applies_to",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "services": {
+  "$nodes": "DomainService",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "operates_on": {
+    "$out": "operates_on",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "rules": {
+    "$out": "constrained_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "external": {
+  "$nodes": "ExternalSystem",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "sends": {
+    "$out": "sends",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "receives": {
+    "$out": "receives",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "through": {
+    "$out": "integrated_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ }
+}

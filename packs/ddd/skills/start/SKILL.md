@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: Domain-driven design for the parts of a product that follow it: subdomains, bounded contexts and their map, event storming (events, commands, reactions, read models, external systems) and the tactical model (aggregates, entities, value objects, business rules, domain services), traced to the requirements and components of the architecture. The pack 'ddd' (release 5) embeds the ontology 'ddd' (release 1), which declares UseCase, Subdomain, BoundedContext, ContextRelationship, DomainEvent, Command, Reaction, ReadModel and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: Domain-driven design for the parts of a product that follow it: subdomains, bounded contexts and their map, event storming (events, commands, reactions, read models, external systems) and the tactical model (aggregates, entities, value objects, business rules, domain services), traced to the requirements and components of the architecture. The pack 'ddd' (release 6) embeds the ontology 'ddd' (release 1), which declares UseCase, Subdomain, BoundedContext, ContextRelationship, DomainEvent, Command, Reaction, ReadModel and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Domain-driven design
@@ -59,3 +59,7 @@ with this pack's **model-domain** skill (`/ddd:model-domain`); `oto status` list
 - **ValueObject**: A thing defined only by its values, immutable, carrying typed fields.
 - **BusinessRule**: An invariant, precondition, postcondition or constraint the domain enforces, cited by the aggregates, commands and use cases it binds. Distinct from the product's Policy, a rule imposed from outside; a policy may require a business rule.
 - **DomainService**: Domain logic that belongs to no single aggregate, stateless, operating on aggregates and values.
+
+## The views it ships
+
+- `domain-model`: `oto serve --http <port> --view domain-model`, or `oto build --target site --view domain-model`

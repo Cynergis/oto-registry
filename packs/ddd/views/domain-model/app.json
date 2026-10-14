@@ -1,0 +1,44 @@
+{
+ "name": "domain-model",
+ "title": "The domain model",
+ "place": "design",
+ "summary": "The parts of the application designed with domain-driven design: the areas of the business, how they work together, what people do, what happens, and the core business objects and their rules.",
+ "shows": [
+  "Subdomain",
+  "BoundedContext",
+  "ContextRelationship",
+  "UseCase",
+  "Command",
+  "DomainEvent",
+  "Reaction",
+  "ReadModel",
+  "Aggregate",
+  "Entity",
+  "ValueObject",
+  "BusinessRule",
+  "DomainService",
+  "ExternalSystem"
+ ],
+ "open": [
+  "DD"
+ ],
+ "entry": "index.html",
+ "engine": ">=0.11.25",
+ "data": [
+  {
+   "file": "data.js",
+   "format": "js-globals",
+   "globals": {
+    "__MODEL__": {
+     "$include": "projections/model.json"
+    }
+   }
+  }
+ ],
+ "requires": {
+  "classes": [
+   "BoundedContext",
+   "UseCase"
+  ]
+ }
+}

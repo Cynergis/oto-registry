@@ -72,3 +72,10 @@ produces for one context: everything that is part of it. Check the gates with `o
 <root> questions` (DD1–DD3 and DD22 answered, DD23 and DD24 empty, the open questions in DD18: for
 you), and tell the person in plain words what the design now settles, what is still open, and who
 can answer each open point.
+
+## Where people see it
+
+The model shows on the product's studio page **The domain model**, beside the architecture: the areas
+of the business, the parts of the model and how they work together, what people do, what happens,
+and the core business objects and their rules, with what is still open. Say so when a group is saved,
+in plain words.
