@@ -1,6 +1,6 @@
 {
   "name": "work",
-  "release": 3,
+  "release": 4,
   "domain": "product",
   "summary": "What is planned, by whom, blocked by what: work items and milestones over the product's requirements, features and components; what slips when a component is late, what is overdue, what waits on a decision.",
   "ontology": {
@@ -16,6 +16,11 @@
   "engine": ">=0.11.17",
   "maintainer": "Cynergis",
   "changelog": [
+    {
+      "release": 4,
+      "at": "2026-10-14",
+      "note": "feature-flow captures through OTO's capture-form (elicit is gone)."
+    },
     {
       "release": 3,
       "at": "2026-10-14",
