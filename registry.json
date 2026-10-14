@@ -161,8 +161,8 @@
     {
       "name": "pdf-to-template",
       "repo": "Cynergis/pdf-to-template-plugin",
-      "ref": "v0.4.2",
-      "version": "0.4.2",
+      "ref": "v0.4.3",
+      "version": "0.4.3",
       "description": "Turn a sample PDF into a data-driven HTML/CSS + Jinja2 template that renders new data to PDF; the report's definition is read from an OTO project (the report pack). Depends on oto and report.",
       "category": "reporting"
     }
