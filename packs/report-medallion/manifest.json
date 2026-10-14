@@ -1,6 +1,6 @@
 {
   "name": "report-medallion",
-  "release": 2,
+  "release": 3,
   "domain": "reporting",
   "summary": "The bridge between a report and the medallion pipeline that feeds it: a report's table is the gold dataset it reads, a column the field behind it, a report check backed by the pipeline rule it relies on.",
   "ontology": {
@@ -16,6 +16,11 @@
   "engine": ">=0.11.8",
   "maintainer": "Cynergis",
   "changelog": [
+    {
+      "release": 3,
+      "at": "2026-10-14",
+      "note": "Embeds medallion@3: the build plan tests."
+    },
     {
       "release": 2,
       "at": "2026-10-14",
