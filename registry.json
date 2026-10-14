@@ -71,7 +71,7 @@
     },
     {
       "name": "product",
-      "release": 3,
+      "release": 4,
       "summary": "A product's specification and its playbook: Atlas, who carries a product from an idea to a published knowledge base, the PRD captured section by section through the curate gates, and the PRD and architecture site read from the graph.",
       "path": "packs/product",
       "ontology": {

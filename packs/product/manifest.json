@@ -1,6 +1,6 @@
 {
   "name": "product",
-  "release": 3,
+  "release": 4,
   "domain": "product",
   "playbook": {
     "for": "a product, from an idea to a published knowledge base: its specification, its design, its build and its readers",
@@ -20,6 +20,11 @@
   "engine": ">=0.11.22",
   "maintainer": "Cynergis",
   "changelog": [
+    {
+      "release": 4,
+      "at": "2026-10-14",
+      "note": "capture-form's three choices named in words; no quoting the engine."
+    },
     {
       "release": 3,
       "at": "2026-10-14",

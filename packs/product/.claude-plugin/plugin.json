@@ -2,7 +2,7 @@
   "name": "product",
   "displayName": "Product (OTO pack)",
   "description": "A product's specification and its playbook: Atlas, who carries a product from an idea to a published knowledge base, the PRD captured section by section through the curate gates, and the PRD and architecture site read from the graph.",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "author": {
     "name": "Cynergis"
   },
