@@ -18,6 +18,14 @@ conventions. The architecture itself assumes no pattern; each part of it may fol
 product may use several. A pattern is a pack that says so itself; this skill finds the patterns, it
 never names them.
 
+## Talking with the person
+
+- **Plain, natural language, in the person's words.** Never say question numbers, ids, class or
+  field names, file names or commands, and never paste what a command printed.
+- **Technical details only when the person asks for them.** Never offer them, not even as a choice.
+- **The same clear shape every time:** say what we are about to do, ask a few questions at a time,
+  read back what you understood in plain sentences, confirm, then say what is next.
+
 ## Before the first question
 
 1. The project composes `software-architecture`: `oto status --project <root>` names it, and the
