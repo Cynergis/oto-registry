@@ -17,7 +17,7 @@
     },
     {
       "name": "ddd",
-      "release": 2,
+      "release": 3,
       "summary": "Domain-driven design for the parts of a product that follow it: subdomains, bounded contexts and their map, event storming (events, commands, reactions, read models, external systems) and the tactical model (aggregates, entities, value objects, business rules, domain services), traced to the requirements and components of the architecture.",
       "path": "packs/ddd",
       "ontology": {
@@ -44,7 +44,7 @@
     },
     {
       "name": "medallion",
-      "release": 3,
+      "release": 4,
       "summary": "Design a medallion data pipeline for a part of a product, source systems to bronze, silver and gold, checkpoint by checkpoint (D1-D9), and the batch flow that runs it, checked by the medallion rules at every capture.",
       "path": "packs/medallion",
       "ontology": {
@@ -71,14 +71,18 @@
     },
     {
       "name": "product",
-      "release": 1,
+      "release": 2,
       "summary": "A product's specification and its playbook: Atlas, who carries a product from an idea to a published knowledge base, the PRD captured section by section through the curate gates, and the PRD and architecture site read from the graph.",
       "path": "packs/product",
       "ontology": {
         "name": "product",
         "release": 9
       },
-      "domain": "product"
+      "domain": "product",
+      "playbook": {
+        "for": "a product, from an idea to a published knowledge base: its specification, its design, its build and its readers",
+        "skill": "atlas"
+      }
     },
     {
       "name": "product-report",
@@ -137,7 +141,7 @@
     },
     {
       "name": "work",
-      "release": 3,
+      "release": 4,
       "summary": "What is planned, by whom, blocked by what: work items and milestones over the product's requirements, features and components; what slips when a component is late, what is overdue, what waits on a decision.",
       "path": "packs/work",
       "ontology": {
@@ -151,8 +155,8 @@
     {
       "name": "oto",
       "repo": "Cynergis/oto",
-      "ref": "v0.11.19",
-      "version": "0.11.19"
+      "ref": "v0.11.21",
+      "version": "0.11.21"
     },
     {
       "name": "pdf-to-template",

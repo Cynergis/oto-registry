@@ -1,7 +1,11 @@
 {
   "name": "product",
-  "release": 1,
+  "release": 2,
   "domain": "product",
+  "playbook": {
+    "for": "a product, from an idea to a published knowledge base: its specification, its design, its build and its readers",
+    "skill": "atlas"
+  },
   "summary": "A product's specification and its playbook: Atlas, who carries a product from an idea to a published knowledge base, the PRD captured section by section through the curate gates, and the PRD and architecture site read from the graph.",
   "ontology": {
     "name": "product",
@@ -13,9 +17,14 @@
     "commit": null,
     "embedded_at": "2026-10-14"
   },
-  "engine": ">=0.11.17",
+  "engine": ">=0.11.21",
   "maintainer": "Cynergis",
   "changelog": [
+    {
+      "release": 2,
+      "at": "2026-10-14",
+      "note": "Atlas is the pack's playbook (for a product, from an idea to a published knowledge base) and leaves orientation to OTO's concierge; elicit is gone, every interview is OTO's capture-form with its [A]/[P]/[C] menu. Needs OTO 0.11.21."
+    },
     {
       "release": 1,
       "at": "2026-10-14",

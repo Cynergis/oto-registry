@@ -1,6 +1,6 @@
 {
   "name": "medallion",
-  "release": 3,
+  "release": 4,
   "domain": "data",
   "pattern": {
     "of": "software-architecture",
@@ -21,6 +21,11 @@
   "engine": ">=0.11.17",
   "maintainer": "Cynergis",
   "changelog": [
+    {
+      "release": 4,
+      "at": "2026-10-14",
+      "note": "design-pipeline captures through OTO's capture-form with its menu, and names the product pack, not a studio."
+    },
     {
       "release": 3,
       "at": "2026-10-14",

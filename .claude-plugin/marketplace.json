@@ -12,10 +12,10 @@
       "source": {
         "source": "github",
         "repo": "Cynergis/oto",
-        "ref": "v0.11.19"
+        "ref": "v0.11.21"
       },
       "description": "The OTO engine: the kg_* query tools as an MCP server, the generic skills, and the session hook. Every pack depends on it.",
-      "version": "0.11.19"
+      "version": "0.11.21"
     },
     {
       "name": "pdf-to-template",
@@ -39,7 +39,7 @@
       "name": "ddd",
       "source": "./packs/ddd",
       "description": "Domain-driven design for the parts of a product that follow it: subdomains, bounded contexts and their map, event storming (events, commands, reactions, read models, external systems) and the tactical model (aggregates, entities, value objects, business rules, domain services), traced to the requirements and components of the architecture.",
-      "version": "2.0.0",
+      "version": "3.0.0",
       "category": "software"
     },
     {
@@ -53,7 +53,7 @@
       "name": "medallion",
       "source": "./packs/medallion",
       "description": "Design a medallion data pipeline for a part of a product, source systems to bronze, silver and gold, checkpoint by checkpoint (D1-D9), and the batch flow that runs it, checked by the medallion rules at every capture.",
-      "version": "3.0.0",
+      "version": "4.0.0",
       "category": "data"
     },
     {
@@ -67,7 +67,7 @@
       "name": "product",
       "source": "./packs/product",
       "description": "A product's specification and its playbook: Atlas, who carries a product from an idea to a published knowledge base, the PRD captured section by section through the curate gates, and the PRD and architecture site read from the graph.",
-      "version": "1.0.0",
+      "version": "2.0.0",
       "category": "product"
     },
     {
@@ -108,7 +108,7 @@
       "name": "work",
       "source": "./packs/work",
       "description": "What is planned, by whom, blocked by what: work items and milestones over the product's requirements, features and components; what slips when a component is late, what is overdue, what waits on a decision.",
-      "version": "3.0.0",
+      "version": "4.0.0",
       "category": "product"
     }
   ]

@@ -2,7 +2,7 @@
 name: prd-build
 description: >
   Build a product's specification (the PRD) as a knowledge base: captures it against the `product`
-  pack and the product type's pack (`product-report`, …) through the elicit skill, section by
+  pack and the product type's pack (`product-report`, …) through OTO's capture-form, section by
   section, each confirmed section contributed through the curate gates. Guided interview or
   structure-from-notes. Use when the user wants to create or extend a PRD, capture requirements,
   personas, journeys, use cases, policies, governance, risk, scope or success metrics. Writing a
@@ -19,7 +19,8 @@ under what rules, why. It is captured against packs, not against a form of this 
    design (`oto init --empty --pack "${CLAUDE_PLUGIN_ROOT}" --ontology
    product-report,software-architecture,flow`, or Atlas's scene 1). If the type's pack does not
    exist yet, capture against `product` alone and tell the person what a type pack would add.
-2. Run the **elicit** skill with the schema of that project. Its sections are the askers the
+2. Run OTO's **capture-form** skill with the schema of that project, its [A]/[P]/[C] menu at every
+   confirmation. Its sections are the askers the
    packs name — the sponsor, the product owner, the builder, compliance, the report product
    owner, the data team — and its items are personas, journeys, requirements, policies, decisions,
    risks, objectives, criteria, terms, and the obligations typed by what they govern.
@@ -29,3 +30,9 @@ under what rules, why. It is captured against packs, not against a form of this 
 
 What this skill no longer does: keep its own section list or write `window.__PRD__`. The site's
 `data.js` is a projection of the graph (prd-site).
+
+## What a specification holds
+
+- **No implementation leakage**: what the product must do, never how it is built; the design is
+  architecture-build's.
+- **Measurable**: a criterion has a metric, a baseline, a target, a date; "fast" is not a value.

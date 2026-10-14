@@ -36,10 +36,10 @@ Restate the feature in one sentence, then ask the graph:
 - **Scope** — `kg_ask PR6 RELEASE=<release>`: in scope, excluded, or unplaced.
 
 Produce a short **Idea Assessment**: verdict (proceed / refine / reject), reasons, risks, and the
-requirements it would add or change — each as a capture item, ready for the **elicit** skill.
+requirements it would add or change — each as a capture item, ready for OTO's **capture-form** skill.
 
 > 🛑 **GATE 1.** Present the Idea Assessment and STOP. Wait for the person to accept, refine, or
-> reject. If they accept, capture the new or changed requirements (**elicit**, against
+> reject. If they accept, capture the new or changed requirements (**capture-form**, against
 > `product` and the type's pack) before Phase 2.
 
 ## Phase 2 — Impact on the design and the flow

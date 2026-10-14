@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: What is planned, by whom, blocked by what: work items and milestones over the product's requirements, features and components; what slips when a component is late, what is overdue, what waits on a decision. The pack 'work' (release 3) embeds the ontology 'work' (release 1), which declares WorkItem, Milestone. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: What is planned, by whom, blocked by what: work items and milestones over the product's requirements, features and components; what slips when a component is late, what is overdue, what waits on a decision. The pack 'work' (release 4) embeds the ontology 'work' (release 1), which declares WorkItem, Milestone. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Work
