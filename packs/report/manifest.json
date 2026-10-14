@@ -1,6 +1,6 @@
 {
   "name": "report",
-  "release": 2,
+  "release": 3,
   "summary": "A report type: its meaning per locale, its sections and fields, the rules that apply, the column that supplies each value, the runs and approvals that produced its template, its operating contract, its lifecycle and the accepted history of its definition.",
   "ontology": {
     "name": "report",
@@ -10,11 +10,16 @@
     "ref": null,
     "path": "oto/report",
     "commit": "7ec9a4e",
-    "embedded_at": "2026-10-13"
+    "embedded_at": "2026-10-14"
   },
   "engine": ">=0.11.2",
   "maintainer": "Cynergis",
   "changelog": [
+    {
+      "release": 3,
+      "at": "2026-10-14",
+      "note": "Every conversation in plain language: no codes, ids or engine output, technical details only when asked (engine 0.11.22). The sample's source document is fictional."
+    },
     {
       "release": 2,
       "at": "2026-10-13",

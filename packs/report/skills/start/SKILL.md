@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: A report type: its meaning per locale, its sections and fields, the rules that apply, the column that supplies each value, the runs and approvals that produced its template, its operating contract, its lifecycle and the accepted history of its definition. The pack 'report' (release 2) embeds the ontology 'report' (release 5), which declares ReportType, StatusChange, Parameter, UniverseQuery, Section, Field, FieldMeaning, Rule and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: A report type: its meaning per locale, its sections and fields, the rules that apply, the column that supplies each value, the runs and approvals that produced its template, its operating contract, its lifecycle and the accepted history of its definition. The pack 'report' (release 3) embeds the ontology 'report' (release 5), which declares ReportType, StatusChange, Parameter, UniverseQuery, Section, Field, FieldMeaning, Rule and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Report domain
@@ -9,6 +9,14 @@ description: >-
 A report type: its meaning per locale, its sections and fields, the rules that apply, the column that supplies each value, the runs and approvals that produced its template, its operating contract, its lifecycle and the accepted history of its definition.
 
 This skill comes with the `report` pack. The ontology is inside the pack, so nothing is fetched.
+
+## Talking with the person
+
+- **Plain, natural language, in the person's words.** Never say question numbers, ids, class or
+  field names, file names or commands, and never paste what a command printed.
+- **Technical details only when the person asks for them.** Never offer them, not even as a choice.
+- **The same clear shape every time:** say what we are about to do, ask a few questions at a time,
+  read back what you understood in plain sentences, confirm, then say what is next.
 
 1. **Start a project from this pack.**
 

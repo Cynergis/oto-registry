@@ -88,7 +88,7 @@
       "name": "report",
       "source": "./packs/report",
       "description": "A report type: its meaning per locale, its sections and fields, the rules that apply, the column that supplies each value, the runs and approvals that produced its template, its operating contract, its lifecycle and the accepted history of its definition.",
-      "version": "2.0.0"
+      "version": "3.0.0"
     },
     {
       "name": "report-medallion",
