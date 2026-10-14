@@ -97,8 +97,8 @@ choice nobody has settled) and who can answer it; never guess it. On top of it:
 
 - The scenarios validated at Gate 3 are acceptance criteria. Never weaken one to make a test
   pass; if a failure shows the feature and what was accepted disagree, STOP and say so.
-- When every step is implemented, the use case's readiness moves on; regenerate the site with
-  **prd-site**.
+- When every step is implemented, the use case's readiness moves on; rebuild the product's studio
+  (`oto build --target site`) so its pages say so.
 
 ## Definition of done
 
