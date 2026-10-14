@@ -1,0 +1,39 @@
+{
+ "name": "where-it-runs",
+ "title": "Where it runs",
+ "place": "runs",
+ "summary": "The cloud and its accounts, each environment, what each part runs on and is built with, its secrets and pipelines, and who decided each choice.",
+ "shows": [
+  "Environment",
+  "Platform",
+  "Account",
+  "PlatformService",
+  "Technology",
+  "Choice",
+  "SecretRef",
+  "Pipeline"
+ ],
+ "open": [
+  "PL"
+ ],
+ "entry": "index.html",
+ "engine": ">=0.11.25",
+ "data": [
+  {
+   "file": "data.js",
+   "format": "js-globals",
+   "globals": {
+    "__RUNS__": {
+     "$include": "projections/runs.json"
+    }
+   }
+  }
+ ],
+ "requires": {
+  "classes": [
+   "Environment",
+   "Platform",
+   "Choice"
+  ]
+ }
+}

@@ -97,6 +97,12 @@ never force.
 A warning is something still open: a decision with no alternatives recorded, a secret kept nowhere.
 Say it, with who can answer it, and go on.
 
+## Where people see it
+
+The binding shows on the product's studio page **Where it runs**: the platform and accounts, each
+environment, what each part runs on and is built with, the secrets by name and place, the pipelines,
+who decided each choice, and what is still missing. Say so when a topic is saved, in plain words.
+
 ## Guardrails
 
 - Never invent an account id, a region, a version or a URL; what nobody knows stays open, and the

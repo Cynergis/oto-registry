@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: The platform binding of a product's architecture: where each part runs (platforms, accounts, environments with their region, console, logs and provisioning), what it runs on and is built with (managed services, technologies at their versions), its secrets by where they are kept, the pipelines that deploy it, and who decides each choice: a named person, or the builder within limits. Briefs stop an implementing agent that lacks any of it. The pack 'platform' (release 1) embeds the ontology 'platform' (release 1), which declares Platform, Account, PlatformService, Technology, Choice, SecretRef, Pipeline. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: The platform binding of a product's architecture: where each part runs (platforms, accounts, environments with their region, console, logs and provisioning), what it runs on and is built with (managed services, technologies at their versions), its secrets by where they are kept, the pipelines that deploy it, and who decides each choice: a named person, or the builder within limits. Briefs stop an implementing agent that lacks any of it. The pack 'platform' (release 2) embeds the ontology 'platform' (release 1), which declares Platform, Account, PlatformService, Technology, Choice, SecretRef, Pipeline. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Platform binding
@@ -52,6 +52,10 @@ with this pack's **bind-platform** skill (`/platform:bind-platform`); `oto statu
 - **Choice**: A choice the design needs made before it can be built: the cloud, a region, a service, a framework. Either a named person decides it, or it is left to the builder within limits: the options allowed, and the constraints and decisions that bound it.
 - **SecretRef**: A secret a component needs, recorded by its name and where it is kept, never by its value.
 - **Pipeline**: What builds and deploys a component or a store to its environments: a CI/CD pipeline, at a place people can open.
+
+## The views it ships
+
+- `where-it-runs`: `oto serve --http <port> --view where-it-runs`, or `oto build --target site --view where-it-runs`
 
 ## The guide
 
