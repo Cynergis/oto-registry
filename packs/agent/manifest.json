@@ -1,6 +1,6 @@
 {
   "name": "agent",
-  "release": 2,
+  "release": 3,
   "domain": "software",
   "pattern": {
     "of": "software-architecture",
@@ -21,6 +21,11 @@
   "engine": ">=0.11.23",
   "maintainer": "Cynergis",
   "changelog": [
+    {
+      "release": 3,
+      "at": "2026-10-14",
+      "note": "The studio's page: How people work with it."
+    },
     {
       "release": 2,
       "at": "2026-10-14",

@@ -1,0 +1,38 @@
+{
+ "name": "agent",
+ "title": "How people work with it",
+ "place": "people",
+ "summary": "The agents people give work to: the jobs they hand them, the tools each can use and what it may change, the limits it keeps, and how we know it works.",
+ "shows": [
+  "Agent",
+  "Job",
+  "Tool",
+  "Guardrail",
+  "KnowledgeSource",
+  "Evaluation",
+  "ConversationStyle"
+ ],
+ "open": [
+  "AG"
+ ],
+ "entry": "index.html",
+ "engine": ">=0.11.25",
+ "data": [
+  {
+   "file": "data.js",
+   "format": "js-globals",
+   "globals": {
+    "__AGENT__": {
+     "$include": "projections/agent.json"
+    }
+   }
+  }
+ ],
+ "requires": {
+  "classes": [
+   "Agent",
+   "Job",
+   "Tool"
+  ]
+ }
+}

@@ -94,6 +94,12 @@ A warning is something still open: a confirmation with nobody named to give it, 
 shown without being asked, a ready job with an open question. Say it, with who can answer it, and
 go on.
 
+## Where people see it
+
+The agent shows on the product's studio page **How people work with it**: its jobs, its tools and
+what they change, the limits it keeps and who confirms, what it reads, and its test conversations,
+with what is still open. Say so when a topic is saved, in plain words.
+
 ## Readiness and the builder's brief
 
 `readiness` (draft, ready, built) is declared on the agent and on each job. A job is ready when it

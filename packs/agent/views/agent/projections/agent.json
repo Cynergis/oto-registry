@@ -1,0 +1,253 @@
+{
+ "agents": {
+  "$nodes": "Agent",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "packaging": "$attr.packaging",
+   "distribution": "$attr.distribution",
+   "readiness": "$attr.readiness",
+   "works_for": {
+    "$out": "works_for",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "carried_by": {
+    "$out": "deployed_as",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "owners": {
+    "$out": "owned_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "depends_on": {
+    "$out": "depends_on",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "style": {
+    "$out": "speaks_in",
+    "$select": {
+     "id": "$id",
+     "name": "$label",
+     "voice": "$attr.voice",
+     "shape": "$attr.shape",
+     "details": "$attr.technical_details"
+    }
+   },
+   "tools": {
+    "$out": "equipped_with",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "reaches": {
+    "$out": "reaches",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "protected_by": {
+    "$in": "protects",
+    "$select": {
+     "id": "$id",
+     "name": "$label",
+     "kind": "$attr.kind",
+     "rule": "$attr.rule"
+    }
+   },
+   "jobs": {
+    "$in": "part_of",
+    "$where": {
+     "type": "Job"
+    },
+    "$sort": "label",
+    "$select": {
+     "id": "$id",
+     "name": "$label",
+     "summary": "$summary"
+    }
+   }
+  }
+ },
+ "jobs": {
+  "$nodes": "Job",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "when": "$attr.when_to_use",
+   "produces": "$attr.produces",
+   "autonomy": "$attr.autonomy",
+   "readiness": "$attr.readiness",
+   "agent": {
+    "$out": "part_of",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "requested_by": {
+    "$out": "requested_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "meets": {
+    "$out": "satisfies",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "calls": {
+    "$out": "calls",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "draws_on": {
+    "$out": "draws_on",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "hands_off_to": {
+    "$out": "hands_off_to",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "protected_by": {
+    "$in": "protects",
+    "$select": {
+     "id": "$id",
+     "name": "$label",
+     "kind": "$attr.kind",
+     "rule": "$attr.rule"
+    }
+   },
+   "tests": {
+    "$in": "proves",
+    "$select": {
+     "id": "$id",
+     "name": "$label",
+     "request": "$attr.request",
+     "expected": "$attr.expected",
+     "must_not": "$attr.must_not",
+     "result": "$attr.result"
+    }
+   }
+  }
+ },
+ "tools": {
+  "$nodes": "Tool",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "effect": "$attr.effect",
+   "reversible": "$attr.reversible",
+   "reaches": {
+    "$out": "reaches",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "used_by": {
+    "$in": "calls",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "protected_by": {
+    "$in": "protects",
+    "$select": {
+     "id": "$id",
+     "name": "$label",
+     "kind": "$attr.kind",
+     "rule": "$attr.rule"
+    }
+   }
+  }
+ },
+ "guardrails": {
+  "$nodes": "Guardrail",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "kind": "$attr.kind",
+   "rule": "$attr.rule",
+   "protects": {
+    "$out": "protects",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "confirmed_by": {
+    "$out": "confirmed_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "upholds": {
+    "$out": "upholds",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "sources": {
+  "$nodes": "KnowledgeSource",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "kind": "$attr.kind",
+   "freshness": "$attr.freshness",
+   "held_in": {
+    "$out": "held_in",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "read_by": {
+    "$in": "draws_on",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ }
+}
