@@ -60,17 +60,6 @@
       "domain": "organization"
     },
     {
-      "name": "prd-architecture-studio",
-      "release": 4,
-      "summary": "Atlas, the Lead Product Engineer, and the studio's skills: a product's specification and design captured against OTO packs through the curate gates, the build with the brief in hand, and the navigable PRD and architecture site.",
-      "path": "packs/prd-architecture-studio",
-      "ontology": {
-        "name": "software-architecture",
-        "release": 10
-      },
-      "domain": "product"
-    },
-    {
       "name": "product-report",
       "release": 2,
       "summary": "A report product's specification: which report types it must produce, where their data must come from, what layout and fidelity, which channels, which rules and sign-offs, what a run must guarantee, what must stay answerable afterwards, what identifies a document, who owns what, and when a report type is ready.",
