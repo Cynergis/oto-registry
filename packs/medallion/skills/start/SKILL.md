@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: Design a medallion data pipeline for a part of a product, source systems to bronze, silver and gold, checkpoint by checkpoint (D1-D9), and the batch flow that runs it, checked by the medallion rules at every capture. The pack 'medallion' (release 2) embeds the ontology 'medallion' (release 2), which declares SourceSystem, SourceTable, SourceColumn, CopyPolicy, TermMapping, CodeSet, CodeMapping, ConformedEntity and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: Design a medallion data pipeline for a part of a product, source systems to bronze, silver and gold, checkpoint by checkpoint (D1-D9), and the batch flow that runs it, checked by the medallion rules at every capture. The pack 'medallion' (release 3) embeds the ontology 'medallion' (release 2), which declares SourceSystem, SourceTable, SourceColumn, CopyPolicy, TermMapping, CodeSet, CodeMapping, ConformedEntity and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Medallion pipeline
@@ -9,6 +9,9 @@ description: >-
 Design a medallion data pipeline for a part of a product, source systems to bronze, silver and gold, checkpoint by checkpoint (D1-D9), and the batch flow that runs it, checked by the medallion rules at every capture.
 
 This skill comes with the `medallion` pack. The ontology is inside the pack, so nothing is fetched.
+
+**A design pattern of `software-architecture`**: for a part of a product that is a medallion data pipeline: its sources, its bronze, silver and gold layers, its rules and the batch flow that runs them. In a project that composes `software-architecture`, such a part is modelled
+with this pack's **design-pipeline** skill (`/medallion:design-pipeline`); `oto status` lists the project's patterns.
 
 1. **Start a project from this pack.**
 

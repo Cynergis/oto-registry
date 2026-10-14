@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: What is planned, by whom, blocked by what: work items and milestones over the product's requirements, features and components; what slips when a component is late, what is overdue, what waits on a decision. The pack 'work' (release 2) embeds the ontology 'work' (release 1), which declares WorkItem, Milestone. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: What is planned, by whom, blocked by what: work items and milestones over the product's requirements, features and components; what slips when a component is late, what is overdue, what waits on a decision. The pack 'work' (release 3) embeds the ontology 'work' (release 1), which declares WorkItem, Milestone. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Work
@@ -22,11 +22,15 @@ This skill comes with the `work` pack. The ontology is inside the pack, so nothi
    `oto ontology diff` shows what changed. Add `--ontology <name>,...` to merge other ontologies
    with the pack's (a product type, the flow).
 
-2. **Run the ontology-interview skill** to fit the vocabulary to the documents at hand.
+2. **Go on with this pack's skills**, written for this domain:
 
-3. **Hand over** to the build-knowledge-base skill for the documents, and to the query-knowledge
-   skill for questions. The engine plugin `oto` comes with this pack: the `kg_*` tools and the
-   generic skills are available once it is installed.
+   - **work:feature-flow**: Governed, gated process for adding or changing a product feature, read from the knowledge base.
+
+3. **For anything else, the engine's skills**: capture-form to answer the vocabulary's
+   questions in an interview, ontology-interview to fit the vocabulary to the documents at hand,
+   build-knowledge-base for a folder of documents, query-knowledge for questions. The engine
+   plugin `oto` comes with this pack: the `kg_*` tools and the generic skills are available once
+   it is installed.
 
 ## What the ontology declares
 

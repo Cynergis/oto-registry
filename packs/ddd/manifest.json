@@ -1,7 +1,12 @@
 {
   "name": "ddd",
-  "release": 1,
+  "release": 2,
   "domain": "software",
+  "pattern": {
+    "of": "software-architecture",
+    "for": "a part of a product designed with domain-driven design: its subdomains, bounded contexts, events and aggregates",
+    "skill": "model-domain"
+  },
   "summary": "Domain-driven design for the parts of a product that follow it: subdomains, bounded contexts and their map, event storming (events, commands, reactions, read models, external systems) and the tactical model (aggregates, entities, value objects, business rules, domain services), traced to the requirements and components of the architecture.",
   "ontology": {
     "name": "ddd",
@@ -11,11 +16,16 @@
     "ref": null,
     "path": null,
     "commit": null,
-    "embedded_at": "2026-10-13"
+    "embedded_at": "2026-10-14"
   },
-  "engine": ">=0.11.2",
+  "engine": ">=0.11.17",
   "maintainer": "Cynergis",
   "changelog": [
+    {
+      "release": 2,
+      "at": "2026-10-14",
+      "note": "ddd declares itself a pattern of software-architecture (model-domain). Needs OTO 0.11.17."
+    },
     {
       "release": 1,
       "at": "2026-10-13",
