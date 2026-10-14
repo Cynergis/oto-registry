@@ -2,7 +2,7 @@
   "name": "ddd",
   "displayName": "Domain-driven design (OTO pack)",
   "description": "Domain-driven design for the parts of a product that follow it: subdomains, bounded contexts and their map, event storming (events, commands, reactions, read models, external systems) and the tactical model (aggregates, entities, value objects, business rules, domain services), traced to the requirements and components of the architecture.",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "author": {
     "name": "Cynergis"
   },

@@ -37,8 +37,8 @@ that follows DDD. The `ddd` ontology decides what to ask; its questions (DD1–D
 
 ## How each group is captured
 
-Run OTO's **capture-form** skill on the project's `capture.json`, with its menu at every
-confirmation ([A] elicit, [P] perspectives, [C] continue). Every confirmed group goes through
+Run OTO's **capture-form** skill on the project's `capture.json`, with its three choices at every read-back (save it and move on, dig deeper, see it from
+someone else's side). Every confirmed group goes through
 the gates as a capture file with `scope` the product. What the product holds is referenced, never
 captured twice: personas, roles, requirements, policies, scenarios, terms, decisions, open
 questions.
