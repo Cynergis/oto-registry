@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: A product's specification and its playbook: Atlas, who carries a product from an idea to a published knowledge base, the PRD captured section by section through the curate gates, and the PRD and architecture site read from the graph. The pack 'product' (release 1) embeds the ontology 'product' (release 9), which declares Product, Persona, ValueProposition, SuccessCriterion, Requirement, Release, Feature, UserJourney and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: A product's specification and its playbook: Atlas, who carries a product from an idea to a published knowledge base, the PRD captured section by section through the curate gates, and the PRD and architecture site read from the graph. The pack 'product' (release 2) embeds the ontology 'product' (release 9), which declares Product, Persona, ValueProposition, SuccessCriterion, Requirement, Release, Feature, UserJourney and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Product
@@ -9,6 +9,9 @@ description: >-
 A product's specification and its playbook: Atlas, who carries a product from an idea to a published knowledge base, the PRD captured section by section through the curate gates, and the PRD and architecture site read from the graph.
 
 This skill comes with the `product` pack. The ontology is inside the pack, so nothing is fetched.
+
+**A playbook**: for a product, from an idea to a published knowledge base: its specification, its design, its build and its readers. This pack's **atlas** skill (`/product:atlas`) leads it from start to end; OTO's
+concierge offers it, and says where the project is at any point.
 
 1. **Start a project from this pack.**
 
@@ -24,8 +27,7 @@ This skill comes with the `product` pack. The ontology is inside the pack, so no
 
 2. **Go on with this pack's skills**, written for this domain:
 
-   - **product:atlas**: Atlas, the Lead Product Engineer.
-   - **product:elicit**: The studio's elicitation.
+   - **product:atlas**: Atlas, the Lead Product Engineer, the product pack's playbook.
    - **product:prd-build**: Build a product's specification (the PRD) as a knowledge base.
    - **product:prd-site**: Serve or publish the navigable PRD + Architecture site as a view of the knowledge base.
 

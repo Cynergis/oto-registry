@@ -12,7 +12,7 @@ The site is an OTO view this pack ships, `prd-site`, installed in the project's 
 project declares this pack (it is listed on the project's home page with the other packs' views): `app.json` declares the data file
 it reads (`data.js`: `window.__PRD__`, `window.__ARCH__`) and the projections that fill it from the
 knowledge base. There is no data file to author: what the graph holds is what the site shows, dated;
-a section the graph cannot fill is empty until a section is captured (**elicit**).
+a section the graph cannot fill is empty until a section is captured (**prd-build**, OTO's **capture-form**).
 
 ## Steps
 
