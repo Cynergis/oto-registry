@@ -1,6 +1,6 @@
 {
   "name": "ddd",
-  "release": 2,
+  "release": 3,
   "domain": "software",
   "pattern": {
     "of": "software-architecture",
@@ -21,6 +21,11 @@
   "engine": ">=0.11.17",
   "maintainer": "Cynergis",
   "changelog": [
+    {
+      "release": 3,
+      "at": "2026-10-14",
+      "note": "model-domain captures through OTO's capture-form with its menu, and is handed a part by the software-architecture pack."
+    },
     {
       "release": 2,
       "at": "2026-10-14",

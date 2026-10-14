@@ -7,7 +7,8 @@ description: >-
   entities, value objects, business rules, domain services), each traced to the requirement it
   satisfies and the component it is deployed as, through the curate gates. Use when a part of the
   product is designed with DDD: "model the domain", "find the bounded contexts", "event storming",
-  "design the aggregates", or when a studio's architecture-build reaches a part that follows DDD.
+  "design the aggregates", or when the software-architecture pack's architecture-build hands it a
+  part that follows DDD.
 ---
 
 # Model a part's domain with DDD
@@ -19,17 +20,17 @@ that follows DDD. The `ddd` ontology decides what to ask; its questions (DD1–D
 ## Before the first question
 
 1. The project composes `ddd`: `oto status --project <root>` names it, and the vocabulary holds
-   `BoundedContext`. The pattern is chosen when the project starts (`oto init --pack <studio>
-   --ontology product-<type>,ddd,flow`, or `--ontology ddd` beside the others); a project started
-   without it cannot add it afterwards.
+   `BoundedContext`. The pattern is chosen when the project starts (`oto init --pack product
+   --ontology product-<type>,software-architecture,ddd,flow`, or `--ontology ddd` beside the others);
+   a project started without it cannot add it afterwards.
 2. The architecture comes first: the systems and components of `software-architecture`. A bounded
    context is `deployed_as` a component, so the component must exist.
 3. Which part: name the system or components this model covers, and keep to them.
 
 ## How each group is captured
 
-Run OTO's **capture-form** skill on the project's `capture.json` (inside the PRD & Architecture
-Studio, its **elicit** skill, which adds the studio's menu). Every confirmed group goes through
+Run OTO's **capture-form** skill on the project's `capture.json`, with its menu at every
+confirmation ([A] elicit, [P] perspectives, [C] continue). Every confirmed group goes through
 the gates as a capture file with `scope` the product. What the product holds is referenced, never
 captured twice: personas, roles, requirements, policies, scenarios, terms, decisions, open
 questions.
