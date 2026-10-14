@@ -86,7 +86,14 @@ case>` shows what exists. Present them for SME review; capture them when validat
 ## Phase 4 — Test-first implementation, with the brief
 
 Only after Gate 3. For every step the feature adds or changes, run **flow:implement-step** (the
-flow pack): brief first, tests before code, BLOCKED stops the work. On top of it:
+flow pack): brief first, tests before code, BLOCKED stops the work. Where it runs is a brief too:
+before writing a component's code, deploying it, or testing the product end to end in an
+environment, ask the project's brief for it when the project has one (`kg_brief implement-component
+COMPONENT=<component>`, `deploy-component COMPONENT=<component>`, `test-end-to-end
+ENVIRONMENT=<environment>`; without its parameter, a brief gives the table of every component or
+environment, ready or blocked and on what). BLOCKED stops the work:
+tell the person in plain words what is missing (an account, a region, a version, a secret's place, a
+choice nobody has settled) and who can answer it; never guess it. On top of it:
 
 - The scenarios validated at Gate 3 are acceptance criteria. Never weaken one to make a test
   pass; if a failure shows the feature and what was accepted disagree, STOP and say so.

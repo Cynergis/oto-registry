@@ -1,6 +1,6 @@
 {
   "name": "agent",
-  "release": 1,
+  "release": 2,
   "domain": "software",
   "pattern": {
     "of": "software-architecture",
@@ -21,6 +21,11 @@
   "engine": ">=0.11.23",
   "maintainer": "Cynergis",
   "changelog": [
+    {
+      "release": 2,
+      "at": "2026-10-14",
+      "note": "The start skill carries the pattern note."
+    },
     {
       "release": 1,
       "at": "2026-10-14",

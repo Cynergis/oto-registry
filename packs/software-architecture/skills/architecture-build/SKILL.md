@@ -5,7 +5,8 @@ description: >-
   decisions with their alternatives (ADRs), systems, components, interfaces, data stores and
   environments, each traced to the requirement it satisfies, through the curate gates; then hand
   each part to the design-pattern pack it follows, found among the project's packs (`oto status`)
-  rather than named here. Use when the user wants to design or extend the architecture, record an
+  rather than named here; then where it runs, with the binding found the same way. Use when the
+  user wants to design or extend the architecture, record an
   ADR as the decision is made, decide which pattern a part follows, or model a part's domain or
   pipeline. Writing up an ADR or a design brief from decisions already in the graph is OTO's spec.
 ---
@@ -73,6 +74,20 @@ part, called `/<pack>:<skill>`). `oto status` marks them `(pattern of software-a
   project starts; say so plainly rather than capturing against a vocabulary the project lacks.
 - A pattern listed `NOT INSTALLED` (the project declares it, this machine lacks it): give its install
   line; until then, capture against its form with capture-form and report its gap questions.
+
+## 4. Where it runs
+
+The design stays platform-neutral; where it runs and what it is built with is a **binding**, a pack
+that says so itself. `oto status --project <root> --json` lists under `packs` each plugin with a
+`binding`: `of` (here `software-architecture`), `for` (what it records, in a phrase) and `skill`
+(called `/<pack>:<skill>`); `oto status` marks it `(binding of software-architecture)`.
+
+- Once the parts and their patterns are captured, say what is next in plain words ("Now: where it
+  runs, and who decides what") and hand over to the binding's `skill`.
+- A project that composes no binding: `oto pack list --bindings` shows the ones the registries offer.
+  Its ontology must be in the project's vocabulary, which is chosen when the project starts; say so
+  plainly. Until then, nothing records where the product runs, and an implementing agent cannot
+  deploy or test it end to end: say that too.
 
 ## What this skill does not do
 

@@ -6,7 +6,7 @@
   "packs": [
     {
       "name": "agent",
-      "release": 1,
+      "release": 2,
       "summary": "An agent people give work to, as a part of a product: the jobs they hand it and the requirement each meets, its tools and what each reads, changes or sends, what it draws on, its guardrails and who confirms, how it talks, where it hands work over, the test conversations that prove each job, and how it is packaged.",
       "path": "packs/agent",
       "ontology": {
@@ -86,8 +86,24 @@
       "domain": "organization"
     },
     {
+      "name": "platform",
+      "release": 1,
+      "summary": "The platform binding of a product's architecture: where each part runs (platforms, accounts, environments with their region, console, logs and provisioning), what it runs on and is built with (managed services, technologies at their versions), its secrets by where they are kept, the pipelines that deploy it, and who decides each choice: a named person, or the builder within limits. Briefs stop an implementing agent that lacks any of it.",
+      "path": "packs/platform",
+      "ontology": {
+        "name": "platform",
+        "release": 1
+      },
+      "domain": "software",
+      "binding": {
+        "of": "software-architecture",
+        "for": "where each part of the product runs and what it is built with: the cloud and its accounts, environments, services, the stack with versions, secrets and pipelines, and who decides each choice",
+        "skill": "bind-platform"
+      }
+    },
+    {
       "name": "product",
-      "release": 5,
+      "release": 6,
       "summary": "A product's specification and its playbook: Atlas, who carries a product from an idea to a published knowledge base, the PRD captured section by section through the curate gates, and the PRD and architecture site read from the graph.",
       "path": "packs/product",
       "ontology": {
@@ -146,7 +162,7 @@
     },
     {
       "name": "software-architecture",
-      "release": 6,
+      "release": 7,
       "summary": "A product's architecture, pattern-neutral: its context and drivers, decisions with their alternatives, systems, components, interfaces, data stores and environments, each traced to the requirement it satisfies; each part handed to the design-pattern pack it follows, found among the project's packs.",
       "path": "packs/software-architecture",
       "ontology": {
@@ -157,7 +173,7 @@
     },
     {
       "name": "work",
-      "release": 5,
+      "release": 6,
       "summary": "What is planned, by whom, blocked by what: work items and milestones over the product's requirements, features and components; what slips when a component is late, what is overdue, what waits on a decision.",
       "path": "packs/work",
       "ontology": {
@@ -171,8 +187,8 @@
     {
       "name": "oto",
       "repo": "Cynergis/oto",
-      "ref": "v0.11.23",
-      "version": "0.11.23"
+      "ref": "v0.11.24",
+      "version": "0.11.24"
     },
     {
       "name": "pdf-to-template",
