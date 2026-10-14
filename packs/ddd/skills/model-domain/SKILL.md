@@ -17,6 +17,14 @@ DDD is a design pattern for a part of a product, not for the whole of it: one pr
 its application with DDD and its data pipeline with another pattern. This skill models the part
 that follows DDD. The `ddd` ontology decides what to ask; its questions (DD1–DD24) are the gates.
 
+## Talking with the person
+
+- **Plain, natural language, in the person's words.** Never say question numbers, ids, class or
+  field names, file names or commands, and never paste what a command printed.
+- **Technical details only when the person asks for them.** Never offer them, not even as a choice.
+- **The same clear shape every time:** say what we are about to do, ask a few questions at a time,
+  read back what you understood in plain sentences, confirm, then say what is next.
+
 ## Before the first question
 
 1. The project composes `ddd`: `oto status --project <root>` names it, and the vocabulary holds
@@ -60,6 +68,7 @@ questions.
 
 `readiness` (draft, ready, built) is declared on contexts, use cases, commands and aggregates.
 A context marked ready must hold nothing still in draft: DD23 is empty. DD22 is what the builder
-produces for one context: everything that is part of it. Report the gates in the engine's words
-(`oto query --project <root> questions`): DD1–DD3 and DD22 answered, DD23 and DD24 empty, and the
-open questions on the design (DD18), with who can answer each.
+produces for one context: everything that is part of it. Check the gates with `oto query --project
+<root> questions` (DD1–DD3 and DD22 answered, DD23 and DD24 empty, the open questions in DD18: for
+you), and tell the person in plain words what the design now settles, what is still open, and who
+can answer each open point.
