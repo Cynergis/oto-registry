@@ -53,7 +53,7 @@
       "name": "medallion",
       "source": "./packs/medallion",
       "description": "Design a medallion data pipeline for a part of a product, source systems to bronze, silver and gold, checkpoint by checkpoint (D1-D9), and the batch flow that runs it, checked by the medallion rules at every capture.",
-      "version": "4.0.0",
+      "version": "5.0.0",
       "category": "data"
     },
     {
