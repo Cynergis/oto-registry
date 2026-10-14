@@ -1,6 +1,6 @@
 {
   "name": "medallion",
-  "release": 7,
+  "release": 8,
   "domain": "data",
   "pattern": {
     "of": "software-architecture",
@@ -10,17 +10,22 @@
   "summary": "Design a medallion data pipeline for a part of a product, source systems to bronze, silver and gold, checkpoint by checkpoint (D1-D9), and the batch flow that runs it, checked by the medallion rules at every capture.",
   "ontology": {
     "name": "medallion",
-    "release": 2,
+    "release": 3,
     "registry": null,
     "source": "https://github.com/Cynergis/medallion-ontology",
     "ref": null,
     "path": "ontology/medallion",
-    "commit": "17382e8",
+    "commit": "867e84b",
     "embedded_at": "2026-10-14"
   },
   "engine": ">=0.11.17",
   "maintainer": "Cynergis",
   "changelog": [
+    {
+      "release": 8,
+      "at": "2026-10-14",
+      "note": "The build plan tests (medallion@3): a test of one of eight kinds says what it tests, what it runs on and what must come out; what nothing tests is open until the build plan closes; the design interview drafts the tests and the lineage page shows them."
+    },
     {
       "release": 7,
       "at": "2026-10-14",
