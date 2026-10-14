@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: The bridge between a report and the medallion pipeline that feeds it: a report's table is the gold dataset it reads, a column the field behind it, a report check backed by the pipeline rule it relies on. The pack 'report-medallion' (release 2) embeds the ontology 'report-medallion' (release 1), which declares . Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: The bridge between a report and the medallion pipeline that feeds it: a report's table is the gold dataset it reads, a column the field behind it, a report check backed by the pipeline rule it relies on. The pack 'report-medallion' (release 3) embeds the ontology 'report-medallion' (release 1), which declares . Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Report and medallion

@@ -60,12 +60,12 @@
     },
     {
       "name": "medallion",
-      "release": 7,
+      "release": 8,
       "summary": "Design a medallion data pipeline for a part of a product, source systems to bronze, silver and gold, checkpoint by checkpoint (D1-D9), and the batch flow that runs it, checked by the medallion rules at every capture.",
       "path": "packs/medallion",
       "ontology": {
         "name": "medallion",
-        "release": 2
+        "release": 3
       },
       "domain": "data",
       "pattern": {
@@ -151,7 +151,7 @@
     },
     {
       "name": "report-medallion",
-      "release": 2,
+      "release": 3,
       "summary": "The bridge between a report and the medallion pipeline that feeds it: a report's table is the gold dataset it reads, a column the field behind it, a report check backed by the pipeline rule it relies on.",
       "path": "packs/report-medallion",
       "ontology": {
