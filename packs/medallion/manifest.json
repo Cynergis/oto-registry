@@ -1,6 +1,6 @@
 {
   "name": "medallion",
-  "release": 5,
+  "release": 6,
   "domain": "data",
   "pattern": {
     "of": "software-architecture",
@@ -21,6 +21,11 @@
   "engine": ">=0.11.17",
   "maintainer": "Cynergis",
   "changelog": [
+    {
+      "release": 6,
+      "at": "2026-10-14",
+      "note": "capture-form's three choices named in words; no quoting the engine."
+    },
     {
       "release": 5,
       "at": "2026-10-14",
