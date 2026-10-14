@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How it is designed</title>
+<link rel="stylesheet" href="../_studio/studio.css">
+<style>
+.page-toc { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 0 0 8px; padding: 0; list-style: none; font-size: 14px; }
+.page-toc a { color: var(--st-muted); }
+section, .studio-card { scroll-margin-top: 72px; }
+.studio-card h3 { margin: 0 0 4px; }
+.facts { color: var(--st-muted); font-size: 15px; margin: 6px 0 0; }
+.facts span { display: block; }
+.facts ul { margin: 2px 0 6px; padding-left: 20px; }
+</style>
+<script src="../_studio/data.js"></script>
+<script src="../_studio/studio.js"></script>
+<script src="data.js"></script>
+</head>
+<body>
+<main class="studio-page">
+  <h1>How it is designed</h1>
+  <p class="studio-lead" id="lead">The systems and their parts, what each offers and uses, and where it runs.</p>
+  <ul class="page-toc" id="toc"></ul>
+  <div id="sections"></div>
+  <div id="studio-open"></div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

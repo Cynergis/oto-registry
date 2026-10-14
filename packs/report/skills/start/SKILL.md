@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: A report type: its meaning per locale, its sections and fields, the rules that apply, the column that supplies each value, the runs and approvals that produced its template, its operating contract, its lifecycle and the accepted history of its definition. The pack 'report' (release 3) embeds the ontology 'report' (release 5), which declares ReportType, StatusChange, Parameter, UniverseQuery, Section, Field, FieldMeaning, Rule and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: A report type: its meaning per locale, its sections and fields, the rules that apply, the column that supplies each value, the runs and approvals that produced its template, its operating contract, its lifecycle and the accepted history of its definition. The pack 'report' (release 4) embeds the ontology 'report' (release 5), which declares ReportType, StatusChange, Parameter, UniverseQuery, Section, Field, FieldMeaning, Rule and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Report domain
@@ -69,3 +69,7 @@ This skill comes with the `report` pack. The ontology is inside the pack, so not
 - **Transformation**: The logic that computes a field's value from columns and other fields when it is not read from one column: a calculation, a mapping, a filter, an aggregation, a lookup, with its expression. Folded from report-generation on 2026-10-07; a product whose rule is 'never compute' declares none.
 - **QualityCheck**: A rule that guards a field, a column or a table: what it tests, its threshold, how severe a failure is. Folded from report-generation on 2026-10-07.
 - **Finding**: One dated failure of a quality check in one run, with its severity and whether it is resolved. Folded from report-generation on 2026-10-07.
+
+## The views it ships
+
+- `reports`: `oto serve --http <port> --view reports`, or `oto build --target site --view reports`

@@ -1,12 +1,12 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: A product's specification and its playbook: Atlas, who carries a product from an idea to a published knowledge base, the PRD captured section by section through the curate gates, and the PRD and architecture site read from the graph. The pack 'product' (release 6) embeds the ontology 'product' (release 9), which declares Product, Persona, ValueProposition, SuccessCriterion, Requirement, Release, Feature, UserJourney and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: A product's specification and its playbook: Atlas, who carries a product from an idea to a published knowledge base, the PRD captured section by section through the curate gates, and the specification page of the product's studio, read from the graph. The pack 'product' (release 7) embeds the ontology 'product' (release 9), which declares Product, Persona, ValueProposition, SuccessCriterion, Requirement, Release, Feature, UserJourney and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Product
 
-A product's specification and its playbook: Atlas, who carries a product from an idea to a published knowledge base, the PRD captured section by section through the curate gates, and the PRD and architecture site read from the graph.
+A product's specification and its playbook: Atlas, who carries a product from an idea to a published knowledge base, the PRD captured section by section through the curate gates, and the specification page of the product's studio, read from the graph.
 
 This skill comes with the `product` pack. The ontology is inside the pack, so nothing is fetched.
 
@@ -37,7 +37,6 @@ concierge offers it, and says where the project is at any point.
 
    - **product:atlas**: Atlas, the Lead Product Engineer, the product pack's playbook.
    - **product:prd-build**: Build a product's specification (the PRD) as a knowledge base.
-   - **product:prd-site**: Serve or publish the navigable PRD + Architecture site as a view of the knowledge base.
 
 3. **For anything else, the engine's skills**: capture-form to answer the vocabulary's
    questions in an interview, ontology-interview to fit the vocabulary to the documents at hand,
@@ -68,7 +67,7 @@ concierge offers it, and says where the project is at any point.
 
 ## The views it ships
 
-- `prd-site`: `oto serve --http <port> --view prd-site`, or `oto build --target site --view prd-site`
+- `specification`: `oto serve --http <port> --view specification`, or `oto build --target site --view specification`
 
 ## The guide
 

@@ -28,8 +28,8 @@ under what rules, why. It is captured against packs, not against a form of this 
    done when every `non_empty` question of the packs answers, or the person has said which stay
    open and why.
 
-What this skill no longer does: keep its own section list or write `window.__PRD__`. The site's
-`data.js` is a projection of the graph (prd-site).
+What this skill no longer does: keep its own section list or write a site's data. The product's
+specification page, in its studio, is read from the graph.
 
 ## Talking with the person
 

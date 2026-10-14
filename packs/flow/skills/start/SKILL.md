@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: Executable process graphs: steps with typed executors (script, OCR, Claude, human, terminal), gated by checks against metrics and parameters, connected by guarded transitions with effects, exchanging artifacts with fields; invariants and the tests derived from them. The briefs an agent reads before implementing or testing a step, building the engine, or changing a parameter or an artifact. The pack 'flow' (release 3) embeds the ontology 'flow' (release 2), which declares Artifact, Check, ClaudeStep, DeterministicStep, Effect, Flow, HumanStep, Implementation and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: Executable process graphs: steps with typed executors (script, OCR, Claude, human, terminal), gated by checks against metrics and parameters, connected by guarded transitions with effects, exchanging artifacts with fields; invariants and the tests derived from them. The briefs an agent reads before implementing or testing a step, building the engine, or changing a parameter or an artifact. The pack 'flow' (release 4) embeds the ontology 'flow' (release 2), which declares Artifact, Check, ClaudeStep, DeterministicStep, Effect, Flow, HumanStep, Implementation and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Flow
@@ -61,3 +61,7 @@ This skill comes with the `flow` pack. The ontology is inside the pack, so nothi
 - **Transition**: A directed edge from a step, taken on an outcome when its guard holds; may apply effects to run state.
 - **ArtifactField**: A named path inside a structured artifact (e.g. pages[].regions[].bbox).
 - **ConfigParameter**: A configuration value (threshold, limit, seed) owned by config, never by steps.
+
+## The views it ships
+
+- `progress`: `oto serve --http <port> --view progress`, or `oto build --target site --view progress`

@@ -89,6 +89,12 @@ that says so itself. `oto status --project <root> --json` lists under `packs` ea
   plainly. Until then, nothing records where the product runs, and an implementing agent cannot
   deploy or test it end to end: say that too.
 
+## Where people see it
+
+What is captured here shows on the product's studio page **How it is designed** (`oto serve --http`,
+or `oto build --target site`): the systems, their parts, what each meets, and what is still open. Say
+so when a topic is saved, in plain words ("You can see it on the design page").
+
 ## What this skill does not do
 
 Keep a section list of its own (the form is the vocabulary's), write a site's data (a view is a

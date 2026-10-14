@@ -1,0 +1,49 @@
+{
+ "name": "specification",
+ "title": "The specification",
+ "place": "product",
+ "summary": "What the product is for and who it serves, what it must do and within which rules, what is decided and what is still open.",
+ "shows": [
+  "Product",
+  "ValueProposition",
+  "Objective",
+  "SuccessCriterion",
+  "Persona",
+  "Role",
+  "Requirement",
+  "UserJourney",
+  "Feature",
+  "Release",
+  "Policy",
+  "Constraint",
+  "Assumption",
+  "Risk",
+  "Decision",
+  "OpenQuestion",
+  "Scenario",
+  "Term"
+ ],
+ "open": [
+  "PR"
+ ],
+ "entry": "index.html",
+ "engine": ">=0.11.25",
+ "data": [
+  {
+   "file": "data.js",
+   "format": "js-globals",
+   "globals": {
+    "__SPEC__": {
+     "$include": "projections/spec.json"
+    }
+   }
+  }
+ ],
+ "requires": {
+  "classes": [
+   "Product",
+   "Requirement",
+   "Persona"
+  ]
+ }
+}

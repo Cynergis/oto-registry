@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: An agent people give work to, as a part of a product: the jobs they hand it and the requirement each meets, its tools and what each reads, changes or sends, what it draws on, its guardrails and who confirms, how it talks, where it hands work over, the test conversations that prove each job, and how it is packaged. The pack 'agent' (release 2) embeds the ontology 'agent' (release 1), which declares Agent, Job, Tool, KnowledgeSource, Guardrail, Evaluation, ConversationStyle. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: An agent people give work to, as a part of a product: the jobs they hand it and the requirement each meets, its tools and what each reads, changes or sends, what it draws on, its guardrails and who confirms, how it talks, where it hands work over, the test conversations that prove each job, and how it is packaged. The pack 'agent' (release 3) embeds the ontology 'agent' (release 1), which declares Agent, Job, Tool, KnowledgeSource, Guardrail, Evaluation, ConversationStyle. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Agent
@@ -52,6 +52,10 @@ with this pack's **design-agent** skill (`/agent:design-agent`); `oto status` li
 - **Guardrail**: A limit on the agent: something it must never do, something it may do only after a named person confirms, or a bound it must stay within. It protects the agent, a job or a tool, and may uphold one of the organisation's policies.
 - **Evaluation**: A test conversation that proves a job works: what the person asks, what the agent must do, what it must never do, and how it went the last time it ran.
 - **ConversationStyle**: How the agent talks with people: its voice, the shape of every exchange (what is next, a few questions, a read-back, a confirmation) and when it shows technical details.
+
+## The views it ships
+
+- `agent`: `oto serve --http <port> --view agent`, or `oto build --target site --view agent`
 
 ## The guide
 

@@ -1,0 +1,36 @@
+{
+ "name": "architecture",
+ "title": "How it is designed",
+ "place": "design",
+ "summary": "The systems and their parts: what each offers and uses, the data it reads and writes, where it runs, which requirement it meets, and the decisions that shaped it.",
+ "shows": [
+  "System",
+  "Component",
+  "Interface",
+  "DataStore",
+  "Runbook",
+  "Repository"
+ ],
+ "open": [
+  "SA"
+ ],
+ "entry": "index.html",
+ "engine": ">=0.11.25",
+ "data": [
+  {
+   "file": "data.js",
+   "format": "js-globals",
+   "globals": {
+    "__ARCH__": {
+     "$include": "projections/arch.json"
+    }
+   }
+  }
+ ],
+ "requires": {
+  "classes": [
+   "System",
+   "Component"
+  ]
+ }
+}

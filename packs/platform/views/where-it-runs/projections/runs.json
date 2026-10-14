@@ -1,0 +1,265 @@
+{
+ "platforms": {
+  "$nodes": "Platform",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "provider": "$attr.provider",
+   "accounts": {
+    "$in": "on_platform",
+    "$select": {
+     "id": "$id",
+     "name": "$label",
+     "kind": "$attr.account_kind",
+     "identifier": "$attr.identifier",
+     "type": "$type"
+    }
+   }
+  }
+ },
+ "environments": {
+  "$nodes": "Environment",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "purpose": "$attr.purpose",
+   "region": "$attr.region",
+   "console": "$attr.console_url",
+   "logs": "$attr.logs_url",
+   "account": {
+    "$out": "hosted_in",
+    "$select": {
+     "id": "$id",
+     "name": "$label",
+     "identifier": "$attr.identifier"
+    }
+   },
+   "provisioned_by": {
+    "$out": "provisioned_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label",
+     "url": "$attr.url"
+    }
+   },
+   "runs": {
+    "$in": "runs_in",
+    "$select": {
+     "id": "$id",
+     "name": "$label",
+     "type": "$type"
+    }
+   },
+   "deployed_by": {
+    "$in": "deploys_to",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "parts": {
+  "$nodes": [
+   "Component",
+   "DataStore"
+  ],
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "type": "$type",
+   "runs_on": {
+    "$out": "runs_on",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "built_with": {
+    "$out": "built_with",
+    "$select": {
+     "id": "$id",
+     "name": "$label",
+     "version": "$attr.version",
+     "kind": "$attr.technology_kind"
+    }
+   },
+   "secrets": {
+    "$out": "needs_secret",
+    "$select": {
+     "id": "$id",
+     "name": "$label",
+     "reference": "$attr.reference"
+    }
+   },
+   "runs_in": {
+    "$out": "runs_in",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "deployed_by": {
+    "$in": "deploys",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "secrets": {
+  "$nodes": "SecretRef",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "reference": "$attr.reference",
+   "kept_in": {
+    "$out": "kept_in",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "needed_by": {
+    "$in": "needs_secret",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "pipelines": {
+  "$nodes": "Pipeline",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "url": "$attr.url",
+   "deploys": {
+    "$out": "deploys",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "to": {
+    "$out": "deploys_to",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "services": {
+  "$nodes": "PlatformService",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "kind": "$attr.service_kind",
+   "platform": {
+    "$out": "on_platform",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "runs": {
+    "$in": "runs_on",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "keeps": {
+    "$in": "kept_in",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "technologies": {
+  "$nodes": "Technology",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "kind": "$attr.technology_kind",
+   "version": "$attr.version",
+   "used_by": {
+    "$in": "built_with",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "choices": {
+  "$nodes": "Choice",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "category": "$attr.category",
+   "authority": "$attr.authority",
+   "allowed": "$attr.allowed",
+   "shapes": {
+    "$out": "shapes",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "bounded_by": {
+    "$out": "bounded_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "settled_by": {
+    "$out": "settled_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label",
+     "option": "$attr.option",
+     "status": "$attr.status",
+     "alternatives": "$attr.alternatives",
+     "consequences": "$attr.consequences",
+     "rationale": "$attr.rationale",
+     "date": "$attr.decided_on"
+    }
+   }
+  }
+ },
+ "deciders": {
+  "$nodes": "Decision",
+  "$map": {
+   "id": "$id",
+   "by": {
+    "$out": "decided_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ }
+}
