@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: A product's specification and its playbook: Atlas, who carries a product from an idea to a published knowledge base, the PRD captured section by section through the curate gates, and the PRD and architecture site read from the graph. The pack 'product' (release 5) embeds the ontology 'product' (release 9), which declares Product, Persona, ValueProposition, SuccessCriterion, Requirement, Release, Feature, UserJourney and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: A product's specification and its playbook: Atlas, who carries a product from an idea to a published knowledge base, the PRD captured section by section through the curate gates, and the PRD and architecture site read from the graph. The pack 'product' (release 6) embeds the ontology 'product' (release 9), which declares Product, Persona, ValueProposition, SuccessCriterion, Requirement, Release, Feature, UserJourney and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Product
