@@ -31,6 +31,14 @@ under what rules, why. It is captured against packs, not against a form of this 
 What this skill no longer does: keep its own section list or write `window.__PRD__`. The site's
 `data.js` is a projection of the graph (prd-site).
 
+## Talking with the person
+
+- **Plain, natural language, in the person's words.** Never say question numbers, ids, class or
+  field names, file names or commands, and never paste what a command printed.
+- **Technical details only when the person asks for them.** Never offer them, not even as a choice.
+- **The same clear shape every time:** say what we are about to do, ask a few questions at a time,
+  read back what you understood in plain sentences, confirm, then say what is next.
+
 ## What a specification holds
 
 - **No implementation leakage**: what the product must do, never how it is built; the design is

@@ -14,6 +14,14 @@ it reads (`data.js`: `window.__PRD__`, `window.__ARCH__`) and the projections th
 knowledge base. There is no data file to author: what the graph holds is what the site shows, dated;
 a section the graph cannot fill is empty until a section is captured (**prd-build**, OTO's **capture-form**).
 
+## Talking with the person
+
+- **Plain, natural language, in the person's words.** Never say question numbers, ids, class or
+  field names, file names or commands, and never paste what a command printed.
+- **Technical details only when the person asks for them.** Never offer them, not even as a choice.
+- **The same clear shape every time:** say what we are about to do, ask a few questions at a time,
+  read back what you understood in plain sentences, confirm, then say what is next.
+
 ## Steps
 
 1. The project: an OTO project with a build (`oto status --project <root>`; `oto build` if it is
