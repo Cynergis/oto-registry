@@ -1,0 +1,343 @@
+{
+ "systems": {
+  "$nodes": "System",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "enables": {
+    "$out": "enables",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "meets": {
+    "$out": "satisfies",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "depends_on": {
+    "$out": "depends_on",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "runbooks": {
+    "$out": "operated_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "parts": {
+    "$in": "part_of",
+    "$select": {
+     "id": "$id",
+     "name": "$label",
+     "type": "$type"
+    }
+   },
+   "owners": {
+    "$out": "owned_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "shaped_by": {
+    "$in": "about",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "threatened_by": {
+    "$in": "threatens",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "documents": {
+    "$out": "documented_in",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "components": {
+  "$nodes": "Component",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "system": {
+    "$out": "part_of",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "exposes": {
+    "$out": "exposes",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "consumes": {
+    "$out": "consumes",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "reads": {
+    "$out": "reads_from",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "writes": {
+    "$out": "writes_to",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "runs_in": {
+    "$out": "runs_in",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "depends_on": {
+    "$out": "depends_on",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "meets": {
+    "$out": "satisfies",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "code": {
+    "$out": "implemented_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "runbooks": {
+    "$out": "operated_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "carries": {
+    "$optional": {
+     "$in": "deployed_as",
+     "$select": {
+      "id": "$id",
+      "name": "$label",
+      "type": "$type"
+     }
+    }
+   },
+   "owners": {
+    "$out": "owned_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "shaped_by": {
+    "$in": "about",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "threatened_by": {
+    "$in": "threatens",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "documents": {
+    "$out": "documented_in",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "interfaces": {
+  "$nodes": "Interface",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "url": "$attr.url",
+   "exposed_by": {
+    "$in": "exposes",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "consumed_by": {
+    "$in": "consumes",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "meets": {
+    "$out": "satisfies",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "owners": {
+    "$out": "owned_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "shaped_by": {
+    "$in": "about",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "threatened_by": {
+    "$in": "threatens",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "documents": {
+    "$out": "documented_in",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "stores": {
+  "$nodes": "DataStore",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "read_by": {
+    "$in": "reads_from",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "written_by": {
+    "$in": "writes_to",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "runs_in": {
+    "$out": "runs_in",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "owners": {
+    "$out": "owned_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "shaped_by": {
+    "$in": "about",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "threatened_by": {
+    "$in": "threatens",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   },
+   "documents": {
+    "$out": "documented_in",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "runbooks": {
+  "$nodes": "Runbook",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "for": {
+    "$in": "operated_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ },
+ "repositories": {
+  "$nodes": "Repository",
+  "$sort": "label",
+  "$map": {
+   "id": "$id",
+   "name": "$label",
+   "summary": "$summary",
+   "url": "$attr.url",
+   "branch": "$attr.default_branch",
+   "holds": {
+    "$in": "implemented_by",
+    "$select": {
+     "id": "$id",
+     "name": "$label"
+    }
+   }
+  }
+ }
+}
