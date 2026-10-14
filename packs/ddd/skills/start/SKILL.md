@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: Domain-driven design for the parts of a product that follow it: subdomains, bounded contexts and their map, event storming (events, commands, reactions, read models, external systems) and the tactical model (aggregates, entities, value objects, business rules, domain services), traced to the requirements and components of the architecture. The pack 'ddd' (release 3) embeds the ontology 'ddd' (release 1), which declares UseCase, Subdomain, BoundedContext, ContextRelationship, DomainEvent, Command, Reaction, ReadModel and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: Domain-driven design for the parts of a product that follow it: subdomains, bounded contexts and their map, event storming (events, commands, reactions, read models, external systems) and the tactical model (aggregates, entities, value objects, business rules, domain services), traced to the requirements and components of the architecture. The pack 'ddd' (release 5) embeds the ontology 'ddd' (release 1), which declares UseCase, Subdomain, BoundedContext, ContextRelationship, DomainEvent, Command, Reaction, ReadModel and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Domain-driven design
@@ -9,6 +9,14 @@ description: >-
 Domain-driven design for the parts of a product that follow it: subdomains, bounded contexts and their map, event storming (events, commands, reactions, read models, external systems) and the tactical model (aggregates, entities, value objects, business rules, domain services), traced to the requirements and components of the architecture.
 
 This skill comes with the `ddd` pack. The ontology is inside the pack, so nothing is fetched.
+
+## Talking with the person
+
+- **Plain, natural language, in the person's words.** Never say question numbers, ids, class or
+  field names, file names or commands, and never paste what a command printed.
+- **Technical details only when the person asks for them.** Never offer them, not even as a choice.
+- **The same clear shape every time:** say what we are about to do, ask a few questions at a time,
+  read back what you understood in plain sentences, confirm, then say what is next.
 
 **A design pattern of `software-architecture`**: for a part of a product designed with domain-driven design: its subdomains, bounded contexts, events and aggregates. In a project that composes `software-architecture`, such a part is modelled
 with this pack's **model-domain** skill (`/ddd:model-domain`); `oto status` lists the project's patterns.

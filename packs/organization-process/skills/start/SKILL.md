@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: How an organization works: units, roles, processes, policies, systems and measures. The pack 'organization-process' (release 5) embeds the ontology 'organization-process' (release 4), which declares Unit, Role, Process, Step, Policy, System, Measure, Decision and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: How an organization works: units, roles, processes, policies, systems and measures. The pack 'organization-process' (release 6) embeds the ontology 'organization-process' (release 4), which declares Unit, Role, Process, Step, Policy, System, Measure, Decision and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Operations Knowledge Base
@@ -9,6 +9,14 @@ description: >-
 How an organization works: units, roles, processes, policies, systems and measures.
 
 This skill comes with the `organization-process` pack. The ontology is inside the pack, so nothing is fetched.
+
+## Talking with the person
+
+- **Plain, natural language, in the person's words.** Never say question numbers, ids, class or
+  field names, file names or commands, and never paste what a command printed.
+- **Technical details only when the person asks for them.** Never offer them, not even as a choice.
+- **The same clear shape every time:** say what we are about to do, ask a few questions at a time,
+  read back what you understood in plain sentences, confirm, then say what is next.
 
 1. **Start a project from this pack.**
 

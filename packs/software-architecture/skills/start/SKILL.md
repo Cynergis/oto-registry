@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: A product's architecture, pattern-neutral: its context and drivers, decisions with their alternatives, systems, components, interfaces, data stores and environments, each traced to the requirement it satisfies; each part handed to the design-pattern pack it follows, found among the project's packs. The pack 'software-architecture' (release 5) embeds the ontology 'software-architecture' (release 10), which declares Asset, System, Component, Interface, DataStore, Environment, Runbook, Repository. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: A product's architecture, pattern-neutral: its context and drivers, decisions with their alternatives, systems, components, interfaces, data stores and environments, each traced to the requirement it satisfies; each part handed to the design-pattern pack it follows, found among the project's packs. The pack 'software-architecture' (release 6) embeds the ontology 'software-architecture' (release 10), which declares Asset, System, Component, Interface, DataStore, Environment, Runbook, Repository. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Software architecture
@@ -9,6 +9,14 @@ description: >-
 A product's architecture, pattern-neutral: its context and drivers, decisions with their alternatives, systems, components, interfaces, data stores and environments, each traced to the requirement it satisfies; each part handed to the design-pattern pack it follows, found among the project's packs.
 
 This skill comes with the `software-architecture` pack. The ontology is inside the pack, so nothing is fetched.
+
+## Talking with the person
+
+- **Plain, natural language, in the person's words.** Never say question numbers, ids, class or
+  field names, file names or commands, and never paste what a command printed.
+- **Technical details only when the person asks for them.** Never offer them, not even as a choice.
+- **The same clear shape every time:** say what we are about to do, ask a few questions at a time,
+  read back what you understood in plain sentences, confirm, then say what is next.
 
 1. **Start a project from this pack.**
 

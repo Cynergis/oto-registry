@@ -19,8 +19,8 @@ under what rules, why. It is captured against packs, not against a form of this 
    design (`oto init --empty --pack "${CLAUDE_PLUGIN_ROOT}" --ontology
    product-report,software-architecture,flow`, or Atlas's scene 1). If the type's pack does not
    exist yet, capture against `product` alone and tell the person what a type pack would add.
-2. Run OTO's **capture-form** skill with the schema of that project, its [A]/[P]/[C] menu at every
-   confirmation. Its sections are the askers the
+2. Run OTO's **capture-form** skill with the schema of that project, with its three choices at every
+   read-back (save it and move on, dig deeper, see it from someone else's side). Its sections are the askers the
    packs name — the sponsor, the product owner, the builder, compliance, the report product
    owner, the data team — and its items are personas, journeys, requirements, policies, decisions,
    risks, objectives, criteria, terms, and the obligations typed by what they govern.
@@ -30,6 +30,14 @@ under what rules, why. It is captured against packs, not against a form of this 
 
 What this skill no longer does: keep its own section list or write `window.__PRD__`. The site's
 `data.js` is a projection of the graph (prd-site).
+
+## Talking with the person
+
+- **Plain, natural language, in the person's words.** Never say question numbers, ids, class or
+  field names, file names or commands, and never paste what a command printed.
+- **Technical details only when the person asks for them.** Never offer them, not even as a choice.
+- **The same clear shape every time:** say what we are about to do, ask a few questions at a time,
+  read back what you understood in plain sentences, confirm, then say what is next.
 
 ## What a specification holds
 

@@ -1,6 +1,6 @@
 {
   "name": "ddd",
-  "release": 3,
+  "release": 5,
   "domain": "software",
   "pattern": {
     "of": "software-architecture",
@@ -21,6 +21,16 @@
   "engine": ">=0.11.17",
   "maintainer": "Cynergis",
   "changelog": [
+    {
+      "release": 5,
+      "at": "2026-10-14",
+      "note": "capture-form's three choices named in words; no quoting the engine."
+    },
+    {
+      "release": 4,
+      "at": "2026-10-14",
+      "note": "Every conversation in plain language: no codes, ids or engine output, technical details only when asked (engine 0.11.22)."
+    },
     {
       "release": 3,
       "at": "2026-10-14",

@@ -6,7 +6,7 @@
   "packs": [
     {
       "name": "auto-claims",
-      "release": 6,
+      "release": 7,
       "summary": "Motor vehicle claims: policy, coverage, claim, incident, handling, money in and out.",
       "path": "packs/auto-claims",
       "ontology": {
@@ -17,7 +17,7 @@
     },
     {
       "name": "ddd",
-      "release": 3,
+      "release": 5,
       "summary": "Domain-driven design for the parts of a product that follow it: subdomains, bounded contexts and their map, event storming (events, commands, reactions, read models, external systems) and the tactical model (aggregates, entities, value objects, business rules, domain services), traced to the requirements and components of the architecture.",
       "path": "packs/ddd",
       "ontology": {
@@ -33,7 +33,7 @@
     },
     {
       "name": "flow",
-      "release": 2,
+      "release": 3,
       "summary": "Executable process graphs: steps with typed executors (script, OCR, Claude, human, terminal), gated by checks against metrics and parameters, connected by guarded transitions with effects, exchanging artifacts with fields; invariants and the tests derived from them. The briefs an agent reads before implementing or testing a step, building the engine, or changing a parameter or an artifact.",
       "path": "packs/flow",
       "ontology": {
@@ -44,7 +44,7 @@
     },
     {
       "name": "medallion",
-      "release": 4,
+      "release": 6,
       "summary": "Design a medallion data pipeline for a part of a product, source systems to bronze, silver and gold, checkpoint by checkpoint (D1-D9), and the batch flow that runs it, checked by the medallion rules at every capture.",
       "path": "packs/medallion",
       "ontology": {
@@ -60,7 +60,7 @@
     },
     {
       "name": "organization-process",
-      "release": 5,
+      "release": 6,
       "summary": "How an organization works: units, roles, processes, policies, systems and measures.",
       "path": "packs/organization-process",
       "ontology": {
@@ -71,7 +71,7 @@
     },
     {
       "name": "product",
-      "release": 2,
+      "release": 4,
       "summary": "A product's specification and its playbook: Atlas, who carries a product from an idea to a published knowledge base, the PRD captured section by section through the curate gates, and the PRD and architecture site read from the graph.",
       "path": "packs/product",
       "ontology": {
@@ -86,7 +86,7 @@
     },
     {
       "name": "product-report",
-      "release": 2,
+      "release": 3,
       "summary": "A report product's specification: which report types it must produce, where their data must come from, what layout and fidelity, which channels, which rules and sign-offs, what a run must guarantee, what must stay answerable afterwards, what identifies a document, who owns what, and when a report type is ready.",
       "path": "packs/product-report",
       "ontology": {
@@ -98,7 +98,7 @@
     },
     {
       "name": "professional-services",
-      "release": 5,
+      "release": 6,
       "summary": "Engagements: scope, deliverables, governance, sessions, decisions and the work that follows.",
       "path": "packs/professional-services",
       "ontology": {
@@ -109,7 +109,7 @@
     },
     {
       "name": "report",
-      "release": 2,
+      "release": 3,
       "summary": "A report type: its meaning per locale, its sections and fields, the rules that apply, the column that supplies each value, the runs and approvals that produced its template, its operating contract, its lifecycle and the accepted history of its definition.",
       "path": "packs/report",
       "ontology": {
@@ -119,7 +119,7 @@
     },
     {
       "name": "report-medallion",
-      "release": 1,
+      "release": 2,
       "summary": "The bridge between a report and the medallion pipeline that feeds it: a report's table is the gold dataset it reads, a column the field behind it, a report check backed by the pipeline rule it relies on.",
       "path": "packs/report-medallion",
       "ontology": {
@@ -130,7 +130,7 @@
     },
     {
       "name": "software-architecture",
-      "release": 5,
+      "release": 6,
       "summary": "A product's architecture, pattern-neutral: its context and drivers, decisions with their alternatives, systems, components, interfaces, data stores and environments, each traced to the requirement it satisfies; each part handed to the design-pattern pack it follows, found among the project's packs.",
       "path": "packs/software-architecture",
       "ontology": {
@@ -141,7 +141,7 @@
     },
     {
       "name": "work",
-      "release": 4,
+      "release": 5,
       "summary": "What is planned, by whom, blocked by what: work items and milestones over the product's requirements, features and components; what slips when a component is late, what is overdue, what waits on a decision.",
       "path": "packs/work",
       "ontology": {
@@ -155,14 +155,14 @@
     {
       "name": "oto",
       "repo": "Cynergis/oto",
-      "ref": "v0.11.21",
-      "version": "0.11.21"
+      "ref": "v0.11.22",
+      "version": "0.11.22"
     },
     {
       "name": "pdf-to-template",
       "repo": "Cynergis/pdf-to-template-plugin",
-      "ref": "v0.4.1",
-      "version": "0.4.1",
+      "ref": "v0.4.3",
+      "version": "0.4.3",
       "description": "Turn a sample PDF into a data-driven HTML/CSS + Jinja2 template that renders new data to PDF; the report's definition is read from an OTO project (the report pack). Depends on oto and report.",
       "category": "reporting"
     }

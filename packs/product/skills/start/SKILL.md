@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: A product's specification and its playbook: Atlas, who carries a product from an idea to a published knowledge base, the PRD captured section by section through the curate gates, and the PRD and architecture site read from the graph. The pack 'product' (release 2) embeds the ontology 'product' (release 9), which declares Product, Persona, ValueProposition, SuccessCriterion, Requirement, Release, Feature, UserJourney and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: A product's specification and its playbook: Atlas, who carries a product from an idea to a published knowledge base, the PRD captured section by section through the curate gates, and the PRD and architecture site read from the graph. The pack 'product' (release 4) embeds the ontology 'product' (release 9), which declares Product, Persona, ValueProposition, SuccessCriterion, Requirement, Release, Feature, UserJourney and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Product
@@ -9,6 +9,14 @@ description: >-
 A product's specification and its playbook: Atlas, who carries a product from an idea to a published knowledge base, the PRD captured section by section through the curate gates, and the PRD and architecture site read from the graph.
 
 This skill comes with the `product` pack. The ontology is inside the pack, so nothing is fetched.
+
+## Talking with the person
+
+- **Plain, natural language, in the person's words.** Never say question numbers, ids, class or
+  field names, file names or commands, and never paste what a command printed.
+- **Technical details only when the person asks for them.** Never offer them, not even as a choice.
+- **The same clear shape every time:** say what we are about to do, ask a few questions at a time,
+  read back what you understood in plain sentences, confirm, then say what is next.
 
 **A playbook**: for a product, from an idea to a published knowledge base: its specification, its design, its build and its readers. This pack's **atlas** skill (`/product:atlas`) leads it from start to end; OTO's
 concierge offers it, and says where the project is at any point.
