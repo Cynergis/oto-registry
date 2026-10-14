@@ -1,6 +1,6 @@
 {
   "name": "product",
-  "release": 4,
+  "release": 5,
   "domain": "product",
   "playbook": {
     "for": "a product, from an idea to a published knowledge base: its specification, its design, its build and its readers",
@@ -20,6 +20,11 @@
   "engine": ">=0.11.22",
   "maintainer": "Cynergis",
   "changelog": [
+    {
+      "release": 5,
+      "at": "2026-10-14",
+      "note": "Atlas mentions agents beside applications and pipelines when it asks which patterns the product's parts follow."
+    },
     {
       "release": 4,
       "at": "2026-10-14",
