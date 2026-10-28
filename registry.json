@@ -194,7 +194,9 @@
       "name": "oto-factory",
       "repo": "Cynergis/oto-factory",
       "ref": "v4.0.0",
-      "version": "4.0.0"
+      "version": "4.0.0",
+      "description": "The software factory on an OTO architecture graph: builds a component from the spec the graph projects, with runner, evaluator and aggregator agents, the spec-context skill, a guard and a Stop hook, and the factory-run pack whose code brings the oto factory commands. A use case of the graph in its own repository (ADR-0007). Depends on oto.",
+      "category": "software"
     },
     {
       "name": "pdf-to-template",
