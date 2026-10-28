@@ -191,6 +191,12 @@
       "version": "0.14.1"
     },
     {
+      "name": "oto-factory",
+      "repo": "Cynergis/oto-factory",
+      "ref": "v4.0.0",
+      "version": "4.0.0"
+    },
+    {
       "name": "pdf-to-template",
       "repo": "Cynergis/pdf-to-template-plugin",
       "ref": "v0.4.4",

@@ -18,6 +18,16 @@
       "version": "0.14.1"
     },
     {
+      "name": "oto-factory",
+      "source": {
+        "source": "github",
+        "repo": "Cynergis/oto-factory",
+        "ref": "v4.0.0"
+      },
+      "description": "",
+      "version": "4.0.0"
+    },
+    {
       "name": "pdf-to-template",
       "source": {
         "source": "github",
