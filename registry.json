@@ -187,8 +187,8 @@
     {
       "name": "oto",
       "repo": "Cynergis/oto",
-      "ref": "v0.11.31",
-      "version": "0.11.31"
+      "ref": "v0.13.0",
+      "version": "0.13.0"
     },
     {
       "name": "pdf-to-template",
