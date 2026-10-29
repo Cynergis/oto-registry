@@ -10,7 +10,7 @@ machine's Python path.
 
 ```bash
 oto pack add calm                                   # from the cynergis registry, or in Claude Code: /plugin install calm@cynergis
-oto init --name "<project>" --ontology architecture,calm --project <root>     # or compose calm into an architecture project
+oto init --name "<project>" --ontology architecture,calm --project <root>     # or any project that composes architecture: the pack adds no term
 oto arch import --framework calm --file model.json --at <date> [--environment environment.<id>] --project <root>
 oto arch export --framework calm [--out model.json] --project <root>
 oto arch migrate --framework calm --by <who> --project <root>                 # a graph written before the architecture pack's release 5

@@ -1,9 +1,10 @@
 # CALM: the FINOS architecture framework, as an adapter
 
-A pack of the registry (`oto pack add calm`, or `/plugin install calm@cynergis` in Claude Code), composed
-into an architecture project (`oto init --ontology architecture,calm`, or `--ontology calm`, which brings
-`architecture` with it). The engine ships no framework (ADR-0008): without this pack, `oto arch import`
-and `export` have no adapter to choose.
+A pack of the registry (`oto pack add calm`, or `/plugin install calm@cynergis` in Claude Code). Installed,
+its adapter is found from any project that composes `architecture`; `oto init --ontology architecture,calm`
+(or `--ontology calm`, which brings `architecture` with it) also records the framework in the project. The
+engine ships no framework (ADR-0008): without this pack, `oto arch import` and `export` have no adapter
+to choose.
 
 On `architecture`: the pack adds no term. A CALM 1.x model (the FINOS Common Architecture Language
 Model, [release 1.0](https://calm.finos.org/release/1.0/meta/core.json); the core schema is unchanged

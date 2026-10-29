@@ -44,10 +44,11 @@ This skill comes with the `calm` pack. The ontology is inside the pack, so nothi
 ## What the pack is for
 
 An architecture framework, not a domain: it reads a CALM 1.x model into the architecture pack's
-reified model and writes the graph back as CALM. Compose it into an architecture project rather than
-starting a project from it alone: `oto init --name "<project>" --ontology architecture,calm` (or
-`--ontology calm`, which brings `architecture` with it) makes a project whose models are written in
-CALM; in a project that already composes `architecture`, `oto ontology compose calm` adds it.
+reified model and writes the graph back as CALM. Install it beside an architecture project rather than
+starting a project from it alone: once the pack is on the machine (`oto pack add calm`, or the plugin),
+`oto arch import --framework calm` finds the adapter in any project that composes `architecture`.
+`oto init --name "<project>" --ontology architecture,calm` also records the framework in the project's
+ontology record; the pack adds no term, so an existing architecture project needs nothing composed.
 
 ## Where to start
 
