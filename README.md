@@ -37,3 +37,10 @@ oto pack publish --from <pack dir> --to https://github.com/Cynergis/oto-registry
 
 `oto ontology publish` works the same way for an ontology. A pack that needs a newer engine waits for the
 engine's pin to move first, or moves it in the same pull request.
+
+**Packs with code.** A pack may carry code of its own under its ontology's `code/` (an architecture framework's
+adapter, a command), which the engine puts on the import path when it loads what the pack's manifest
+`provides` (OTO 0.14.2 or later). Such a pack carries its tests under `packs/<name>/tests`, with a conftest that
+points the engine at the pack; the `pack tests` workflow runs them against the engine on every pull request.
+`calm`, the FINOS architecture framework, is the first: the engine ships no framework adapter
+([ADR-0008](https://github.com/Cynergis/oto/blob/main/docs/adr/0008-a-framework-is-a-pack-of-the-registry.md)).
