@@ -43,6 +43,17 @@
       "domain": "software"
     },
     {
+      "name": "data",
+      "release": 1,
+      "summary": "The data semantic layer as facts: a store's tables and columns with their types, keys and a meaning that is a draft until a named person confirms it, the jobs and feeds that load each table (lineage from a dbt manifest or the ETL's SQL), who reads each table and how (usage from the query log). oto data introspect, lineage, usage, meaning and confirm come with the pack, with the data-meaning skill; the engine ships no data layer of its own.",
+      "path": "packs/data",
+      "ontology": {
+        "name": "data",
+        "release": 3
+      },
+      "domain": "data"
+    },
+    {
       "name": "ddd",
       "release": 7,
       "summary": "Domain-driven design for the parts of a product that follow it: subdomains, bounded contexts and their map, event storming (events, commands, reactions, read models, external systems) and the tactical model (aggregates, entities, value objects, business rules, domain services), on the architecture pack so a context's deployed component and its framework's node are one node; oto ddd storm reads an event-storming board into a document and a capture the gates take, and a named person signs each element off with oto decide. The engine ships no ddd: this pack is it.",

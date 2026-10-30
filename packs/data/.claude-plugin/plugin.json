@@ -1,0 +1,17 @@
+{
+  "name": "data",
+  "displayName": "Data (OTO pack)",
+  "description": "The data semantic layer as facts: a store's tables and columns with their types, keys and a meaning that is a draft until a named person confirms it, the jobs and feeds that load each table (lineage from a dbt manifest or the ETL's SQL), who reads each table and how (usage from the query log). oto data introspect, lineage, usage, meaning and confirm come with the pack, with the data-meaning skill; the engine ships no data layer of its own.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Cynergis"
+  },
+  "dependencies": [
+    "oto@cynergis-engine"
+  ],
+  "keywords": [
+    "data",
+    "oto",
+    "knowledge-graph"
+  ]
+}
