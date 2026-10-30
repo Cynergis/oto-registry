@@ -48,4 +48,6 @@ points the engine at the pack; the `pack tests` workflow runs them against the e
 in `ontology/ddd/code` as the module `oto_ddd`, loaded through the command its manifest provides; the engine ships no
 pack with tools of its own ([ADR-0010](https://github.com/Cynergis/oto/blob/main/docs/adr/0010-a-domain-feature-is-a-pack-of-the-registry.md)).
 `work`, the plan with `communication` on it, is the second: `oto work` and the board's status hook are the module `oto_work`
-in `ontology/work/code`, and the pack's `hooks/hooks.json` opens a Claude Code session with the inbox. `data` and `policy` follow.
+in `ontology/work/code`, and the pack's `hooks/hooks.json` opens a Claude Code session with the inbox. `data` (the data
+semantic layer: `oto data` as `oto_data`) and `policy` (access policy, on data: `oto policy`, its two build stages and its write and
+read hooks as `oto_policy`, with data embedded beside it) are the last two: the engine ships no pack with tools of its own.

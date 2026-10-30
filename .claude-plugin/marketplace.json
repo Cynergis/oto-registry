@@ -54,6 +54,13 @@
       "category": "software"
     },
     {
+      "name": "data",
+      "source": "./packs/data",
+      "description": "The data semantic layer as facts: a store's tables and columns with their types, keys and a meaning that is a draft until a named person confirms it, the jobs and feeds that load each table (lineage from a dbt manifest or the ETL's SQL), who reads each table and how (usage from the query log). oto data introspect, lineage, usage, meaning and confirm come with the pack, with the data-meaning skill; the engine ships no data layer of its own.",
+      "version": "1.0.0",
+      "category": "data"
+    },
+    {
       "name": "ddd",
       "source": "./packs/ddd",
       "description": "Domain-driven design for the parts of a product that follow it: subdomains, bounded contexts and their map, event storming (events, commands, reactions, read models, external systems) and the tactical model (aggregates, entities, value objects, business rules, domain services), on the architecture pack so a context's deployed component and its framework's node are one node; oto ddd storm reads an event-storming board into a document and a capture the gates take, and a named person signs each element off with oto decide. The engine ships no ddd: this pack is it.",
@@ -87,6 +94,13 @@
       "description": "The platform binding of a product's architecture: where each part runs (platforms, accounts, environments with their region, console, logs and provisioning), what it runs on and is built with (managed services, technologies at their versions), its secrets by where they are kept, the pipelines that deploy it, and who decides each choice: a named person, or the builder within limits. Briefs stop an implementing agent that lacks any of it.",
       "version": "2.0.0",
       "category": "software"
+    },
+    {
+      "name": "policy",
+      "source": "./packs/policy",
+      "description": "Access policy as facts on the data layer: a rule permits or forbids a permission for the roles and teams it names, a table or a column says how it is classified and whether it holds personal data, a principal holds roles and an agent is granted them; the active rules compile into a signed Cedar bundle, a signed snapshot of what an agent may do for a principal that the engine's guards and write hooks hold a session to, and the platform's IAM bindings derived and never enforced. oto policy compile, snapshot, iam, verify, list and denials come with the pack, with its two build stages and its write and read hooks; the engine ships no policy of its own.",
+      "version": "1.0.0",
+      "category": "security"
     },
     {
       "name": "product",

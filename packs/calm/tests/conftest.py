@@ -6,7 +6,7 @@ import sys
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.environ["OTO_ONTOLOGIES"] = os.path.join(HERE, "ontology")
-os.environ.setdefault("OTO_PACKS", os.path.join(HERE, ".no-user-packs"))
+os.environ["OTO_PACKS"] = os.path.dirname(HERE)      # the registry's packs beside this one: the policy and data packs the policy test composes resolve as installed packs
 os.environ.setdefault("CLAUDE_CONFIG_DIR", os.path.join(HERE, ".no-claude-config"))
 CODE = os.path.join(HERE, "ontology", "calm", "code")
 if CODE not in sys.path:
