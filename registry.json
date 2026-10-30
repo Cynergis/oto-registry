@@ -196,12 +196,6 @@
   ],
   "plugins": [
     {
-      "name": "oto",
-      "repo": "Cynergis/oto",
-      "ref": "v0.14.2",
-      "version": "0.14.2"
-    },
-    {
       "name": "oto-factory",
       "repo": "Cynergis/oto-factory",
       "ref": "v5.0.0",

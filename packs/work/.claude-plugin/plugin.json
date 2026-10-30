@@ -7,7 +7,7 @@
     "name": "Cynergis"
   },
   "dependencies": [
-    "oto"
+    "oto@cynergis-engine"
   ],
   "keywords": [
     "product",

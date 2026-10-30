@@ -7,6 +7,6 @@
     "name": "Cynergis"
   },
   "dependencies": [
-    "oto"
+    "oto@cynergis-engine"
   ]
 }
