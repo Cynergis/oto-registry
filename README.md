@@ -44,3 +44,7 @@ adapter, a command), which the engine puts on the import path when it loads what
 points the engine at the pack; the `pack tests` workflow runs them against the engine on every pull request.
 `calm`, the FINOS architecture framework, is the first: the engine ships no framework adapter
 ([ADR-0008](https://github.com/Cynergis/oto/blob/main/docs/adr/0008-a-framework-is-a-pack-of-the-registry.md)).
+`ddd`, the domain model, is the first domain feature to leave the engine: its storming importer and `oto ddd storm` travel
+in `ontology/ddd/code` as the module `oto_ddd`, loaded through the command its manifest provides; the engine ships no
+pack with tools of its own ([ADR-0010](https://github.com/Cynergis/oto/blob/main/docs/adr/0010-a-domain-feature-is-a-pack-of-the-registry.md)),
+and `work` with `communication`, `data` and `policy` follow.
