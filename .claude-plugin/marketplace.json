@@ -132,8 +132,8 @@
     {
       "name": "work",
       "source": "./packs/work",
-      "description": "What is planned, by whom, blocked by what: work items and milestones over the product's requirements, features and components; what slips when a component is late, what is overdue, what waits on a decision.",
-      "version": "7.0.0",
+      "description": "The plan as facts: work items and milestones over the product's requirements, features and components, each open, blocked (on whom, why) or deployed, the state derived from dated transitions and never written on the item; messages beside the item they are about (the communication ontology, on work): a notification from a block to whom it waits on, the inbox a session opens with, replies that lift the block, reminders past a due date. oto work set, board, notify, inbox, reply, event and remind come with the pack; the engine ships no work of its own.",
+      "version": "8.0.0",
       "category": "product"
     }
   ]

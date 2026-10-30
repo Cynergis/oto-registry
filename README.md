@@ -46,5 +46,6 @@ points the engine at the pack; the `pack tests` workflow runs them against the e
 ([ADR-0008](https://github.com/Cynergis/oto/blob/main/docs/adr/0008-a-framework-is-a-pack-of-the-registry.md)).
 `ddd`, the domain model, is the first domain feature to leave the engine: its storming importer and `oto ddd storm` travel
 in `ontology/ddd/code` as the module `oto_ddd`, loaded through the command its manifest provides; the engine ships no
-pack with tools of its own ([ADR-0010](https://github.com/Cynergis/oto/blob/main/docs/adr/0010-a-domain-feature-is-a-pack-of-the-registry.md)),
-and `work` with `communication`, `data` and `policy` follow.
+pack with tools of its own ([ADR-0010](https://github.com/Cynergis/oto/blob/main/docs/adr/0010-a-domain-feature-is-a-pack-of-the-registry.md)).
+`work`, the plan with `communication` on it, is the second: `oto work` and the board's status hook are the module `oto_work`
+in `ontology/work/code`, and the pack's `hooks/hooks.json` opens a Claude Code session with the inbox. `data` and `policy` follow.
