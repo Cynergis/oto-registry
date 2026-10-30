@@ -257,7 +257,7 @@ def test_import_and_export_refuse_what_they_cannot_do(empty, tmp_path):
     assert code == 1 and "environment.nope" in out, out
     plain = str(tmp_path / "plain")
     with contextlib.redirect_stdout(io.StringIO()):
-        init(plain, slug="plain", name="Plain", ontology="communication")
+        init(plain, slug="plain", name="Plain", ontology="organization-process")
     code, out = _cli("arch", "import", "--framework", "calm", "--file", INVOICE, "--at", "2026-10-27", "--project", plain)
     assert code == 1 and "Relationship" in out and "architecture" in out, out
     assert not os.path.exists(os.path.join(root, "proposals", "calm-invoice-platform.json"))

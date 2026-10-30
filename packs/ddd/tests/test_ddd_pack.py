@@ -250,7 +250,7 @@ def test_storm_refuses_what_it_cannot_cite(ddd, tmp_path):
     assert code == 0 and "Do it" in out and "handled_by" in out and "Nothing here" in out, "a command with no aggregate and a hot spot about nothing: said before the gates"
     plain = str(tmp_path / "plain")
     with contextlib.redirect_stdout(io.StringIO()):
-        init(plain, slug="plain", name="Plain", ontology="communication")
+        init(plain, slug="plain", name="Plain", ontology="organization-process")
     code, out = _cli("ddd", "storm", "--from", str(board), "--at", "2026-10-21", "--project", plain)
     assert code == 1 and "DomainEvent" in out
 
