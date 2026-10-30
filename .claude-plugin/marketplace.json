@@ -6,17 +6,10 @@
   "metadata": {
     "description": "The OTO catalog: ontologies and packs, published by Cynergis."
   },
+  "allowCrossMarketplaceDependenciesOn": [
+    "cynergis-engine"
+  ],
   "plugins": [
-    {
-      "name": "oto",
-      "source": {
-        "source": "github",
-        "repo": "Cynergis/oto",
-        "ref": "v0.14.2"
-      },
-      "description": "The OTO engine: the kg_* query tools as an MCP server, the generic skills, and the session hook. Every pack depends on it.",
-      "version": "0.14.2"
-    },
     {
       "name": "oto-factory",
       "source": {
