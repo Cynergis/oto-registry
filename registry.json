@@ -136,7 +136,7 @@
     },
     {
       "name": "policy",
-      "release": 1,
+      "release": 2,
       "summary": "Access policy as facts on the data layer: a rule permits or forbids a permission for the roles and teams it names, a table or a column says how it is classified and whether it holds personal data, a principal holds roles and an agent is granted them; the active rules compile into a signed Cedar bundle, a signed snapshot of what an agent may do for a principal that the engine's guards and write hooks hold a session to, and the platform's IAM bindings derived and never enforced. oto policy compile, snapshot, iam, verify, list and denials come with the pack, with its two build stages and its write and read hooks; the engine ships no policy of its own.",
       "path": "packs/policy",
       "ontology": {
