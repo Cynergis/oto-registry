@@ -58,4 +58,7 @@ pack here ([ADR-0011](https://github.com/Cynergis/oto/blob/main/docs/adr/0011-a-
 `platform`, `calm`, `ddd` and the feature packs extend, and `auto-claims`, `organization-process` and `professional-services`
 on `oto-core` alone. Each embeds the vocabularies it extends at the releases it was checked with, so installing one is
 enough to compose it (`oto pack add <name>`, `oto init --ontology <name>`), and a release of a domain vocabulary is cut
-here and nowhere else.
+here and nowhere else. The `architecture` pack carries `oto arch` (import, export, migrate, the code map, compile, impact, measure)
+and the served `arch_context` as the module `oto_architecture` in its `code/`, loaded through its manifest's `provides.commands` and
+`provides.tools`; the calm pack's adapter and the ddd pack's test fixture import the reified model's names from it, and the policy pack
+lands its IAM bindings through the engine's own gates helper (`oto.curate.apply`).
