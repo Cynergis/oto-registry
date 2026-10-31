@@ -6,7 +6,10 @@ the code map beside it) is tested through this one; what CALM is, is the calm pa
 import json
 import os
 
-from oto.arch import ArchError, CONTROL, FLOW, INTERFACE, ISO_DATE, PREFIX, RELATIONSHIP
+try:                                              # the reified model's names are the architecture pack's code (ADR-0011) ...
+    from oto_architecture import ArchError, CONTROL, FLOW, INTERFACE, ISO_DATE, PREFIX, RELATIONSHIP
+except ImportError:                               # ... or the engine's own, on an engine before 0.15.0 that still ships it
+    from oto.arch import ArchError, CONTROL, FLOW, INTERFACE, ISO_DATE, PREFIX, RELATIONSHIP
 
 FRAMEWORK = "plain"
 
