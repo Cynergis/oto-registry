@@ -1,6 +1,6 @@
 {
   "name": "data",
-  "release": 1,
+  "release": 2,
   "domain": "data",
   "summary": "The data semantic layer as facts: a store's tables and columns with their types, keys and a meaning that is a draft until a named person confirms it, the jobs and feeds that load each table (lineage from a dbt manifest or the ETL's SQL), who reads each table and how (usage from the query log). oto data introspect, lineage, usage, meaning and confirm come with the pack, with the data-meaning skill; the engine ships no data layer of its own.",
   "ontology": {
@@ -16,6 +16,11 @@
   "engine": ">=0.14.7",
   "maintainer": "Cynergis",
   "changelog": [
+    {
+      "release": 2,
+      "at": "2026-10-31",
+      "note": "The tests resolve the other vocabularies they compose from the registry's packs beside this one, since the engine ships none (ADR-0011)."
+    },
     {
       "release": 1,
       "at": "2026-10-30",
