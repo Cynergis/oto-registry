@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: A product's architecture, pattern-neutral: its context and drivers, decisions with their alternatives, systems, components, interfaces, data stores and environments, each traced to the requirement it satisfies; each part handed to the design-pattern pack it follows, found among the project's packs. The pack 'software-architecture' (release 8) embeds the ontology 'software-architecture' (release 10), which declares Asset, System, Component, Interface, DataStore, Environment, Runbook, Repository. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: A product's architecture, pattern-neutral: its context and drivers, decisions with their alternatives, systems, components, interfaces, data stores and environments, each traced to the requirement it satisfies; each part handed to the design-pattern pack it follows, found among the project's packs. The pack 'software-architecture' (release 9) embeds the ontology 'software-architecture' (release 12), which declares Asset, System, Component, Interface, DataStore, Environment, Runbook, Repository. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Software architecture
@@ -51,13 +51,13 @@ This skill comes with the `software-architecture` pack. The ontology is inside t
 - **Runbook**: The documented way to operate or recover something.
 - **Repository**: Where a component's code lives: a source repository, recorded before it exists (intended) and observed once it does.
 
-## The actions it ships
+## The tools it ships
 
 OTO lists them; the caller invokes (the act skill):
 
-- `action.check-repository` on Repository: Reads the repository's metadata from GitHub and records that it exists, its URL and its default branch. Realises an intended repository; re-attests a current one.
-- `action.create-repository` on Repository: Creates the repository an intended Repository fact describes, under its owner, and records the result. Changes the world: a person confirms it by name.
-- `action.probe-interface` on Interface: Calls an interface's base URL with a GET and keeps the response as a source document, so what the interface actually answers can be read and curated.
+- `tool.check-repository` on Repository: Reads the repository's metadata from GitHub and records that it exists, its URL and its default branch. Realises an intended repository; re-attests a current one.
+- `tool.create-repository` on Repository: Creates the repository an intended Repository fact describes, under its owner, and records the result. Changes the world: a person confirms it by name.
+- `tool.probe-interface` on Interface: Calls an interface's base URL with a GET and keeps the response as a source document, so what the interface actually answers can be read and curated.
 
 ## The views it ships
 
@@ -97,11 +97,11 @@ rule; `oto rules explain <rule>` says why the rule exists and what it derived.
 
 ## What can be done
 
-The ontology ships three actions, listed by `oto actions list` and never invoked by OTO: a daily
+The ontology ships three tools, listed by `oto tools list` and never invoked by OTO: a daily
 check that a repository exists (read-only; it realises an intended `Repository` and re-attests a
 current one), the creation of a repository an intended fact describes (it changes the world, so a
 person confirms it by name), and a weekly read of what an `Interface` answers at its URL. Record a
-run with `oto actions record`, and the response enters the graph through the gates with the run as
+run with `oto tools record`, and the response enters the graph through the gates with the run as
 its evidence. The act skill is the protocol.
 
 ## Common mistakes
