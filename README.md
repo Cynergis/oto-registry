@@ -51,3 +51,11 @@ pack with tools of its own ([ADR-0010](https://github.com/Cynergis/oto/blob/main
 in `ontology/work/code`, and the pack's `hooks/hooks.json` opens a Claude Code session with the inbox. `data` (the data
 semantic layer: `oto data` as `oto_data`) and `policy` (access policy, on data: `oto policy`, its two build stages and its write and
 read hooks as `oto_policy`, with data embedded beside it) are the last two: the engine ships no pack with tools of its own.
+
+**The domain vocabularies.** The engine ships one vocabulary, `oto-core`, its own schema; every domain vocabulary is a
+pack here ([ADR-0011](https://github.com/Cynergis/oto/blob/main/docs/adr/0011-a-domain-vocabulary-is-a-pack-of-the-registry.md)):
+`portfolio`, `product`, `software-architecture` and `architecture`, the estate and the reified model that `agent`,
+`platform`, `calm`, `ddd` and the feature packs extend, and `auto-claims`, `organization-process` and `professional-services`
+on `oto-core` alone. Each embeds the vocabularies it extends at the releases it was checked with, so installing one is
+enough to compose it (`oto pack add <name>`, `oto init --ontology <name>`), and a release of a domain vocabulary is cut
+here and nowhere else.
