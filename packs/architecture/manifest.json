@@ -1,11 +1,11 @@
 {
   "name": "architecture",
-  "release": 1,
+  "release": 2,
   "domain": "software",
   "summary": "The architecture graph for implementation, framework-neutral: estate nodes carrying the id, type and payload of the framework their model was written in (CALM through the calm pack's adapter), relationships, controls and flows as nodes, requirements with budgets and the evidence that measured them, the code modules and commits that implement each component, and the change proposals evidence raised.",
   "ontology": {
     "name": "architecture",
-    "release": 6,
+    "release": 7,
     "registry": null,
     "source": "built-in",
     "ref": null,
@@ -13,9 +13,14 @@
     "commit": null,
     "embedded_at": "2026-10-31"
   },
-  "engine": ">=0.14.7",
+  "engine": ">=0.14.8",
   "maintainer": "Cynergis",
   "changelog": [
+    {
+      "release": 2,
+      "at": "2026-10-31",
+      "note": "The arch command (import, export, migrate, the code map, compile, impact, measure) and the served arch_context are this pack's code, the module oto_architecture in code/, through provides.commands and the engine's provides.tools seam; the vocabulary at release 7 names it; the engine's arch tests and the plain framework fixture move here (ADR-0011)."
+    },
     {
       "release": 1,
       "at": "2026-10-31",

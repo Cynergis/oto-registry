@@ -22,12 +22,12 @@
     },
     {
       "name": "architecture",
-      "release": 1,
+      "release": 2,
       "summary": "The architecture graph for implementation, framework-neutral: estate nodes carrying the id, type and payload of the framework their model was written in (CALM through the calm pack's adapter), relationships, controls and flows as nodes, requirements with budgets and the evidence that measured them, the code modules and commits that implement each component, and the change proposals evidence raised.",
       "path": "packs/architecture",
       "ontology": {
         "name": "architecture",
-        "release": 6
+        "release": 7
       },
       "domain": "software"
     },

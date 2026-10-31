@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: The architecture graph for implementation, framework-neutral: estate nodes carrying the id, type and payload of the framework their model was written in (CALM through the calm pack's adapter), relationships, controls and flows as nodes, requirements with budgets and the evidence that measured them, the code modules and commits that implement each component, and the change proposals evidence raised. The pack 'architecture' (release 1) embeds the ontology 'architecture' (release 6), which declares Relationship, Control, Flow, FlowStep, NFR, Evidence, CodeModule, Commit and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: The architecture graph for implementation, framework-neutral: estate nodes carrying the id, type and payload of the framework their model was written in (CALM through the calm pack's adapter), relationships, controls and flows as nodes, requirements with budgets and the evidence that measured them, the code modules and commits that implement each component, and the change proposals evidence raised. The pack 'architecture' (release 2) embeds the ontology 'architecture' (release 7), which declares Relationship, Control, Flow, FlowStep, NFR, Evidence, CodeModule, Commit and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Architecture
