@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: The platform binding of a product's architecture: where each part runs (platforms, accounts, environments with their region, console, logs and provisioning), what it runs on and is built with (managed services, technologies at their versions), its secrets by where they are kept, the pipelines that deploy it, and who decides each choice: a named person, or the builder within limits. Briefs stop an implementing agent that lacks any of it. The pack 'platform' (release 2) embeds the ontology 'platform' (release 1), which declares Platform, Account, PlatformService, Technology, Choice, SecretRef, Pipeline. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: The platform binding of a product's architecture: where each part runs (platforms, accounts, environments with their region, console, logs and provisioning), what it runs on and is built with (managed services, technologies at their versions), its secrets by where they are kept, the pipelines that deploy it, and who decides each choice: a named person, or the builder within limits. Briefs stop an implementing agent that lacks any of it. The pack 'platform' (release 3) embeds the ontology 'platform' (release 1), which declares Platform, Account, PlatformService, Technology, Choice, SecretRef, Pipeline. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Platform binding
