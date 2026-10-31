@@ -1,6 +1,6 @@
 {
   "name": "agent",
-  "release": 3,
+  "release": 4,
   "domain": "software",
   "pattern": {
     "of": "software-architecture",
@@ -16,11 +16,16 @@
     "ref": null,
     "path": null,
     "commit": null,
-    "embedded_at": "2026-10-14"
+    "embedded_at": "2026-10-31"
   },
-  "engine": ">=0.11.23",
+  "engine": ">=0.14.7",
   "maintainer": "Cynergis",
   "changelog": [
+    {
+      "release": 4,
+      "at": "2026-10-31",
+      "note": "Republished from the engine under ADR-0011, its bases at the engine's current releases (software-architecture 12, product 14, oto-core 7): the engine ships no domain vocabulary."
+    },
     {
       "release": 3,
       "at": "2026-10-14",

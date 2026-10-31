@@ -6,7 +6,7 @@
   "packs": [
     {
       "name": "agent",
-      "release": 3,
+      "release": 4,
       "summary": "An agent people give work to, as a part of a product: the jobs they hand it and the requirement each meets, its tools and what each reads, changes or sends, what it draws on, its guardrails and who confirms, how it talks, where it hands work over, the test conversations that prove each job, and how it is packaged.",
       "path": "packs/agent",
       "ontology": {
