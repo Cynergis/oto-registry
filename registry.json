@@ -33,7 +33,7 @@
     },
     {
       "name": "auto-claims",
-      "release": 7,
+      "release": 8,
       "summary": "Motor vehicle claims: policy, coverage, claim, incident, handling, money in and out.",
       "path": "packs/auto-claims",
       "ontology": {
