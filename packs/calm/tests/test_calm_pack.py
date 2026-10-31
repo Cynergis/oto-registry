@@ -11,7 +11,8 @@ import os
 
 import pytest
 
-from oto import arch as _arch, audit as _audit, extensions
+import oto_architecture as _arch
+from oto import audit as _audit, extensions
 from oto.cli import main
 from oto.curate import session as _session
 from oto.model import ontologies

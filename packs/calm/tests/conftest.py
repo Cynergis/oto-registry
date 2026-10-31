@@ -11,3 +11,6 @@ os.environ.setdefault("CLAUDE_CONFIG_DIR", os.path.join(HERE, ".no-claude-config
 CODE = os.path.join(HERE, "ontology", "calm", "code")
 if CODE not in sys.path:
     sys.path.insert(0, CODE)
+ARCHITECTURE_CODE = os.path.join(os.path.dirname(HERE), "architecture", "ontology", "architecture", "code")   # oto arch and the reified model's names (ADR-0011)
+if os.path.isdir(ARCHITECTURE_CODE) and ARCHITECTURE_CODE not in sys.path:
+    sys.path.insert(0, ARCHITECTURE_CODE)

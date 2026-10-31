@@ -1,0 +1,11 @@
+{
+  "_about": "A test-only pack wrapping the plain framework the ddd pack's tests import a model through: its adapter reads a file that is already the reified model. Found through OTO_PACKS by tests/conftest.py; never published.",
+  "name": "plain-framework",
+  "release": 1,
+  "domain": "software",
+  "summary": "The plain framework, for the ddd pack's tests.",
+  "ontology": {"name": "plain", "release": 1, "registry": null, "source": "embedded", "ref": null, "path": "ontology/plain", "commit": null, "embedded_at": "2026-10-30"},
+  "engine": ">=0.14.2",
+  "maintainer": "Cynergis",
+  "changelog": []
+}

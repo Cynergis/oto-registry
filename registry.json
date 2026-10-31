@@ -22,12 +22,12 @@
     },
     {
       "name": "architecture",
-      "release": 1,
+      "release": 2,
       "summary": "The architecture graph for implementation, framework-neutral: estate nodes carrying the id, type and payload of the framework their model was written in (CALM through the calm pack's adapter), relationships, controls and flows as nodes, requirements with budgets and the evidence that measured them, the code modules and commits that implement each component, and the change proposals evidence raised.",
       "path": "packs/architecture",
       "ontology": {
         "name": "architecture",
-        "release": 6
+        "release": 7
       },
       "domain": "software"
     },
@@ -44,7 +44,7 @@
     },
     {
       "name": "calm",
-      "release": 1,
+      "release": 2,
       "summary": "The FINOS Common Architecture Language Model as an architecture framework for the architecture pack: the adapter that reads a CALM 1.x model into the graph and writes the graph back as CALM, chosen by oto arch import --framework calm, with the migration of a graph written with CALM's former attribute names. The engine ships no framework: this pack installs the first.",
       "path": "packs/calm",
       "ontology": {
@@ -55,7 +55,7 @@
     },
     {
       "name": "data",
-      "release": 1,
+      "release": 2,
       "summary": "The data semantic layer as facts: a store's tables and columns with their types, keys and a meaning that is a draft until a named person confirms it, the jobs and feeds that load each table (lineage from a dbt manifest or the ETL's SQL), who reads each table and how (usage from the query log). oto data introspect, lineage, usage, meaning and confirm come with the pack, with the data-meaning skill; the engine ships no data layer of its own.",
       "path": "packs/data",
       "ontology": {
@@ -66,7 +66,7 @@
     },
     {
       "name": "ddd",
-      "release": 7,
+      "release": 8,
       "summary": "Domain-driven design for the parts of a product that follow it: subdomains, bounded contexts and their map, event storming (events, commands, reactions, read models, external systems) and the tactical model (aggregates, entities, value objects, business rules, domain services), on the architecture pack so a context's deployed component and its framework's node are one node; oto ddd storm reads an event-storming board into a document and a capture the gates take, and a named person signs each element off with oto decide. The engine ships no ddd: this pack is it.",
       "path": "packs/ddd",
       "ontology": {
@@ -136,7 +136,7 @@
     },
     {
       "name": "policy",
-      "release": 1,
+      "release": 2,
       "summary": "Access policy as facts on the data layer: a rule permits or forbids a permission for the roles and teams it names, a table or a column says how it is classified and whether it holds personal data, a principal holds roles and an agent is granted them; the active rules compile into a signed Cedar bundle, a signed snapshot of what an agent may do for a principal that the engine's guards and write hooks hold a session to, and the platform's IAM bindings derived and never enforced. oto policy compile, snapshot, iam, verify, list and denials come with the pack, with its two build stages and its write and read hooks; the engine ships no policy of its own.",
       "path": "packs/policy",
       "ontology": {

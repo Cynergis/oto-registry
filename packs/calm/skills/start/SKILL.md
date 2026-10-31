@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: The FINOS Common Architecture Language Model as an architecture framework for the architecture pack: the adapter that reads a CALM 1.x model into the graph and writes the graph back as CALM, chosen by oto arch import --framework calm, with the migration of a graph written with CALM's former attribute names. The engine ships no framework: this pack installs the first. The pack 'calm' (release 1) embeds the ontology 'calm' (release 2), which declares . Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: The FINOS Common Architecture Language Model as an architecture framework for the architecture pack: the adapter that reads a CALM 1.x model into the graph and writes the graph back as CALM, chosen by oto arch import --framework calm, with the migration of a graph written with CALM's former attribute names. The engine ships no framework: this pack installs the first. The pack 'calm' (release 2) embeds the ontology 'calm' (release 2), which declares . Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # CALM

@@ -23,6 +23,9 @@ os.environ["CLAUDE_CONFIG_DIR"] = CONFIG
 CODE = os.path.join(HERE, "ontology", "ddd", "code")
 if CODE not in sys.path:
     sys.path.insert(0, CODE)
+ARCHITECTURE_CODE = os.path.join(os.path.dirname(HERE), "architecture", "ontology", "architecture", "code")   # oto arch, which the plain framework imports through (ADR-0011)
+if os.path.isdir(ARCHITECTURE_CODE) and ARCHITECTURE_CODE not in sys.path:
+    sys.path.insert(0, ARCHITECTURE_CODE)
 PLAIN_MODEL = os.path.join(HERE, "tests", "fixtures", "invoice-platform.model.json")
 
 
