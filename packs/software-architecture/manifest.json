@@ -1,21 +1,26 @@
 {
   "name": "software-architecture",
-  "release": 8,
+  "release": 9,
   "domain": "software",
   "summary": "A product's architecture, pattern-neutral: its context and drivers, decisions with their alternatives, systems, components, interfaces, data stores and environments, each traced to the requirement it satisfies; each part handed to the design-pattern pack it follows, found among the project's packs.",
   "ontology": {
     "name": "software-architecture",
-    "release": 10,
+    "release": 12,
     "registry": null,
     "source": "built-in",
     "ref": null,
     "path": null,
     "commit": null,
-    "embedded_at": "2026-10-14"
+    "embedded_at": "2026-10-31"
   },
-  "engine": ">=0.11.17",
+  "engine": ">=0.14.7",
   "maintainer": "Cynergis",
   "changelog": [
+    {
+      "release": 9,
+      "at": "2026-10-31",
+      "note": "Republished from the engine at ontology release 12 (was 10) under ADR-0011: the engine ships no domain vocabulary, and this pack is the only software-architecture there is."
+    },
     {
       "release": 8,
       "at": "2026-10-14",
