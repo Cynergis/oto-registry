@@ -36,14 +36,21 @@
       "name": "agent",
       "source": "./packs/agent",
       "description": "An agent people give work to, as a part of a product: the jobs they hand it and the requirement each meets, its tools and what each reads, changes or sends, what it draws on, its guardrails and who confirms, how it talks, where it hands work over, the test conversations that prove each job, and how it is packaged.",
-      "version": "3.0.0",
+      "version": "4.0.0",
+      "category": "software"
+    },
+    {
+      "name": "architecture",
+      "source": "./packs/architecture",
+      "description": "The architecture graph for implementation, framework-neutral: estate nodes carrying the id, type and payload of the framework their model was written in (CALM through the calm pack's adapter), relationships, controls and flows as nodes, requirements with budgets and the evidence that measured them, the code modules and commits that implement each component, and the change proposals evidence raised.",
+      "version": "1.0.0",
       "category": "software"
     },
     {
       "name": "auto-claims",
       "source": "./packs/auto-claims",
       "description": "Motor vehicle claims: policy, coverage, claim, incident, handling, money in and out.",
-      "version": "7.0.0",
+      "version": "8.0.0",
       "category": "insurance"
     },
     {
@@ -85,14 +92,14 @@
       "name": "organization-process",
       "source": "./packs/organization-process",
       "description": "How an organization works: units, roles, processes, policies, systems and measures.",
-      "version": "6.0.0",
+      "version": "7.0.0",
       "category": "organization"
     },
     {
       "name": "platform",
       "source": "./packs/platform",
       "description": "The platform binding of a product's architecture: where each part runs (platforms, accounts, environments with their region, console, logs and provisioning), what it runs on and is built with (managed services, technologies at their versions), its secrets by where they are kept, the pipelines that deploy it, and who decides each choice: a named person, or the builder within limits. Briefs stop an implementing agent that lacks any of it.",
-      "version": "2.0.0",
+      "version": "3.0.0",
       "category": "software"
     },
     {
@@ -103,10 +110,17 @@
       "category": "security"
     },
     {
+      "name": "portfolio",
+      "source": "./packs/portfolio",
+      "description": "What we build, who owns it, what we pursue: the products with their stage, domain and value stream, the roles and teams accountable, the objectives of the period and which products pursue them, the capabilities needed and provided, the dependencies between products, and where each product's knowledge base, site and packs are.",
+      "version": "1.0.0",
+      "category": "product"
+    },
+    {
       "name": "product",
       "source": "./packs/product",
       "description": "A product's specification and its playbook: Atlas, who carries a product from an idea to a published knowledge base, the PRD captured section by section through the curate gates, and the specification page of the product's studio, read from the graph.",
-      "version": "7.0.0",
+      "version": "8.0.0",
       "category": "product"
     },
     {
@@ -120,7 +134,7 @@
       "name": "professional-services",
       "source": "./packs/professional-services",
       "description": "Engagements: scope, deliverables, governance, sessions, decisions and the work that follows.",
-      "version": "6.0.0",
+      "version": "7.0.0",
       "category": "professional-services"
     },
     {
@@ -140,7 +154,7 @@
       "name": "software-architecture",
       "source": "./packs/software-architecture",
       "description": "A product's architecture, pattern-neutral: its context and drivers, decisions with their alternatives, systems, components, interfaces, data stores and environments, each traced to the requirement it satisfies; each part handed to the design-pattern pack it follows, found among the project's packs.",
-      "version": "8.0.0",
+      "version": "9.0.0",
       "category": "software"
     },
     {
