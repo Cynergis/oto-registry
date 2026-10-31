@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: An agent people give work to, as a part of a product: the jobs they hand it and the requirement each meets, its tools and what each reads, changes or sends, what it draws on, its guardrails and who confirms, how it talks, where it hands work over, the test conversations that prove each job, and how it is packaged. The pack 'agent' (release 3) embeds the ontology 'agent' (release 1), which declares Agent, Job, Tool, KnowledgeSource, Guardrail, Evaluation, ConversationStyle. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: An agent people give work to, as a part of a product: the jobs they hand it and the requirement each meets, its tools and what each reads, changes or sends, what it draws on, its guardrails and who confirms, how it talks, where it hands work over, the test conversations that prove each job, and how it is packaged. The pack 'agent' (release 4) embeds the ontology 'agent' (release 1), which declares Agent, Job, Tool, KnowledgeSource, Guardrail, Evaluation, ConversationStyle. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # Agent
