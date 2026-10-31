@@ -135,6 +135,17 @@
       "domain": "security"
     },
     {
+      "name": "portfolio",
+      "release": 1,
+      "summary": "What we build, who owns it, what we pursue: the products with their stage, domain and value stream, the roles and teams accountable, the objectives of the period and which products pursue them, the capabilities needed and provided, the dependencies between products, and where each product's knowledge base, site and packs are.",
+      "path": "packs/portfolio",
+      "ontology": {
+        "name": "portfolio",
+        "release": 1
+      },
+      "domain": "product"
+    },
+    {
       "name": "product",
       "release": 7,
       "summary": "A product's specification and its playbook: Atlas, who carries a product from an idea to a published knowledge base, the PRD captured section by section through the curate gates, and the specification page of the product's studio, read from the graph.",
