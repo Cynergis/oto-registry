@@ -1,6 +1,6 @@
 {
   "name": "calm",
-  "release": 1,
+  "release": 2,
   "domain": "software",
   "summary": "The FINOS Common Architecture Language Model as an architecture framework for the architecture pack: the adapter that reads a CALM 1.x model into the graph and writes the graph back as CALM, chosen by oto arch import --framework calm, with the migration of a graph written with CALM's former attribute names. The engine ships no framework: this pack installs the first.",
   "ontology": {
@@ -16,6 +16,11 @@
   "engine": ">=0.14.2",
   "maintainer": "Cynergis",
   "changelog": [
+    {
+      "release": 2,
+      "at": "2026-10-31",
+      "note": "The adapter imports the reified model's names from the architecture pack's oto_architecture (ADR-0011), falling back to the engine's module on an engine before 0.15.0; architecture re-embedded at release 7."
+    },
     {
       "release": 1,
       "at": "2026-10-29",

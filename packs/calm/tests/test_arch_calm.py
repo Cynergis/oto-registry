@@ -17,7 +17,7 @@ import os
 
 import pytest
 
-from oto import arch
+import oto_architecture as arch
 import oto_calm as _calm
 from oto.cli import main
 from oto.curate import session
