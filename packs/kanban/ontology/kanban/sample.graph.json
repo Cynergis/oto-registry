@@ -1,0 +1,1400 @@
+{
+  "nodes": [
+    {
+      "id": "team.checkout",
+      "type": "Team",
+      "label": "Checkout team",
+      "aliases": [],
+      "summary": "The team that builds the shop's checkout.",
+      "attributes": {},
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-09-01",
+      "valid_from": "2026-09-01",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "team.payments",
+      "type": "Team",
+      "label": "Payments team",
+      "aliases": [],
+      "summary": "The team that runs refunds and card payments.",
+      "attributes": {},
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-09-01",
+      "valid_from": "2026-09-01",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "person.ana",
+      "type": "Person",
+      "label": "Ana",
+      "aliases": [],
+      "summary": "Developer on the checkout team.",
+      "attributes": {},
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-09-01",
+      "valid_from": "2026-09-01",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "person.ben",
+      "type": "Person",
+      "label": "Ben",
+      "aliases": [],
+      "summary": "Developer on the checkout team.",
+      "attributes": {},
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-09-01",
+      "valid_from": "2026-09-01",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "person.chloe",
+      "type": "Person",
+      "label": "Chloe",
+      "aliases": [],
+      "summary": "Product lead for checkout; leads replenishment.",
+      "attributes": {},
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-09-01",
+      "valid_from": "2026-09-01",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "board.checkout",
+      "type": "Board",
+      "label": "Checkout board",
+      "aliases": [],
+      "summary": "The checkout team's board.",
+      "attributes": {
+        "expected_days": 10,
+        "expected_share": 85
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-09-01",
+      "valid_from": "2026-09-01",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "board.payments",
+      "type": "Board",
+      "label": "Payments board",
+      "aliases": [],
+      "summary": "The payments team's board.",
+      "attributes": {
+        "expected_days": 15,
+        "expected_share": 85
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-09-01",
+      "valid_from": "2026-09-01",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "column.checkout-ready",
+      "type": "Column",
+      "label": "Ready",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "position": 1,
+        "kind": "waiting"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-09-01",
+      "valid_from": "2026-09-01",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "column.checkout-doing",
+      "type": "Column",
+      "label": "Doing",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "position": 2,
+        "kind": "working"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-09-01",
+      "valid_from": "2026-09-01",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "column.checkout-review",
+      "type": "Column",
+      "label": "Review",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "position": 3,
+        "kind": "working"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-09-01",
+      "valid_from": "2026-09-01",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "column.checkout-done",
+      "type": "Column",
+      "label": "Done",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "position": 4,
+        "kind": "done"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-09-01",
+      "valid_from": "2026-09-01",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "column.payments-doing",
+      "type": "Column",
+      "label": "Doing",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "position": 1,
+        "kind": "working"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-09-01",
+      "valid_from": "2026-09-01",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "column.payments-done",
+      "type": "Column",
+      "label": "Done",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "position": 2,
+        "kind": "done"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-09-01",
+      "valid_from": "2026-09-01",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "limit.checkout-doing-1",
+      "type": "WipLimit",
+      "label": "Doing limit of 3 from 2026-08-01",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "max_cards": 3,
+        "set_on": "2026-08-01",
+        "reason": "Three developers, one card each."
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-08-01",
+      "valid_from": "2026-08-01",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "limit.checkout-doing-2",
+      "type": "WipLimit",
+      "label": "Doing limit of 2 from 2026-10-15",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "max_cards": 2,
+        "set_on": "2026-10-15",
+        "reason": "Too much started and not enough finished: swarm instead."
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-10-15",
+      "valid_from": "2026-10-15",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "limit.checkout-review-1",
+      "type": "WipLimit",
+      "label": "Review limit of 2 from 2026-08-01",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "max_cards": 2,
+        "set_on": "2026-08-01",
+        "reason": "Reviews should not wait more than a day."
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-08-01",
+      "valid_from": "2026-08-01",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "card.saved-cards",
+      "type": "Card",
+      "label": "Saved cards at checkout",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "requested_on": "2026-09-01",
+        "class_of_service": "standard"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-09-01",
+      "valid_from": "2026-09-01",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "move.saved-cards-1",
+      "type": "Move",
+      "label": "Saved cards at checkout into Ready",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "moved_on": "2026-09-02"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-09-02",
+      "valid_from": "2026-09-02",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "move.saved-cards-2",
+      "type": "Move",
+      "label": "Saved cards at checkout into Doing",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "moved_on": "2026-09-05"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-09-05",
+      "valid_from": "2026-09-05",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "move.saved-cards-3",
+      "type": "Move",
+      "label": "Saved cards at checkout into Review",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "moved_on": "2026-09-10"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-09-10",
+      "valid_from": "2026-09-10",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "move.saved-cards-4",
+      "type": "Move",
+      "label": "Saved cards at checkout into Doing",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "moved_on": "2026-09-11"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-09-11",
+      "valid_from": "2026-09-11",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "move.saved-cards-5",
+      "type": "Move",
+      "label": "Saved cards at checkout into Review",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "moved_on": "2026-09-14"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-09-14",
+      "valid_from": "2026-09-14",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "move.saved-cards-6",
+      "type": "Move",
+      "label": "Saved cards at checkout into Done",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "moved_on": "2026-09-16"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-09-16",
+      "valid_from": "2026-09-16",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "card.refund-email",
+      "type": "Card",
+      "label": "Refund confirmation email",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "requested_on": "2026-09-20",
+        "class_of_service": "fixed_date",
+        "due": "2026-11-20"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-09-20",
+      "valid_from": "2026-09-20",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "move.refund-email-1",
+      "type": "Move",
+      "label": "Refund confirmation email into Ready",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "moved_on": "2026-09-21"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-09-21",
+      "valid_from": "2026-09-21",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "move.refund-email-2",
+      "type": "Move",
+      "label": "Refund confirmation email into Doing",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "moved_on": "2026-10-01"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-10-01",
+      "valid_from": "2026-10-01",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "card.rounding",
+      "type": "Card",
+      "label": "Fix rounding in order totals",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "requested_on": "2026-10-10",
+        "class_of_service": "expedite"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-10-10",
+      "valid_from": "2026-10-10",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "move.rounding-1",
+      "type": "Move",
+      "label": "Fix rounding in order totals into Doing",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "moved_on": "2026-10-10"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-10-10",
+      "valid_from": "2026-10-10",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "move.rounding-2",
+      "type": "Move",
+      "label": "Fix rounding in order totals into Review",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "moved_on": "2026-10-12"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-10-12",
+      "valid_from": "2026-10-12",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "move.rounding-3",
+      "type": "Move",
+      "label": "Fix rounding in order totals into Done",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "moved_on": "2026-10-13"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-10-13",
+      "valid_from": "2026-10-13",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "card.gift-cards",
+      "type": "Card",
+      "label": "Gift card balance",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "requested_on": "2026-10-14",
+        "class_of_service": "standard"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-10-14",
+      "valid_from": "2026-10-14",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "move.gift-cards-1",
+      "type": "Move",
+      "label": "Gift card balance into Ready",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "moved_on": "2026-10-16"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-10-16",
+      "valid_from": "2026-10-16",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "move.gift-cards-2",
+      "type": "Move",
+      "label": "Gift card balance into Doing",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "moved_on": "2026-10-20"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-10-20",
+      "valid_from": "2026-10-20",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "card.autocomplete",
+      "type": "Card",
+      "label": "Address autocomplete",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "requested_on": "2026-10-14",
+        "class_of_service": "standard"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-10-14",
+      "valid_from": "2026-10-14",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "move.autocomplete-1",
+      "type": "Move",
+      "label": "Address autocomplete into Ready",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "moved_on": "2026-10-18"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-10-18",
+      "valid_from": "2026-10-18",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "move.autocomplete-2",
+      "type": "Move",
+      "label": "Address autocomplete into Doing",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "moved_on": "2026-10-22"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-10-22",
+      "valid_from": "2026-10-22",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "card.dark-mode",
+      "type": "Card",
+      "label": "Dark mode for checkout",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "requested_on": "2026-10-24"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-10-24",
+      "valid_from": "2026-10-24",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "move.dark-mode-1",
+      "type": "Move",
+      "label": "Dark mode for checkout into Ready",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "moved_on": "2026-10-25"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-10-25",
+      "valid_from": "2026-10-25",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "card.payments-refunds-api",
+      "type": "Card",
+      "label": "Refunds endpoint",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "requested_on": "2026-09-25",
+        "class_of_service": "standard"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-09-25",
+      "valid_from": "2026-09-25",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "move.payments-refunds-api-1",
+      "type": "Move",
+      "label": "Refunds endpoint into Doing",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "moved_on": "2026-10-02"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-10-02",
+      "valid_from": "2026-10-02",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "blocker.saved-cards-design",
+      "type": "Blocker",
+      "label": "Saved cards waiting for design sign-off",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "blocked_on": "2026-09-06",
+        "cleared_on": "2026-09-08",
+        "reason": "The card form needed design sign-off."
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-09-06",
+      "valid_from": "2026-09-06",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "blocker.refund-email-api",
+      "type": "Blocker",
+      "label": "Refund email waiting for the refunds endpoint",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "blocked_on": "2026-10-05",
+        "reason": "The email needs the refund's amount from the payments team's endpoint."
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-10-05",
+      "valid_from": "2026-10-05",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "policy.checkout-ready",
+      "type": "Policy",
+      "label": "Ready means ready",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "applies_when": "entering",
+        "statement": "A card enters Ready with its acceptance criteria written and its size agreed."
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-09-01",
+      "valid_from": "2026-09-01",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "policy.checkout-done",
+      "type": "Policy",
+      "label": "Definition of done",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "applies_when": "leaving",
+        "statement": "Reviewed by another developer, tests pass, and deployed to production."
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-09-01",
+      "valid_from": "2026-09-01",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "policy.checkout-blockers",
+      "type": "Policy",
+      "label": "Blockers first",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "applies_when": "always",
+        "statement": "A blocked card is swarmed before anyone pulls new work."
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-09-01",
+      "valid_from": "2026-09-01",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "policy.payments-done",
+      "type": "Policy",
+      "label": "Definition of done",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "applies_when": "leaving",
+        "statement": "Reviewed, and deployed behind a flag that is off."
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-09-01",
+      "valid_from": "2026-09-01",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "policy.checkout-pull",
+      "type": "Policy",
+      "label": "One card each",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "applies_when": "entering",
+        "statement": "A developer pulls a card into Doing only when they hold no other card there."
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-09-01",
+      "valid_from": "2026-09-01",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "replenishment.checkout-2026-09-18",
+      "type": "Replenishment",
+      "label": "Checkout replenishment, 18 September",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "held_on": "2026-09-18"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-09-18",
+      "valid_from": "2026-09-18",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    },
+    {
+      "id": "replenishment.checkout-2026-10-14",
+      "type": "Replenishment",
+      "label": "Checkout replenishment, 14 October",
+      "aliases": [],
+      "summary": "",
+      "attributes": {
+        "held_on": "2026-10-14"
+      },
+      "tags": [
+        "sample"
+      ],
+      "as_of": "2026-10-14",
+      "valid_from": "2026-10-14",
+      "source_doc": "sample-board",
+      "status": "current",
+      "sources": [
+        "sample-board"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "board.checkout",
+      "rel": "owned_by",
+      "to": "team.checkout"
+    },
+    {
+      "from": "board.payments",
+      "rel": "owned_by",
+      "to": "team.payments"
+    },
+    {
+      "from": "column.checkout-ready",
+      "rel": "column_of",
+      "to": "board.checkout"
+    },
+    {
+      "from": "column.checkout-doing",
+      "rel": "column_of",
+      "to": "board.checkout"
+    },
+    {
+      "from": "column.checkout-review",
+      "rel": "column_of",
+      "to": "board.checkout"
+    },
+    {
+      "from": "column.checkout-done",
+      "rel": "column_of",
+      "to": "board.checkout"
+    },
+    {
+      "from": "column.payments-doing",
+      "rel": "column_of",
+      "to": "board.payments"
+    },
+    {
+      "from": "column.payments-done",
+      "rel": "column_of",
+      "to": "board.payments"
+    },
+    {
+      "from": "limit.checkout-doing-1",
+      "rel": "limits",
+      "to": "column.checkout-doing"
+    },
+    {
+      "from": "limit.checkout-doing-1",
+      "rel": "decided_by",
+      "to": "person.chloe"
+    },
+    {
+      "from": "limit.checkout-doing-2",
+      "rel": "limits",
+      "to": "column.checkout-doing"
+    },
+    {
+      "from": "limit.checkout-doing-2",
+      "rel": "decided_by",
+      "to": "person.chloe"
+    },
+    {
+      "from": "limit.checkout-review-1",
+      "rel": "limits",
+      "to": "column.checkout-review"
+    },
+    {
+      "from": "limit.checkout-review-1",
+      "rel": "decided_by",
+      "to": "person.chloe"
+    },
+    {
+      "from": "card.saved-cards",
+      "rel": "worked_by",
+      "to": "person.ana"
+    },
+    {
+      "from": "move.saved-cards-1",
+      "rel": "move_of",
+      "to": "card.saved-cards"
+    },
+    {
+      "from": "move.saved-cards-1",
+      "rel": "into",
+      "to": "column.checkout-ready"
+    },
+    {
+      "from": "move.saved-cards-2",
+      "rel": "move_of",
+      "to": "card.saved-cards"
+    },
+    {
+      "from": "move.saved-cards-2",
+      "rel": "into",
+      "to": "column.checkout-doing"
+    },
+    {
+      "from": "move.saved-cards-2",
+      "rel": "out_of",
+      "to": "column.checkout-ready"
+    },
+    {
+      "from": "move.saved-cards-3",
+      "rel": "move_of",
+      "to": "card.saved-cards"
+    },
+    {
+      "from": "move.saved-cards-3",
+      "rel": "into",
+      "to": "column.checkout-review"
+    },
+    {
+      "from": "move.saved-cards-3",
+      "rel": "out_of",
+      "to": "column.checkout-doing"
+    },
+    {
+      "from": "move.saved-cards-4",
+      "rel": "move_of",
+      "to": "card.saved-cards"
+    },
+    {
+      "from": "move.saved-cards-4",
+      "rel": "into",
+      "to": "column.checkout-doing"
+    },
+    {
+      "from": "move.saved-cards-4",
+      "rel": "out_of",
+      "to": "column.checkout-review"
+    },
+    {
+      "from": "move.saved-cards-5",
+      "rel": "move_of",
+      "to": "card.saved-cards"
+    },
+    {
+      "from": "move.saved-cards-5",
+      "rel": "into",
+      "to": "column.checkout-review"
+    },
+    {
+      "from": "move.saved-cards-5",
+      "rel": "out_of",
+      "to": "column.checkout-doing"
+    },
+    {
+      "from": "move.saved-cards-6",
+      "rel": "move_of",
+      "to": "card.saved-cards"
+    },
+    {
+      "from": "move.saved-cards-6",
+      "rel": "into",
+      "to": "column.checkout-done"
+    },
+    {
+      "from": "move.saved-cards-6",
+      "rel": "out_of",
+      "to": "column.checkout-review"
+    },
+    {
+      "from": "card.refund-email",
+      "rel": "worked_by",
+      "to": "person.ben"
+    },
+    {
+      "from": "move.refund-email-1",
+      "rel": "move_of",
+      "to": "card.refund-email"
+    },
+    {
+      "from": "move.refund-email-1",
+      "rel": "into",
+      "to": "column.checkout-ready"
+    },
+    {
+      "from": "move.refund-email-2",
+      "rel": "move_of",
+      "to": "card.refund-email"
+    },
+    {
+      "from": "move.refund-email-2",
+      "rel": "into",
+      "to": "column.checkout-doing"
+    },
+    {
+      "from": "move.refund-email-2",
+      "rel": "out_of",
+      "to": "column.checkout-ready"
+    },
+    {
+      "from": "card.rounding",
+      "rel": "worked_by",
+      "to": "person.ana"
+    },
+    {
+      "from": "move.rounding-1",
+      "rel": "move_of",
+      "to": "card.rounding"
+    },
+    {
+      "from": "move.rounding-1",
+      "rel": "into",
+      "to": "column.checkout-doing"
+    },
+    {
+      "from": "move.rounding-2",
+      "rel": "move_of",
+      "to": "card.rounding"
+    },
+    {
+      "from": "move.rounding-2",
+      "rel": "into",
+      "to": "column.checkout-review"
+    },
+    {
+      "from": "move.rounding-2",
+      "rel": "out_of",
+      "to": "column.checkout-doing"
+    },
+    {
+      "from": "move.rounding-3",
+      "rel": "move_of",
+      "to": "card.rounding"
+    },
+    {
+      "from": "move.rounding-3",
+      "rel": "into",
+      "to": "column.checkout-done"
+    },
+    {
+      "from": "move.rounding-3",
+      "rel": "out_of",
+      "to": "column.checkout-review"
+    },
+    {
+      "from": "card.gift-cards",
+      "rel": "worked_by",
+      "to": "person.ana"
+    },
+    {
+      "from": "move.gift-cards-1",
+      "rel": "move_of",
+      "to": "card.gift-cards"
+    },
+    {
+      "from": "move.gift-cards-1",
+      "rel": "into",
+      "to": "column.checkout-ready"
+    },
+    {
+      "from": "move.gift-cards-2",
+      "rel": "move_of",
+      "to": "card.gift-cards"
+    },
+    {
+      "from": "move.gift-cards-2",
+      "rel": "into",
+      "to": "column.checkout-doing"
+    },
+    {
+      "from": "move.gift-cards-2",
+      "rel": "out_of",
+      "to": "column.checkout-ready"
+    },
+    {
+      "from": "card.autocomplete",
+      "rel": "worked_by",
+      "to": "person.ana"
+    },
+    {
+      "from": "move.autocomplete-1",
+      "rel": "move_of",
+      "to": "card.autocomplete"
+    },
+    {
+      "from": "move.autocomplete-1",
+      "rel": "into",
+      "to": "column.checkout-ready"
+    },
+    {
+      "from": "move.autocomplete-2",
+      "rel": "move_of",
+      "to": "card.autocomplete"
+    },
+    {
+      "from": "move.autocomplete-2",
+      "rel": "into",
+      "to": "column.checkout-doing"
+    },
+    {
+      "from": "move.autocomplete-2",
+      "rel": "out_of",
+      "to": "column.checkout-ready"
+    },
+    {
+      "from": "move.dark-mode-1",
+      "rel": "move_of",
+      "to": "card.dark-mode"
+    },
+    {
+      "from": "move.dark-mode-1",
+      "rel": "into",
+      "to": "column.checkout-ready"
+    },
+    {
+      "from": "move.payments-refunds-api-1",
+      "rel": "move_of",
+      "to": "card.payments-refunds-api"
+    },
+    {
+      "from": "move.payments-refunds-api-1",
+      "rel": "into",
+      "to": "column.payments-doing"
+    },
+    {
+      "from": "blocker.saved-cards-design",
+      "rel": "blocks",
+      "to": "card.saved-cards"
+    },
+    {
+      "from": "blocker.saved-cards-design",
+      "rel": "waits_on",
+      "to": "person.chloe"
+    },
+    {
+      "from": "blocker.refund-email-api",
+      "rel": "blocks",
+      "to": "card.refund-email"
+    },
+    {
+      "from": "blocker.refund-email-api",
+      "rel": "waits_on",
+      "to": "team.payments"
+    },
+    {
+      "from": "policy.checkout-pull",
+      "rel": "applies_to",
+      "to": "column.checkout-doing"
+    },
+    {
+      "from": "policy.checkout-ready",
+      "rel": "applies_to",
+      "to": "column.checkout-ready"
+    },
+    {
+      "from": "policy.checkout-done",
+      "rel": "applies_to",
+      "to": "column.checkout-review"
+    },
+    {
+      "from": "policy.checkout-blockers",
+      "rel": "applies_to",
+      "to": "board.checkout"
+    },
+    {
+      "from": "policy.payments-done",
+      "rel": "applies_to",
+      "to": "column.payments-doing"
+    },
+    {
+      "from": "replenishment.checkout-2026-09-18",
+      "rel": "replenishes",
+      "to": "board.checkout"
+    },
+    {
+      "from": "replenishment.checkout-2026-09-18",
+      "rel": "decided_by",
+      "to": "person.chloe"
+    },
+    {
+      "from": "replenishment.checkout-2026-09-18",
+      "rel": "pulled_in",
+      "to": "card.refund-email"
+    },
+    {
+      "from": "replenishment.checkout-2026-10-14",
+      "rel": "replenishes",
+      "to": "board.checkout"
+    },
+    {
+      "from": "replenishment.checkout-2026-10-14",
+      "rel": "decided_by",
+      "to": "person.chloe"
+    },
+    {
+      "from": "replenishment.checkout-2026-10-14",
+      "rel": "pulled_in",
+      "to": "card.gift-cards"
+    },
+    {
+      "from": "replenishment.checkout-2026-10-14",
+      "rel": "pulled_in",
+      "to": "card.autocomplete"
+    }
+  ]
+}

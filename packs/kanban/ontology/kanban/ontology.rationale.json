@@ -1,0 +1,151 @@
+{
+  "_about": "Why each class and relation exists, the alternatives considered, and who confirmed it.",
+  "classes": {
+    "Board": {
+      "question": "Which columns are over their limit, which cards are blocked, how often do we finish within the expected time? (KB1, KB2, KB12 and every board question)",
+      "why": "Every question is asked about one board; the board carries the expectation the team gives people, so the promise sits with the board that makes it.",
+      "alternatives": "The team as the anchor: rejected, a team can run more than one board, and the questions are about the flow, not the people.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)"
+    },
+    "Column": {
+      "question": "Where does work pile up, did a card move backwards, what must be true to enter a column? (KB1, KB3, KB5, KB9, KB14)",
+      "why": "A column has an order, a kind, limits and policies of its own, and every move points at one; it is a thing, not a value on the card.",
+      "alternatives": "A status value on the card: rejected, a status has no order, no limit and no policy. A fixed list of states (to do, doing, done): rejected, every team draws its own columns.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)"
+    },
+    "Card": {
+      "question": "Who is working on what, how long did this card take, which fixed-date cards are at risk? (KB4, KB7, KB11)",
+      "why": "The unit that flows: it has its own dates, urgency and history, and it is what every move, blocker and replenishment is about.",
+      "alternatives": "Separate classes for story, task and bug: rejected, no question tells them apart yet; a card type can come in as a value when one does.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)"
+    },
+    "Move": {
+      "question": "What did the board look like on a date, how long did a card take, how many cards did we finish each week? (KB6, KB7, KB10)",
+      "why": "Its own node because it has a date and must keep its history: a column written on the card says where it is, never how long it has been there or where it went back from.",
+      "alternatives": "The card's column as an attribute, superseded on every move: rejected, the questions read the history and a question sees only current facts. Times of day: rejected, dates are compared and flow is read per day, so one move per card per day.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)"
+    },
+    "WipLimit": {
+      "question": "Which columns are over their limit, and when and why did a limit change? (KB1, KB8)",
+      "why": "A limit is a decision: it has a date, a reason and someone who took it, and the reason for the last change is what the next one starts from.",
+      "alternatives": "A number on the column: rejected, it keeps no date, no reason and no history. A policy with a number: rejected, a limit is counted against and a policy is read.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)"
+    },
+    "Blocker": {
+      "question": "Which cards are blocked, since when, on whom, and what blocks us most often? (KB2, KB15)",
+      "why": "It has its own start and end dates, a reason and whom it waits on; counted over time it shows the dependencies that keep coming back.",
+      "alternatives": "A blocked flag on the card: rejected, a flag keeps no reason, no dates and no history. A Blocked column: rejected, a blocked card stays in its column.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)"
+    },
+    "Policy": {
+      "question": "What has to be true before a card moves into or out of a column, and which policies does this board have that another doesn't? (KB5, KB16)",
+      "why": "An explicit policy is a statement the team agreed and can change; it governs a column or a board and is compared across boards.",
+      "alternatives": "Text on the column: rejected, a column can have several policies, one on entry and one on exit, and a board has policies of its own.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)"
+    },
+    "Replenishment": {
+      "question": "Which cards were pulled in at the last replenishment meeting, and who decided? (KB13)",
+      "why": "The meeting is an event with a date and a decision; the cards chosen and who chose them belong to it, not to each card.",
+      "alternatives": "A pulled-in date on each card: rejected, it loses who decided and which cards were chosen together.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)"
+    },
+    "Person": {
+      "question": "Who is working on what, who decided a limit or a replenishment, who is a card waiting on? (KB4, KB8, KB13, KB2)",
+      "why": "In kanban individuals pull the work, and holding more than one card is a question about a person; decisions on a board are taken by named people.",
+      "alternatives": "Roles, the usual owner because roles outlive people: rejected here, no question is about a role and every one about holding or deciding is about a person.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)"
+    },
+    "Team": {
+      "question": "What or whom are cards waiting on, and how do another team's board's policies differ? (KB15, KB16)",
+      "why": "Work often waits on another team rather than a person, and boards are compared team to team.",
+      "alternatives": "Waiting on a person in that team: rejected, the team is what the blocker names and what has to change.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)"
+    }
+  },
+  "properties": {
+    "column_of": {
+      "question": "Which columns does this board have? (every board question)",
+      "why": "Every board question walks from the board to its columns.",
+      "alternatives": "Columns shared between boards: rejected, each board draws its own.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)"
+    },
+    "owned_by": {
+      "question": "Which team's board is the other one? (KB16)",
+      "why": "Comparing boards is comparing teams' ways of working.",
+      "alternatives": "The team as a value on the board: rejected, a team is also what a card waits on.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)"
+    },
+    "worked_by": {
+      "question": "Who is working on what, and who holds more than one card? (KB4)",
+      "why": "The one edge from the work to the people doing it.",
+      "alternatives": "The person on each move: rejected, the question is who holds the card now.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)"
+    },
+    "move_of": {
+      "question": "Where is a card now, and where has it been? (KB1-KB4, KB6, KB7, KB9-KB12, KB14, KB15)",
+      "why": "Ties each move to the card it moves; the latest one is where the card is.",
+      "alternatives": "Moves listed on the card: rejected, a move has its own date and columns.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)"
+    },
+    "into": {
+      "question": "Where did a card go, and when? (KB1-KB4, KB6, KB7, KB9-KB12, KB14, KB15)",
+      "why": "The column a move ends in: where the card is from that day.",
+      "alternatives": "Only the target column on the card: rejected, see Move.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)"
+    },
+    "out_of": {
+      "question": "Did a card move backwards? (KB9)",
+      "why": "Backwards is a move into a column to the left of the one it came out of; the column it left has to be recorded to see it.",
+      "alternatives": "Reading the previous move: rejected, the question language finds the previous move only with a second comparison, and a card's first move has none.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)"
+    },
+    "limits": {
+      "question": "Which columns are over their limit, and how has a limit changed? (KB1, KB8)",
+      "why": "Ties each limit to the column it limits.",
+      "alternatives": "Limits on the board: rejected, kanban limits are per column.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)"
+    },
+    "decided_by": {
+      "question": "Who changed a limit, who chose what to pull in? (KB8, KB13)",
+      "why": "Both decisions are taken by named people and asked about by name.",
+      "alternatives": "A separate relation per decision: rejected, one relation means the same thing in both.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)"
+    },
+    "blocks": {
+      "question": "Which cards are blocked? (KB2, KB11, KB15)",
+      "why": "Ties each blocker to the card it stops, so a blocked card is found from the card and the blocker's dates and reason travel with it.",
+      "alternatives": "A blocked flag on the card: rejected, see Blocker.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)"
+    },
+    "waits_on": {
+      "question": "What or whom is a blocked card waiting on? (KB2, KB15)",
+      "why": "The person, team or card to chase; counted over time, what keeps blocking the board.",
+      "alternatives": "The reason text alone: rejected, a reason in words cannot be grouped by whom it waits on.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)"
+    },
+    "applies_to": {
+      "question": "What must be true before a card moves into or out of a column? (KB5)",
+      "why": "A policy governs a column or the whole board.",
+      "alternatives": "Policies on columns only: rejected, some policies hold for the whole board.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)"
+    },
+    "policy_of": {
+      "question": "Which policies does this board have that another doesn't? (KB16)",
+      "why": "Gathers every policy that holds on a board, its own and its columns', so two boards can be compared; derived by two rules, never written by hand.",
+      "alternatives": "Asking the question twice, once for the board and once for its columns: rejected, the comparison needs both in one answer.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)"
+    },
+    "replenishes": {
+      "question": "What was pulled in at the last replenishment for this board? (KB13)",
+      "why": "Ties a meeting to the board whose work it chose.",
+      "alternatives": "Meetings across boards: rejected, no question asks about one yet.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)"
+    },
+    "pulled_in": {
+      "question": "Which cards were pulled in at the last replenishment? (KB13)",
+      "why": "The cards the meeting chose together, so the next replenishment can look back at what was chosen and what came of it.",
+      "alternatives": "A pulled-in date on each card: rejected, see Replenishment.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)"
+    }
+  }
+}

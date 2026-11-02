@@ -92,6 +92,17 @@
       "domain": "software"
     },
     {
+      "name": "kanban",
+      "release": 1,
+      "summary": "How work flows across a team's kanban board: ordered columns, cards and the dated moves that carry them, work-in-progress limits and why they changed, blockers and whom they wait on, explicit policies, and replenishment meetings.",
+      "path": "packs/kanban",
+      "ontology": {
+        "name": "kanban",
+        "release": 1
+      },
+      "domain": "organization"
+    },
+    {
       "name": "medallion",
       "release": 8,
       "summary": "Design a medallion data pipeline for a part of a product, source systems to bronze, silver and gold, checkpoint by checkpoint (D1-D9), and the batch flow that runs it, checked by the medallion rules at every capture.",

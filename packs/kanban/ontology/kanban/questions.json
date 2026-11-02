@@ -1,0 +1,1365 @@
+{
+  "_about": "What a graph in this vocabulary must answer; a term no question cites has no reason to exist. Each question runs over the graph in the pattern language of rules.json; counting and durations are worked out from the rows it returns.",
+  "questions": {
+    "KB1": {
+      "who": "a team lead",
+      "question": "Which columns on $BOARD are over their work-in-progress limit right now, and by how many cards?",
+      "why": "A column over its limit is where the team has started more than it can finish; the limit only works if someone sees it broken. Answering: Count the cards per column and compare with its limit.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)",
+      "params": {
+        "BOARD": {
+          "type": "Board"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "k",
+              "column_of",
+              "$BOARD"
+            ]
+          },
+          {
+            "node": "k",
+            "type": "Column"
+          },
+          {
+            "edge": [
+              "l",
+              "limits",
+              "k"
+            ]
+          },
+          {
+            "node": "l",
+            "type": "WipLimit"
+          },
+          {
+            "not": [
+              {
+                "edge": [
+                  "l_later",
+                  "limits",
+                  "k"
+                ]
+              },
+              {
+                "node": "l_later",
+                "type": "WipLimit",
+                "where": {
+                  "set_on": {
+                    ">": "$l.set_on"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "m",
+                  "move_of",
+                  "c"
+                ]
+              },
+              {
+                "node": "m",
+                "type": "Move"
+              },
+              {
+                "edge": [
+                  "m",
+                  "into",
+                  "k"
+                ]
+              },
+              {
+                "not": [
+                  {
+                    "edge": [
+                      "m_later",
+                      "move_of",
+                      "c"
+                    ]
+                  },
+                  {
+                    "node": "m_later",
+                    "type": "Move",
+                    "where": {
+                      "moved_on": {
+                        ">": "$m.moved_on"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "select": [
+          "k.label",
+          "l.max_cards",
+          "c.label"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$BOARD",
+            "type": "Board"
+          }
+        ],
+        "say": "no column on this board has a limit"
+      }
+    },
+    "KB2": {
+      "who": "a team lead",
+      "question": "Which cards on $BOARD are blocked, since when, and what or who are they waiting on?",
+      "why": "A blocked card nobody is chasing ages silently; the stand-up starts from this list.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)",
+      "params": {
+        "BOARD": {
+          "type": "Board"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "node": "b",
+            "type": "Blocker",
+            "where": {
+              "cleared_on": {
+                "exists": false
+              }
+            }
+          },
+          {
+            "edge": [
+              "b",
+              "blocks",
+              "c"
+            ]
+          },
+          {
+            "node": "c",
+            "type": "Card"
+          },
+          {
+            "edge": [
+              "m",
+              "move_of",
+              "c"
+            ]
+          },
+          {
+            "node": "m",
+            "type": "Move"
+          },
+          {
+            "edge": [
+              "m",
+              "into",
+              "k"
+            ]
+          },
+          {
+            "not": [
+              {
+                "edge": [
+                  "m_later",
+                  "move_of",
+                  "c"
+                ]
+              },
+              {
+                "node": "m_later",
+                "type": "Move",
+                "where": {
+                  "moved_on": {
+                    ">": "$m.moved_on"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "edge": [
+              "k",
+              "column_of",
+              "$BOARD"
+            ]
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "b",
+                  "waits_on",
+                  "w"
+                ]
+              }
+            ]
+          }
+        ],
+        "select": [
+          "c.label",
+          "k.label",
+          "b.blocked_on",
+          "b.reason",
+          "w.label",
+          "w.type"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$BOARD",
+            "type": "Board"
+          }
+        ],
+        "say": "nothing on this board is blocked right now"
+      }
+    },
+    "KB3": {
+      "who": "a team lead",
+      "question": "Which cards on $BOARD have been in the same column longer than cards usually stay there?",
+      "why": "Aging work is the earliest warning a card will miss its date; it shows days before the card is late. Answering: A card's age in its column is today minus the day it entered; compare it with how long cards stayed in that column before (the moves of the board's history).",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)",
+      "params": {
+        "BOARD": {
+          "type": "Board"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "k",
+              "column_of",
+              "$BOARD"
+            ]
+          },
+          {
+            "node": "k",
+            "type": "Column",
+            "where": {
+              "kind": {
+                "!=": "done"
+              }
+            }
+          },
+          {
+            "edge": [
+              "m",
+              "move_of",
+              "c"
+            ]
+          },
+          {
+            "node": "m",
+            "type": "Move"
+          },
+          {
+            "edge": [
+              "m",
+              "into",
+              "k"
+            ]
+          },
+          {
+            "not": [
+              {
+                "edge": [
+                  "m_later",
+                  "move_of",
+                  "c"
+                ]
+              },
+              {
+                "node": "m_later",
+                "type": "Move",
+                "where": {
+                  "moved_on": {
+                    ">": "$m.moved_on"
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "select": [
+          "c.label",
+          "k.label",
+          "m.moved_on"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$BOARD",
+            "type": "Board"
+          }
+        ],
+        "say": "no card is on this board outside its done columns"
+      }
+    },
+    "KB4": {
+      "who": "the team",
+      "question": "Who is working on what on $BOARD right now, and who is holding more than one card?",
+      "why": "Holding several cards at once is how work starts and does not finish; the team sees it here.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)",
+      "params": {
+        "BOARD": {
+          "type": "Board"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "k",
+              "column_of",
+              "$BOARD"
+            ]
+          },
+          {
+            "node": "k",
+            "type": "Column",
+            "where": {
+              "kind": "working"
+            }
+          },
+          {
+            "edge": [
+              "m",
+              "move_of",
+              "c"
+            ]
+          },
+          {
+            "node": "m",
+            "type": "Move"
+          },
+          {
+            "edge": [
+              "m",
+              "into",
+              "k"
+            ]
+          },
+          {
+            "not": [
+              {
+                "edge": [
+                  "m_later",
+                  "move_of",
+                  "c"
+                ]
+              },
+              {
+                "node": "m_later",
+                "type": "Move",
+                "where": {
+                  "moved_on": {
+                    ">": "$m.moved_on"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "edge": [
+              "c",
+              "worked_by",
+              "p"
+            ]
+          },
+          {
+            "node": "p",
+            "type": "Person"
+          }
+        ],
+        "select": [
+          "p.label",
+          "c.label",
+          "k.label"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$BOARD",
+            "type": "Board"
+          }
+        ],
+        "say": "nobody is recorded as working on a card in a working column"
+      }
+    },
+    "KB5": {
+      "who": "the team",
+      "question": "What has to be true before a card can move into $COLUMN, or out of it?",
+      "why": "An explicit policy is only explicit if anyone can look it up at the moment they move the card.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)",
+      "params": {
+        "COLUMN": {
+          "type": "Column"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "p",
+              "applies_to",
+              "$COLUMN"
+            ]
+          },
+          {
+            "node": "p",
+            "type": "Policy"
+          }
+        ],
+        "select": [
+          "p.label",
+          "p.applies_when",
+          "p.statement"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$COLUMN",
+            "type": "Column"
+          }
+        ],
+        "say": "this column makes no policy explicit"
+      }
+    },
+    "KB6": {
+      "who": "a coach",
+      "question": "What did $BOARD look like on a given date: which cards were in which column?",
+      "why": "A retrospective argues about what the board looked like; the moves settle it. Answering: On a date, each card is in the column of its latest move on or before that date.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)",
+      "params": {
+        "BOARD": {
+          "type": "Board"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "k",
+              "column_of",
+              "$BOARD"
+            ]
+          },
+          {
+            "node": "k",
+            "type": "Column"
+          },
+          {
+            "edge": [
+              "m",
+              "into",
+              "k"
+            ]
+          },
+          {
+            "node": "m",
+            "type": "Move"
+          },
+          {
+            "edge": [
+              "m",
+              "move_of",
+              "c"
+            ]
+          },
+          {
+            "node": "c",
+            "type": "Card"
+          }
+        ],
+        "select": [
+          "c.label",
+          "k.label",
+          "k.position",
+          "m.moved_on"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$BOARD",
+            "type": "Board"
+          }
+        ],
+        "say": "no card has moved on this board yet"
+      }
+    },
+    "KB7": {
+      "who": "a team lead",
+      "question": "How long did $CARD take from the start of work to done, and from the request to delivery?",
+      "why": "Cycle time is what the team controls, lead time is what the person who asked waits; they answer different complaints. Answering: Work starts at the first move into a working column and ends at the move into done; the request is the card's requested-on date.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)",
+      "params": {
+        "CARD": {
+          "type": "Card"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "node": "$CARD",
+            "type": "Card"
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "m",
+                  "move_of",
+                  "$CARD"
+                ]
+              },
+              {
+                "node": "m",
+                "type": "Move"
+              },
+              {
+                "edge": [
+                  "m",
+                  "into",
+                  "k"
+                ]
+              },
+              {
+                "node": "k",
+                "type": "Column",
+                "where": {
+                  "kind": {
+                    "in": [
+                      "working",
+                      "done"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "select": [
+          "$CARD.requested_on",
+          "k.label",
+          "k.kind",
+          "m.moved_on"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$CARD",
+            "type": "Card"
+          }
+        ],
+        "say": "the card has no request date and has not started"
+      }
+    },
+    "KB8": {
+      "who": "a coach",
+      "question": "When did the limit on $COLUMN change, from what to what, and why?",
+      "why": "A limit changed without a reason is a limit nobody trusts; the next change starts from why the last one was made. Answering: Ordered by date, each limit is the change from the one before it.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)",
+      "params": {
+        "COLUMN": {
+          "type": "Column"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "l",
+              "limits",
+              "$COLUMN"
+            ]
+          },
+          {
+            "node": "l",
+            "type": "WipLimit"
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "l",
+                  "decided_by",
+                  "p"
+                ]
+              },
+              {
+                "node": "p",
+                "type": "Person"
+              }
+            ]
+          }
+        ],
+        "select": [
+          "l.set_on",
+          "l.max_cards",
+          "l.reason",
+          "p.label"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$COLUMN",
+            "type": "Column"
+          }
+        ],
+        "say": "this column has never had a limit"
+      }
+    },
+    "KB9": {
+      "who": "a team lead",
+      "question": "Did $CARD move backwards through any columns, and how many times?",
+      "why": "A card that goes back is rework: the policy for leaving the column it came from did not hold.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)",
+      "params": {
+        "CARD": {
+          "type": "Card"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "m",
+              "move_of",
+              "$CARD"
+            ]
+          },
+          {
+            "node": "m",
+            "type": "Move"
+          },
+          {
+            "edge": [
+              "m",
+              "out_of",
+              "a"
+            ]
+          },
+          {
+            "node": "a",
+            "type": "Column"
+          },
+          {
+            "edge": [
+              "m",
+              "into",
+              "b"
+            ]
+          },
+          {
+            "node": "b",
+            "type": "Column",
+            "where": {
+              "position": {
+                "<": "$a.position"
+              }
+            }
+          }
+        ],
+        "select": [
+          "m.moved_on",
+          "a.label",
+          "b.label"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$CARD",
+            "type": "Card"
+          }
+        ],
+        "say": "the card has only moved forwards"
+      }
+    },
+    "KB10": {
+      "who": "a coach",
+      "question": "How many cards did $BOARD finish each week over the last few months?",
+      "why": "Throughput is what a forecast is made from; a forecast from memory is a guess. Answering: Group the finishing dates by week over the window asked for.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)",
+      "params": {
+        "BOARD": {
+          "type": "Board"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "k",
+              "column_of",
+              "$BOARD"
+            ]
+          },
+          {
+            "node": "k",
+            "type": "Column",
+            "where": {
+              "kind": "done"
+            }
+          },
+          {
+            "edge": [
+              "m",
+              "into",
+              "k"
+            ]
+          },
+          {
+            "node": "m",
+            "type": "Move"
+          },
+          {
+            "edge": [
+              "m",
+              "move_of",
+              "c"
+            ]
+          },
+          {
+            "node": "c",
+            "type": "Card"
+          }
+        ],
+        "select": [
+          "c.label",
+          "m.moved_on"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$BOARD",
+            "type": "Board"
+          }
+        ],
+        "say": "no card on this board has reached done"
+      }
+    },
+    "KB11": {
+      "who": "a team lead",
+      "question": "Which urgent or fixed-date cards on $BOARD are at risk of missing their date?",
+      "why": "A fixed-date card is worth nothing a day late; it has to be seen while there is still time. Answering: At risk: the due date is closer than the board's expected days, or the card is blocked.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)",
+      "params": {
+        "BOARD": {
+          "type": "Board"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "node": "c",
+            "type": "Card",
+            "where": {
+              "class_of_service": {
+                "in": [
+                  "expedite",
+                  "fixed_date"
+                ]
+              }
+            }
+          },
+          {
+            "edge": [
+              "m",
+              "move_of",
+              "c"
+            ]
+          },
+          {
+            "node": "m",
+            "type": "Move"
+          },
+          {
+            "edge": [
+              "m",
+              "into",
+              "k"
+            ]
+          },
+          {
+            "not": [
+              {
+                "edge": [
+                  "m_later",
+                  "move_of",
+                  "c"
+                ]
+              },
+              {
+                "node": "m_later",
+                "type": "Move",
+                "where": {
+                  "moved_on": {
+                    ">": "$m.moved_on"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "edge": [
+              "k",
+              "column_of",
+              "$BOARD"
+            ]
+          },
+          {
+            "node": "k",
+            "type": "Column",
+            "where": {
+              "kind": {
+                "!=": "done"
+              }
+            }
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "b",
+                  "blocks",
+                  "c"
+                ]
+              },
+              {
+                "node": "b",
+                "type": "Blocker",
+                "where": {
+                  "cleared_on": {
+                    "exists": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "select": [
+          "c.label",
+          "c.class_of_service",
+          "c.due",
+          "k.label",
+          "m.moved_on",
+          "b.reason"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$BOARD",
+            "type": "Board"
+          }
+        ],
+        "say": "no urgent or fixed-date card is open on this board"
+      }
+    },
+    "KB12": {
+      "who": "a team lead",
+      "question": "How often does $BOARD finish cards within the time it told people to expect?",
+      "why": "The expectation is a promise to everyone who asks for work; it is kept or it is not, and the team should know which. Answering: A card is on time when done minus start is at most the expected days; compare the share on time with the expected share.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)",
+      "params": {
+        "BOARD": {
+          "type": "Board"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "node": "$BOARD",
+            "type": "Board"
+          },
+          {
+            "edge": [
+              "k",
+              "column_of",
+              "$BOARD"
+            ]
+          },
+          {
+            "node": "k",
+            "type": "Column",
+            "where": {
+              "kind": "done"
+            }
+          },
+          {
+            "edge": [
+              "d",
+              "into",
+              "k"
+            ]
+          },
+          {
+            "node": "d",
+            "type": "Move"
+          },
+          {
+            "edge": [
+              "d",
+              "move_of",
+              "c"
+            ]
+          },
+          {
+            "node": "c",
+            "type": "Card"
+          },
+          {
+            "edge": [
+              "s",
+              "move_of",
+              "c"
+            ]
+          },
+          {
+            "node": "s",
+            "type": "Move"
+          },
+          {
+            "edge": [
+              "s",
+              "into",
+              "w"
+            ]
+          },
+          {
+            "node": "w",
+            "type": "Column",
+            "where": {
+              "kind": "working"
+            }
+          },
+          {
+            "not": [
+              {
+                "edge": [
+                  "s_earlier",
+                  "move_of",
+                  "c"
+                ]
+              },
+              {
+                "node": "s_earlier",
+                "type": "Move",
+                "where": {
+                  "moved_on": {
+                    "<": "$s.moved_on"
+                  }
+                }
+              },
+              {
+                "edge": [
+                  "s_earlier",
+                  "into",
+                  "w_earlier"
+                ]
+              },
+              {
+                "node": "w_earlier",
+                "type": "Column",
+                "where": {
+                  "kind": "working"
+                }
+              }
+            ]
+          }
+        ],
+        "select": [
+          "c.label",
+          "s.moved_on",
+          "d.moved_on",
+          "$BOARD.expected_days",
+          "$BOARD.expected_share"
+        ]
+      },
+      "gate": "any",
+      "gaps": [
+        {
+          "when": [
+            {
+              "node": "$BOARD",
+              "type": "Board"
+            }
+          ],
+          "say": "no card on this board has reached done"
+        },
+        {
+          "when": [
+            {
+              "node": "$BOARD",
+              "type": "Board",
+              "where": {
+                "expected_days": {
+                  "exists": false
+                }
+              }
+            }
+          ],
+          "say": "the board states no expected time"
+        }
+      ]
+    },
+    "KB13": {
+      "who": "a team lead",
+      "question": "Which cards were pulled in at the last replenishment meeting for $BOARD, and who decided?",
+      "why": "What was chosen, and by whom, is what the next replenishment is held to account against.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)",
+      "params": {
+        "BOARD": {
+          "type": "Board"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "r",
+              "replenishes",
+              "$BOARD"
+            ]
+          },
+          {
+            "node": "r",
+            "type": "Replenishment"
+          },
+          {
+            "not": [
+              {
+                "edge": [
+                  "r_later",
+                  "replenishes",
+                  "$BOARD"
+                ]
+              },
+              {
+                "node": "r_later",
+                "type": "Replenishment",
+                "where": {
+                  "held_on": {
+                    ">": "$r.held_on"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "r",
+                  "pulled_in",
+                  "c"
+                ]
+              },
+              {
+                "node": "c",
+                "type": "Card"
+              }
+            ]
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "r",
+                  "decided_by",
+                  "p"
+                ]
+              }
+            ]
+          }
+        ],
+        "select": [
+          "r.held_on",
+          "c.label",
+          "p.label"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$BOARD",
+            "type": "Board"
+          }
+        ],
+        "say": "no replenishment meeting is recorded for this board"
+      }
+    },
+    "KB14": {
+      "who": "a coach",
+      "question": "Which column on $BOARD has the most cards waiting, as opposed to being worked on?",
+      "why": "Work piles up in front of the bottleneck; the waiting columns say where it is. Answering: Count the cards per column; the waiting columns with the most are where work piles up.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)",
+      "params": {
+        "BOARD": {
+          "type": "Board"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "k",
+              "column_of",
+              "$BOARD"
+            ]
+          },
+          {
+            "node": "k",
+            "type": "Column",
+            "where": {
+              "kind": {
+                "!=": "done"
+              }
+            }
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "m",
+                  "move_of",
+                  "c"
+                ]
+              },
+              {
+                "node": "m",
+                "type": "Move"
+              },
+              {
+                "edge": [
+                  "m",
+                  "into",
+                  "k"
+                ]
+              },
+              {
+                "not": [
+                  {
+                    "edge": [
+                      "m_later",
+                      "move_of",
+                      "c"
+                    ]
+                  },
+                  {
+                    "node": "m_later",
+                    "type": "Move",
+                    "where": {
+                      "moved_on": {
+                        ">": "$m.moved_on"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "select": [
+          "k.label",
+          "k.kind",
+          "k.position",
+          "c.label"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$BOARD",
+            "type": "Board"
+          }
+        ],
+        "say": "the board has no column outside done"
+      }
+    },
+    "KB15": {
+      "who": "a coach",
+      "question": "What blocks $BOARD most often, and on what or whom?",
+      "why": "A blocker that keeps coming back is a dependency to fix, not bad luck to wait out. Answering: Group the blockers by whom or what they waited on.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)",
+      "params": {
+        "BOARD": {
+          "type": "Board"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "node": "b",
+            "type": "Blocker"
+          },
+          {
+            "edge": [
+              "b",
+              "blocks",
+              "c"
+            ]
+          },
+          {
+            "edge": [
+              "m",
+              "move_of",
+              "c"
+            ]
+          },
+          {
+            "edge": [
+              "m",
+              "into",
+              "k"
+            ]
+          },
+          {
+            "edge": [
+              "k",
+              "column_of",
+              "$BOARD"
+            ]
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "b",
+                  "waits_on",
+                  "w"
+                ]
+              }
+            ]
+          }
+        ],
+        "select": [
+          "b.label",
+          "b.reason",
+          "b.blocked_on",
+          "b.cleared_on",
+          "w.label",
+          "w.type"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$BOARD",
+            "type": "Board"
+          }
+        ],
+        "say": "nothing on this board has ever been blocked"
+      }
+    },
+    "KB16": {
+      "who": "a coach",
+      "question": "Which policies does $BOARD have that $OTHER, another team's board, does not?",
+      "why": "Two teams that work differently should know they do; a policy one team found useful is the other's cheapest improvement. Answering: A policy with no counterpart on the other board is this board's alone; one with a counterpart of the same name may still say something different.",
+      "validated_by": "Chiheb Dkhil, 2026-11-02 (walked through in the ontology interview)",
+      "params": {
+        "BOARD": {
+          "type": "Board"
+        },
+        "OTHER": {
+          "type": "Board"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "p",
+              "policy_of",
+              "$BOARD"
+            ]
+          },
+          {
+            "node": "p",
+            "type": "Policy"
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "q",
+                  "policy_of",
+                  "$OTHER"
+                ]
+              },
+              {
+                "node": "q",
+                "type": "Policy",
+                "where": {
+                  "label": "$p.label"
+                }
+              }
+            ]
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "$OTHER",
+                  "owned_by",
+                  "t"
+                ]
+              },
+              {
+                "node": "t",
+                "type": "Team"
+              }
+            ]
+          }
+        ],
+        "select": [
+          "p.label",
+          "p.statement",
+          "q.statement",
+          "t.label"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$BOARD",
+            "type": "Board"
+          }
+        ],
+        "say": "this board makes no policy explicit"
+      }
+    }
+  }
+}

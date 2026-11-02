@@ -1,0 +1,27 @@
+{
+  "name": "kanban",
+  "release": 1,
+  "domain": "organization",
+  "summary": "How work flows across a team's kanban board: ordered columns, cards and the dated moves that carry them, work-in-progress limits and why they changed, blockers and whom they wait on, explicit policies, and replenishment meetings.",
+  "extends": [
+    "oto-core"
+  ],
+  "namespace": "https://cynergis.ai/ont/kanban#",
+  "engine": ">=0.16",
+  "carries": [
+    "vocabulary",
+    "rationale",
+    "rules",
+    "questions",
+    "sample",
+    "readme"
+  ],
+  "changelog": [
+    {
+      "release": 1,
+      "at": "2026-11-01",
+      "note": "Started in a workspace: oto pack new."
+    }
+  ],
+  "_about": "The ontology's identity: its release rises on every published change, `extends` names what it composes on top of, `carries` what the directory holds."
+}
