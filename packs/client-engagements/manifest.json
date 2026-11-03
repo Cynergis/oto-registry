@@ -1,6 +1,6 @@
 {
   "name": "client-engagements",
-  "release": 1,
+  "release": 2,
   "summary": "Client engagements end to end: pursuits, statements of work and change orders, pricing and margin bands, staffing, risks and commitments, billing, on top of professional services delivery.",
   "ontology": {
     "name": "client-engagements",
@@ -14,6 +14,11 @@
   },
   "engine": ">=0.18",
   "changelog": [
+    {
+      "release": 2,
+      "at": "2026-11-03",
+      "note": "First release: pursuits, SOWs and change orders, scope, pricing and margin bands, staffing, risks, commitments and billing, on professional-services."
+    },
     {
       "release": 1,
       "at": "2026-11-03",

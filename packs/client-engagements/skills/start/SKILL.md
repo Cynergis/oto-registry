@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: Client engagements end to end: pursuits, statements of work and change orders, pricing and margin bands, staffing, risks and commitments, billing, on top of professional services delivery. The pack 'client-engagements' (release 1) embeds the ontology 'client-engagements' (release 1), which declares Pursuit, StatementOfWork, ChangeOrder, ScopeItem, SolutionDocument, Assumption, PricingModel, MarginBand and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: Client engagements end to end: pursuits, statements of work and change orders, pricing and margin bands, staffing, risks and commitments, billing, on top of professional services delivery. The pack 'client-engagements' (release 2) embeds the ontology 'client-engagements' (release 1), which declares Pursuit, StatementOfWork, ChangeOrder, ScopeItem, SolutionDocument, Assumption, PricingModel, MarginBand and more. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # client-engagements

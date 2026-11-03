@@ -55,7 +55,7 @@
     },
     {
       "name": "client-engagements",
-      "release": 1,
+      "release": 2,
       "summary": "Client engagements end to end: pursuits, statements of work and change orders, pricing and margin bands, staffing, risks and commitments, billing, on top of professional services delivery.",
       "path": "packs/client-engagements",
       "ontology": {
