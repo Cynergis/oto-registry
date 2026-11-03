@@ -1,0 +1,774 @@
+{
+  "_about": "The vocabulary of a professional services firm's client engagements: many clients, every fact traced to the right client and engagement. Derived from the questions in questions.json.",
+  "name": "client-engagement",
+  "ontology_version": 1,
+  "strict_domains": false,
+  "languages": [
+    "en"
+  ],
+  "classes": {
+    "Client": {
+      "label": "client",
+      "definition": "An organization the firm sells to or works for.",
+      "alt_labels": [
+        "customer",
+        "account"
+      ]
+    },
+    "Engagement": {
+      "label": "engagement",
+      "definition": "One piece of work for one client, from the first conversation about it through to its close, whether or not it was ever signed.",
+      "alt_labels": [
+        "pursuit",
+        "deal",
+        "project"
+      ],
+      "scope_note": "It starts at the first conversation, so sales meetings before a signature have somewhere to belong. Follow-on work is a new engagement linked to the one it came from."
+    },
+    "Person": {
+      "label": "person",
+      "definition": "A named individual on the client's side or the firm's.",
+      "alt_labels": [
+        "attendee",
+        "contact"
+      ],
+      "scope_note": "A person stands on their own because one person can work on many engagements."
+    },
+    "Role": {
+      "label": "role",
+      "definition": "A seat on one engagement: what someone is there to do, on which side, filled by a named person or still unfilled.",
+      "alt_labels": [
+        "stakeholder",
+        "sponsor",
+        "champion",
+        "buyer"
+      ],
+      "scope_note": "A role with no person is valid: documents often name the seat before the person is known."
+    },
+    "Interaction": {
+      "label": "interaction",
+      "definition": "Something that took place with or about a client on a date: a meeting, presentation, call, workshop, interview or a document sent by email.",
+      "alt_labels": [
+        "meeting",
+        "presentation",
+        "call",
+        "workshop",
+        "session",
+        "discussion"
+      ],
+      "scope_note": "This is the event. Its notes or transcript are a source document, a different thing with a different date."
+    },
+    "DiscussionPoint": {
+      "label": "discussion point",
+      "definition": "One thing said during an interaction, and who raised it.",
+      "alt_labels": [
+        "talking point",
+        "statement"
+      ]
+    },
+    "Topic": {
+      "label": "topic",
+      "definition": "A subject that can come up across interactions.",
+      "alt_labels": [
+        "theme",
+        "subject"
+      ],
+      "scope_note": "A topic stands on its own because the same subject recurs across meetings; it is reached for a client through what was said at that client's interactions."
+    },
+    "EngagementDocument": {
+      "label": "engagement document",
+      "definition": "A named, versioned document the firm produces or exchanges on an engagement: a proposal, statement of work, agreement, deck or report.",
+      "alt_labels": [
+        "SOW",
+        "statement of work",
+        "proposal",
+        "deck",
+        "MSA",
+        "NDA",
+        "contract"
+      ],
+      "scope_note": "This is the business object, with its version and whether the client may see it. The source file a fact cites is a separate Document."
+    },
+    "ScopeItem": {
+      "label": "scope item",
+      "definition": "One thing explicitly in or out of an engagement's scope.",
+      "alt_labels": [
+        "in scope",
+        "out of scope",
+        "exclusion"
+      ]
+    },
+    "Deliverable": {
+      "label": "deliverable",
+      "definition": "Something the firm owes the client on an engagement.",
+      "alt_labels": [
+        "output",
+        "work product"
+      ]
+    },
+    "SuccessCriterion": {
+      "label": "success criterion",
+      "definition": "A test by which an engagement or one deliverable will be judged.",
+      "alt_labels": [
+        "acceptance criterion",
+        "acceptance test"
+      ],
+      "scope_note": "It may judge a deliverable or the whole engagement. Subjective criteria are worth marking, because they are where acceptance disputes begin."
+    },
+    "Commitment": {
+      "label": "commitment",
+      "definition": "Something the firm promised or implied, in an interaction or a document.",
+      "alt_labels": [
+        "promise"
+      ],
+      "scope_note": "Its purpose is to expose promises the statement of work does not cover or contradicts."
+    },
+    "Assumption": {
+      "label": "assumption",
+      "definition": "Something the plan or the price rests on that may turn out false."
+    },
+    "Milestone": {
+      "label": "milestone",
+      "definition": "A dated gate, checkpoint or readout on an engagement.",
+      "alt_labels": [
+        "gate",
+        "checkpoint",
+        "readout"
+      ],
+      "scope_note": "A gate's conditions are open items and decisions that block it."
+    },
+    "Price": {
+      "label": "price",
+      "definition": "The commercial terms of an engagement at a point in time: fee, model, margin and contingency.",
+      "alt_labels": [
+        "fee",
+        "quote",
+        "commercials"
+      ],
+      "scope_note": "Margin and contingency are internal. Marking them does not restrict who can read the graph."
+    },
+    "Decision": {
+      "label": "decision",
+      "definition": "A choice waiting to be made or already made on an engagement, with who decides, why and what else was considered.",
+      "alt_labels": [
+        "approval"
+      ]
+    },
+    "Risk": {
+      "label": "risk",
+      "definition": "Something that may harm an engagement, with its rating, mitigation and owner.",
+      "alt_labels": [
+        "threat"
+      ],
+      "scope_note": "A risk that happens can point to the open item it became."
+    },
+    "Finding": {
+      "label": "finding",
+      "definition": "Something the firm concluded about the client's situation, on evidence.",
+      "alt_labels": [
+        "theme",
+        "observation",
+        "score"
+      ],
+      "scope_note": "The graph stops at what the firm found, not the client's whole organization or program."
+    },
+    "Recommendation": {
+      "label": "recommendation",
+      "definition": "What the firm advised the client to do, and how the client responded.",
+      "alt_labels": [
+        "advice",
+        "move"
+      ]
+    },
+    "OpenItem": {
+      "label": "open item",
+      "definition": "Something still to be done or resolved: an action, something needed from the client, or an issue.",
+      "alt_labels": [
+        "action item",
+        "follow-up",
+        "next step",
+        "issue",
+        "dependency",
+        "blocker"
+      ],
+      "scope_note": "What the firm needs from the client is an open item owned on the client's side."
+    },
+    "ChangeRequest": {
+      "label": "change request",
+      "definition": "A request to change an engagement's scope, price or dates, with what triggered it and its outcome.",
+      "alt_labels": [
+        "change order",
+        "amendment"
+      ]
+    },
+    "ReusableAsset": {
+      "label": "reusable asset",
+      "definition": "A method, template, rubric or tool of the firm's that can be used on many engagements.",
+      "alt_labels": [
+        "method",
+        "template",
+        "rubric",
+        "accelerator"
+      ],
+      "scope_note": "It belongs to the firm, not to any client."
+    }
+  },
+  "properties": {
+    "for_client": {
+      "domain": "Engagement",
+      "range": "Client",
+      "definition": "The client this engagement is for. Exactly one.",
+      "label": "for client",
+      "inverse": "has_engagement",
+      "min": 1,
+      "max": 1
+    },
+    "on_engagement": {
+      "domain": "Role|EngagementDocument|ScopeItem|Deliverable|SuccessCriterion|Commitment|Assumption|Milestone|Price|Decision|Risk|Finding|Recommendation|OpenItem|ChangeRequest",
+      "range": "Engagement",
+      "definition": "The one engagement this belongs to.",
+      "label": "on engagement",
+      "min": 1,
+      "max": 1
+    },
+    "follows_on_from": {
+      "domain": "Engagement",
+      "range": "Engagement",
+      "definition": "The engagement this follow-on work came out of.",
+      "label": "follows on from",
+      "inverse": "led_to"
+    },
+    "filled_by": {
+      "domain": "Role",
+      "range": "Person",
+      "definition": "The person currently holding this seat.",
+      "label": "filled by",
+      "inverse": "holds_role"
+    },
+    "concerns_engagement": {
+      "domain": "Interaction|Document",
+      "range": "Engagement",
+      "definition": "The engagement this interaction or source document concerns. An interaction may concern several.",
+      "label": "concerns engagement"
+    },
+    "with_client": {
+      "domain": "Interaction",
+      "range": "Client",
+      "definition": "The client this interaction was with. Stated for a general relationship meeting, and derived when the interaction concerns an engagement.",
+      "label": "with client"
+    },
+    "attended_by": {
+      "domain": "Interaction",
+      "range": "Person",
+      "definition": "Someone present at, or receiving, this interaction.",
+      "label": "attended by",
+      "inverse": "attended"
+    },
+    "presented": {
+      "domain": "Interaction",
+      "range": "EngagementDocument|Finding|Recommendation",
+      "definition": "A document, finding or recommendation shown or sent in this interaction.",
+      "label": "presented",
+      "inverse": "presented_in"
+    },
+    "recorded_in": {
+      "domain": "Interaction",
+      "range": "Document",
+      "definition": "The source document holding this interaction's notes or transcript.",
+      "label": "recorded in"
+    },
+    "said_in": {
+      "domain": "DiscussionPoint",
+      "range": "Interaction",
+      "definition": "The interaction where this was said. Exactly one.",
+      "label": "said in",
+      "min": 1,
+      "max": 1
+    },
+    "raised_by": {
+      "domain": "DiscussionPoint",
+      "range": "Person",
+      "definition": "Who said or raised this.",
+      "label": "raised by"
+    },
+    "about_topic": {
+      "domain": "DiscussionPoint",
+      "range": "Topic",
+      "definition": "The subject this statement is about.",
+      "label": "about topic"
+    },
+    "raised_in": {
+      "domain": "OpenItem",
+      "range": "Interaction",
+      "definition": "The interaction this open item came out of.",
+      "label": "raised in"
+    },
+    "defined_in": {
+      "domain": "ScopeItem|Deliverable|Price|Assumption|Milestone|SuccessCriterion",
+      "range": "EngagementDocument",
+      "definition": "The document and version that states this.",
+      "label": "defined in"
+    },
+    "accepted_by": {
+      "domain": "Deliverable",
+      "range": "Person|Role",
+      "definition": "Who accepts this deliverable.",
+      "label": "accepted by"
+    },
+    "judges": {
+      "domain": "SuccessCriterion",
+      "range": "Deliverable",
+      "definition": "The deliverable this criterion judges. Absent when it judges the whole engagement.",
+      "label": "judges"
+    },
+    "made_in": {
+      "domain": "Commitment",
+      "range": "Interaction|EngagementDocument",
+      "definition": "Where this promise was made.",
+      "label": "made in"
+    },
+    "made_by": {
+      "domain": "Commitment",
+      "range": "Person|Role",
+      "definition": "Who made this promise.",
+      "label": "made by"
+    },
+    "covered_by": {
+      "domain": "Commitment",
+      "range": "ScopeItem|Deliverable",
+      "definition": "The scope item or deliverable that covers this promise.",
+      "label": "covered by"
+    },
+    "contradicted_by": {
+      "domain": "Commitment",
+      "range": "ScopeItem",
+      "definition": "A scope item that contradicts this promise, such as an exclusion.",
+      "label": "contradicted by"
+    },
+    "approved_by": {
+      "domain": "Price",
+      "range": "Person|Role",
+      "definition": "Who approved this price.",
+      "label": "approved by"
+    },
+    "decided_by": {
+      "domain": "Decision",
+      "range": "Person|Role",
+      "definition": "Who must make this decision, or who made it.",
+      "label": "decided by"
+    },
+    "taken_in": {
+      "domain": "Decision",
+      "range": "Interaction",
+      "definition": "The interaction where this decision was taken.",
+      "label": "taken in"
+    },
+    "blocks": {
+      "domain": "Decision|OpenItem",
+      "range": "Milestone|Deliverable|Decision|OpenItem",
+      "definition": "What cannot move until this is settled.",
+      "label": "blocks",
+      "inverse": "blocked_by"
+    },
+    "owned_by": {
+      "domain": "Risk|OpenItem",
+      "range": "Person|Role",
+      "definition": "Who is accountable for this.",
+      "label": "owned by"
+    },
+    "became": {
+      "domain": "Risk",
+      "range": "OpenItem",
+      "definition": "The open item this risk turned into when it happened.",
+      "label": "became"
+    },
+    "evidenced_by": {
+      "domain": "Finding",
+      "range": "Document|Interaction",
+      "definition": "What this finding rests on.",
+      "label": "evidenced by"
+    },
+    "addresses": {
+      "domain": "Recommendation",
+      "range": "Finding",
+      "definition": "The finding this recommendation responds to.",
+      "label": "addresses"
+    },
+    "changes": {
+      "domain": "ChangeRequest",
+      "range": "ScopeItem|Price|Milestone|Deliverable",
+      "definition": "What this change request affects.",
+      "label": "changes",
+      "inverse": "changed_by"
+    },
+    "uses_asset": {
+      "domain": "Engagement",
+      "range": "ReusableAsset",
+      "definition": "A firm asset used on this engagement.",
+      "label": "uses asset",
+      "inverse": "used_on"
+    }
+  },
+  "attributes": {
+    "Client": {
+      "sector": {
+        "type": "string",
+        "definition": "The client's industry, as the firm describes it."
+      }
+    },
+    "Engagement": {
+      "stage": {
+        "type": "enum:pursuit|proposed|contracted|delivering|closed|lost",
+        "definition": "Where this work is, from the first conversation to its close or loss.",
+        "required": true
+      },
+      "service_line": {
+        "type": "scheme:ServiceLine",
+        "definition": "The kind of work, used to find similar past work.",
+        "label": "service line"
+      },
+      "client_ask": {
+        "type": "string",
+        "definition": "What the client asked for, in their terms.",
+        "label": "client ask"
+      },
+      "business_problem": {
+        "type": "string",
+        "definition": "The problem behind the ask.",
+        "label": "business problem"
+      },
+      "success_measured_by": {
+        "type": "string",
+        "definition": "How the client measures success today, which may differ from how this work will be judged.",
+        "label": "success measured by"
+      }
+    },
+    "Person": {
+      "organization": {
+        "type": "string",
+        "definition": "The organization this person works for, as named."
+      }
+    },
+    "Role": {
+      "role_kind": {
+        "type": "scheme:RoleKind",
+        "definition": "What this seat is there to do.",
+        "required": true,
+        "label": "role kind"
+      },
+      "side": {
+        "type": "enum:client|firm",
+        "definition": "Which side holds this seat.",
+        "required": true
+      },
+      "time_commitment": {
+        "type": "string",
+        "definition": "How much of this person's time the seat takes, as the document says it.",
+        "label": "time commitment"
+      }
+    },
+    "Interaction": {
+      "interaction_kind": {
+        "type": "enum:meeting|presentation|workshop|call|interview|email",
+        "definition": "What sort of interaction this was.",
+        "required": true,
+        "label": "interaction kind"
+      },
+      "held_on": {
+        "type": "date",
+        "definition": "When it took place.",
+        "required": true,
+        "label": "held on"
+      }
+    },
+    "EngagementDocument": {
+      "document_kind": {
+        "type": "enum:proposal|statement_of_work|agreement|presentation|report|other",
+        "definition": "What sort of document this is.",
+        "required": true,
+        "label": "document kind"
+      },
+      "version": {
+        "type": "string",
+        "definition": "The version as the firm names it."
+      },
+      "audience": {
+        "type": "enum:internal|client_shared",
+        "definition": "Whether this version stays inside the firm or has been shared with the client.",
+        "required": true
+      },
+      "document_state": {
+        "type": "enum:draft|in_review|sent|signed",
+        "definition": "Where this version stands.",
+        "label": "document state"
+      }
+    },
+    "ScopeItem": {
+      "scope_state": {
+        "type": "enum:in|out",
+        "definition": "Whether this is in or out of scope.",
+        "required": true,
+        "label": "in or out"
+      },
+      "reason": {
+        "type": "string",
+        "definition": "Why it is in or out, or why it moved."
+      }
+    },
+    "Deliverable": {
+      "acceptance_state": {
+        "type": "enum:pending|delivered|accepted|disputed",
+        "definition": "Where acceptance stands.",
+        "required": true,
+        "label": "acceptance state"
+      },
+      "due_on": {
+        "type": "date",
+        "definition": "When it is due.",
+        "label": "due on"
+      }
+    },
+    "SuccessCriterion": {
+      "checkable": {
+        "type": "boolean",
+        "definition": "Whether two people would agree on whether it was met."
+      }
+    },
+    "Assumption": {
+      "assumption_about": {
+        "type": "enum:price|plan|scope",
+        "definition": "What this assumption supports.",
+        "label": "about"
+      },
+      "change_trigger": {
+        "type": "string",
+        "definition": "What would make this a change request if it proved false.",
+        "label": "change trigger"
+      }
+    },
+    "Milestone": {
+      "milestone_kind": {
+        "type": "enum:gate|checkpoint|readout|start|other",
+        "definition": "What sort of milestone this is.",
+        "label": "milestone kind"
+      },
+      "due_on": {
+        "type": "date",
+        "definition": "When it is due.",
+        "label": "due on"
+      },
+      "milestone_state": {
+        "type": "enum:planned|met|missed|moved",
+        "definition": "Where it stands.",
+        "required": true,
+        "label": "milestone state"
+      }
+    },
+    "Price": {
+      "fee": {
+        "type": "number",
+        "definition": "The fee, before tax.",
+        "required": true
+      },
+      "currency": {
+        "type": "string",
+        "definition": "The currency of the fee.",
+        "required": true
+      },
+      "pricing_model": {
+        "type": "enum:fixed_fee|time_and_materials|retainer|other",
+        "definition": "How the work is charged.",
+        "label": "pricing model"
+      },
+      "margin": {
+        "type": "number",
+        "definition": "The margin as a percentage. Internal."
+      },
+      "contingency": {
+        "type": "number",
+        "definition": "The contingency as a percentage. Internal."
+      },
+      "billable_days": {
+        "type": "number",
+        "definition": "The billable days this price assumes.",
+        "label": "billable days"
+      }
+    },
+    "Decision": {
+      "decision_state": {
+        "type": "enum:waiting|made",
+        "definition": "Whether this decision is waiting or made.",
+        "required": true,
+        "label": "decision state"
+      },
+      "due_on": {
+        "type": "date",
+        "definition": "When it is needed by.",
+        "label": "due on"
+      },
+      "decided_on": {
+        "type": "date",
+        "definition": "When it was made.",
+        "label": "decided on"
+      },
+      "reason": {
+        "type": "string",
+        "definition": "Why it was decided this way."
+      },
+      "options_considered": {
+        "type": "list",
+        "definition": "The options that were on the table, including those rejected.",
+        "label": "options considered"
+      }
+    },
+    "Risk": {
+      "likelihood": {
+        "type": "enum:low|medium|high",
+        "definition": "How likely it is, as last rated. Some documents name a risk without rating it."
+      },
+      "impact": {
+        "type": "enum:low|medium|high",
+        "definition": "How much harm it would do, as last rated. Some documents name a risk without rating it."
+      },
+      "mitigation": {
+        "type": "string",
+        "definition": "What is being done about it."
+      },
+      "risk_category": {
+        "type": "string",
+        "definition": "The kind of risk, in the firm's words, used to find risks that recur across engagements.",
+        "label": "risk category"
+      }
+    },
+    "Finding": {
+      "finding_area": {
+        "type": "string",
+        "definition": "The area of the client's work this finding concerns.",
+        "label": "area"
+      }
+    },
+    "Recommendation": {
+      "client_response": {
+        "type": "enum:pending|accepted|acted_on|declined",
+        "definition": "How the client responded.",
+        "required": true,
+        "label": "client response"
+      }
+    },
+    "OpenItem": {
+      "item_kind": {
+        "type": "enum:action|client_dependency|issue",
+        "definition": "Whether this is an action, something needed from the client, or an issue.",
+        "required": true,
+        "label": "item kind"
+      },
+      "item_state": {
+        "type": "enum:open|done|dropped",
+        "definition": "Whether it is still open.",
+        "required": true,
+        "label": "item state"
+      },
+      "due_on": {
+        "type": "date",
+        "definition": "When it is due.",
+        "label": "due on"
+      }
+    },
+    "ChangeRequest": {
+      "change_state": {
+        "type": "enum:raised|approved|rejected",
+        "definition": "The outcome so far.",
+        "required": true,
+        "label": "change state"
+      },
+      "change_trigger": {
+        "type": "string",
+        "definition": "What caused this request.",
+        "label": "trigger"
+      },
+      "effect": {
+        "type": "string",
+        "definition": "What it did to scope, fee and dates, in words."
+      }
+    },
+    "ReusableAsset": {
+      "asset_kind": {
+        "type": "enum:method|template|rubric|tool|other",
+        "definition": "What sort of asset this is.",
+        "label": "asset kind"
+      }
+    }
+  },
+  "schemes": {
+    "ServiceLine": {
+      "definition": "The kinds of consulting work the firm offers.",
+      "concepts": {
+        "cloud-migration": {
+          "label": "Cloud migration",
+          "definition": "Moving systems and data to the cloud."
+        },
+        "ai-transformation": {
+          "label": "AI transformation",
+          "definition": "Changing how an organization works with AI, from assessment to adoption."
+        },
+        "software-development": {
+          "label": "Software application development",
+          "definition": "Designing and building software applications."
+        },
+        "data-science": {
+          "label": "Data science",
+          "definition": "Models and analysis that answer business questions."
+        },
+        "data-engineering": {
+          "label": "Data engineering",
+          "definition": "Pipelines and platforms that move and prepare data."
+        }
+      }
+    },
+    "RoleKind": {
+      "definition": "What a seat on an engagement is there to do, on either side. The buying roles follow common sales qualification practice.",
+      "concepts": {
+        "economic-buyer": {
+          "label": "Economic buyer",
+          "definition": "Has the authority and the budget to say yes."
+        },
+        "sponsor": {
+          "label": "Sponsor",
+          "definition": "Backs the work at leadership level and answers for it."
+        },
+        "champion": {
+          "label": "Champion",
+          "definition": "Advocates for the work inside the client, with access to the buyer."
+        },
+        "day-to-day-lead": {
+          "label": "Day-to-day lead",
+          "definition": "Runs the work from the client's side."
+        },
+        "steering-member": {
+          "label": "Steering committee member",
+          "definition": "Challenges and approves at checkpoints."
+        },
+        "gatekeeper": {
+          "label": "Gatekeeper",
+          "definition": "Can block the work, such as procurement, legal or risk."
+        },
+        "contact": {
+          "label": "Contact",
+          "definition": "A named contact for one area, or a source of data."
+        },
+        "accountable-executive": {
+          "label": "Accountable executive",
+          "definition": "Answers for the commercials and the relationship on the firm's side."
+        },
+        "engagement-lead": {
+          "label": "Engagement lead",
+          "definition": "Runs the plan and the delivery on the firm's side."
+        },
+        "specialist": {
+          "label": "Specialist",
+          "definition": "Brings subject expertise on the firm's side."
+        }
+      }
+    }
+  }
+}

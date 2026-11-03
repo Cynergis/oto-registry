@@ -54,6 +54,17 @@
       "domain": "software"
     },
     {
+      "name": "client-engagement",
+      "release": 1,
+      "summary": "A professional services firm's client engagements: many clients, every fact traced to the right client and engagement, from the first sales conversation to the close.",
+      "path": "packs/client-engagement",
+      "ontology": {
+        "name": "client-engagement",
+        "release": 1
+      },
+      "domain": "professional-services"
+    },
+    {
       "name": "client-engagements",
       "release": 2,
       "summary": "Client engagements end to end: pursuits, statements of work and change orders, pricing and margin bands, staffing, risks and commitments, billing, on top of professional services delivery.",

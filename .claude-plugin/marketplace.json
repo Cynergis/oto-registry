@@ -61,6 +61,13 @@
       "category": "software"
     },
     {
+      "name": "client-engagement",
+      "source": "./packs/client-engagement",
+      "description": "A professional services firm's client engagements: many clients, every fact traced to the right client and engagement, from the first sales conversation to the close.",
+      "version": "1.0.0",
+      "category": "professional-services"
+    },
+    {
       "name": "client-engagements",
       "source": "./packs/client-engagements",
       "description": "Client engagements end to end: pursuits, statements of work and change orders, pricing and margin bands, staffing, risks and commitments, billing, on top of professional services delivery.",

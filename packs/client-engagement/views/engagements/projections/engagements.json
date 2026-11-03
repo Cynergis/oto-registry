@@ -1,0 +1,7 @@
+{
+  "nodes": {
+    "$nodes": ["Client", "Engagement", "Person", "Role", "Interaction", "DiscussionPoint", "Topic", "EngagementDocument", "ScopeItem", "Deliverable", "SuccessCriterion", "Commitment", "Assumption", "Milestone", "Price", "Decision", "Risk", "Finding", "Recommendation", "OpenItem", "ChangeRequest", "ReusableAsset"],
+    "$map": {"id": "$id", "type": "$type", "label": "$label", "summary": "$summary", "attrs": "$attrs", "as_of": "$as_of", "source": "$source_doc"}
+  },
+  "edges": {"$edges": true}
+}

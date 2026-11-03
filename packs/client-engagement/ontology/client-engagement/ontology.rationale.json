@@ -1,0 +1,319 @@
+{
+  "_about": "Why each class and relation exists, the alternatives considered, and who confirmed it. validated_by stays empty until a person who knows the domain confirms the entry.",
+  "classes": {
+    "Client": {
+      "question": "Which clients do we have?",
+      "why": "Everything the firm knows hangs from who it was for, so the client must exist once, with its own identity, however many engagements it has.",
+      "alternatives": "A client name written on each engagement: two spellings of one client would split its history, so it became a class.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "Engagement": {
+      "question": "What work exists for each client, at what stage and in which service line?",
+      "why": "It is the unit every fact is traced to, and the context a person chooses before asking follow-up questions.",
+      "alternatives": "An opportunity and a project as two classes, as sales and delivery tools separate them. Rejected: the questions follow one piece of work across the signature, and splitting it would split its history.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "Person": {
+      "question": "Who attended, said or decided something?",
+      "why": "Decisions and statements must be traced to the individual who made them, because a seat can change hands afterwards.",
+      "alternatives": "Roles alone: they are stable but cannot say who was actually in the room or who actually decided.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "Role": {
+      "question": "Who sponsors, champions, pays or could block this, on either side?",
+      "why": "The same person can hold different seats on different engagements, and a seat can exist before anyone fills it, so the seat needs an identity of its own.",
+      "alternatives": "An attribute on the person: it cannot differ per engagement or be unfilled. Sales qualification practice supplies the role kinds, such as economic buyer and champion.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "Interaction": {
+      "question": "Which meeting, presentation or call took place, and who attended?",
+      "why": "Who was present and what was shown are facts about the event, and 'what did we decide on the 14th' needs the event to have its own date.",
+      "alternatives": "Merging the meeting with its minutes: the two have different dates, and the event would have no home until someone wrote notes.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "DiscussionPoint": {
+      "question": "What was said, and who raised it?",
+      "why": "Asking what was said each time on a topic needs each statement separately, with its own speaker and meeting.",
+      "alternatives": "Free text in the meeting's summary: it cannot be grouped by topic or attributed to a speaker.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "Topic": {
+      "question": "What keeps coming up with this client?",
+      "why": "Seeing what recurs needs one identity shared by every mention of it.",
+      "alternatives": "A tag on each discussion point: spelling drift would hide the recurrence that the question exists to find.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "EngagementDocument": {
+      "question": "Which proposal, statement of work or deck exists, in which version, and is it internal or client-facing?",
+      "why": "A version has its own status and audience, and an internal draft must stay distinguishable from what the client received.",
+      "alternatives": "Reusing the core Document: that is a file in the corpus, and it has no version, status or audience. A separate class for the statement of work: nothing it holds differs from other documents, because scope and price have their own terms.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "ScopeItem": {
+      "question": "What is in or out, and why did it change?",
+      "why": "Each line of scope can move on its own date for its own reason, so each needs its own history.",
+      "alternatives": "A scope paragraph on the statement of work: it could not say which line changed, when or why.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "Deliverable": {
+      "question": "What do we owe, who accepts it, and has it been accepted?",
+      "why": "Acceptance is tracked per item, with its own accepter and state.",
+      "alternatives": "A list on the statement of work: it could not hold an accepter or an acceptance state per item.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "SuccessCriterion": {
+      "question": "How will the work be judged?",
+      "why": "A criterion can be challenged and reworded before signature, and its history matters when acceptance is disputed.",
+      "alternatives": "A text attribute on the deliverable: criteria for the whole engagement would have no home, and a rewording would leave no trace.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "Commitment": {
+      "question": "What did we promise, and does the statement of work cover it?",
+      "why": "A promise made in a deck or a meeting binds the relationship even when the contract is silent, and finding the gap needs the promise as a fact.",
+      "alternatives": "A kind of discussion point: a promise can sit in a document with no meeting behind it, and it needs links to the scope that covers or contradicts it.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "Assumption": {
+      "question": "What do our plan and price rest on?",
+      "why": "Assumptions are what a change request is later argued from, so each must be findable and may name what it would trigger.",
+      "alternatives": "A paragraph in the statement of work: it cannot be checked one by one or linked to the change it triggers.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "Milestone": {
+      "question": "What gates and checkpoints are coming, and what must clear first?",
+      "why": "Where an engagement stands is read from what has been met and what blocks the next one.",
+      "alternatives": "Project phases: no question needs them yet. A stage attribute alone: it cannot say what must clear.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "Price": {
+      "question": "What are the fee, margin and contingency, and who approved them?",
+      "why": "A price is reworked and approved several times before signature, and each version needs its own date and approver.",
+      "alternatives": "Attributes on the engagement: superseding the engagement to record a new price would disturb everything linked to it.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "Decision": {
+      "question": "What is waiting or decided, by whom, why, and against which options?",
+      "why": "A decision has a date, a reason and rejected options, none of which a status can keep.",
+      "alternatives": "A status on what it affects: it would keep no reason, no decider and no alternatives.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "Risk": {
+      "question": "What threatens this work, who owns it, and how has its rating changed?",
+      "why": "Each risk is re-rated over time and has its own owner, so each needs its own history.",
+      "alternatives": "A single risk list on the engagement: rating changes would leave no trace.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "Finding": {
+      "question": "What did we find, and on what evidence?",
+      "why": "A finding must hold up when challenged, so it must trace to its evidence.",
+      "alternatives": "Merging it with the recommendation: what is true and what to do about it are reviewed and disputed separately.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "Recommendation": {
+      "question": "What did we advise, and did the client act on it?",
+      "why": "The firm follows up on advice, so each piece needs its own response.",
+      "alternatives": "A section of the final deck: it could not record the client's response per item.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "OpenItem": {
+      "question": "What is still open, who owns it, when is it due, and what does it block?",
+      "why": "Follow-up is the reason this graph exists, and each item needs its own owner, due date and origin.",
+      "alternatives": "Separate classes for actions, dependencies and issues, as project logs do: each holds the same facts here, so the difference is one attribute.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "ChangeRequest": {
+      "question": "What triggered a change, what was the outcome, and what did it affect?",
+      "why": "Change is how a fixed-fee engagement protects itself, and each request needs its trigger, outcome and effects.",
+      "alternatives": "Only superseding the scope or the price: that shows what changed but not who asked, why or whether it was approved.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "ReusableAsset": {
+      "question": "Which of the firm's methods can we reuse, and where have we used them?",
+      "why": "Reuse across clients needs an identity that outlives any single engagement.",
+      "alternatives": "A label on the engagement: it could not hold what the asset is or list everywhere it was used.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    }
+  },
+  "properties": {
+    "for_client": {
+      "question": "Which client is this work for?",
+      "why": "This is half of the tracing rule: every engagement must name its client, so nothing floats free.",
+      "alternatives": "A client on every fact: the same fact stated twice could disagree, so the client is reached through the engagement.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "on_engagement": {
+      "question": "Which engagement does this belong to?",
+      "why": "This is the other half of the tracing rule, and the engine refuses a fact of these kinds without it.",
+      "alternatives": "Allowing several engagements: it would blur what belongs where. An item that truly spans two is recorded on each.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "follows_on_from": {
+      "question": "What follow-on work did this engagement open up?",
+      "why": "Follow-on work is new work with its own scope and price, and the link keeps where it came from.",
+      "alternatives": "A list of possibilities on the first engagement: it could not track each one's stage.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "filled_by": {
+      "question": "Who holds this role?",
+      "why": "Separating the seat from the person lets the seat stay unfilled or change hands.",
+      "alternatives": "A name attribute on the role: it could not be linked to what the person said or decided.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "concerns_engagement": {
+      "question": "Which engagements did this meeting or document concern?",
+      "why": "A meeting can cover several engagements, and a source document is often about one, so this is many-to-many and not required.",
+      "alternatives": "Using the one-engagement link: it would refuse a meeting that covers two.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "with_client": {
+      "question": "Which client was this interaction with?",
+      "why": "General relationship meetings belong to no engagement, yet must still trace to a client.",
+      "alternatives": "Inventing a catch-all engagement per client: it would pollute the list a person chooses from.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "attended_by": {
+      "question": "Who attended?",
+      "why": "Knowing who has seen what is read from who attended and what was shown.",
+      "alternatives": "An attendee list as text: it could not answer what one person has seen.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "presented": {
+      "question": "What was presented, and to whom?",
+      "why": "Avoiding surprises at a readout depends on knowing what each person has already seen.",
+      "alternatives": "Recording readers on the document: it would lose when and in which meeting they saw it.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "recorded_in": {
+      "question": "Where is this meeting written down?",
+      "why": "Keeps the event and its record separate while still linked.",
+      "alternatives": "Merging them, already rejected for the interaction itself.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "said_in": {
+      "question": "Where was this said?",
+      "why": "Ties every statement to its meeting, and through it to the client.",
+      "alternatives": "Tying statements directly to an engagement: statements in a general client meeting would have no home.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "raised_by": {
+      "question": "Who raised it?",
+      "why": "The question asks who raised each topic, and a statement must be attributable.",
+      "alternatives": "Keeping the speaker in the text: it could not be queried.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "about_topic": {
+      "question": "What was this about?",
+      "why": "It is what lets mentions across meetings be grouped.",
+      "alternatives": "A free-text tag, already rejected for topic.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "raised_in": {
+      "question": "Which meeting did this come from?",
+      "why": "Follow-up needs to go back to where the item was agreed, and it is how a meeting's outcomes are listed.",
+      "alternatives": "Text in the summary: it could not list what a meeting left open.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "defined_in": {
+      "question": "Which document says this?",
+      "why": "Comparing what a version promised with what is true now needs the link.",
+      "alternatives": "Relying only on the citation: that names the file, not the business document and its version.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "accepted_by": {
+      "question": "Who accepts it?",
+      "why": "An acceptance dispute starts with not knowing who could accept.",
+      "alternatives": "A person only: often only the seat is known when the work is signed.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "judges": {
+      "question": "By what test is this accepted?",
+      "why": "Links a test to what it tests, so an acceptance dispute can start from an agreed test.",
+      "alternatives": "A text field on the deliverable, already rejected for success criterion.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "made_in": {
+      "question": "Where was this promised?",
+      "why": "A disputed promise is settled by where it was made.",
+      "alternatives": "Citation alone: it names a file, not the meeting.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "made_by": {
+      "question": "Who promised it?",
+      "why": "The promise has to be raised with whoever made it.",
+      "alternatives": "Leaving it in the text: it could not be queried.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "covered_by": {
+      "question": "Does the statement of work cover this promise?",
+      "why": "A promise with no cover is exactly what the question is looking for.",
+      "alternatives": "A yes-or-no attribute: it would not say what covers it.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "contradicted_by": {
+      "question": "Does the statement of work contradict this promise?",
+      "why": "A promise the contract excludes is more urgent than one it merely omits.",
+      "alternatives": "Treating both as uncovered: it hides the urgent case.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "approved_by": {
+      "question": "Who approved the price?",
+      "why": "A price gap needs a named approver, or it returns later as a margin problem.",
+      "alternatives": "Free text: it could not be queried.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "decided_by": {
+      "question": "Who must decide, or who decided?",
+      "why": "A waiting decision without a decider stays waiting.",
+      "alternatives": "Two relations for before and after: the state attribute already says which.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "taken_in": {
+      "question": "Where was it decided?",
+      "why": "Makes 'what did we decide at that meeting' answerable.",
+      "alternatives": "The date alone: two meetings can share a date.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "blocks": {
+      "question": "What is blocked until then?",
+      "why": "This is how a gate's conditions and a decision's consequences are read.",
+      "alternatives": "A blocked flag on the item: it would not say by what.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "owned_by": {
+      "question": "Who owns it?",
+      "why": "Follow-up needs an owner, and documents often name only the seat.",
+      "alternatives": "A person only: it would refuse a seat with no name yet.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "became": {
+      "question": "Did this risk happen?",
+      "why": "Project practice moves a risk that occurs into the issues, and the link keeps the trail.",
+      "alternatives": "Closing the risk and starting afresh: the history would be lost.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "evidenced_by": {
+      "question": "What evidence supports it?",
+      "why": "A finding must hold up when a steering committee challenges it, so its evidence must be reachable.",
+      "alternatives": "Citation alone: an interaction with no written record could not count as evidence.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "addresses": {
+      "question": "Which finding led to this advice?",
+      "why": "Links what to do to why, so advice can be reviewed against the finding it came from.",
+      "alternatives": "Merging them, already rejected for finding.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "changes": {
+      "question": "What did the change affect?",
+      "why": "The effect on scope, fee and dates is what the question asks.",
+      "alternatives": "Text in the request: it could not be traced from the scope item.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    "uses_asset": {
+      "question": "Where has this method been used?",
+      "why": "Reuse is read from where an asset has been used.",
+      "alternatives": "A label on the engagement, already rejected for reusable asset.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    }
+  }
+}

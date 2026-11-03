@@ -1,0 +1,179 @@
+{
+  "_about": "What is derived and what is flagged in this vocabulary. validated_by stays empty until a person who knows the domain confirms the rule.",
+  "rules": [
+    {
+      "id": "interaction-reaches-client",
+      "kind": "derive",
+      "when": [
+        {
+          "node": "i",
+          "type": "Interaction"
+        },
+        {
+          "edge": [
+            "i",
+            "concerns_engagement",
+            "e"
+          ]
+        },
+        {
+          "edge": [
+            "e",
+            "for_client",
+            "c"
+          ]
+        }
+      ],
+      "then": {
+        "edge": [
+          "i",
+          "with_client",
+          "c"
+        ]
+      },
+      "why": "Documents name the engagement a meeting concerned, but questions about a client need every meeting with that client in one place, including general relationship meetings.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    {
+      "id": "interaction-names-a-client",
+      "kind": "policy",
+      "severity": "blocking",
+      "answers": "CE5",
+      "when": [
+        {
+          "node": "i",
+          "type": "Interaction"
+        },
+        {
+          "not_edge": [
+            "i",
+            "with_client",
+            "*"
+          ]
+        }
+      ],
+      "then": {
+        "flag": "this interaction names neither an engagement nor a client: say which client it was with"
+      },
+      "why": "Every fact must trace to the right client. An interaction may concern several engagements or the client alone, so a required link cannot say this, and this rule does.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    {
+      "id": "open-item-overdue",
+      "kind": "policy",
+      "severity": "warn",
+      "answers": "CE19",
+      "when": [
+        {
+          "node": "i",
+          "type": "OpenItem",
+          "where": {
+            "item_state": "open",
+            "due_on": {
+              "<": "$today"
+            }
+          }
+        }
+      ],
+      "then": {
+        "flag": "this open item is past its due date"
+      },
+      "why": "An overdue item nobody chases is a promise being quietly broken.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    {
+      "id": "decision-overdue",
+      "kind": "policy",
+      "severity": "warn",
+      "answers": "CE14",
+      "when": [
+        {
+          "node": "d",
+          "type": "Decision",
+          "where": {
+            "decision_state": "waiting",
+            "due_on": {
+              "<": "$today"
+            }
+          }
+        }
+      ],
+      "then": {
+        "flag": "this decision is past the date it was needed by"
+      },
+      "why": "A late decision on the critical path moves everything after it.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    {
+      "id": "decision-without-reason",
+      "kind": "policy",
+      "severity": "warn",
+      "answers": "CE15",
+      "when": [
+        {
+          "node": "d",
+          "type": "Decision",
+          "where": {
+            "decision_state": "made",
+            "reason": {
+              "exists": false
+            }
+          }
+        }
+      ],
+      "then": {
+        "flag": "this decision is recorded as made but says nothing about why"
+      },
+      "why": "A decision with no reason gets argued again.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    {
+      "id": "risk-without-owner",
+      "kind": "policy",
+      "severity": "warn",
+      "answers": "CE17",
+      "when": [
+        {
+          "node": "r",
+          "type": "Risk"
+        },
+        {
+          "not_edge": [
+            "r",
+            "owned_by",
+            "*"
+          ]
+        }
+      ],
+      "then": {
+        "flag": "this risk has no owner"
+      },
+      "why": "A risk nobody owns is a risk nobody is mitigating.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    },
+    {
+      "id": "commitment-contradicted",
+      "kind": "policy",
+      "severity": "warn",
+      "answers": "CE10",
+      "when": [
+        {
+          "edge": [
+            "c",
+            "contradicted_by",
+            "s"
+          ]
+        },
+        {
+          "node": "c",
+          "type": "Commitment"
+        }
+      ],
+      "then": {
+        "flag": "this promise contradicts the scope: raise it with the client before they find it"
+      },
+      "why": "A promise the contract excludes is the most urgent gap to close.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "client-engagement",
+  "displayName": "client-engagement (OTO pack)",
+  "description": "A professional services firm's client engagements: many clients, every fact traced to the right client and engagement, from the first sales conversation to the close.",
+  "version": "1.0.0",
+  "author": {
+    "name": "cynergis"
+  },
+  "dependencies": [
+    "oto@cynergis-engine"
+  ],
+  "keywords": [
+    "professional-services",
+    "oto",
+    "knowledge-graph"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "client-engagement",
+  "release": 1,
+  "extends": [
+    "oto-core"
+  ],
+  "namespace": "https://cynergis.ai/ont/client-engagement#",
+  "engine": ">=0.20",
+  "carries": [
+    "vocabulary",
+    "rationale",
+    "rules",
+    "questions",
+    "sample",
+    "readme",
+    "guide"
+  ],
+  "changelog": [
+    {
+      "release": 1,
+      "at": "2026-11-03",
+      "note": "Started in a workspace: oto pack new."
+    }
+  ],
+  "_about": "The ontology's identity: its release rises on every published change, `extends` names what it composes on top of, `carries` what the directory holds.",
+  "summary": "A professional services firm's client engagements: many clients, every fact traced to the right client and engagement, from the first sales conversation to the close."
+}

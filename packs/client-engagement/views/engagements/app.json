@@ -1,0 +1,14 @@
+{
+  "name": "engagements",
+  "title": "Engagements",
+  "place": "domain",
+  "summary": "Choose a client and an engagement, and see what needs follow-up, what happened, what was agreed and who is involved.",
+  "shows": ["Client", "Engagement"],
+  "open": ["CE"],
+  "entry": "index.html",
+  "engine": ">=0.20",
+  "data": [
+    {"file": "data.js", "format": "js-globals", "globals": {"__ENGAGEMENTS__": {"$include": "projections/engagements.json"}}}
+  ],
+  "requires": {"classes": ["Client", "Engagement"], "relations": ["for_client", "on_engagement"]}
+}

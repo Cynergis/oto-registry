@@ -1,0 +1,1496 @@
+{
+  "_about": "What a graph in this vocabulary must answer. Each runs over the graph; a term no question cites has no reason to exist. validated_by stays empty until the person who asks it confirms it.",
+  "questions": {
+    "CE1": {
+      "who": "anyone at the firm",
+      "question": "Which clients and engagements do we have, and where does each stand?",
+      "why": "This is where a person starts: they choose the client and engagement that frame every follow-up question.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)",
+      "ask": {
+        "when": [
+          {
+            "node": "e",
+            "type": "Engagement"
+          },
+          {
+            "edge": [
+              "e",
+              "for_client",
+              "c"
+            ]
+          },
+          {
+            "node": "c",
+            "type": "Client"
+          }
+        ],
+        "select": [
+          "c.label",
+          "e.label",
+          "e.stage",
+          "e.service_line"
+        ]
+      },
+      "gate": "any",
+      "terms": [
+        "Client.sector"
+      ]
+    },
+    "CE2": {
+      "who": "an account lead",
+      "question": "Why is the client talking to us on $ENGAGEMENT: what did they ask, what problem sits behind it, and how do they measure success today?",
+      "why": "Everyone joining the work needs the reason it exists, in the client's terms.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)",
+      "params": {
+        "ENGAGEMENT": {
+          "type": "Engagement"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "node": "$ENGAGEMENT",
+            "type": "Engagement"
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "k",
+                  "on_engagement",
+                  "$ENGAGEMENT"
+                ]
+              },
+              {
+                "node": "k",
+                "type": "SuccessCriterion"
+              },
+              {
+                "optional": [
+                  {
+                    "edge": [
+                      "k",
+                      "judges",
+                      "d"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "select": [
+          "$ENGAGEMENT.client_ask",
+          "$ENGAGEMENT.business_problem",
+          "$ENGAGEMENT.success_measured_by",
+          "k.label",
+          "k.checkable"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$ENGAGEMENT"
+          }
+        ],
+        "say": "nothing records why this client came to us"
+      }
+    },
+    "CE3": {
+      "who": "an account lead",
+      "question": "Who is involved on $ENGAGEMENT on both sides, what is each person's role, who pays, who champions the work, and who could block it?",
+      "why": "A deal is lost to the person nobody knew could stop it, and sales practice treats unknown buyers and champions as the warning sign.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)",
+      "params": {
+        "ENGAGEMENT": {
+          "type": "Engagement"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "r",
+              "on_engagement",
+              "$ENGAGEMENT"
+            ]
+          },
+          {
+            "node": "r",
+            "type": "Role"
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "r",
+                  "filled_by",
+                  "p"
+                ]
+              },
+              {
+                "node": "p",
+                "type": "Person"
+              }
+            ]
+          }
+        ],
+        "select": [
+          "r.label",
+          "r.role_kind",
+          "r.side",
+          "r.time_commitment",
+          "p.label",
+          "p.organization"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$ENGAGEMENT"
+          }
+        ],
+        "say": "nobody is recorded on this engagement yet"
+      }
+    },
+    "CE4": {
+      "who": "an engagement lead",
+      "question": "What was discussed at each interaction on $ENGAGEMENT, who attended, and what came out of it?",
+      "why": "People forget what was said, and follow-up depends on it.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)",
+      "params": {
+        "ENGAGEMENT": {
+          "type": "Engagement"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "i",
+              "concerns_engagement",
+              "$ENGAGEMENT"
+            ]
+          },
+          {
+            "node": "i",
+            "type": "Interaction"
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "i",
+                  "attended_by",
+                  "a"
+                ]
+              }
+            ]
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "pt",
+                  "said_in",
+                  "i"
+                ]
+              }
+            ]
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "out",
+                  "raised_in",
+                  "i"
+                ]
+              }
+            ]
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "i",
+                  "recorded_in",
+                  "rec"
+                ]
+              }
+            ]
+          }
+        ],
+        "select": [
+          "i.label",
+          "i.interaction_kind",
+          "i.held_on",
+          "a.label",
+          "pt.label",
+          "out.label",
+          "rec.label"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$ENGAGEMENT"
+          }
+        ],
+        "say": "no interaction is recorded on this engagement yet"
+      }
+    },
+    "CE5": {
+      "who": "an account lead",
+      "question": "Which topics keep coming up with $CLIENT, who raised them, and what was said each time?",
+      "why": "What recurs across meetings is what the client actually cares about.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)",
+      "params": {
+        "CLIENT": {
+          "type": "Client"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "i",
+              "with_client",
+              "$CLIENT"
+            ]
+          },
+          {
+            "node": "i",
+            "type": "Interaction"
+          },
+          {
+            "edge": [
+              "pt",
+              "said_in",
+              "i"
+            ]
+          },
+          {
+            "node": "pt",
+            "type": "DiscussionPoint"
+          },
+          {
+            "edge": [
+              "pt",
+              "about_topic",
+              "t"
+            ]
+          },
+          {
+            "node": "t",
+            "type": "Topic"
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "pt",
+                  "raised_by",
+                  "who"
+                ]
+              }
+            ]
+          }
+        ],
+        "select": [
+          "t.label",
+          "pt.label",
+          "who.label",
+          "i.label",
+          "i.held_on"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$CLIENT"
+          }
+        ],
+        "say": "no discussion is recorded for this client yet"
+      }
+    },
+    "CE6": {
+      "who": "an engagement lead",
+      "question": "What have we presented on $ENGAGEMENT, to whom and in which version, and what has each person already seen?",
+      "why": "No surprises at a readout: leadership should see each theme before the final deck does.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)",
+      "params": {
+        "ENGAGEMENT": {
+          "type": "Engagement"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "i",
+              "concerns_engagement",
+              "$ENGAGEMENT"
+            ]
+          },
+          {
+            "node": "i",
+            "type": "Interaction"
+          },
+          {
+            "edge": [
+              "i",
+              "presented",
+              "m"
+            ]
+          },
+          {
+            "node": "m",
+            "type": "EngagementDocument|Finding|Recommendation"
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "i",
+                  "attended_by",
+                  "a"
+                ]
+              }
+            ]
+          }
+        ],
+        "select": [
+          "m.label",
+          "m.version",
+          "m.audience",
+          "m.document_kind",
+          "m.document_state",
+          "i.label",
+          "i.held_on",
+          "a.label"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$ENGAGEMENT"
+          }
+        ],
+        "say": "nothing has been presented on this engagement yet"
+      },
+      "terms": [
+        "EngagementDocument"
+      ]
+    },
+    "CE7": {
+      "who": "an engagement lead",
+      "question": "Where does $ENGAGEMENT stand, and what must clear before it can start or move on?",
+      "why": "A slipped gate moves everything after it, so what blocks the next gate must be visible.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)",
+      "params": {
+        "ENGAGEMENT": {
+          "type": "Engagement"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "m",
+              "on_engagement",
+              "$ENGAGEMENT"
+            ]
+          },
+          {
+            "node": "m",
+            "type": "Milestone"
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "x",
+                  "blocks",
+                  "m"
+                ]
+              }
+            ]
+          }
+        ],
+        "select": [
+          "$ENGAGEMENT.stage",
+          "m.label",
+          "m.milestone_kind",
+          "m.due_on",
+          "m.milestone_state",
+          "x.label"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$ENGAGEMENT"
+          }
+        ],
+        "say": "no gate or checkpoint is recorded on this engagement yet"
+      },
+      "terms": [
+        "Milestone.milestone_state"
+      ]
+    },
+    "CE8": {
+      "who": "an engagement lead",
+      "question": "What is in and out of scope on $ENGAGEMENT today, and when and why did each item change?",
+      "why": "Scope creep starts when nobody can say what was agreed.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)",
+      "params": {
+        "ENGAGEMENT": {
+          "type": "Engagement"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "s",
+              "on_engagement",
+              "$ENGAGEMENT"
+            ]
+          },
+          {
+            "node": "s",
+            "type": "ScopeItem"
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "s",
+                  "defined_in",
+                  "d"
+                ]
+              }
+            ]
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "cr",
+                  "changes",
+                  "s"
+                ]
+              }
+            ]
+          }
+        ],
+        "select": [
+          "s.label",
+          "s.scope_state",
+          "s.reason",
+          "s.as_of",
+          "d.label",
+          "cr.label"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$ENGAGEMENT"
+          }
+        ],
+        "say": "no scope is recorded on this engagement yet"
+      }
+    },
+    "CE9": {
+      "who": "an engagement lead",
+      "question": "What does the statement of work on $ENGAGEMENT commit us to deliver, who accepts each item and by what test, and what has been accepted?",
+      "why": "Acceptance disputes come from deliverables nobody defined a test for.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)",
+      "params": {
+        "ENGAGEMENT": {
+          "type": "Engagement"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "d",
+              "on_engagement",
+              "$ENGAGEMENT"
+            ]
+          },
+          {
+            "node": "d",
+            "type": "Deliverable"
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "d",
+                  "accepted_by",
+                  "who"
+                ]
+              }
+            ]
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "k",
+                  "judges",
+                  "d"
+                ]
+              }
+            ]
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "d",
+                  "defined_in",
+                  "doc"
+                ]
+              }
+            ]
+          }
+        ],
+        "select": [
+          "d.label",
+          "d.acceptance_state",
+          "d.due_on",
+          "who.label",
+          "k.label",
+          "doc.label"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$ENGAGEMENT"
+          }
+        ],
+        "say": "no deliverable is recorded on this engagement yet"
+      }
+    },
+    "CE10": {
+      "who": "an engagement lead",
+      "question": "What was promised on $ENGAGEMENT in a meeting or a deck that the statement of work does not cover or contradicts?",
+      "why": "A promise the contract does not hold is a dispute waiting to happen, and it should be raised before the client reads the document.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)",
+      "params": {
+        "ENGAGEMENT": {
+          "type": "Engagement"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "c",
+              "on_engagement",
+              "$ENGAGEMENT"
+            ]
+          },
+          {
+            "node": "c",
+            "type": "Commitment"
+          },
+          {
+            "not_edge": [
+              "c",
+              "covered_by",
+              "*"
+            ]
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "c",
+                  "made_in",
+                  "w"
+                ]
+              }
+            ]
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "c",
+                  "made_by",
+                  "who"
+                ]
+              }
+            ]
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "c",
+                  "contradicted_by",
+                  "x"
+                ]
+              }
+            ]
+          }
+        ],
+        "select": [
+          "c.label",
+          "w.label",
+          "who.label",
+          "x.label"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$ENGAGEMENT"
+          }
+        ],
+        "say": "no uncovered promise is recorded on this engagement"
+      }
+    },
+    "CE11": {
+      "who": "an accountable executive",
+      "question": "What do the plan and price on $ENGAGEMENT assume, and what would make that a change request?",
+      "why": "Assumptions are what a change request is later argued from.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)",
+      "params": {
+        "ENGAGEMENT": {
+          "type": "Engagement"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "a",
+              "on_engagement",
+              "$ENGAGEMENT"
+            ]
+          },
+          {
+            "node": "a",
+            "type": "Assumption"
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "a",
+                  "defined_in",
+                  "d"
+                ]
+              }
+            ]
+          }
+        ],
+        "select": [
+          "a.label",
+          "a.assumption_about",
+          "a.change_trigger",
+          "d.label"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$ENGAGEMENT"
+          }
+        ],
+        "say": "no assumption is recorded on this engagement yet"
+      }
+    },
+    "CE12": {
+      "who": "an engagement lead",
+      "question": "What do we need from the client on $ENGAGEMENT, and by when?",
+      "why": "Most slips on an engagement begin with something the client owed and nobody chased.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)",
+      "params": {
+        "ENGAGEMENT": {
+          "type": "Engagement"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "i",
+              "on_engagement",
+              "$ENGAGEMENT"
+            ]
+          },
+          {
+            "node": "i",
+            "type": "OpenItem",
+            "where": {
+              "item_kind": "client_dependency",
+              "item_state": "open"
+            }
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "i",
+                  "owned_by",
+                  "o"
+                ]
+              },
+              {
+                "optional": [
+                  {
+                    "edge": [
+                      "o",
+                      "filled_by",
+                      "person"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "select": [
+          "i.label",
+          "i.due_on",
+          "o.label",
+          "person.label"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$ENGAGEMENT"
+          }
+        ],
+        "say": "nothing is recorded as needed from the client"
+      }
+    },
+    "CE13": {
+      "who": "an accountable executive",
+      "question": "What did the scope, price or plan on $ENGAGEMENT say on a given past date?",
+      "why": "Disputes turn on what was true on a past date. This lists what stands today with its dates, and reading the engagement as of a date gives what stood then.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)",
+      "params": {
+        "ENGAGEMENT": {
+          "type": "Engagement"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "x",
+              "on_engagement",
+              "$ENGAGEMENT"
+            ]
+          },
+          {
+            "node": "x",
+            "type": "ScopeItem|Price|Milestone"
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "x",
+                  "defined_in",
+                  "d"
+                ]
+              }
+            ]
+          }
+        ],
+        "select": [
+          "x.label",
+          "x.type",
+          "x.as_of",
+          "x.valid_from",
+          "d.label"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$ENGAGEMENT"
+          }
+        ],
+        "say": "no scope, price or plan is recorded on this engagement yet"
+      }
+    },
+    "CE14": {
+      "who": "an accountable executive",
+      "question": "Which decisions are waiting on $ENGAGEMENT, who must make them, by when, and what is blocked until then?",
+      "why": "A waiting decision on the critical path costs time every day nobody sees it.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)",
+      "params": {
+        "ENGAGEMENT": {
+          "type": "Engagement"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "d",
+              "on_engagement",
+              "$ENGAGEMENT"
+            ]
+          },
+          {
+            "node": "d",
+            "type": "Decision",
+            "where": {
+              "decision_state": "waiting"
+            }
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "d",
+                  "decided_by",
+                  "who"
+                ]
+              },
+              {
+                "optional": [
+                  {
+                    "edge": [
+                      "who",
+                      "filled_by",
+                      "person"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "d",
+                  "blocks",
+                  "b"
+                ]
+              }
+            ]
+          }
+        ],
+        "select": [
+          "d.label",
+          "d.due_on",
+          "who.label",
+          "person.label",
+          "b.label"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$ENGAGEMENT"
+          }
+        ],
+        "say": "no decision is waiting on this engagement"
+      }
+    },
+    "CE15": {
+      "who": "an accountable executive",
+      "question": "What was decided on $ENGAGEMENT, when, by whom and why, and which options were rejected?",
+      "why": "Without the reason and the alternatives, every decision gets argued again.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)",
+      "params": {
+        "ENGAGEMENT": {
+          "type": "Engagement"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "d",
+              "on_engagement",
+              "$ENGAGEMENT"
+            ]
+          },
+          {
+            "node": "d",
+            "type": "Decision",
+            "where": {
+              "decision_state": "made"
+            }
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "d",
+                  "decided_by",
+                  "who"
+                ]
+              },
+              {
+                "optional": [
+                  {
+                    "edge": [
+                      "who",
+                      "filled_by",
+                      "person"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "d",
+                  "taken_in",
+                  "i"
+                ]
+              }
+            ]
+          }
+        ],
+        "select": [
+          "d.label",
+          "d.decided_on",
+          "d.reason",
+          "d.options_considered",
+          "who.label",
+          "person.label",
+          "i.label"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$ENGAGEMENT"
+          }
+        ],
+        "say": "no decision is recorded as made on this engagement"
+      }
+    },
+    "CE16": {
+      "who": "an accountable executive",
+      "question": "How was the price on $ENGAGEMENT built, what are the fee, margin and contingency, and who approved any gap?",
+      "why": "A price gap with no named approver comes back as a margin problem.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)",
+      "params": {
+        "ENGAGEMENT": {
+          "type": "Engagement"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "p",
+              "on_engagement",
+              "$ENGAGEMENT"
+            ]
+          },
+          {
+            "node": "p",
+            "type": "Price"
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "p",
+                  "approved_by",
+                  "who"
+                ]
+              }
+            ]
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "p",
+                  "defined_in",
+                  "d"
+                ]
+              }
+            ]
+          }
+        ],
+        "select": [
+          "p.label",
+          "p.fee",
+          "p.currency",
+          "p.pricing_model",
+          "p.margin",
+          "p.contingency",
+          "p.billable_days",
+          "who.label",
+          "d.label"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$ENGAGEMENT"
+          }
+        ],
+        "say": "no price is recorded on this engagement yet"
+      }
+    },
+    "CE17": {
+      "who": "an engagement lead",
+      "question": "Which risks threaten $ENGAGEMENT most right now, who owns each, and has any happened?",
+      "why": "A register nobody reads protects nothing, and a rating's past values are read from its history.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)",
+      "params": {
+        "ENGAGEMENT": {
+          "type": "Engagement"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "r",
+              "on_engagement",
+              "$ENGAGEMENT"
+            ]
+          },
+          {
+            "node": "r",
+            "type": "Risk"
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "r",
+                  "owned_by",
+                  "o"
+                ]
+              },
+              {
+                "optional": [
+                  {
+                    "edge": [
+                      "o",
+                      "filled_by",
+                      "person"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "r",
+                  "became",
+                  "i"
+                ]
+              }
+            ]
+          }
+        ],
+        "select": [
+          "r.label",
+          "r.likelihood",
+          "r.impact",
+          "r.mitigation",
+          "o.label",
+          "person.label",
+          "i.label"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$ENGAGEMENT"
+          }
+        ],
+        "say": "no risk is recorded on this engagement yet"
+      }
+    },
+    "CE18": {
+      "who": "an engagement lead",
+      "question": "What did we find and recommend on $ENGAGEMENT, what evidence supports it, and did the client act on it?",
+      "why": "A finding must hold up when challenged, and advice nobody followed up is wasted.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)",
+      "params": {
+        "ENGAGEMENT": {
+          "type": "Engagement"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "f",
+              "on_engagement",
+              "$ENGAGEMENT"
+            ]
+          },
+          {
+            "node": "f",
+            "type": "Finding"
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "f",
+                  "evidenced_by",
+                  "ev"
+                ]
+              }
+            ]
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "rc",
+                  "addresses",
+                  "f"
+                ]
+              },
+              {
+                "node": "rc",
+                "type": "Recommendation"
+              }
+            ]
+          }
+        ],
+        "select": [
+          "f.label",
+          "f.finding_area",
+          "ev.label",
+          "rc.label",
+          "rc.client_response"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$ENGAGEMENT"
+          }
+        ],
+        "say": "no finding is recorded on this engagement yet"
+      }
+    },
+    "CE19": {
+      "who": "an engagement lead",
+      "question": "What is still open on $ENGAGEMENT, which interaction did it come from, who owns it, when is it due, and what does it block?",
+      "why": "Follow-up is the reason this graph exists.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)",
+      "params": {
+        "ENGAGEMENT": {
+          "type": "Engagement"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "i",
+              "on_engagement",
+              "$ENGAGEMENT"
+            ]
+          },
+          {
+            "node": "i",
+            "type": "OpenItem",
+            "where": {
+              "item_state": "open"
+            }
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "i",
+                  "owned_by",
+                  "o"
+                ]
+              },
+              {
+                "optional": [
+                  {
+                    "edge": [
+                      "o",
+                      "filled_by",
+                      "person"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "i",
+                  "raised_in",
+                  "w"
+                ]
+              }
+            ]
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "i",
+                  "blocks",
+                  "b"
+                ]
+              }
+            ]
+          }
+        ],
+        "select": [
+          "i.label",
+          "i.item_kind",
+          "i.due_on",
+          "o.label",
+          "person.label",
+          "w.label",
+          "b.label"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$ENGAGEMENT"
+          }
+        ],
+        "say": "nothing is open on this engagement"
+      }
+    },
+    "CE20": {
+      "who": "an accountable executive",
+      "question": "Which change requests were raised on $ENGAGEMENT, what triggered them, what was the outcome, and how did they affect scope, fee and dates?",
+      "why": "Fixed-fee work stays profitable only if changes are visible and priced.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)",
+      "params": {
+        "ENGAGEMENT": {
+          "type": "Engagement"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "c",
+              "on_engagement",
+              "$ENGAGEMENT"
+            ]
+          },
+          {
+            "node": "c",
+            "type": "ChangeRequest"
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "c",
+                  "changes",
+                  "x"
+                ]
+              }
+            ]
+          }
+        ],
+        "select": [
+          "c.label",
+          "c.change_trigger",
+          "c.change_state",
+          "c.effect",
+          "x.label"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$ENGAGEMENT"
+          }
+        ],
+        "say": "no change request is recorded on this engagement"
+      }
+    },
+    "CE21": {
+      "who": "an account lead",
+      "question": "What follow-on work did $ENGAGEMENT open up, and where does it stand?",
+      "why": "Pilots and later phases are the next sale, and they disappear when nobody tracks them.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)",
+      "params": {
+        "ENGAGEMENT": {
+          "type": "Engagement"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "f",
+              "follows_on_from",
+              "$ENGAGEMENT"
+            ]
+          },
+          {
+            "node": "f",
+            "type": "Engagement"
+          }
+        ],
+        "select": [
+          "f.label",
+          "f.stage",
+          "f.service_line"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "node": "$ENGAGEMENT"
+          }
+        ],
+        "say": "no follow-on work is recorded from this engagement"
+      }
+    },
+    "CE22": {
+      "who": "a partner",
+      "question": "What have we already done for each client and kind of work, what can we reuse, and which risks came back?",
+      "why": "Looks across engagements and clients on purpose, because new work should start from what the firm already learned.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)",
+      "ask": {
+        "when": [
+          {
+            "node": "e",
+            "type": "Engagement"
+          },
+          {
+            "edge": [
+              "e",
+              "for_client",
+              "c"
+            ]
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "e",
+                  "uses_asset",
+                  "a"
+                ]
+              },
+              {
+                "node": "a",
+                "type": "ReusableAsset"
+              }
+            ]
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "r",
+                  "on_engagement",
+                  "e"
+                ]
+              },
+              {
+                "node": "r",
+                "type": "Risk"
+              }
+            ]
+          }
+        ],
+        "select": [
+          "c.label",
+          "e.label",
+          "e.service_line",
+          "a.label",
+          "a.asset_kind",
+          "r.risk_category"
+        ]
+      },
+      "gate": "any"
+    },
+    "CE23": {
+      "who": "a curator",
+      "question": "What do we hold that is not yet tied to a client and an engagement?",
+      "why": "The rule that everything traces to a client and an engagement is only as good as what still escapes it. The engine refuses the other kinds without their link, so source documents are what can remain here, and firm-wide ones may rightly stay.",
+      "validated_by": "Chiheb Dkhil, 2026-11-03 (walked through in the ontology interview)",
+      "ask": {
+        "when": [
+          {
+            "node": "d",
+            "type": "Document"
+          },
+          {
+            "not_edge": [
+              "d",
+              "concerns_engagement",
+              "*"
+            ]
+          },
+          {
+            "optional": [
+              {
+                "edge": [
+                  "i",
+                  "recorded_in",
+                  "d"
+                ]
+              }
+            ]
+          }
+        ],
+        "select": [
+          "d.label",
+          "d.as_of",
+          "i.label"
+        ]
+      },
+      "gate": "any"
+    }
+  }
+}

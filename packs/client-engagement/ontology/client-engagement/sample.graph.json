@@ -1,0 +1,1327 @@
+{
+ "_about": "An invented graph naming nobody real: two clients, an engagement name they share, and every question answered from it. It is never a client's graph.",
+ "nodes": [
+  {
+   "id": "doc.sample-engagement-notes",
+   "type": "Document",
+   "label": "Sample engagement notes",
+   "aliases": [],
+   "summary": "An invented note every fact in this sample cites.",
+   "attributes": {},
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "doc.sample-firm-handbook",
+   "type": "Document",
+   "label": "Sample firm handbook",
+   "aliases": [],
+   "summary": "An invented firm-wide document, tied to no engagement.",
+   "attributes": {},
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "client.example-mutual",
+   "type": "Client",
+   "label": "Example Mutual",
+   "aliases": [],
+   "summary": "An invented insurer.",
+   "attributes": {
+    "sector": "Insurance"
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "client.sample-bank",
+   "type": "Client",
+   "label": "Sample Bank",
+   "aliases": [],
+   "summary": "An invented bank.",
+   "attributes": {
+    "sector": "Banking"
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "engagement.example-assessment",
+   "type": "Engagement",
+   "label": "AI delivery assessment",
+   "aliases": [],
+   "summary": "An invented assessment for Example Mutual.",
+   "attributes": {
+    "stage": "proposed",
+    "service_line": "ai-transformation",
+    "client_ask": "Are our AI tools making delivery faster?",
+    "business_problem": "Success is measured by usage, which shows adoption and not impact.",
+    "success_measured_by": "Monthly tool usage"
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "engagement.sample-assessment",
+   "type": "Engagement",
+   "label": "AI delivery assessment",
+   "aliases": [],
+   "summary": "An invented assessment for Sample Bank, sharing a name with another client's engagement.",
+   "attributes": {
+    "stage": "delivering",
+    "service_line": "ai-transformation"
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "engagement.sample-cloud",
+   "type": "Engagement",
+   "label": "Cloud migration",
+   "aliases": [],
+   "summary": "An invented migration for Sample Bank, with nothing open.",
+   "attributes": {
+    "stage": "closed",
+    "service_line": "cloud-migration"
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "engagement.example-pilots",
+   "type": "Engagement",
+   "label": "AI pilots",
+   "aliases": [],
+   "summary": "Invented follow-on work from the assessment.",
+   "attributes": {
+    "stage": "pursuit",
+    "service_line": "ai-transformation"
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "person.alex-example",
+   "type": "Person",
+   "label": "Alex Example",
+   "aliases": [],
+   "summary": "Invented client lead.",
+   "attributes": {
+    "organization": "Example Mutual"
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "person.sam-sample",
+   "type": "Person",
+   "label": "Sam Sample",
+   "aliases": [],
+   "summary": "Invented client sponsor.",
+   "attributes": {
+    "organization": "Example Mutual"
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "person.jo-demo",
+   "type": "Person",
+   "label": "Jo Demo",
+   "aliases": [],
+   "summary": "Invented engagement lead.",
+   "attributes": {
+    "organization": "The firm"
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "role.example-sponsor",
+   "type": "Role",
+   "label": "Lead sponsor",
+   "aliases": [],
+   "summary": "Lead sponsor.",
+   "attributes": {
+    "role_kind": "sponsor",
+    "side": "client"
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "role.example-lead",
+   "type": "Role",
+   "label": "Day-to-day lead",
+   "aliases": [],
+   "summary": "Day-to-day lead.",
+   "attributes": {
+    "role_kind": "day-to-day-lead",
+    "side": "client"
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "role.example-gatekeeper",
+   "type": "Role",
+   "label": "AI review owner",
+   "aliases": [],
+   "summary": "AI review owner.",
+   "attributes": {
+    "role_kind": "gatekeeper",
+    "side": "client"
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "role.example-engagement-lead",
+   "type": "Role",
+   "label": "Engagement lead",
+   "aliases": [],
+   "summary": "Engagement lead.",
+   "attributes": {
+    "role_kind": "engagement-lead",
+    "side": "firm",
+    "time_commitment": "Full time"
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "interaction.example-kickoff",
+   "type": "Interaction",
+   "label": "Scoping meeting",
+   "aliases": [],
+   "summary": "Invented scoping meeting.",
+   "attributes": {
+    "interaction_kind": "presentation",
+    "held_on": "2026-09-14"
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-14",
+   "valid_from": "2026-09-14",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "interaction.example-relationship",
+   "type": "Interaction",
+   "label": "General relationship lunch",
+   "aliases": [],
+   "summary": "Invented meeting with the client and no engagement.",
+   "attributes": {
+    "interaction_kind": "meeting",
+    "held_on": "2026-08-20"
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-08-20",
+   "valid_from": "2026-08-20",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "interaction.sample-kickoff",
+   "type": "Interaction",
+   "label": "Scoping meeting",
+   "aliases": [],
+   "summary": "Invented meeting for the other client.",
+   "attributes": {
+    "interaction_kind": "meeting",
+    "held_on": "2026-09-15"
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-15",
+   "valid_from": "2026-09-15",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "topic.governance",
+   "type": "Topic",
+   "label": "Governance",
+   "aliases": [],
+   "summary": "Governance.",
+   "attributes": {},
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "point.example-governance",
+   "type": "DiscussionPoint",
+   "label": "Approvals take too long",
+   "aliases": [],
+   "summary": "Invented statement.",
+   "attributes": {},
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "point.example-governance-2",
+   "type": "DiscussionPoint",
+   "label": "Nobody owns AI yet",
+   "aliases": [],
+   "summary": "Invented statement.",
+   "attributes": {},
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "document.example-sow-v2",
+   "type": "EngagementDocument",
+   "label": "Statement of work, version 2",
+   "aliases": [],
+   "summary": "Statement of work, version 2.",
+   "attributes": {
+    "document_kind": "statement_of_work",
+    "version": "2",
+    "audience": "client_shared",
+    "document_state": "sent"
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "scope.example-areas",
+   "type": "ScopeItem",
+   "label": "Three business areas",
+   "aliases": [],
+   "summary": "Three business areas.",
+   "attributes": {
+    "scope_state": "in",
+    "reason": "Agreed at the scoping meeting."
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "scope.example-normalize",
+   "type": "ScopeItem",
+   "label": "Normalizing ticket data",
+   "aliases": [],
+   "summary": "Normalizing ticket data.",
+   "attributes": {
+    "scope_state": "out",
+    "reason": "Moved to the next phase."
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "deliverable.example-roadmap",
+   "type": "Deliverable",
+   "label": "Roadmap",
+   "aliases": [],
+   "summary": "Roadmap.",
+   "attributes": {
+    "acceptance_state": "pending",
+    "due_on": "2027-01-29"
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "criterion.example-signoff",
+   "type": "SuccessCriterion",
+   "label": "The sponsor signs off the roadmap",
+   "aliases": [],
+   "summary": "The sponsor signs off the roadmap.",
+   "attributes": {
+    "checkable": true
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "commitment.example-normalize",
+   "type": "Commitment",
+   "label": "Comparable data across areas",
+   "aliases": [],
+   "summary": "Comparable data across areas.",
+   "attributes": {},
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "commitment.example-roadmap",
+   "type": "Commitment",
+   "label": "A roadmap by January",
+   "aliases": [],
+   "summary": "A roadmap by January.",
+   "attributes": {},
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "assumption.example-interviews",
+   "type": "Assumption",
+   "label": "About fifteen interviews",
+   "aliases": [],
+   "summary": "About fifteen interviews.",
+   "attributes": {
+    "assumption_about": "price",
+    "change_trigger": "More than fifteen interviews"
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "milestone.example-gate",
+   "type": "Milestone",
+   "label": "Start gate",
+   "aliases": [],
+   "summary": "Start gate.",
+   "attributes": {
+    "milestone_kind": "gate",
+    "due_on": "2026-11-13",
+    "milestone_state": "planned"
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "price.example-v1",
+   "type": "Price",
+   "label": "Fixed fee for the assessment",
+   "aliases": [],
+   "summary": "Fixed fee for the assessment.",
+   "attributes": {
+    "fee": 110000,
+    "currency": "CAD",
+    "pricing_model": "fixed_fee",
+    "margin": 25,
+    "contingency": 10,
+    "billable_days": 30
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-05",
+   "valid_from": "2026-09-05",
+   "source_doc": "sample-engagement-notes",
+   "status": "superseded",
+   "sources": [
+    "sample-engagement-notes"
+   ],
+   "superseded_by": "price.example-v2",
+   "valid_to": "2026-09-20"
+  },
+  {
+   "id": "price.example-v2",
+   "type": "Price",
+   "label": "Fixed fee for the assessment",
+   "aliases": [],
+   "summary": "Fixed fee for the assessment.",
+   "attributes": {
+    "fee": 100000,
+    "currency": "CAD",
+    "pricing_model": "fixed_fee",
+    "margin": 20,
+    "contingency": 10,
+    "billable_days": 30
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-20",
+   "valid_from": "2026-09-20",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ],
+   "supersedes": "price.example-v1"
+  },
+  {
+   "id": "decision.example-fee",
+   "type": "Decision",
+   "label": "Quote the revised fee",
+   "aliases": [],
+   "summary": "Quote the revised fee.",
+   "attributes": {
+    "decision_state": "made",
+    "decided_on": "2026-09-20",
+    "reason": "Keeps the quote under the client's approval limit.",
+    "options_considered": [
+     "Hold the first quote",
+     "Reduce the fee",
+     "Reduce the scope"
+    ]
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "decision.example-start",
+   "type": "Decision",
+   "label": "Confirm the start date",
+   "aliases": [],
+   "summary": "Confirm the start date.",
+   "attributes": {
+    "decision_state": "waiting",
+    "due_on": "2026-11-10"
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "item.example-review",
+   "type": "OpenItem",
+   "label": "Clear the AI review",
+   "aliases": [],
+   "summary": "Clear the AI review.",
+   "attributes": {
+    "item_kind": "client_dependency",
+    "item_state": "open",
+    "due_on": "2026-11-12"
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "item.example-disclosure",
+   "type": "OpenItem",
+   "label": "Write the AI usage disclosure",
+   "aliases": [],
+   "summary": "Write the AI usage disclosure.",
+   "attributes": {
+    "item_kind": "action",
+    "item_state": "open",
+    "due_on": "2026-11-10"
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "risk.example-review",
+   "type": "Risk",
+   "label": "The AI review does not clear in time",
+   "aliases": [],
+   "summary": "The AI review does not clear in time.",
+   "attributes": {
+    "likelihood": "high",
+    "impact": "high",
+    "mitigation": "Write the disclosure early.",
+    "risk_category": "Client approval"
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "finding.example-usage",
+   "type": "Finding",
+   "label": "Tools are deployed, but use is shallow",
+   "aliases": [],
+   "summary": "Tools are deployed, but use is shallow.",
+   "attributes": {
+    "finding_area": "Adoption"
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "recommendation.example-owner",
+   "type": "Recommendation",
+   "label": "Name one accountable owner",
+   "aliases": [],
+   "summary": "Name one accountable owner.",
+   "attributes": {
+    "client_response": "pending"
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "change.example-areas",
+   "type": "ChangeRequest",
+   "label": "Add a fourth business area",
+   "aliases": [],
+   "summary": "Add a fourth business area.",
+   "attributes": {
+    "change_state": "raised",
+    "change_trigger": "The sponsor asked for one more area.",
+    "effect": "Would add days and raise the fee."
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "asset.maturity-rubric",
+   "type": "ReusableAsset",
+   "label": "Maturity rubric",
+   "aliases": [],
+   "summary": "Maturity rubric.",
+   "attributes": {
+    "asset_kind": "rubric"
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "risk.sample-review",
+   "type": "Risk",
+   "label": "The review does not clear in time",
+   "aliases": [],
+   "summary": "The review does not clear in time.",
+   "attributes": {
+    "likelihood": "medium",
+    "impact": "high",
+    "risk_category": "Client approval",
+    "mitigation": "Ask early."
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  },
+  {
+   "id": "item.sample-access",
+   "type": "OpenItem",
+   "label": "Grant repository access",
+   "aliases": [],
+   "summary": "Grant repository access.",
+   "attributes": {
+    "item_kind": "client_dependency",
+    "item_state": "open",
+    "due_on": "2026-12-15"
+   },
+   "tags": [
+    "sample"
+   ],
+   "as_of": "2026-09-01",
+   "valid_from": "2026-09-01",
+   "source_doc": "sample-engagement-notes",
+   "status": "current",
+   "sources": [
+    "sample-engagement-notes"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "engagement.example-assessment",
+   "rel": "for_client",
+   "to": "client.example-mutual"
+  },
+  {
+   "from": "engagement.example-pilots",
+   "rel": "for_client",
+   "to": "client.example-mutual"
+  },
+  {
+   "from": "engagement.sample-assessment",
+   "rel": "for_client",
+   "to": "client.sample-bank"
+  },
+  {
+   "from": "engagement.sample-cloud",
+   "rel": "for_client",
+   "to": "client.sample-bank"
+  },
+  {
+   "from": "engagement.example-pilots",
+   "rel": "follows_on_from",
+   "to": "engagement.example-assessment"
+  },
+  {
+   "from": "role.example-sponsor",
+   "rel": "on_engagement",
+   "to": "engagement.example-assessment"
+  },
+  {
+   "from": "role.example-sponsor",
+   "rel": "filled_by",
+   "to": "person.sam-sample"
+  },
+  {
+   "from": "role.example-lead",
+   "rel": "on_engagement",
+   "to": "engagement.example-assessment"
+  },
+  {
+   "from": "role.example-lead",
+   "rel": "filled_by",
+   "to": "person.alex-example"
+  },
+  {
+   "from": "role.example-gatekeeper",
+   "rel": "on_engagement",
+   "to": "engagement.example-assessment"
+  },
+  {
+   "from": "role.example-engagement-lead",
+   "rel": "on_engagement",
+   "to": "engagement.example-assessment"
+  },
+  {
+   "from": "role.example-engagement-lead",
+   "rel": "filled_by",
+   "to": "person.jo-demo"
+  },
+  {
+   "from": "interaction.example-kickoff",
+   "rel": "concerns_engagement",
+   "to": "engagement.example-assessment"
+  },
+  {
+   "from": "interaction.example-kickoff",
+   "rel": "attended_by",
+   "to": "person.alex-example"
+  },
+  {
+   "from": "interaction.example-kickoff",
+   "rel": "attended_by",
+   "to": "person.jo-demo"
+  },
+  {
+   "from": "interaction.example-kickoff",
+   "rel": "recorded_in",
+   "to": "doc.sample-engagement-notes"
+  },
+  {
+   "from": "interaction.example-relationship",
+   "rel": "with_client",
+   "to": "client.example-mutual"
+  },
+  {
+   "from": "interaction.sample-kickoff",
+   "rel": "concerns_engagement",
+   "to": "engagement.sample-assessment"
+  },
+  {
+   "from": "doc.sample-engagement-notes",
+   "rel": "concerns_engagement",
+   "to": "engagement.example-assessment"
+  },
+  {
+   "from": "point.example-governance",
+   "rel": "said_in",
+   "to": "interaction.example-kickoff"
+  },
+  {
+   "from": "point.example-governance",
+   "rel": "raised_by",
+   "to": "person.alex-example"
+  },
+  {
+   "from": "point.example-governance",
+   "rel": "about_topic",
+   "to": "topic.governance"
+  },
+  {
+   "from": "point.example-governance-2",
+   "rel": "said_in",
+   "to": "interaction.example-relationship"
+  },
+  {
+   "from": "point.example-governance-2",
+   "rel": "raised_by",
+   "to": "person.sam-sample"
+  },
+  {
+   "from": "point.example-governance-2",
+   "rel": "about_topic",
+   "to": "topic.governance"
+  },
+  {
+   "from": "document.example-sow-v2",
+   "rel": "on_engagement",
+   "to": "engagement.example-assessment"
+  },
+  {
+   "from": "interaction.example-kickoff",
+   "rel": "presented",
+   "to": "document.example-sow-v2"
+  },
+  {
+   "from": "scope.example-areas",
+   "rel": "on_engagement",
+   "to": "engagement.example-assessment"
+  },
+  {
+   "from": "scope.example-areas",
+   "rel": "defined_in",
+   "to": "document.example-sow-v2"
+  },
+  {
+   "from": "scope.example-normalize",
+   "rel": "on_engagement",
+   "to": "engagement.example-assessment"
+  },
+  {
+   "from": "scope.example-normalize",
+   "rel": "defined_in",
+   "to": "document.example-sow-v2"
+  },
+  {
+   "from": "deliverable.example-roadmap",
+   "rel": "on_engagement",
+   "to": "engagement.example-assessment"
+  },
+  {
+   "from": "deliverable.example-roadmap",
+   "rel": "accepted_by",
+   "to": "role.example-sponsor"
+  },
+  {
+   "from": "deliverable.example-roadmap",
+   "rel": "defined_in",
+   "to": "document.example-sow-v2"
+  },
+  {
+   "from": "criterion.example-signoff",
+   "rel": "on_engagement",
+   "to": "engagement.example-assessment"
+  },
+  {
+   "from": "criterion.example-signoff",
+   "rel": "judges",
+   "to": "deliverable.example-roadmap"
+  },
+  {
+   "from": "criterion.example-signoff",
+   "rel": "defined_in",
+   "to": "document.example-sow-v2"
+  },
+  {
+   "from": "commitment.example-normalize",
+   "rel": "on_engagement",
+   "to": "engagement.example-assessment"
+  },
+  {
+   "from": "commitment.example-normalize",
+   "rel": "made_in",
+   "to": "interaction.example-kickoff"
+  },
+  {
+   "from": "commitment.example-normalize",
+   "rel": "made_by",
+   "to": "role.example-engagement-lead"
+  },
+  {
+   "from": "commitment.example-normalize",
+   "rel": "contradicted_by",
+   "to": "scope.example-normalize"
+  },
+  {
+   "from": "commitment.example-roadmap",
+   "rel": "on_engagement",
+   "to": "engagement.example-assessment"
+  },
+  {
+   "from": "commitment.example-roadmap",
+   "rel": "made_in",
+   "to": "interaction.example-kickoff"
+  },
+  {
+   "from": "commitment.example-roadmap",
+   "rel": "covered_by",
+   "to": "deliverable.example-roadmap"
+  },
+  {
+   "from": "assumption.example-interviews",
+   "rel": "on_engagement",
+   "to": "engagement.example-assessment"
+  },
+  {
+   "from": "assumption.example-interviews",
+   "rel": "defined_in",
+   "to": "document.example-sow-v2"
+  },
+  {
+   "from": "milestone.example-gate",
+   "rel": "on_engagement",
+   "to": "engagement.example-assessment"
+  },
+  {
+   "from": "milestone.example-gate",
+   "rel": "defined_in",
+   "to": "document.example-sow-v2"
+  },
+  {
+   "from": "price.example-v1",
+   "rel": "on_engagement",
+   "to": "engagement.example-assessment"
+  },
+  {
+   "from": "price.example-v1",
+   "rel": "defined_in",
+   "to": "document.example-sow-v2"
+  },
+  {
+   "from": "price.example-v2",
+   "rel": "on_engagement",
+   "to": "engagement.example-assessment"
+  },
+  {
+   "from": "price.example-v2",
+   "rel": "defined_in",
+   "to": "document.example-sow-v2"
+  },
+  {
+   "from": "price.example-v2",
+   "rel": "approved_by",
+   "to": "person.jo-demo"
+  },
+  {
+   "from": "decision.example-fee",
+   "rel": "on_engagement",
+   "to": "engagement.example-assessment"
+  },
+  {
+   "from": "decision.example-fee",
+   "rel": "decided_by",
+   "to": "person.jo-demo"
+  },
+  {
+   "from": "decision.example-fee",
+   "rel": "taken_in",
+   "to": "interaction.example-kickoff"
+  },
+  {
+   "from": "decision.example-start",
+   "rel": "on_engagement",
+   "to": "engagement.example-assessment"
+  },
+  {
+   "from": "decision.example-start",
+   "rel": "decided_by",
+   "to": "role.example-lead"
+  },
+  {
+   "from": "decision.example-start",
+   "rel": "blocks",
+   "to": "milestone.example-gate"
+  },
+  {
+   "from": "item.example-review",
+   "rel": "on_engagement",
+   "to": "engagement.example-assessment"
+  },
+  {
+   "from": "item.example-review",
+   "rel": "owned_by",
+   "to": "role.example-gatekeeper"
+  },
+  {
+   "from": "item.example-review",
+   "rel": "raised_in",
+   "to": "interaction.example-kickoff"
+  },
+  {
+   "from": "item.example-review",
+   "rel": "blocks",
+   "to": "milestone.example-gate"
+  },
+  {
+   "from": "item.example-disclosure",
+   "rel": "on_engagement",
+   "to": "engagement.example-assessment"
+  },
+  {
+   "from": "item.example-disclosure",
+   "rel": "owned_by",
+   "to": "role.example-engagement-lead"
+  },
+  {
+   "from": "item.example-disclosure",
+   "rel": "raised_in",
+   "to": "interaction.example-kickoff"
+  },
+  {
+   "from": "risk.example-review",
+   "rel": "on_engagement",
+   "to": "engagement.example-assessment"
+  },
+  {
+   "from": "risk.example-review",
+   "rel": "owned_by",
+   "to": "role.example-engagement-lead"
+  },
+  {
+   "from": "risk.example-review",
+   "rel": "became",
+   "to": "item.example-review"
+  },
+  {
+   "from": "finding.example-usage",
+   "rel": "on_engagement",
+   "to": "engagement.example-assessment"
+  },
+  {
+   "from": "finding.example-usage",
+   "rel": "evidenced_by",
+   "to": "interaction.example-kickoff"
+  },
+  {
+   "from": "finding.example-usage",
+   "rel": "evidenced_by",
+   "to": "doc.sample-engagement-notes"
+  },
+  {
+   "from": "recommendation.example-owner",
+   "rel": "on_engagement",
+   "to": "engagement.example-assessment"
+  },
+  {
+   "from": "recommendation.example-owner",
+   "rel": "addresses",
+   "to": "finding.example-usage"
+  },
+  {
+   "from": "interaction.example-kickoff",
+   "rel": "presented",
+   "to": "finding.example-usage"
+  },
+  {
+   "from": "change.example-areas",
+   "rel": "on_engagement",
+   "to": "engagement.example-assessment"
+  },
+  {
+   "from": "change.example-areas",
+   "rel": "changes",
+   "to": "scope.example-areas"
+  },
+  {
+   "from": "change.example-areas",
+   "rel": "changes",
+   "to": "price.example-v2"
+  },
+  {
+   "from": "engagement.example-assessment",
+   "rel": "uses_asset",
+   "to": "asset.maturity-rubric"
+  },
+  {
+   "from": "engagement.sample-assessment",
+   "rel": "uses_asset",
+   "to": "asset.maturity-rubric"
+  },
+  {
+   "from": "risk.sample-review",
+   "rel": "on_engagement",
+   "to": "engagement.sample-assessment"
+  },
+  {
+   "from": "risk.sample-review",
+   "rel": "owned_by",
+   "to": "person.jo-demo"
+  },
+  {
+   "from": "item.sample-access",
+   "rel": "on_engagement",
+   "to": "engagement.sample-assessment"
+  }
+ ]
+}

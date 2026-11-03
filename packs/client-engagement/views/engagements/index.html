@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engagements</title>
+<link rel="stylesheet" href="../_studio/studio.css">
+<style>
+:root { --e-line: var(--st-line, #d9d9d4); --e-muted: var(--st-muted, #66665f); --e-panel: var(--st-panel, #ffffff); --e-accent: var(--st-accent, #1f5fbf); --e-warn: #a33a1e; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --e-warn: #ff9d82; } }
+:root[data-theme="dark"] { --e-warn: #ff9d82; }
+.picker { display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0 8px; }
+.picker label { display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 600; color: var(--e-muted); flex: 1 1 240px; }
+.picker select { font: inherit; font-weight: 400; padding: 8px; border: 1px solid var(--e-line); border-radius: 6px; background: var(--e-panel); color: inherit; width: 100%; }
+.head { margin-top: 20px; }
+.head h2 { margin: 0 0 6px; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { font-size: 13px; padding: 1px 9px; border-radius: 99px; border: 1px solid var(--e-line); color: var(--e-muted); }
+.tag.internal { color: var(--e-warn); border-color: var(--e-warn); }
+.why { margin: 12px 0 0; }
+.why dt { font-size: 13px; font-weight: 600; color: var(--e-muted); margin-top: 8px; }
+.why dd { margin: 0; }
+.group { margin-top: 32px; }
+.group > h2 { font-size: 20px; margin: 0 0 4px; }
+.block { margin-top: 18px; }
+.block h3 { font-size: 15px; margin: 0 0 6px; display: flex; align-items: center; gap: 8px; }
+.wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; background: var(--e-panel); }
+th, td { text-align: left; vertical-align: top; padding: 7px 9px; border-bottom: 1px solid var(--e-line); }
+th { color: var(--e-muted); font-weight: 600; white-space: nowrap; }
+.empty { color: var(--e-muted); font-size: 14px; margin: 0; }
+.late { color: var(--e-warn); font-weight: 600; }
+.note { color: var(--e-muted); font-size: 14px; }
+</style>
+<script src="../_studio/data.js"></script>
+<script src="../_studio/studio.js"></script>
+<script src="data.js"></script>
+</head>
+<body>
+<main class="studio-page">
+  <h1>Engagements</h1>
+  <p class="studio-lead">Choose a client and an engagement to see what needs follow-up, what happened, what was agreed and who is involved.</p>
+  <div class="picker">
+    <label for="client">Client<select id="client"></select></label>
+    <label for="engagement">Engagement<select id="engagement"></select></label>
+  </div>
+  <div id="page"></div>
+  <div id="studio-open"></div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
