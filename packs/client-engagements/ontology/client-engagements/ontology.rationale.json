@@ -1,0 +1,271 @@
+{
+  "_about": "Why each class and relation exists, the alternatives considered, and who confirmed it. `validated_by` stays empty until a person who knows the domain has confirmed the entry.",
+  "classes": {
+    "Pursuit": {
+      "question": "Which opportunities are we pursuing with this client, at what stage, who leads each, and why did we win or lose?",
+      "why": "A pursuit has its own dates, lead, documents and outcome before any engagement exists, and a lost pursuit never becomes one.",
+      "alternatives": "A stage attribute on Engagement: rejected, because a lost pursuit would then be an engagement that never happened.",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "StatementOfWork": {
+      "question": "Is this request in scope under the signed SOW, and which clause says so?",
+      "why": "Its signing date and clauses are what scope, pricing and key-person questions are judged against, so it must be addressable on its own.",
+      "alternatives": "A document-kind attribute on Document: rejected, because questions need to ask for SOWs by type and traverse their scope.",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "ChangeOrder": {
+      "question": "What was the scope at signing compared with now, and why did each change happen?",
+      "why": "Each change carries its own date, reason and value; without it the scope history collapses into the latest state.",
+      "alternatives": "Superseding the SOW with a new version: rejected, because the reason and value of each change would be lost.",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "ScopeItem": {
+      "question": "Is this request in scope, and which clause says so?",
+      "why": "Scope is argued item by item and clause by clause; a scope paragraph on the SOW cannot answer which change added or removed a line.",
+      "alternatives": "Free text on the SOW: rejected, because it cannot say when an item entered or left scope.",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "SolutionDocument": {
+      "question": "Have we done work like this before, and which solution document can I reuse?",
+      "why": "Reuse is the top need: solution documents must be findable by platform, regulation and problem, and carry their assumptions.",
+      "alternatives": "Splitting proposals from solution documents: deferred until a question needs the difference.",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "Assumption": {
+      "question": "What does this solution assume about the client's environment, and which assumptions are still unconfirmed?",
+      "why": "An assumption is confirmed or invalidated on a date by someone, and an invalidated one is often the reason for a change order.",
+      "alternatives": "A list attribute on the solution document: rejected, because it would keep no confirmation or history.",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "PricingModel": {
+      "question": "Which pricing model is this engagement on, what sits behind the number, and is the margin inside the approved band?",
+      "why": "A price is revised during a pursuit and by change orders; each revision keeps its margin and the decisions behind it.",
+      "alternatives": "Price and model as attributes on Engagement: rejected, because revisions and exception approvals would have nowhere to attach.",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "MarginBand": {
+      "question": "Is the priced margin inside the approved band for its pricing model, and if not, who approved the exception?",
+      "why": "The band is policy that changes over time; a price must be judged against the band in force when it was set.",
+      "alternatives": "Constants in a rule: rejected, because the band changes and its history matters for past approvals.",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "Assignment": {
+      "question": "Who is staffed on this engagement, in which role, from when to when, and how does that compare with the plan?",
+      "why": "Staffing questions need person, role, engagement, dates and rates together, and plan and actual must sit side by side.",
+      "alternatives": "A direct person-to-engagement relation: rejected, because it holds no role, dates, allocation or rates.",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "Platform": {
+      "question": "Have we done work on this platform before, and who did it?",
+      "why": "Platforms are shared across engagements and are the main way people search for similar past work.",
+      "alternatives": "A tag attribute on Engagement: rejected, because free tags drift in spelling and cannot be traversed.",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "Regulation": {
+      "question": "Which regulations does this engagement touch, and what does that oblige us to do?",
+      "why": "Regulatory work is a main axis for finding past work and people, and obligations must trace to the instrument.",
+      "alternatives": "Regulatory categories (e.g. third-party risk): rejected as invented; cite the instrument instead.",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "Risk": {
+      "question": "What are the open risks and blockers, who owns each, and what are they waiting on?",
+      "why": "A risk has an owner, a lifecycle and a dependency on someone; none of that fits on an action item or question.",
+      "alternatives": "Reusing ActionItem: rejected, because a risk is a possibility to manage, not a task to finish.",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "Commitment": {
+      "question": "What did sales promise that delivery needs to know, and what has the client committed to provide and is any of it late?",
+      "why": "Promises in both directions have the same shape (who, what, by when, met or not); one class answers both.",
+      "alternatives": "Two classes, one per direction: rejected, because they would differ only in who made the promise.",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "BillingMilestone": {
+      "question": "Which milestones have been billed, and what can we bill this month?",
+      "why": "A milestone has its own amount and due date and links acceptance of work to money.",
+      "alternatives": "Amount attributes on Deliverable: rejected, because one milestone can cover several deliverables.",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "Invoice": {
+      "question": "Which invoices are outstanding?",
+      "why": "An invoice has its own number, amount, dates and state, separate from what it bills.",
+      "alternatives": "A billed flag on the milestone: rejected, because time-and-materials invoices have no milestone.",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    }
+  },
+  "properties": {
+    "client_of": {
+      "question": "Which opportunities are we pursuing with this client?",
+      "why": "Widened from the base to pursuits, so a client's pipeline and its engagements are read the same way.",
+      "alternatives": "",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "owns": {
+      "question": "Who leads this pursuit, and who owns this risk?",
+      "why": "Widened from the base: leading a pursuit and owning a risk are the same accountability.",
+      "alternatives": "A separate led_by relation: rejected as a second word for the same thing.",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "decides": {
+      "question": "Who approved this price outside the margin band?",
+      "why": "Widened from the base so pricing exceptions and scope rulings are decisions with a date and a reason.",
+      "alternatives": "An approver attribute on the pricing model: rejected, because it keeps no reason or session.",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "became": {
+      "question": "What did sales promise that delivery needs to know on day one?",
+      "why": "It is the handover: everything said during the pursuit stays reachable from the engagement.",
+      "alternatives": "",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "solution_for": {
+      "question": "Which solution document can I reuse?",
+      "why": "Reuse needs to know what a solution was written for and how that turned out.",
+      "alternatives": "",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "involves_platform": {
+      "question": "Have we done work on this platform before, and who did it?",
+      "why": "Platform is the main way people search for similar past work and the people who did it.",
+      "alternatives": "",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "subject_to": {
+      "question": "Which regulations does this engagement touch?",
+      "why": "The second search axis for similar work, and where obligations start.",
+      "alternatives": "",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "assumes": {
+      "question": "What does this solution assume, and what is still unconfirmed?",
+      "why": "Ties each assumption to what breaks if it proves false.",
+      "alternatives": "",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "confirmed_by": {
+      "question": "Which assumptions are still unconfirmed?",
+      "why": "A confirmation with no source is just optimism.",
+      "alternatives": "",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "amends": {
+      "question": "How has the scope changed since signing?",
+      "why": "A change order with no SOW is not a change to anything.",
+      "alternatives": "",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "defines_scope": {
+      "question": "Is this in scope, and which clause says so?",
+      "why": "Lets each scope item trace to the document and date that introduced it.",
+      "alternatives": "",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "removes_scope": {
+      "question": "What was the scope at signing compared with now?",
+      "why": "Removal is as much a scope change as an addition and needs its own record.",
+      "alternatives": "Superseding the item: kept as well, but the change order must say it did it.",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "priced_by": {
+      "question": "Which pricing model is this engagement on?",
+      "why": "Links the commercial model to the work and its changes.",
+      "alternatives": "",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "held_to": {
+      "question": "Is the priced margin inside the approved band?",
+      "why": "The band in force at the time, not today's band, is what an approval was measured against.",
+      "alternatives": "",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "staffs": {
+      "question": "Who is staffed on this engagement?",
+      "why": "An assignment to nothing is not an assignment.",
+      "alternatives": "",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "assignee": {
+      "question": "Who is staffed, and how does it compare with the plan?",
+      "why": "Planned positions may be unnamed, so this is optional.",
+      "alternatives": "",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "as_role": {
+      "question": "In which role, and at what rate?",
+      "why": "Plan and actual are compared role by role.",
+      "alternatives": "",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "worked_on": {
+      "question": "Who has done this kind of work before?",
+      "why": "The shortcut experience questions traverse; derived so nobody maintains it by hand.",
+      "alternatives": "A skills list per person: rejected, because self-declared skills drift from what people actually did.",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "key_person_for": {
+      "question": "Which commitments depend on one named person?",
+      "why": "Key-person clauses and promises name individuals; roles cannot carry that risk.",
+      "alternatives": "",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "signs_off": {
+      "question": "Which deliverables are waiting on sign-off, and who signs?",
+      "why": "Sign-off is distinct from ownership: the client signs what we own.",
+      "alternatives": "",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "threatens": {
+      "question": "What are the open risks, and what do they threaten?",
+      "why": "Ties a risk to the work and money at stake.",
+      "alternatives": "",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "waits_on": {
+      "question": "What are the blockers waiting on?",
+      "why": "The person to chase is the answer people need from a blocker.",
+      "alternatives": "",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "promised_by": {
+      "question": "What has the client committed to provide?",
+      "why": "Gives a commitment its direction without a second class.",
+      "alternatives": "",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "commitment_for": {
+      "question": "What did sales promise during the pursuit?",
+      "why": "Pre-sales promises must follow the pursuit into the engagement.",
+      "alternatives": "",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "required_by": {
+      "question": "What does this regulation oblige us to do?",
+      "why": "Obligations are traced to the instrument, never to an invented category.",
+      "alternatives": "",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "sponsors": {
+      "question": "Who are our sponsors at this client, and how has that changed?",
+      "why": "Sponsors change; with roles and dated fills the history stays.",
+      "alternatives": "",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "milestone_of": {
+      "question": "What can we bill this month?",
+      "why": "A milestone belongs to one engagement or contract, which is where billing is reviewed.",
+      "alternatives": "",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "bills_on": {
+      "question": "What can we bill this month?",
+      "why": "Billing follows acceptance; the link makes that readable.",
+      "alternatives": "",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    },
+    "invoices": {
+      "question": "Which invoices are outstanding, and for what?",
+      "why": "An invoice must say what it bills, or it cannot be reconciled against milestones or time.",
+      "alternatives": "",
+      "validated_by": "Scott Ivory, 2026-11-03"
+    }
+  }
+}

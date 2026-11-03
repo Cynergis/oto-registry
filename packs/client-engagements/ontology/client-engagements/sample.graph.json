@@ -1,0 +1,1121 @@
+{
+  "_about": "A small fictional graph every question answers from. Names nobody real.",
+  "nodes": [
+    {
+      "id": "org.northwind",
+      "type": "Organization",
+      "label": "Northwind Advisory",
+      "aliases": [],
+      "summary": "The supplier (fictional).",
+      "attributes": {
+        "side": "supplier"
+      },
+      "tags": [
+        "organization"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "org.fabrikam",
+      "type": "Organization",
+      "label": "Fabrikam Bank",
+      "aliases": [],
+      "summary": "The client (fictional).",
+      "attributes": {
+        "side": "client"
+      },
+      "tags": [
+        "organization"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "pursuit.core-mod",
+      "type": "Pursuit",
+      "label": "Core Modernization Pursuit",
+      "aliases": [],
+      "summary": "Won pursuit for a cloud landing zone and core banking integration.",
+      "attributes": {
+        "stage": "won",
+        "outcome_reason": "Strong regulatory track record; client pushed back on the initial price.",
+        "estimated_value_cad": 900000,
+        "expected_close": "2026-01-10"
+      },
+      "tags": [
+        "pursuit"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "pursuit.data-platform",
+      "type": "Pursuit",
+      "label": "Data Platform Pursuit",
+      "aliases": [],
+      "summary": "Lost pursuit for a data platform.",
+      "attributes": {
+        "stage": "lost",
+        "outcome_reason": "Client chose an incumbent; our timeline was judged too long.",
+        "estimated_value_cad": 400000,
+        "expected_close": "2025-11-30"
+      },
+      "tags": [
+        "pursuit"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "engagement.core-mod",
+      "type": "Engagement",
+      "label": "Core Modernization",
+      "aliases": [],
+      "summary": "The engagement won from the core modernization pursuit.",
+      "attributes": {},
+      "tags": [
+        "engagement"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "ws.landing-zone",
+      "type": "Workstream",
+      "label": "Cloud Landing Zone",
+      "aliases": [],
+      "summary": "Design and build of the landing zone.",
+      "attributes": {},
+      "tags": [
+        "workstream"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "deliverable.target-arch",
+      "type": "Deliverable",
+      "label": "Target Architecture",
+      "aliases": [],
+      "summary": "The target architecture document.",
+      "attributes": {
+        "state": "submitted",
+        "due_on": "2026-03-31",
+        "estimate_cad": 120000,
+        "forecast_cad": 135000
+      },
+      "tags": [
+        "deliverable"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "doc.sow-001",
+      "type": "StatementOfWork",
+      "label": "SOW 001: Core Modernization",
+      "aliases": [
+        "SOW-001"
+      ],
+      "summary": "The signed statement of work.",
+      "attributes": {
+        "sow_number": "SOW-001",
+        "signed_on": "2026-01-15",
+        "contract_value_cad": 850000
+      },
+      "tags": [
+        "statementofwork"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "doc.co-001",
+      "type": "ChangeOrder",
+      "label": "Change Order 001",
+      "aliases": [],
+      "summary": "Adds phase-one data migration.",
+      "attributes": {
+        "effective_on": "2026-04-01",
+        "reason": "The client's data volumes assumption proved too low.",
+        "value_change_cad": 95000
+      },
+      "tags": [
+        "changeorder"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "scope.landing-zone",
+      "type": "ScopeItem",
+      "label": "Build the cloud landing zone",
+      "aliases": [],
+      "summary": "In scope at signing.",
+      "attributes": {
+        "in_scope": true,
+        "clause": "3.1"
+      },
+      "tags": [
+        "scopeitem"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "scope.data-migration",
+      "type": "ScopeItem",
+      "label": "Historical data migration",
+      "aliases": [],
+      "summary": "Excluded at signing.",
+      "attributes": {
+        "in_scope": false,
+        "clause": "3.4"
+      },
+      "tags": [
+        "scopeitem"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "scope.migration-phase1",
+      "type": "ScopeItem",
+      "label": "Phase-one data migration",
+      "aliases": [],
+      "summary": "Added by change order 001.",
+      "attributes": {
+        "in_scope": true,
+        "clause": "CO-001 2.1"
+      },
+      "tags": [
+        "scopeitem"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "doc.solution-core-mod",
+      "type": "SolutionDocument",
+      "label": "Core Modernization Solution",
+      "aliases": [],
+      "summary": "The solution proposed for the pursuit.",
+      "attributes": {
+        "reusable": true
+      },
+      "tags": [
+        "solutiondocument"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "assumption.api-access",
+      "type": "Assumption",
+      "label": "Client provides sandbox API access in week 2",
+      "aliases": [],
+      "summary": "Not yet confirmed.",
+      "attributes": {
+        "state": "unconfirmed"
+      },
+      "tags": [
+        "assumption"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "assumption.data-volumes",
+      "type": "Assumption",
+      "label": "Under 5 TB of historical data",
+      "aliases": [],
+      "summary": "Confirmed, later invalidated by the change order.",
+      "attributes": {
+        "state": "confirmed"
+      },
+      "tags": [
+        "assumption"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "pricing.core-mod",
+      "type": "PricingModel",
+      "label": "Core Modernization Price",
+      "aliases": [],
+      "summary": "Fixed price at signing.",
+      "attributes": {
+        "model": "fixed_price",
+        "price_cad": 850000,
+        "cost_cad": 527000,
+        "priced_margin_pct": 38
+      },
+      "tags": [
+        "pricingmodel"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "band.fixed-2026",
+      "type": "MarginBand",
+      "label": "Fixed-price band 2026",
+      "aliases": [],
+      "summary": "The approved band for fixed-price work in 2026.",
+      "attributes": {
+        "applies_to": "fixed_price",
+        "floor_pct": 35,
+        "target_pct": 42
+      },
+      "tags": [
+        "marginband"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "platform.core-banking",
+      "type": "Platform",
+      "label": "Sample Core Banking Platform",
+      "aliases": [],
+      "summary": "A fictional core banking system.",
+      "attributes": {},
+      "tags": [
+        "platform"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "reg.osfi-b13",
+      "type": "Regulation",
+      "label": "OSFI Guideline B-13",
+      "aliases": [
+        "B-13"
+      ],
+      "summary": "Technology and cyber risk management.",
+      "attributes": {
+        "issuer": "OSFI",
+        "citation": "Guideline B-13: Technology and Cyber Risk Management (2022)"
+      },
+      "tags": [
+        "regulation"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "person.alex",
+      "type": "Person",
+      "label": "Alex Example",
+      "aliases": [],
+      "summary": "A fictional partner.",
+      "attributes": {},
+      "tags": [
+        "person"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "person.riley",
+      "type": "Person",
+      "label": "Riley Sample",
+      "aliases": [],
+      "summary": "A fictional solution architect.",
+      "attributes": {},
+      "tags": [
+        "person"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "person.jordan",
+      "type": "Person",
+      "label": "Jordan Placeholder",
+      "aliases": [],
+      "summary": "A fictional engagement lead.",
+      "attributes": {},
+      "tags": [
+        "person"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "person.casey",
+      "type": "Person",
+      "label": "Casey Client",
+      "aliases": [],
+      "summary": "A fictional client executive.",
+      "attributes": {},
+      "tags": [
+        "person"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "role.architect",
+      "type": "Role",
+      "label": "Solution Architect",
+      "aliases": [],
+      "summary": "The delivery team's architect.",
+      "attributes": {},
+      "tags": [
+        "role"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "role.lead",
+      "type": "Role",
+      "label": "Engagement Lead",
+      "aliases": [],
+      "summary": "Runs the engagement day to day.",
+      "attributes": {},
+      "tags": [
+        "role"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "role.client-cio",
+      "type": "Role",
+      "label": "Client CIO",
+      "aliases": [],
+      "summary": "The client's executive sponsor.",
+      "attributes": {},
+      "tags": [
+        "role"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "asg.architect-plan",
+      "type": "Assignment",
+      "label": "Architect (planned)",
+      "aliases": [],
+      "summary": "The SOW's staffing plan for the architect.",
+      "attributes": {
+        "kind": "planned",
+        "start_on": "2026-02-01",
+        "end_on": "2026-07-31",
+        "allocation_pct": 100,
+        "bill_rate_cad": 2000,
+        "cost_rate_cad": 1150
+      },
+      "tags": [
+        "assignment"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "asg.riley",
+      "type": "Assignment",
+      "label": "Riley as architect",
+      "aliases": [],
+      "summary": "Actual assignment.",
+      "attributes": {
+        "kind": "actual",
+        "start_on": "2026-02-01",
+        "end_on": "2026-09-30",
+        "allocation_pct": 80
+      },
+      "tags": [
+        "assignment"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "asg.jordan",
+      "type": "Assignment",
+      "label": "Jordan as lead",
+      "aliases": [],
+      "summary": "Actual assignment.",
+      "attributes": {
+        "kind": "actual",
+        "start_on": "2026-02-01",
+        "allocation_pct": 50
+      },
+      "tags": [
+        "assignment"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "session.steering-1",
+      "type": "Session",
+      "label": "Steering Committee, 2026-03-10",
+      "aliases": [],
+      "summary": "First steering committee.",
+      "attributes": {},
+      "tags": [
+        "session"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "forum.steering",
+      "type": "GovernanceForum",
+      "label": "Core Modernization Steering Committee",
+      "aliases": [],
+      "summary": "Monthly steering committee.",
+      "attributes": {},
+      "tags": [
+        "governanceforum"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "doc.steering-minutes-1",
+      "type": "Document",
+      "label": "Steering minutes, 2026-03-10",
+      "aliases": [],
+      "summary": "Minutes of the first steering committee.",
+      "attributes": {},
+      "tags": [
+        "document"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "decision.phase1-migration",
+      "type": "Decision",
+      "label": "Add phase-one migration by change order",
+      "aliases": [],
+      "summary": "Agreed at steering.",
+      "attributes": {},
+      "tags": [
+        "decision"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "risk.access-delay",
+      "type": "Risk",
+      "label": "Sandbox access is late",
+      "aliases": [],
+      "summary": "Blocks architecture validation.",
+      "attributes": {
+        "kind": "blocker",
+        "state": "open"
+      },
+      "tags": [
+        "risk"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "commit.env-access",
+      "type": "Commitment",
+      "label": "Client provides sandbox access",
+      "aliases": [],
+      "summary": "A client responsibility in the SOW.",
+      "attributes": {
+        "due_on": "2026-02-15",
+        "state": "open"
+      },
+      "tags": [
+        "commitment"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "commit.named-architect",
+      "type": "Commitment",
+      "label": "Named architect for the full term",
+      "aliases": [],
+      "summary": "Promised during the pursuit.",
+      "attributes": {
+        "state": "open"
+      },
+      "tags": [
+        "commitment"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "ms.arch-accepted",
+      "type": "BillingMilestone",
+      "label": "Target architecture accepted",
+      "aliases": [],
+      "summary": "Billable on acceptance.",
+      "attributes": {
+        "amount_cad": 170000,
+        "due_on": "2026-04-15"
+      },
+      "tags": [
+        "billingmilestone"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    },
+    {
+      "id": "inv.0001",
+      "type": "Invoice",
+      "label": "Invoice 0001",
+      "aliases": [],
+      "summary": "Mobilization invoice.",
+      "attributes": {
+        "invoice_number": "INV-0001",
+        "amount_cad": 85000,
+        "issued_on": "2026-02-01",
+        "state": "issued"
+      },
+      "tags": [
+        "invoice"
+      ],
+      "as_of": "2026-01-15",
+      "valid_from": "2026-01-15",
+      "source_doc": "sample",
+      "status": "current",
+      "sources": [
+        "sample"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "org.northwind",
+      "rel": "delivers",
+      "to": "engagement.core-mod"
+    },
+    {
+      "from": "org.fabrikam",
+      "rel": "client_of",
+      "to": "engagement.core-mod"
+    },
+    {
+      "from": "org.fabrikam",
+      "rel": "client_of",
+      "to": "pursuit.core-mod"
+    },
+    {
+      "from": "org.fabrikam",
+      "rel": "client_of",
+      "to": "pursuit.data-platform"
+    },
+    {
+      "from": "person.alex",
+      "rel": "owns",
+      "to": "pursuit.core-mod"
+    },
+    {
+      "from": "person.alex",
+      "rel": "owns",
+      "to": "pursuit.data-platform"
+    },
+    {
+      "from": "pursuit.core-mod",
+      "rel": "became",
+      "to": "engagement.core-mod"
+    },
+    {
+      "from": "engagement.core-mod",
+      "rel": "scoped_as",
+      "to": "ws.landing-zone"
+    },
+    {
+      "from": "ws.landing-zone",
+      "rel": "produces",
+      "to": "deliverable.target-arch"
+    },
+    {
+      "from": "doc.sow-001",
+      "rel": "specifies",
+      "to": "engagement.core-mod"
+    },
+    {
+      "from": "doc.sow-001",
+      "rel": "defines_scope",
+      "to": "scope.landing-zone"
+    },
+    {
+      "from": "doc.sow-001",
+      "rel": "defines_scope",
+      "to": "scope.data-migration"
+    },
+    {
+      "from": "doc.co-001",
+      "rel": "amends",
+      "to": "doc.sow-001"
+    },
+    {
+      "from": "doc.co-001",
+      "rel": "defines_scope",
+      "to": "scope.migration-phase1"
+    },
+    {
+      "from": "doc.co-001",
+      "rel": "removes_scope",
+      "to": "scope.data-migration"
+    },
+    {
+      "from": "doc.co-001",
+      "rel": "priced_by",
+      "to": "pricing.core-mod"
+    },
+    {
+      "from": "doc.solution-core-mod",
+      "rel": "solution_for",
+      "to": "pursuit.core-mod"
+    },
+    {
+      "from": "doc.solution-core-mod",
+      "rel": "involves_platform",
+      "to": "platform.core-banking"
+    },
+    {
+      "from": "doc.solution-core-mod",
+      "rel": "subject_to",
+      "to": "reg.osfi-b13"
+    },
+    {
+      "from": "doc.solution-core-mod",
+      "rel": "assumes",
+      "to": "assumption.api-access"
+    },
+    {
+      "from": "doc.solution-core-mod",
+      "rel": "assumes",
+      "to": "assumption.data-volumes"
+    },
+    {
+      "from": "pricing.core-mod",
+      "rel": "assumes",
+      "to": "assumption.data-volumes"
+    },
+    {
+      "from": "assumption.data-volumes",
+      "rel": "confirmed_by",
+      "to": "person.casey"
+    },
+    {
+      "from": "person.jordan",
+      "rel": "owns",
+      "to": "assumption.api-access"
+    },
+    {
+      "from": "engagement.core-mod",
+      "rel": "priced_by",
+      "to": "pricing.core-mod"
+    },
+    {
+      "from": "pricing.core-mod",
+      "rel": "held_to",
+      "to": "band.fixed-2026"
+    },
+    {
+      "from": "engagement.core-mod",
+      "rel": "involves_platform",
+      "to": "platform.core-banking"
+    },
+    {
+      "from": "engagement.core-mod",
+      "rel": "subject_to",
+      "to": "reg.osfi-b13"
+    },
+    {
+      "from": "pursuit.core-mod",
+      "rel": "involves_platform",
+      "to": "platform.core-banking"
+    },
+    {
+      "from": "deliverable.target-arch",
+      "rel": "required_by",
+      "to": "reg.osfi-b13"
+    },
+    {
+      "from": "person.riley",
+      "rel": "fills",
+      "to": "role.architect"
+    },
+    {
+      "from": "person.jordan",
+      "rel": "fills",
+      "to": "role.lead"
+    },
+    {
+      "from": "person.casey",
+      "rel": "fills",
+      "to": "role.client-cio"
+    },
+    {
+      "from": "role.client-cio",
+      "rel": "part_of",
+      "to": "org.fabrikam"
+    },
+    {
+      "from": "role.architect",
+      "rel": "part_of",
+      "to": "org.northwind"
+    },
+    {
+      "from": "role.lead",
+      "rel": "part_of",
+      "to": "org.northwind"
+    },
+    {
+      "from": "role.client-cio",
+      "rel": "sponsors",
+      "to": "engagement.core-mod"
+    },
+    {
+      "from": "role.client-cio",
+      "rel": "signs_off",
+      "to": "deliverable.target-arch"
+    },
+    {
+      "from": "asg.architect-plan",
+      "rel": "staffs",
+      "to": "engagement.core-mod"
+    },
+    {
+      "from": "asg.architect-plan",
+      "rel": "as_role",
+      "to": "role.architect"
+    },
+    {
+      "from": "asg.riley",
+      "rel": "staffs",
+      "to": "engagement.core-mod"
+    },
+    {
+      "from": "asg.riley",
+      "rel": "assignee",
+      "to": "person.riley"
+    },
+    {
+      "from": "asg.riley",
+      "rel": "as_role",
+      "to": "role.architect"
+    },
+    {
+      "from": "asg.jordan",
+      "rel": "staffs",
+      "to": "engagement.core-mod"
+    },
+    {
+      "from": "asg.jordan",
+      "rel": "assignee",
+      "to": "person.jordan"
+    },
+    {
+      "from": "asg.jordan",
+      "rel": "as_role",
+      "to": "role.lead"
+    },
+    {
+      "from": "person.riley",
+      "rel": "key_person_for",
+      "to": "engagement.core-mod"
+    },
+    {
+      "from": "person.riley",
+      "rel": "key_person_for",
+      "to": "commit.named-architect"
+    },
+    {
+      "from": "session.steering-1",
+      "rel": "instance_of",
+      "to": "forum.steering"
+    },
+    {
+      "from": "session.steering-1",
+      "rel": "recorded_in",
+      "to": "doc.steering-minutes-1"
+    },
+    {
+      "from": "person.casey",
+      "rel": "member_of",
+      "to": "forum.steering"
+    },
+    {
+      "from": "person.alex",
+      "rel": "member_of",
+      "to": "forum.steering"
+    },
+    {
+      "from": "session.steering-1",
+      "rel": "raised",
+      "to": "decision.phase1-migration"
+    },
+    {
+      "from": "decision.phase1-migration",
+      "rel": "decides",
+      "to": "ws.landing-zone"
+    },
+    {
+      "from": "decision.phase1-migration",
+      "rel": "decides",
+      "to": "scope.migration-phase1"
+    },
+    {
+      "from": "decision.phase1-migration",
+      "rel": "decides",
+      "to": "pricing.core-mod"
+    },
+    {
+      "from": "person.jordan",
+      "rel": "owns",
+      "to": "risk.access-delay"
+    },
+    {
+      "from": "risk.access-delay",
+      "rel": "threatens",
+      "to": "deliverable.target-arch"
+    },
+    {
+      "from": "risk.access-delay",
+      "rel": "waits_on",
+      "to": "org.fabrikam"
+    },
+    {
+      "from": "commit.env-access",
+      "rel": "promised_by",
+      "to": "org.fabrikam"
+    },
+    {
+      "from": "commit.env-access",
+      "rel": "commitment_for",
+      "to": "engagement.core-mod"
+    },
+    {
+      "from": "commit.env-access",
+      "rel": "waits_on",
+      "to": "role.client-cio"
+    },
+    {
+      "from": "commit.named-architect",
+      "rel": "promised_by",
+      "to": "org.northwind"
+    },
+    {
+      "from": "commit.named-architect",
+      "rel": "commitment_for",
+      "to": "pursuit.core-mod"
+    },
+    {
+      "from": "person.jordan",
+      "rel": "owns",
+      "to": "commit.env-access"
+    },
+    {
+      "from": "ms.arch-accepted",
+      "rel": "milestone_of",
+      "to": "engagement.core-mod"
+    },
+    {
+      "from": "ms.arch-accepted",
+      "rel": "bills_on",
+      "to": "deliverable.target-arch"
+    },
+    {
+      "from": "inv.0001",
+      "rel": "invoices",
+      "to": "engagement.core-mod"
+    }
+  ]
+}

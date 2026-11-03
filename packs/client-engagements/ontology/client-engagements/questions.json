@@ -1,0 +1,979 @@
+{
+  "_about": "What a graph in this vocabulary must answer; a term no question cites has no reason to exist.",
+  "questions": {
+    "CE1": {
+      "who": "a partner",
+      "question": "Which opportunities are we pursuing with client $CLIENT, at what stage, and who is leading each?",
+      "why": "Pipeline reviews start here, and today the answer sits in several people's heads.",
+      "validated_by": "Scott Ivory, 2026-11-03",
+      "params": {
+        "CLIENT": {
+          "type": "Organization"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "$CLIENT",
+              "client_of",
+              "p"
+            ]
+          },
+          {
+            "node": "p",
+            "type": "Pursuit"
+          },
+          {
+            "edge": [
+              "lead",
+              "owns",
+              "p"
+            ]
+          }
+        ],
+        "select": [
+          "p.label",
+          "p.stage",
+          "p.estimated_value_cad",
+          "p.expected_close",
+          "lead.label"
+        ]
+      },
+      "gate": "any"
+    },
+    "CE2": {
+      "who": "a practitioner",
+      "question": "Which solution documents have we written for work on platform $PLATFORM, and for which pursuit or engagement?",
+      "why": "Finding a reusable solution is the most painful search today.",
+      "validated_by": "Scott Ivory, 2026-11-03",
+      "params": {
+        "PLATFORM": {
+          "type": "Platform"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "s",
+              "involves_platform",
+              "$PLATFORM"
+            ]
+          },
+          {
+            "node": "s",
+            "type": "SolutionDocument"
+          },
+          {
+            "edge": [
+              "s",
+              "solution_for",
+              "x"
+            ]
+          }
+        ],
+        "select": [
+          "s.label",
+          "s.reusable",
+          "x.label",
+          "x.type"
+        ]
+      },
+      "gate": "any"
+    },
+    "CE3": {
+      "who": "a partner",
+      "question": "Which pursuits did we win or lose, for which client, and why?",
+      "why": "Win and loss reasons are what the next proposal should learn from.",
+      "validated_by": "Scott Ivory, 2026-11-03",
+      "ask": {
+        "when": [
+          {
+            "node": "p",
+            "type": "Pursuit"
+          },
+          {
+            "edge": [
+              "c",
+              "client_of",
+              "p"
+            ]
+          }
+        ],
+        "select": [
+          "p.label",
+          "p.stage",
+          "p.outcome_reason",
+          "c.label"
+        ]
+      },
+      "gate": "any"
+    },
+    "CE4": {
+      "who": "an engagement lead",
+      "question": "Which assumptions does solution $SOLUTION rest on that nobody has confirmed?",
+      "why": "An unconfirmed assumption is the usual root of a change order.",
+      "validated_by": "Scott Ivory, 2026-11-03",
+      "params": {
+        "SOLUTION": {
+          "type": "SolutionDocument"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "$SOLUTION",
+              "assumes",
+              "a"
+            ]
+          },
+          {
+            "node": "a",
+            "type": "Assumption",
+            "where": {
+              "state": "unconfirmed"
+            }
+          }
+        ],
+        "select": [
+          "a.label",
+          "a.state"
+        ]
+      },
+      "gate": "any",
+      "terms": [
+        "confirmed_by"
+      ]
+    },
+    "CE5": {
+      "who": "an engagement lead",
+      "question": "What was promised during the pursuit that became engagement $ENGAGEMENT, and by whom?",
+      "why": "Delivery inherits every promise sales made; missing one is how trust is lost in the first month.",
+      "validated_by": "Scott Ivory, 2026-11-03",
+      "params": {
+        "ENGAGEMENT": {
+          "type": "Engagement"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "p",
+              "became",
+              "$ENGAGEMENT"
+            ]
+          },
+          {
+            "node": "p",
+            "type": "Pursuit"
+          },
+          {
+            "edge": [
+              "c",
+              "commitment_for",
+              "p"
+            ]
+          },
+          {
+            "node": "c",
+            "type": "Commitment"
+          },
+          {
+            "edge": [
+              "c",
+              "promised_by",
+              "o"
+            ]
+          }
+        ],
+        "select": [
+          "c.label",
+          "c.due_on",
+          "c.state",
+          "o.label"
+        ]
+      },
+      "gate": "any",
+      "gaps": {
+        "when": [
+          {
+            "not_edge": [
+              "*",
+              "became",
+              "$ENGAGEMENT"
+            ]
+          }
+        ],
+        "say": "no pursuit is recorded for this engagement"
+      }
+    },
+    "CE6": {
+      "who": "an engagement lead",
+      "question": "What is in and out of scope under statement of work $SOW, and which clause says so?",
+      "why": "Scope disputes are settled clause by clause.",
+      "validated_by": "Scott Ivory, 2026-11-03",
+      "params": {
+        "SOW": {
+          "type": "StatementOfWork"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "$SOW",
+              "defines_scope",
+              "s"
+            ]
+          },
+          {
+            "node": "s",
+            "type": "ScopeItem"
+          }
+        ],
+        "select": [
+          "s.label",
+          "s.in_scope",
+          "s.clause"
+        ]
+      },
+      "gate": "any",
+      "terms": [
+        "StatementOfWork.sow_number",
+        "StatementOfWork.signed_on",
+        "StatementOfWork.contract_value_cad"
+      ]
+    },
+    "CE7": {
+      "who": "a partner",
+      "question": "How has statement of work $SOW changed since signing, and why did each change happen?",
+      "why": "Scope creep is only visible as a history of dated changes with reasons.",
+      "validated_by": "Scott Ivory, 2026-11-03",
+      "params": {
+        "SOW": {
+          "type": "StatementOfWork"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "co",
+              "amends",
+              "$SOW"
+            ]
+          },
+          {
+            "node": "co",
+            "type": "ChangeOrder"
+          },
+          {
+            "edge": [
+              "co",
+              "defines_scope",
+              "s"
+            ]
+          },
+          {
+            "node": "s",
+            "type": "ScopeItem"
+          }
+        ],
+        "select": [
+          "co.label",
+          "co.effective_on",
+          "co.reason",
+          "co.value_change_cad",
+          "s.label",
+          "s.in_scope"
+        ]
+      },
+      "gate": "any",
+      "terms": [
+        "removes_scope"
+      ]
+    },
+    "CE8": {
+      "who": "a partner",
+      "question": "Which pricing model is engagement $ENGAGEMENT on, and which roles and rates sit behind the number?",
+      "why": "A price nobody can explain cannot be defended or renegotiated.",
+      "validated_by": "Scott Ivory, 2026-11-03",
+      "params": {
+        "ENGAGEMENT": {
+          "type": "Engagement"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "$ENGAGEMENT",
+              "priced_by",
+              "pm"
+            ]
+          },
+          {
+            "node": "pm",
+            "type": "PricingModel"
+          },
+          {
+            "edge": [
+              "a",
+              "staffs",
+              "$ENGAGEMENT"
+            ]
+          },
+          {
+            "node": "a",
+            "type": "Assignment",
+            "where": {
+              "kind": "planned"
+            }
+          },
+          {
+            "edge": [
+              "a",
+              "as_role",
+              "r"
+            ]
+          }
+        ],
+        "select": [
+          "pm.model",
+          "pm.price_cad",
+          "pm.cost_cad",
+          "r.label",
+          "a.allocation_pct",
+          "a.bill_rate_cad",
+          "a.cost_rate_cad"
+        ]
+      },
+      "gate": "any",
+      "terms": [
+        "assumes"
+      ]
+    },
+    "CE9": {
+      "who": "a partner",
+      "question": "Is each price inside the approved margin band for its commercial model?",
+      "why": "A price below the floor needs an approved exception on record.",
+      "validated_by": "Scott Ivory, 2026-11-03",
+      "ask": {
+        "when": [
+          {
+            "node": "pm",
+            "type": "PricingModel"
+          },
+          {
+            "edge": [
+              "pm",
+              "held_to",
+              "b"
+            ]
+          },
+          {
+            "node": "b",
+            "type": "MarginBand"
+          }
+        ],
+        "select": [
+          "pm.label",
+          "pm.model",
+          "pm.priced_margin_pct",
+          "b.applies_to",
+          "b.floor_pct",
+          "b.target_pct"
+        ]
+      },
+      "gate": "any",
+      "terms": [
+        "decides"
+      ]
+    },
+    "CE10": {
+      "who": "delivery / PMO",
+      "question": "Which deliverables on fixed-price work are forecast over their estimate?",
+      "why": "Overruns on fixed price come straight out of margin; seeing them early is the point.",
+      "validated_by": "Scott Ivory, 2026-11-03",
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "eng",
+              "priced_by",
+              "pm"
+            ]
+          },
+          {
+            "node": "pm",
+            "type": "PricingModel",
+            "where": {
+              "model": "fixed_price"
+            }
+          },
+          {
+            "edge": [
+              "eng",
+              "scoped_as",
+              "w"
+            ]
+          },
+          {
+            "edge": [
+              "w",
+              "produces",
+              "d"
+            ]
+          },
+          {
+            "node": "d",
+            "type": "Deliverable"
+          }
+        ],
+        "select": [
+          "eng.label",
+          "d.label",
+          "d.estimate_cad",
+          "d.forecast_cad"
+        ]
+      },
+      "gate": "any"
+    },
+    "CE11": {
+      "who": "delivery / PMO",
+      "question": "Who is actually staffed on engagement $ENGAGEMENT, in which role, from when to when?",
+      "why": "Staffing is the most-asked operational question and is rarely in one place.",
+      "validated_by": "Scott Ivory, 2026-11-03",
+      "params": {
+        "ENGAGEMENT": {
+          "type": "Engagement"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "a",
+              "staffs",
+              "$ENGAGEMENT"
+            ]
+          },
+          {
+            "node": "a",
+            "type": "Assignment",
+            "where": {
+              "kind": "actual"
+            }
+          },
+          {
+            "edge": [
+              "a",
+              "assignee",
+              "p"
+            ]
+          },
+          {
+            "edge": [
+              "a",
+              "as_role",
+              "r"
+            ]
+          }
+        ],
+        "select": [
+          "p.label",
+          "r.label",
+          "a.start_on",
+          "a.end_on",
+          "a.allocation_pct"
+        ]
+      },
+      "gate": "any"
+    },
+    "CE12": {
+      "who": "delivery / PMO",
+      "question": "How does the staffing plan for engagement $ENGAGEMENT compare with who is actually on it, role by role?",
+      "why": "A plan that drifted from the SOW is a margin and key-person risk.",
+      "validated_by": "Scott Ivory, 2026-11-03",
+      "params": {
+        "ENGAGEMENT": {
+          "type": "Engagement"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "a",
+              "staffs",
+              "$ENGAGEMENT"
+            ]
+          },
+          {
+            "node": "a",
+            "type": "Assignment"
+          },
+          {
+            "edge": [
+              "a",
+              "as_role",
+              "r"
+            ]
+          }
+        ],
+        "select": [
+          "r.label",
+          "a.kind",
+          "a.start_on",
+          "a.end_on",
+          "a.allocation_pct"
+        ]
+      },
+      "gate": "any"
+    },
+    "CE13": {
+      "who": "a practitioner",
+      "question": "Who has worked on platform $PLATFORM before, on which engagement, and when do they roll off now?",
+      "why": "Finding people who have done it before is the second most painful search today.",
+      "validated_by": "Scott Ivory, 2026-11-03",
+      "params": {
+        "PLATFORM": {
+          "type": "Platform"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "eng",
+              "involves_platform",
+              "$PLATFORM"
+            ]
+          },
+          {
+            "node": "eng",
+            "type": "Engagement"
+          },
+          {
+            "edge": [
+              "p",
+              "worked_on",
+              "eng"
+            ]
+          },
+          {
+            "node": "p",
+            "type": "Person"
+          },
+          {
+            "edge": [
+              "a",
+              "assignee",
+              "p"
+            ]
+          },
+          {
+            "node": "a",
+            "type": "Assignment",
+            "where": {
+              "kind": "actual"
+            }
+          }
+        ],
+        "select": [
+          "p.label",
+          "eng.label",
+          "a.end_on"
+        ]
+      },
+      "gate": "any"
+    },
+    "CE14": {
+      "who": "a partner",
+      "question": "Which engagements, deliverables or commitments depend on one named person?",
+      "why": "Key-person clauses turn a resignation into a contract problem.",
+      "validated_by": "Scott Ivory, 2026-11-03",
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "p",
+              "key_person_for",
+              "x"
+            ]
+          },
+          {
+            "node": "p",
+            "type": "Person"
+          }
+        ],
+        "select": [
+          "p.label",
+          "x.label",
+          "x.type"
+        ]
+      },
+      "gate": "any"
+    },
+    "CE15": {
+      "who": "an engagement lead",
+      "question": "What has been decided on engagement $ENGAGEMENT, in which session?",
+      "why": "Tracing what we agreed with the client, and when, is the most painful delivery question today.",
+      "validated_by": "Scott Ivory, 2026-11-03",
+      "params": {
+        "ENGAGEMENT": {
+          "type": "Engagement"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "$ENGAGEMENT",
+              "scoped_as",
+              "w"
+            ]
+          },
+          {
+            "edge": [
+              "d",
+              "decides",
+              "w"
+            ]
+          },
+          {
+            "node": "d",
+            "type": "Decision"
+          },
+          {
+            "edge": [
+              "s",
+              "raised",
+              "d"
+            ]
+          },
+          {
+            "node": "s",
+            "type": "Session"
+          }
+        ],
+        "select": [
+          "d.label",
+          "w.label",
+          "s.label"
+        ]
+      },
+      "gate": "any"
+    },
+    "CE16": {
+      "who": "an engagement lead",
+      "question": "Which deliverables on engagement $ENGAGEMENT are due or waiting on sign-off, and who signs?",
+      "why": "Acceptance gates billing and is often stuck on one client person.",
+      "validated_by": "Scott Ivory, 2026-11-03",
+      "params": {
+        "ENGAGEMENT": {
+          "type": "Engagement"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "$ENGAGEMENT",
+              "scoped_as",
+              "w"
+            ]
+          },
+          {
+            "edge": [
+              "w",
+              "produces",
+              "d"
+            ]
+          },
+          {
+            "node": "d",
+            "type": "Deliverable"
+          },
+          {
+            "edge": [
+              "x",
+              "signs_off",
+              "d"
+            ]
+          }
+        ],
+        "select": [
+          "d.label",
+          "d.state",
+          "d.due_on",
+          "x.label"
+        ]
+      },
+      "gate": "any"
+    },
+    "CE17": {
+      "who": "delivery / PMO",
+      "question": "What are the open risks and blockers, who owns each, what do they threaten and what are they waiting on?",
+      "why": "A blocker with no owner and no one to chase stays a blocker.",
+      "validated_by": "Scott Ivory, 2026-11-03",
+      "ask": {
+        "when": [
+          {
+            "node": "r",
+            "type": "Risk",
+            "where": {
+              "state": "open"
+            }
+          },
+          {
+            "edge": [
+              "o",
+              "owns",
+              "r"
+            ]
+          },
+          {
+            "edge": [
+              "r",
+              "threatens",
+              "x"
+            ]
+          },
+          {
+            "edge": [
+              "r",
+              "waits_on",
+              "w"
+            ]
+          }
+        ],
+        "select": [
+          "r.label",
+          "r.kind",
+          "o.label",
+          "x.label",
+          "w.label"
+        ]
+      },
+      "gate": "any"
+    },
+    "CE18": {
+      "who": "an engagement lead",
+      "question": "What has the client committed to provide on engagement $ENGAGEMENT, by when, and is it met?",
+      "why": "Late client dependencies are the usual cause of slipped dates and disputed change orders.",
+      "validated_by": "Scott Ivory, 2026-11-03",
+      "params": {
+        "ENGAGEMENT": {
+          "type": "Engagement"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "c",
+              "commitment_for",
+              "$ENGAGEMENT"
+            ]
+          },
+          {
+            "node": "c",
+            "type": "Commitment"
+          },
+          {
+            "edge": [
+              "c",
+              "promised_by",
+              "o"
+            ]
+          },
+          {
+            "edge": [
+              "o",
+              "client_of",
+              "$ENGAGEMENT"
+            ]
+          }
+        ],
+        "select": [
+          "c.label",
+          "c.due_on",
+          "c.state",
+          "o.label"
+        ]
+      },
+      "gate": "any",
+      "terms": [
+        "waits_on"
+      ]
+    },
+    "CE19": {
+      "who": "an engagement lead",
+      "question": "Which regulations does engagement $ENGAGEMENT touch, and what work does each oblige?",
+      "why": "Regulated clients expect the obligations traced to the instrument, e.g. an OSFI guideline.",
+      "validated_by": "Scott Ivory, 2026-11-03",
+      "params": {
+        "ENGAGEMENT": {
+          "type": "Engagement"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "$ENGAGEMENT",
+              "subject_to",
+              "g"
+            ]
+          },
+          {
+            "node": "g",
+            "type": "Regulation"
+          },
+          {
+            "edge": [
+              "x",
+              "required_by",
+              "g"
+            ]
+          }
+        ],
+        "select": [
+          "g.label",
+          "g.issuer",
+          "g.citation",
+          "x.label",
+          "x.type"
+        ]
+      },
+      "gate": "any"
+    },
+    "CE20": {
+      "who": "delivery / PMO",
+      "question": "Which billing milestones on engagement $ENGAGEMENT are tied to which deliverables, and are those accepted?",
+      "why": "What can be billed this month follows from acceptance.",
+      "validated_by": "Scott Ivory, 2026-11-03",
+      "params": {
+        "ENGAGEMENT": {
+          "type": "Engagement"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "m",
+              "milestone_of",
+              "$ENGAGEMENT"
+            ]
+          },
+          {
+            "node": "m",
+            "type": "BillingMilestone"
+          },
+          {
+            "edge": [
+              "m",
+              "bills_on",
+              "d"
+            ]
+          },
+          {
+            "node": "d",
+            "type": "Deliverable"
+          }
+        ],
+        "select": [
+          "m.label",
+          "m.amount_cad",
+          "m.due_on",
+          "d.label",
+          "d.state"
+        ]
+      },
+      "gate": "any"
+    },
+    "CE21": {
+      "who": "a partner",
+      "question": "Who sponsors our work at client $CLIENT, in which role, on which engagement or pursuit?",
+      "why": "Sponsors move; knowing who holds the role now, and who did before, protects the relationship.",
+      "validated_by": "Scott Ivory, 2026-11-03",
+      "params": {
+        "CLIENT": {
+          "type": "Organization"
+        }
+      },
+      "ask": {
+        "when": [
+          {
+            "edge": [
+              "r",
+              "part_of",
+              "$CLIENT"
+            ]
+          },
+          {
+            "node": "r",
+            "type": "Role"
+          },
+          {
+            "edge": [
+              "r",
+              "sponsors",
+              "x"
+            ]
+          },
+          {
+            "edge": [
+              "p",
+              "fills",
+              "r"
+            ]
+          }
+        ],
+        "select": [
+          "p.label",
+          "r.label",
+          "x.label"
+        ]
+      },
+      "gate": "any"
+    },
+    "CE22": {
+      "who": "delivery / PMO",
+      "question": "Which invoices are issued and unpaid, and what do they bill?",
+      "why": "Outstanding invoices are cash the firm is waiting on.",
+      "validated_by": "Scott Ivory, 2026-11-03",
+      "ask": {
+        "when": [
+          {
+            "node": "i",
+            "type": "Invoice",
+            "where": {
+              "state": "issued"
+            }
+          },
+          {
+            "edge": [
+              "i",
+              "invoices",
+              "x"
+            ]
+          }
+        ],
+        "select": [
+          "i.label",
+          "i.invoice_number",
+          "i.amount_cad",
+          "i.issued_on",
+          "x.label"
+        ]
+      },
+      "gate": "any"
+    }
+  }
+}

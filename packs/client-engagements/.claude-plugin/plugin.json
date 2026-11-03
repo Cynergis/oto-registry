@@ -1,0 +1,12 @@
+{
+  "name": "client-engagements",
+  "displayName": "client-engagements (OTO pack)",
+  "description": "Client engagements end to end: pursuits, statements of work and change orders, pricing and margin bands, staffing, risks and commitments, billing, on top of professional services delivery.",
+  "version": "1.0.0",
+  "author": {
+    "name": "cynergis"
+  },
+  "dependencies": [
+    "oto@cynergis-engine"
+  ]
+}

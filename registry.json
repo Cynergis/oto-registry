@@ -54,6 +54,16 @@
       "domain": "software"
     },
     {
+      "name": "client-engagements",
+      "release": 1,
+      "summary": "Client engagements end to end: pursuits, statements of work and change orders, pricing and margin bands, staffing, risks and commitments, billing, on top of professional services delivery.",
+      "path": "packs/client-engagements",
+      "ontology": {
+        "name": "client-engagements",
+        "release": 1
+      }
+    },
+    {
       "name": "data",
       "release": 2,
       "summary": "The data semantic layer as facts: a store's tables and columns with their types, keys and a meaning that is a draft until a named person confirms it, the jobs and feeds that load each table (lineage from a dbt manifest or the ETL's SQL), who reads each table and how (usage from the query log). oto data introspect, lineage, usage, meaning and confirm come with the pack, with the data-meaning skill; the engine ships no data layer of its own.",

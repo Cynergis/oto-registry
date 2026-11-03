@@ -1,0 +1,569 @@
+{
+  "_about": "The vocabulary this pack delivers, on professional-services: pre-sales, contracts and scope, pricing and margin, staffing, risks and commitments, and billing. Derived from the questions in questions.json.",
+  "name": "client-engagements",
+  "ontology_version": 1,
+  "strict_domains": false,
+  "languages": [
+    "en"
+  ],
+  "classes": {
+    "Pursuit": {
+      "definition": "An opportunity to win work from a client, from first conversation to a signed statement of work, a loss or a withdrawal.",
+      "alt_labels": [
+        "opportunity",
+        "deal",
+        "bid"
+      ],
+      "scope_note": "Ends when it is won, lost or withdrawn; the work that follows a win is an Engagement."
+    },
+    "StatementOfWork": {
+      "definition": "The signed contract document that sets an engagement's scope, price, staffing and terms.",
+      "subclass_of": [
+        "Document"
+      ],
+      "label": "statement of work",
+      "alt_labels": [
+        "SOW"
+      ]
+    },
+    "ChangeOrder": {
+      "definition": "A dated amendment to a statement of work that changes its scope, price or terms, with the reason for it.",
+      "subclass_of": [
+        "Document"
+      ],
+      "label": "change order",
+      "alt_labels": [
+        "change request",
+        "CR",
+        "amendment"
+      ]
+    },
+    "ScopeItem": {
+      "definition": "One in-scope or out-of-scope statement in a statement of work or change order, with the clause it sits in.",
+      "label": "scope item"
+    },
+    "SolutionDocument": {
+      "definition": "A solution design, proposal or approach document we wrote for a pursuit or an engagement.",
+      "subclass_of": [
+        "Document"
+      ],
+      "label": "solution document",
+      "alt_labels": [
+        "solution",
+        "proposal",
+        "approach document"
+      ]
+    },
+    "Assumption": {
+      "definition": "Something a solution, price or statement of work takes as true about the client's environment, confirmed or not.",
+      "alt_labels": [
+        "dependency assumption",
+        "pricing assumption"
+      ]
+    },
+    "PricingModel": {
+      "definition": "How an engagement, pursuit or change order is priced: the commercial model, the price, the cost and the margin it was priced at.",
+      "label": "pricing model",
+      "alt_labels": [
+        "pricing",
+        "commercial model",
+        "price build"
+      ]
+    },
+    "MarginBand": {
+      "definition": "The approved floor and target margin for a commercial model, as set by the firm's pricing policy at a point in time.",
+      "label": "margin band",
+      "alt_labels": [
+        "margin guardrail",
+        "approved margin range"
+      ]
+    },
+    "Assignment": {
+      "definition": "A person or an open position in a role on an engagement or pursuit, from a date to a date, planned or actual, with its rates.",
+      "alt_labels": [
+        "staffing",
+        "allocation",
+        "booking"
+      ],
+      "scope_note": "A planned assignment may name only a role; an actual one names the person."
+    },
+    "Platform": {
+      "definition": "A technology product or platform an engagement or solution works on: a core banking system, a cloud, a data platform.",
+      "alt_labels": [
+        "technology",
+        "product",
+        "stack"
+      ]
+    },
+    "Regulation": {
+      "definition": "A named regulatory instrument or guideline an engagement must respect, cited by its official title.",
+      "alt_labels": [
+        "guideline",
+        "regulatory requirement"
+      ],
+      "scope_note": "Only real, cited instruments (e.g. an OSFI guideline); never an invented category."
+    },
+    "Risk": {
+      "definition": "An open risk or blocker to an engagement, with an owner, a state and what it is waiting on.",
+      "alt_labels": [
+        "blocker",
+        "issue",
+        "RAID item"
+      ]
+    },
+    "Commitment": {
+      "definition": "Something one party promised another on a pursuit or engagement: what we promised in pre-sales, or what the client committed to provide.",
+      "alt_labels": [
+        "promise",
+        "client responsibility",
+        "client dependency"
+      ],
+      "scope_note": "Who made it is the promised_by relation; direction is not a separate class."
+    },
+    "BillingMilestone": {
+      "definition": "A billable point in an engagement, usually tied to a deliverable's acceptance, with its amount.",
+      "label": "billing milestone",
+      "alt_labels": [
+        "payment milestone"
+      ]
+    },
+    "Invoice": {
+      "definition": "An invoice issued to a client for a milestone or a period of time-and-materials work."
+    }
+  },
+  "properties": {
+    "client_of": {
+      "domain": "Organization",
+      "range": "Engagement|Pursuit",
+      "definition": "The client an engagement or pursuit is for."
+    },
+    "owns": {
+      "domain": "Person|Role|Organization",
+      "range": "Workstream|Deliverable|ActionItem|Question|Pursuit|Risk|Commitment|Assumption",
+      "definition": "Accountability for something."
+    },
+    "decides": {
+      "domain": "Decision",
+      "range": "Concept|Workstream|Deliverable|Role|PricingModel|ScopeItem|Assumption",
+      "definition": "What a decision settles."
+    },
+    "became": {
+      "domain": "Pursuit",
+      "range": "Engagement",
+      "definition": "The engagement a won pursuit turned into.",
+      "inverse": "won_from",
+      "inverse_label": "won from",
+      "max": 1
+    },
+    "solution_for": {
+      "domain": "SolutionDocument",
+      "range": "Pursuit|Engagement",
+      "definition": "The pursuit or engagement a solution document was written for.",
+      "label": "solution for",
+      "inverse": "has_solution"
+    },
+    "involves_platform": {
+      "domain": "Engagement|Pursuit|SolutionDocument",
+      "range": "Platform",
+      "definition": "A platform the work or solution is built on or changes.",
+      "label": "involves platform"
+    },
+    "subject_to": {
+      "domain": "Engagement|Pursuit|SolutionDocument",
+      "range": "Regulation",
+      "definition": "A regulation the work must respect.",
+      "label": "subject to"
+    },
+    "assumes": {
+      "domain": "SolutionDocument|PricingModel|StatementOfWork",
+      "range": "Assumption",
+      "definition": "An assumption the solution, price or contract rests on."
+    },
+    "confirmed_by": {
+      "domain": "Assumption",
+      "range": "Person|Role|Session",
+      "definition": "Who or what confirmed an assumption.",
+      "label": "confirmed by"
+    },
+    "amends": {
+      "domain": "ChangeOrder",
+      "range": "StatementOfWork",
+      "definition": "The statement of work a change order amends.",
+      "min": 1,
+      "max": 1,
+      "inverse": "amended_by",
+      "inverse_label": "amended by"
+    },
+    "defines_scope": {
+      "domain": "StatementOfWork|ChangeOrder",
+      "range": "ScopeItem",
+      "definition": "A scope item the contract or change order brings in, in or out of scope.",
+      "label": "defines scope"
+    },
+    "removes_scope": {
+      "domain": "ChangeOrder",
+      "range": "ScopeItem",
+      "definition": "A scope item a change order takes out of the contract.",
+      "label": "removes scope"
+    },
+    "priced_by": {
+      "domain": "Engagement|Pursuit|ChangeOrder",
+      "range": "PricingModel",
+      "definition": "The pricing model that prices the work.",
+      "label": "priced by"
+    },
+    "held_to": {
+      "domain": "PricingModel",
+      "range": "MarginBand",
+      "definition": "The margin band a price was judged against when it was set.",
+      "label": "held to",
+      "max": 1
+    },
+    "staffs": {
+      "domain": "Assignment",
+      "range": "Engagement|Pursuit",
+      "definition": "The engagement or pursuit an assignment is on.",
+      "min": 1,
+      "max": 1,
+      "inverse": "staffed_by",
+      "inverse_label": "staffed by"
+    },
+    "assignee": {
+      "domain": "Assignment",
+      "range": "Person",
+      "definition": "The person in an assignment; absent for an open planned position.",
+      "max": 1,
+      "inverse": "assigned_as",
+      "inverse_label": "assigned as"
+    },
+    "as_role": {
+      "domain": "Assignment",
+      "range": "Role",
+      "definition": "The role an assignment fills.",
+      "label": "as role",
+      "max": 1
+    },
+    "worked_on": {
+      "domain": "Person",
+      "range": "Engagement",
+      "definition": "A person was actually assigned to an engagement. Derived from actual assignments.",
+      "label": "worked on",
+      "inverse": "worked_on_by",
+      "inverse_label": "worked on by"
+    },
+    "key_person_for": {
+      "domain": "Person",
+      "range": "Engagement|Deliverable|Commitment",
+      "definition": "A commitment depends on this named individual.",
+      "label": "key person for"
+    },
+    "signs_off": {
+      "domain": "Person|Role",
+      "range": "Deliverable",
+      "definition": "Who accepts a deliverable on the client's behalf.",
+      "label": "signs off"
+    },
+    "threatens": {
+      "domain": "Risk",
+      "range": "Engagement|Workstream|Deliverable|BillingMilestone",
+      "definition": "What a risk would hurt if it happened."
+    },
+    "waits_on": {
+      "domain": "Risk|Commitment",
+      "range": "Person|Role|Organization",
+      "definition": "Who a blocker or overdue commitment is waiting on.",
+      "label": "waits on"
+    },
+    "promised_by": {
+      "domain": "Commitment",
+      "range": "Organization",
+      "definition": "The party that made a commitment.",
+      "label": "promised by",
+      "min": 1,
+      "max": 1
+    },
+    "commitment_for": {
+      "domain": "Commitment",
+      "range": "Pursuit|Engagement",
+      "definition": "The pursuit or engagement a commitment was made in.",
+      "label": "commitment for",
+      "min": 1
+    },
+    "required_by": {
+      "domain": "ScopeItem|Commitment|Deliverable",
+      "range": "Regulation",
+      "definition": "The regulation that obliges this piece of work.",
+      "label": "required by"
+    },
+    "sponsors": {
+      "domain": "Person|Role",
+      "range": "Engagement|Pursuit",
+      "definition": "An executive sponsor or decision-maker for the work."
+    },
+    "milestone_of": {
+      "domain": "BillingMilestone",
+      "range": "Engagement|StatementOfWork",
+      "definition": "The engagement or contract a billing milestone belongs to.",
+      "label": "milestone of",
+      "min": 1
+    },
+    "bills_on": {
+      "domain": "BillingMilestone",
+      "range": "Deliverable",
+      "definition": "The deliverable whose acceptance makes a milestone billable.",
+      "label": "bills on"
+    },
+    "invoices": {
+      "domain": "Invoice",
+      "range": "BillingMilestone|Engagement",
+      "definition": "What an invoice bills: a milestone, or an engagement for time-and-materials work.",
+      "min": 1
+    }
+  },
+  "attributes": {
+    "Pursuit": {
+      "stage": {
+        "type": "enum:identified|qualifying|proposing|negotiating|won|lost|withdrawn",
+        "definition": "Where the pursuit is.",
+        "required": true
+      },
+      "outcome_reason": {
+        "type": "string",
+        "label": "outcome reason",
+        "definition": "Why it was won, lost or withdrawn, including what the client pushed back on."
+      },
+      "estimated_value_cad": {
+        "type": "number",
+        "label": "estimated value (CAD)",
+        "definition": "The expected contract value in Canadian dollars."
+      },
+      "expected_close": {
+        "type": "date",
+        "label": "expected close",
+        "definition": "When a decision is expected."
+      }
+    },
+    "StatementOfWork": {
+      "sow_number": {
+        "type": "string",
+        "label": "SOW number",
+        "definition": "The contract's identifier."
+      },
+      "signed_on": {
+        "type": "date",
+        "label": "signed on",
+        "definition": "When both parties signed."
+      },
+      "contract_value_cad": {
+        "type": "number",
+        "label": "contract value (CAD)",
+        "definition": "The total value at signing."
+      }
+    },
+    "ChangeOrder": {
+      "effective_on": {
+        "type": "date",
+        "label": "effective on",
+        "definition": "When the change takes effect.",
+        "required": true
+      },
+      "reason": {
+        "type": "string",
+        "definition": "Why the change was made.",
+        "required": true
+      },
+      "value_change_cad": {
+        "type": "number",
+        "label": "value change (CAD)",
+        "definition": "How much the contract value moves, negative for a reduction."
+      }
+    },
+    "ScopeItem": {
+      "in_scope": {
+        "type": "boolean",
+        "label": "in scope",
+        "definition": "True when included, false when explicitly excluded.",
+        "required": true
+      },
+      "clause": {
+        "type": "string",
+        "definition": "The clause reference in the document that states it."
+      }
+    },
+    "SolutionDocument": {
+      "reusable": {
+        "type": "boolean",
+        "definition": "Whether it can be shared as a starting point for other clients once anonymized."
+      }
+    },
+    "Assumption": {
+      "state": {
+        "type": "enum:unconfirmed|confirmed|invalidated",
+        "definition": "Whether the assumption has been checked.",
+        "required": true
+      }
+    },
+    "PricingModel": {
+      "model": {
+        "type": "enum:fixed_price|time_and_materials|capped_tm|outcome_based",
+        "label": "commercial model",
+        "definition": "How the work is charged.",
+        "required": true
+      },
+      "price_cad": {
+        "type": "number",
+        "label": "price (CAD)",
+        "definition": "The price to the client."
+      },
+      "cost_cad": {
+        "type": "number",
+        "label": "cost (CAD)",
+        "definition": "The estimated delivery cost."
+      },
+      "priced_margin_pct": {
+        "type": "number",
+        "label": "priced margin (%)",
+        "definition": "The margin the price was set at."
+      }
+    },
+    "MarginBand": {
+      "applies_to": {
+        "type": "enum:fixed_price|time_and_materials|capped_tm|outcome_based",
+        "label": "applies to",
+        "definition": "The commercial model the band governs.",
+        "required": true
+      },
+      "floor_pct": {
+        "type": "number",
+        "label": "floor (%)",
+        "definition": "The lowest margin approved without an exception."
+      },
+      "target_pct": {
+        "type": "number",
+        "label": "target (%)",
+        "definition": "The margin a price should aim for."
+      }
+    },
+    "Assignment": {
+      "kind": {
+        "type": "enum:planned|actual",
+        "definition": "Whether this is the plan or what happened.",
+        "required": true
+      },
+      "start_on": {
+        "type": "date",
+        "label": "start",
+        "definition": "First day on the work."
+      },
+      "end_on": {
+        "type": "date",
+        "label": "end",
+        "definition": "Last day on the work; absent while open-ended."
+      },
+      "allocation_pct": {
+        "type": "number",
+        "label": "allocation (%)",
+        "definition": "Share of a full week on this work."
+      },
+      "bill_rate_cad": {
+        "type": "number",
+        "label": "bill rate (CAD/day)",
+        "definition": "Daily rate charged to the client."
+      },
+      "cost_rate_cad": {
+        "type": "number",
+        "label": "cost rate (CAD/day)",
+        "definition": "Daily cost of the person or position."
+      }
+    },
+    "Regulation": {
+      "issuer": {
+        "type": "string",
+        "definition": "The regulator or body that issued it, e.g. OSFI."
+      },
+      "citation": {
+        "type": "string",
+        "definition": "The official title and version or date."
+      }
+    },
+    "Risk": {
+      "kind": {
+        "type": "enum:risk|blocker",
+        "definition": "A blocker is stopping work now; a risk might.",
+        "required": true
+      },
+      "state": {
+        "type": "enum:open|mitigated|closed|realised",
+        "definition": "Where the risk is.",
+        "required": true
+      }
+    },
+    "Commitment": {
+      "due_on": {
+        "type": "date",
+        "label": "due",
+        "definition": "When it must be met."
+      },
+      "state": {
+        "type": "enum:open|met|missed|waived",
+        "definition": "Whether it has been met.",
+        "required": true
+      }
+    },
+    "Deliverable": {
+      "state": {
+        "type": "enum:planned|in_progress|submitted|accepted|rejected",
+        "definition": "Where the deliverable is in acceptance."
+      },
+      "due_on": {
+        "type": "date",
+        "label": "due",
+        "definition": "The contracted due date."
+      },
+      "estimate_cad": {
+        "type": "number",
+        "label": "estimate (CAD)",
+        "definition": "The cost it was priced at."
+      },
+      "forecast_cad": {
+        "type": "number",
+        "label": "forecast (CAD)",
+        "definition": "The current forecast cost to complete."
+      }
+    },
+    "BillingMilestone": {
+      "amount_cad": {
+        "type": "number",
+        "label": "amount (CAD)",
+        "definition": "What is billed when it is reached."
+      },
+      "due_on": {
+        "type": "date",
+        "label": "due",
+        "definition": "When it is expected to be billable."
+      }
+    },
+    "Invoice": {
+      "invoice_number": {
+        "type": "string",
+        "label": "invoice number",
+        "definition": "The invoice's identifier."
+      },
+      "amount_cad": {
+        "type": "number",
+        "label": "amount (CAD)",
+        "definition": "The invoiced amount before tax."
+      },
+      "issued_on": {
+        "type": "date",
+        "label": "issued on",
+        "definition": "When it was sent."
+      },
+      "state": {
+        "type": "enum:draft|issued|paid|disputed|void",
+        "definition": "Where the invoice is.",
+        "required": true
+      }
+    }
+  }
+}
