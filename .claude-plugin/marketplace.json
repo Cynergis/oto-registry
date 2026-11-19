@@ -31,6 +31,13 @@
       "description": "Turn a sample PDF into a data-driven HTML/CSS + Jinja2 template that renders new data to PDF; the report's definition is read from an OTO project (the report pack). Depends on oto and report.",
       "version": "0.4.5",
       "category": "reporting"
+    },
+    {
+      "name": "e2e-suppliers",
+      "source": "./packs/e2e-suppliers",
+      "description": "Suppliers and who to reach at each: a throwaway pack for the end-to-end test of connected graphs.",
+      "version": "1.0.0",
+      "category": "procurement"
     }
   ]
 }

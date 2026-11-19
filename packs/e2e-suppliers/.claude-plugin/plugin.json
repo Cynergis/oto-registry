@@ -1,0 +1,17 @@
+{
+  "name": "e2e-suppliers",
+  "displayName": "e2e-suppliers (OTO pack)",
+  "description": "Suppliers and who to reach at each: a throwaway pack for the end-to-end test of connected graphs.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Cynergis"
+  },
+  "dependencies": [
+    "oto@cynergis-engine"
+  ],
+  "keywords": [
+    "procurement",
+    "oto",
+    "knowledge-graph"
+  ]
+}

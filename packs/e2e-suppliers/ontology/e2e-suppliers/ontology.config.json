@@ -1,0 +1,25 @@
+{
+  "_about": "The vocabulary this pack delivers. Empty until the interview fills it: classes, relations and attributes derived from the questions the graph must answer (the ontology-interview skill); `oto pack check` holds it to its gates, `oto pack try` tries it in the trial project beside this pack.",
+  "_summary": "Suppliers and who to reach at each",
+  "classes": {
+    "Contact": {
+      "definition": "A person to reach at a supplier."
+    },
+    "Supplier": {
+      "definition": "A company we buy from."
+    }
+  },
+  "languages": [
+    "en"
+  ],
+  "name": "e2e-suppliers",
+  "ontology_version": 1,
+  "properties": {
+    "reached_through": {
+      "definition": "The person a supplier is reached through.",
+      "domain": "Supplier",
+      "range": "Contact"
+    }
+  },
+  "strict_domains": false
+}

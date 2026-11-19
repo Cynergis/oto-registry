@@ -1,0 +1,53 @@
+{
+  "_about": "What a graph in this vocabulary must answer; a term no question cites has no reason to exist.",
+  "questions": {
+    "SUP1": {
+      "ask": {
+        "select": [
+          "s.label"
+        ],
+        "when": [
+          {
+            "node": "s",
+            "type": "Supplier"
+          }
+        ]
+      },
+      "gate": "non_empty",
+      "question": "Which suppliers do we have?",
+      "validated_by": "Claude, for the end-to-end test of 2026-11-19",
+      "who": "a buyer",
+      "why": "The list of suppliers is what every purchase is checked against."
+    },
+    "SUP2": {
+      "ask": {
+        "select": [
+          "c.label"
+        ],
+        "when": [
+          {
+            "edge": [
+              "$SUPPLIER",
+              "reached_through",
+              "c"
+            ]
+          },
+          {
+            "node": "c",
+            "type": "Contact"
+          }
+        ]
+      },
+      "gate": "non_empty",
+      "params": {
+        "SUPPLIER": {
+          "type": "Supplier"
+        }
+      },
+      "question": "Who do we reach at $SUPPLIER?",
+      "validated_by": "Claude, for the end-to-end test of 2026-11-19",
+      "who": "a buyer",
+      "why": "A question about a supplier ends with a person to ask."
+    }
+  }
+}

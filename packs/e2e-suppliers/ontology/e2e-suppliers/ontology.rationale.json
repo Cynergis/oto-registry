@@ -1,0 +1,25 @@
+{
+  "_about": "Why each class and relation exists, the alternatives considered, and who confirmed it.",
+  "classes": {
+    "Contact": {
+      "alternatives": "",
+      "question": "Who do we reach at a supplier?",
+      "validated_by": "Claude, for the end-to-end test of 2026-11-19",
+      "why": "A supplier is reached through a named person, who changes more often than the supplier does."
+    },
+    "Supplier": {
+      "alternatives": "",
+      "question": "Which suppliers do we have?",
+      "validated_by": "Claude, for the end-to-end test of 2026-11-19",
+      "why": "Buying is recorded against the company bought from."
+    }
+  },
+  "properties": {
+    "reached_through": {
+      "alternatives": "",
+      "question": "Who do we reach at a supplier?",
+      "validated_by": "Claude, for the end-to-end test of 2026-11-19",
+      "why": "Without it a supplier is a name with nobody to call."
+    }
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "edges": [
+    {
+      "from": "supplier.acme",
+      "rel": "cites",
+      "to": "doc.handbook"
+    },
+    {
+      "from": "supplier.acme",
+      "rel": "reached_through",
+      "to": "contact.dana-okoro"
+    },
+    {
+      "from": "supplier.borealis",
+      "rel": "reached_through",
+      "to": "contact.li-wei"
+    }
+  ],
+  "nodes": [
+    {
+      "aliases": [],
+      "as_of": "2026-01-01",
+      "attributes": {},
+      "id": "contact.dana-okoro",
+      "label": "Dana Okoro",
+      "source_doc": "sample",
+      "sources": [
+        "sample"
+      ],
+      "status": "current",
+      "summary": "Account manager at Acme Tooling.",
+      "tags": [
+        "sample"
+      ],
+      "type": "Contact",
+      "valid_from": "2026-01-01"
+    },
+    {
+      "aliases": [],
+      "as_of": "2026-01-01",
+      "attributes": {},
+      "id": "contact.li-wei",
+      "label": "Li Wei",
+      "source_doc": "sample",
+      "sources": [
+        "sample"
+      ],
+      "status": "current",
+      "summary": "Account manager at Borealis Parts.",
+      "tags": [
+        "sample"
+      ],
+      "type": "Contact",
+      "valid_from": "2026-01-01"
+    },
+    {
+      "aliases": [],
+      "as_of": "2026-01-01",
+      "attributes": {},
+      "id": "doc.handbook",
+      "label": "Operations handbook",
+      "source_doc": "sample",
+      "sources": [
+        "sample"
+      ],
+      "status": "current",
+      "summary": "The handbook the sample facts come from.",
+      "tags": [
+        "sample"
+      ],
+      "type": "Document",
+      "valid_from": "2026-01-01"
+    },
+    {
+      "aliases": [],
+      "as_of": "2026-01-01",
+      "attributes": {
+        "classes": [
+          "Supplier",
+          "Contact"
+        ],
+        "reach": "sample-kg",
+        "slug": "sample",
+        "subject": "Suppliers and who to reach at each"
+      },
+      "id": "graph.sample",
+      "label": "The sample graph",
+      "source_doc": "sample",
+      "sources": [
+        "sample"
+      ],
+      "status": "current",
+      "summary": "This graph, described from outside.",
+      "tags": [
+        "sample"
+      ],
+      "type": "Graph",
+      "valid_from": "2026-01-01"
+    },
+    {
+      "aliases": [],
+      "as_of": "2026-01-01",
+      "attributes": {},
+      "id": "supplier.acme",
+      "label": "Acme Tooling",
+      "source_doc": "sample",
+      "sources": [
+        "sample"
+      ],
+      "status": "current",
+      "summary": "Supplies workshop tools.",
+      "tags": [
+        "sample"
+      ],
+      "type": "Supplier",
+      "valid_from": "2026-01-01"
+    },
+    {
+      "aliases": [],
+      "as_of": "2026-01-01",
+      "attributes": {},
+      "id": "supplier.borealis",
+      "label": "Borealis Parts",
+      "source_doc": "sample",
+      "sources": [
+        "sample"
+      ],
+      "status": "current",
+      "summary": "Supplies spare parts.",
+      "tags": [
+        "sample"
+      ],
+      "type": "Supplier",
+      "valid_from": "2026-01-01"
+    }
+  ]
+}

@@ -3,7 +3,20 @@
   "summary": "The OTO catalog: ontologies and packs, published by Cynergis.",
   "ontologies": [],
   "engine": "https://github.com/Cynergis/oto",
-  "packs": [],
+  "packs": [
+    {
+      "name": "e2e-suppliers",
+      "release": 1,
+      "summary": "Suppliers and who to reach at each: a throwaway pack for the end-to-end test of connected graphs.",
+      "path": "packs/e2e-suppliers",
+      "ontology": {
+        "name": "e2e-suppliers",
+        "release": 1
+      },
+      "workspace": "Cynergis/e2e-suppliers",
+      "domain": "procurement"
+    }
+  ],
   "plugins": [
     {
       "name": "oto-factory",
