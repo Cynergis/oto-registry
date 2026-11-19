@@ -5,6 +5,32 @@
   "engine": "https://github.com/Cynergis/oto",
   "packs": [
     {
+      "name": "e2e-contracts",
+      "release": 1,
+      "summary": "Contracts and what each obliges: a throwaway pack for the end-to-end test of connected graphs. Its suppliers live in another graph.",
+      "path": "packs/e2e-contracts",
+      "ontology": {
+        "name": "e2e-contracts",
+        "release": 1
+      },
+      "workspace": "Cynergis/e2e-contracts",
+      "domain": "procurement",
+      "connects_to": [
+        {
+          "name": "suppliers",
+          "pack": "e2e-suppliers",
+          "release": 1,
+          "classes": [
+            "Supplier"
+          ],
+          "from": [
+            "Contract"
+          ],
+          "for": "who supplies what a contract buys"
+        }
+      ]
+    },
+    {
       "name": "e2e-suppliers",
       "release": 1,
       "summary": "Suppliers and who to reach at each: a throwaway pack for the end-to-end test of connected graphs.",

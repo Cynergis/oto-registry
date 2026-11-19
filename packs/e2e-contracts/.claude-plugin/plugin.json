@@ -1,0 +1,17 @@
+{
+  "name": "e2e-contracts",
+  "displayName": "e2e-contracts (OTO pack)",
+  "description": "Contracts and what each obliges: a throwaway pack for the end-to-end test of connected graphs. Its suppliers live in another graph.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Cynergis"
+  },
+  "dependencies": [
+    "oto@cynergis-engine"
+  ],
+  "keywords": [
+    "procurement",
+    "oto",
+    "knowledge-graph"
+  ]
+}

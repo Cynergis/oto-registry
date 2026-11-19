@@ -1,0 +1,119 @@
+{
+  "edges": [
+    {
+      "from": "contract.tooling-2026",
+      "rel": "cites",
+      "to": "doc.handbook"
+    },
+    {
+      "from": "contract.tooling-2026",
+      "rel": "obliges",
+      "to": "obligation.deliver-monthly"
+    },
+    {
+      "from": "contract.tooling-2026",
+      "rel": "obliges",
+      "to": "obligation.pay-30-days"
+    }
+  ],
+  "nodes": [
+    {
+      "aliases": [],
+      "as_of": "2026-01-01",
+      "attributes": {},
+      "id": "contract.tooling-2026",
+      "label": "Tooling supply 2026",
+      "source_doc": "sample",
+      "sources": [
+        "sample"
+      ],
+      "status": "current",
+      "summary": "Workshop tools for the year 2026.",
+      "tags": [
+        "sample"
+      ],
+      "type": "Contract",
+      "valid_from": "2026-01-01"
+    },
+    {
+      "aliases": [],
+      "as_of": "2026-01-01",
+      "attributes": {},
+      "id": "doc.handbook",
+      "label": "Operations handbook",
+      "source_doc": "sample",
+      "sources": [
+        "sample"
+      ],
+      "status": "current",
+      "summary": "The handbook the sample facts come from.",
+      "tags": [
+        "sample"
+      ],
+      "type": "Document",
+      "valid_from": "2026-01-01"
+    },
+    {
+      "aliases": [],
+      "as_of": "2026-01-01",
+      "attributes": {
+        "classes": [
+          "Contract",
+          "Obligation"
+        ],
+        "reach": "sample-kg",
+        "slug": "sample",
+        "subject": "Contracts and what each obliges us to"
+      },
+      "id": "graph.sample",
+      "label": "The sample graph",
+      "source_doc": "sample",
+      "sources": [
+        "sample"
+      ],
+      "status": "current",
+      "summary": "This graph, described from outside.",
+      "tags": [
+        "sample"
+      ],
+      "type": "Graph",
+      "valid_from": "2026-01-01"
+    },
+    {
+      "aliases": [],
+      "as_of": "2026-01-01",
+      "attributes": {},
+      "id": "obligation.deliver-monthly",
+      "label": "Deliver each month",
+      "source_doc": "sample",
+      "sources": [
+        "sample"
+      ],
+      "status": "current",
+      "summary": "The supplier delivers the month's order by its fifth working day.",
+      "tags": [
+        "sample"
+      ],
+      "type": "Obligation",
+      "valid_from": "2026-01-01"
+    },
+    {
+      "aliases": [],
+      "as_of": "2026-01-01",
+      "attributes": {},
+      "id": "obligation.pay-30-days",
+      "label": "Pay within 30 days",
+      "source_doc": "sample",
+      "sources": [
+        "sample"
+      ],
+      "status": "current",
+      "summary": "We pay each invoice within 30 days.",
+      "tags": [
+        "sample"
+      ],
+      "type": "Obligation",
+      "valid_from": "2026-01-01"
+    }
+  ]
+}

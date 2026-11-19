@@ -1,0 +1,40 @@
+{
+  "name": "e2e-contracts",
+  "release": 1,
+  "domain": "procurement",
+  "summary": "Contracts and what each obliges: a throwaway pack for the end-to-end test of connected graphs. Its suppliers live in another graph.",
+  "ontology": {
+    "name": "e2e-contracts",
+    "release": 1,
+    "registry": null,
+    "source": "workspace",
+    "ref": null,
+    "path": null,
+    "commit": null,
+    "embedded_at": "2026-11-19"
+  },
+  "engine": ">=0.25",
+  "maintainer": "Cynergis",
+  "changelog": [
+    {
+      "release": 1,
+      "at": "2026-11-19",
+      "note": "First release, for the end-to-end test of connected graphs: connects to e2e-suppliers"
+    }
+  ],
+  "connects_to": [
+    {
+      "name": "suppliers",
+      "pack": "e2e-suppliers",
+      "release": 1,
+      "classes": [
+        "Supplier"
+      ],
+      "from": [
+        "Contract"
+      ],
+      "for": "who supplies what a contract buys"
+    }
+  ],
+  "_about": "The pack's identity: its release rises on every published change; `ontology` names the ontology embedded under ontology/ and where it came from; `domain` is the category it belongs to."
+}

@@ -1,0 +1,53 @@
+{
+  "_about": "What a graph in this vocabulary must answer; a term no question cites has no reason to exist.",
+  "questions": {
+    "CON1": {
+      "ask": {
+        "select": [
+          "c.label"
+        ],
+        "when": [
+          {
+            "node": "c",
+            "type": "Contract"
+          }
+        ]
+      },
+      "gate": "non_empty",
+      "question": "Which contracts do we hold?",
+      "validated_by": "Claude, for the end-to-end test of 2026-11-19",
+      "who": "a contract manager",
+      "why": "The list of contracts is the list of what we are committed to."
+    },
+    "CON2": {
+      "ask": {
+        "select": [
+          "o.label"
+        ],
+        "when": [
+          {
+            "edge": [
+              "$CONTRACT",
+              "obliges",
+              "o"
+            ]
+          },
+          {
+            "node": "o",
+            "type": "Obligation"
+          }
+        ]
+      },
+      "gate": "non_empty",
+      "params": {
+        "CONTRACT": {
+          "type": "Contract"
+        }
+      },
+      "question": "What does $CONTRACT oblige?",
+      "validated_by": "Claude, for the end-to-end test of 2026-11-19",
+      "who": "a contract manager",
+      "why": "An obligation nobody can list is one nobody keeps."
+    }
+  }
+}

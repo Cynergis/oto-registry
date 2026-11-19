@@ -1,0 +1,25 @@
+{
+  "_about": "The vocabulary this pack delivers. Empty until the interview fills it: classes, relations and attributes derived from the questions the graph must answer (the ontology-interview skill); `oto pack check` holds it to its gates, `oto pack try` tries it in the trial project beside this pack.",
+  "_summary": "Contracts and what each obliges us to",
+  "classes": {
+    "Contract": {
+      "definition": "An agreement to buy from a supplier, with a start and an end."
+    },
+    "Obligation": {
+      "definition": "Something a contract obliges one side to do."
+    }
+  },
+  "languages": [
+    "en"
+  ],
+  "name": "e2e-contracts",
+  "ontology_version": 1,
+  "properties": {
+    "obliges": {
+      "definition": "What the contract obliges.",
+      "domain": "Contract",
+      "range": "Obligation"
+    }
+  },
+  "strict_domains": false
+}
