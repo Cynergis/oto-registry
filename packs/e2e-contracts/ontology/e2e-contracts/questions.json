@@ -48,6 +48,38 @@
       "validated_by": "Claude, for the end-to-end test of 2026-11-19",
       "who": "a contract manager",
       "why": "An obligation nobody can list is one nobody keeps."
+    },
+    "CON3": {
+      "ask": {
+        "select": [
+          "s.label",
+          "s.remote_id",
+          "s.connection"
+        ],
+        "when": [
+          {
+            "edge": [
+              "$CONTRACT",
+              "supplied_by",
+              "s"
+            ]
+          },
+          {
+            "node": "s",
+            "type": "Reference"
+          }
+        ]
+      },
+      "gate": "non_empty",
+      "params": {
+        "CONTRACT": {
+          "type": "Contract"
+        }
+      },
+      "question": "Who supplies $CONTRACT?",
+      "validated_by": "Claude, for the end-to-end test of 2026-11-20",
+      "who": "a contract manager",
+      "why": "A contract with nobody on the other side cannot be followed up."
     }
   }
 }

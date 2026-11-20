@@ -19,6 +19,9 @@
     },
     "Graph": {
       "definition": "A knowledge graph described from outside: what it holds (its subject and main classes) and how it is reached. Every graph holds one about itself, written at init, and one for each graph it depends on, so an agent can list a graph's dependencies, read what each holds and choose which to ask without custom modelling."
+    },
+    "Reference": {
+      "definition": "A thing that lives in another graph, named here so that facts can point at it: which connection of this graph's pack it comes through, its id there, its class there, and its name as last seen. The other graph holds the thing; this is where to find it."
     }
   },
   "properties": {
@@ -96,6 +99,26 @@
       "connected_as": {
         "type": "list",
         "definition": "On a graph this one depends on: the connections of this graph's pack that it fills, by name. A pack declares which other packs it connects to; this says which graph answers for each. Empty or absent on a dependency no connection names."
+      }
+    },
+    "Reference": {
+      "connection": {
+        "type": "string",
+        "definition": "The connection of this graph's pack it comes through, by name: which other graph holds the thing.",
+        "required": true
+      },
+      "remote_id": {
+        "type": "string",
+        "definition": "The thing's id in the graph that holds it.",
+        "required": true
+      },
+      "remote_class": {
+        "type": "string",
+        "definition": "The class the thing has in the graph that holds it, one of the classes the connection refers to."
+      },
+      "seen_at": {
+        "type": "string",
+        "definition": "The date the thing was last read in the other graph: the label here is its name as of then, and may have moved since."
       }
     }
   }

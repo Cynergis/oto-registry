@@ -1,6 +1,6 @@
 {
   "name": "e2e-contracts",
-  "release": 1,
+  "release": 2,
   "domain": "procurement",
   "extends": [
     "oto-core"
@@ -15,6 +15,11 @@
     "readme"
   ],
   "changelog": [
+    {
+      "release": 2,
+      "at": "2026-11-20",
+      "note": "supplied_by: a contract points at its supplier in the suppliers graph, through a reference."
+    },
     {
       "release": 1,
       "at": "2026-11-19",

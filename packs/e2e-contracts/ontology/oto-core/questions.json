@@ -138,6 +138,28 @@
         ]
       },
       "gate": "non_empty"
+    },
+    "CORE5": {
+      "who": "an agent following a fact into another graph",
+      "question": "Which things does this graph refer to in other graphs, and where does each live?",
+      "why": "A fact that points outside this graph must say where: which connection, which id there, of which class, and how old the name shown here is.",
+      "validated_by": "",
+      "ask": {
+        "when": [
+          {
+            "node": "r",
+            "type": "Reference"
+          }
+        ],
+        "select": [
+          "r.label",
+          "r.connection",
+          "r.remote_id",
+          "r.remote_class",
+          "r.seen_at"
+        ]
+      },
+      "gate": "any"
     }
   }
 }

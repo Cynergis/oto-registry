@@ -19,6 +19,11 @@
       "definition": "What the contract obliges.",
       "domain": "Contract",
       "range": "Obligation"
+    },
+    "supplied_by": {
+      "definition": "The supplier a contract buys from. The supplier lives in the suppliers graph; here it is a reference to it.",
+      "domain": "Contract",
+      "range": "Reference"
     }
   },
   "strict_domains": false

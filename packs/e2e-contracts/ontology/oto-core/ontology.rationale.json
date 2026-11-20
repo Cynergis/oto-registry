@@ -18,6 +18,12 @@
       "why": "Graphs reference other graphs. A dependency declared as a node carries what the other graph holds and how to reach it, so an agent lists, chooses and queries without a mapping anyone writes, and the concierge root is a graph of nothing but descriptors.",
       "alternatives": "A dependencies list in project.config.json: rejected, config is not queryable and carries no provenance. A node per remote class: rejected, the descriptor's class list is enough to choose.",
       "validated_by": ""
+    },
+    "Reference": {
+      "question": "Which things does this graph refer to in other graphs, and where does each live? (CORE5)",
+      "why": "A graph of any size is several graphs. A contract's supplier lives in the suppliers graph: copying the supplier here would make two of it, and a bare id in an attribute is a string nothing can check or follow. A reference is a node, so a fact points at it like at anything else, and it says which graph to ask.",
+      "alternatives": "An edge that ends in the other graph's id: rejected, every check, store and view assumes an edge ends inside the graph. A copy of the other graph's node under its own class: rejected, two graphs would each hold the thing and drift apart.",
+      "validated_by": ""
     }
   },
   "properties": {

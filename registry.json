@@ -6,12 +6,12 @@
   "packs": [
     {
       "name": "e2e-contracts",
-      "release": 1,
+      "release": 2,
       "summary": "Contracts and what each obliges: a throwaway pack for the end-to-end test of connected graphs. Its suppliers live in another graph.",
       "path": "packs/e2e-contracts",
       "ontology": {
         "name": "e2e-contracts",
-        "release": 1
+        "release": 2
       },
       "workspace": "Cynergis/e2e-contracts",
       "domain": "procurement",
@@ -26,7 +26,14 @@
           "from": [
             "Contract"
           ],
-          "for": "who supplies what a contract buys"
+          "for": "who supplies what a contract buys",
+          "through": [
+            {
+              "from": "Contract",
+              "relation": "supplied_by",
+              "to": "Supplier"
+            }
+          ]
         }
       ]
     },

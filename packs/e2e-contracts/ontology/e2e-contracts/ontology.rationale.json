@@ -20,6 +20,12 @@
       "question": "What does a contract oblige?",
       "validated_by": "Claude, for the end-to-end test of 2026-11-19",
       "why": "The obligations are the contract, read as things to do."
+    },
+    "supplied_by": {
+      "alternatives": "A Supplier class here: rejected, the suppliers graph already holds suppliers and two copies would drift.",
+      "question": "Who supplies a contract?",
+      "validated_by": "Claude, for the end-to-end test of 2026-11-20",
+      "why": "A contract is with someone. The supplier is another team's record, so the contract points at it and does not copy it."
     }
   }
 }

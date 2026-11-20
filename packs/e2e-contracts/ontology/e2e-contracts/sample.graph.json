@@ -14,6 +14,11 @@
       "from": "contract.tooling-2026",
       "rel": "obliges",
       "to": "obligation.pay-30-days"
+    },
+    {
+      "from": "contract.tooling-2026",
+      "rel": "supplied_by",
+      "to": "ref.suppliers.supplier.acme"
     }
   ],
   "nodes": [
@@ -113,6 +118,29 @@
         "sample"
       ],
       "type": "Obligation",
+      "valid_from": "2026-01-01"
+    },
+    {
+      "aliases": [],
+      "as_of": "2026-01-01",
+      "attributes": {
+        "connection": "suppliers",
+        "remote_class": "Supplier",
+        "remote_id": "supplier.acme",
+        "seen_at": "2026-01-01"
+      },
+      "id": "ref.suppliers.supplier.acme",
+      "label": "Acme Tooling",
+      "source_doc": "sample",
+      "sources": [
+        "sample"
+      ],
+      "status": "current",
+      "summary": "Acme Tooling, a Supplier that lives in the suppliers graph.",
+      "tags": [
+        "sample"
+      ],
+      "type": "Reference",
       "valid_from": "2026-01-01"
     }
   ]

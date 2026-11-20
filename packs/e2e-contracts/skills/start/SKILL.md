@@ -1,7 +1,7 @@
 ---
 name: start
 description: >-
-  Start or extend an OTO knowledge project in this domain: Contracts and what each obliges: a throwaway pack for the end-to-end test of connected graphs. Its suppliers live in another graph. The pack 'e2e-contracts' (release 1) embeds the ontology 'e2e-contracts' (release 1), which declares Contract, Obligation. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
+  Start or extend an OTO knowledge project in this domain: Contracts and what each obliges: a throwaway pack for the end-to-end test of connected graphs. Its suppliers live in another graph. The pack 'e2e-contracts' (release 2) embeds the ontology 'e2e-contracts' (release 2), which declares Contract, Obligation. Use when someone wants a knowledge graph, a vocabulary or an interview for this domain.
 ---
 
 # e2e-contracts
